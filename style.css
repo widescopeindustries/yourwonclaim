@@ -1,0 +1,479 @@
+/* General Styles */
+:root {
+    --primary-color: #003366; /* Deep Navy Blue */
+    --secondary-color: #e0a800; /* Gold/Yellow */
+    --light-gray: #f4f4f4;
+    --dark-gray: #333333;
+    --text-color: #333333;
+    --light-text: #ffffff;
+    --border-radius: 5px;
+  }
+  
+  body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Cleaner font */
+      line-height: 1.7; /* Increased line height for readability */
+      margin: 0;
+      color: var(--text-color);
+      background-color: #fff; /* White background */
+  }
+  
+  .container {
+      max-width: 1100px; /* Slightly narrower for better focus */
+      margin: 0 auto;
+      padding: 0 20px;
+  }
+  
+  .section-padding {
+      padding: 80px 0; /* Increased padding */
+  }
+  
+  .bg-light {
+      background-color: var(--light-gray);
+  }
+  
+  .bg-primary {
+      background-color: var(--primary-color);
+      color: var(--light-text);
+  }
+  
+  h1, h2, h3 {
+      margin-bottom: 1rem;
+      line-height: 1.3;
+  }
+  
+  h2 {
+      text-align: center;
+      font-size: 2.5rem; /* Larger section headings */
+      margin-bottom: 40px; /* More space below headings */
+  }
+  
+  p {
+      margin-bottom: 1rem;
+  }
+  
+  a {
+      color: var(--secondary-color);
+      text-decoration: none;
+  }
+  
+  a:hover {
+      text-decoration: underline;
+  }
+  
+  img {
+      max-width: 100%;
+      height: auto;
+  }
+  
+  /* Buttons */
+  .btn {
+      display: inline-block;
+      padding: 14px 28px; /* Larger buttons */
+      border: none;
+      border-radius: var(--border-radius);
+      font-size: 1.1rem; /* Slightly smaller font for buttons */
+      font-weight: bold;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+      text-align: center;
+      letter-spacing: 0.5px;
+  }
+  
+  .btn-primary {
+      background-color: var(--secondary-color);
+      color: var(--light-text);
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .btn-primary:hover {
+      background-color: #c29100; /* Darker gold */
+      transform: translateY(-2px);
+      text-decoration: none;
+      box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+  }
+  
+  .btn-secondary {
+      background-color: #6c757d; /* Gray */
+      color: var(--light-text);
+  }
+  
+  .btn-secondary:hover {
+      background-color: #5a6268;
+      transform: translateY(-2px);
+      text-decoration: none;
+  }
+  
+  .btn-light {
+      background-color: var(--light-text);
+      color: var(--primary-color);
+      border: 1px solid var(--primary-color);
+  }
+  
+  .btn-light:hover {
+      background-color: var(--light-gray);
+      transform: translateY(-2px);
+      text-decoration: none;
+  }
+  
+  
+  /* Hero Section */
+  .hero {
+      /* You NEED to replace 'hero-image.jpg' with a real image path in your project */
+      background: linear-gradient(rgba(0, 51, 102, 0.7), rgba(0, 51, 102, 0.7)), url('placeholder_images/hero-image.jpg') no-repeat center center/cover;
+      color: var(--light-text);
+      text-align: center;
+      padding: 180px 0; /* More padding */
+      position: relative;
+      min-height: 60vh; /* Ensure it takes up significant height */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+  }
+  
+  /* Removed ::before pseudo-element as gradient is applied directly */
+  
+  .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 800px; /* Constrain content width */
+  }
+  
+  .hero h1 {
+      font-size: 3.8rem; /* Larger hero headline */
+      margin-bottom: 20px;
+      font-weight: 700;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  }
+  
+  .hero p {
+      font-size: 1.5rem; /* Larger hero paragraph */
+      margin-bottom: 40px; /* More space before button */
+      font-weight: 300;
+  }
+  
+  /* Story Section */
+  .story h2 {
+      text-align: left; /* Align heading left */
+  }
+  
+  .story-content {
+      display: grid; /* Use grid for better layout control */
+      grid-template-columns: 300px 1fr; /* Fixed width for image, rest for text */
+      gap: 40px; /* Space between image and text */
+      align-items: center;
+  }
+  
+  .story-image {
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      object-fit: cover; /* Ensure image covers the circle */
+      border: 5px solid var(--secondary-color); /* Gold border */
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .story-content p {
+      font-size: 1.1rem;
+  }
+  
+  
+  /* Pathway Section */
+  .pathway-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsive columns */
+      gap: 40px;
+      text-align: center;
+  }
+  
+  .pathway-item {
+      background-color: #fff; /* White background for items */
+      padding: 30px;
+      border-radius: var(--border-radius);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .pathway-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  }
+  
+  .pathway-item i {
+      color: var(--secondary-color); /* Gold */
+      margin-bottom: 20px;
+  }
+  
+  .pathway-item h3 {
+      font-size: 1.5rem;
+      color: var(--primary-color);
+      margin-bottom: 15px;
+  }
+  
+  /* Decoder Intro Section */
+  .decoder-intro {
+      text-align: center;
+  }
+  .decoder-intro h2 {
+      text-align: center;
+  }
+  .decoder-intro p {
+      max-width: 700px;
+      margin: 0 auto 30px auto; /* Center paragraph */
+      font-size: 1.1rem;
+  }
+  
+  /* Benefits Section */
+  .benefits-list {
+      list-style: none;
+      padding: 0;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Grid layout for benefits */
+      gap: 25px;
+  }
+  
+  .benefits-list li {
+      font-size: 1.05rem; /* Slightly smaller */
+      margin-bottom: 0; /* Remove margin as gap handles spacing */
+      display: flex;
+      align-items: flex-start; /* Align icon top */
+      background-color: #fff;
+      padding: 20px;
+      border-radius: var(--border-radius);
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  }
+  
+  .benefits-list li i {
+      margin-right: 15px;
+      color: var(--primary-color); /* Deep Blue */
+      font-size: 1.4rem; /* Larger icons */
+      margin-top: 3px; /* Align icon slightly */
+      width: 25px; /* Fixed width for alignment */
+      text-align: center;
+  }
+  
+  /* Testimonials Section */
+  .testimonial-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+      gap: 30px;
+  }
+  
+  .testimonial {
+      background-color: var(--light-gray); /* Light gray background */
+      padding: 35px;
+      border-radius: var(--border-radius);
+      border-left: 5px solid var(--secondary-color); /* Gold accent border */
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+      font-size: 1.1rem;
+      font-style: italic;
+  }
+  
+  .testimonial-author {
+      font-style: normal;
+      font-weight: bold;
+      text-align: right;
+      margin-top: 20px;
+      color: var(--primary-color);
+  }
+  
+  /* Pricing Section */
+  .pricing h2 {
+      margin-bottom: 15px; /* Less space below main heading */
+  }
+  .pricing-subtext {
+      text-align: center;
+      font-size: 1.1rem;
+      margin-bottom: 50px;
+      color: #555;
+  }
+  .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      align-items: stretch; /* Make cards equal height */
+  }
+  
+  .pricing-card {
+      background-color: #fff;
+      border-radius: var(--border-radius);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+      padding: 40px 30px;
+      text-align: center;
+      display: flex;
+      flex-direction: column; /* Align items vertically */
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      position: relative; /* For featured badge */
+      overflow: hidden; /* For featured badge */
+  }
+  
+  .pricing-card:hover {
+       transform: translateY(-5px);
+       box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
+  }
+  
+  .pricing-card.featured {
+      border: 2px solid var(--secondary-color); /* Gold */
+      transform: scale(1.05); /* Make featured slightly larger */
+  }
+  
+  .pricing-card.featured:hover {
+       transform: scale(1.07) translateY(-5px); /* Slightly larger hover effect */
+  }
+  
+  .featured-badge {
+      position: absolute;
+      top: 0;
+      right: 0;
+      background-color: var(--secondary-color);
+      color: white;
+      padding: 5px 15px;
+      font-size: 0.9rem;
+      font-weight: bold;
+      border-bottom-left-radius: var(--border-radius);
+  }
+  
+  
+  .pricing-card h3 {
+      font-size: 1.8rem;
+      margin-bottom: 15px;
+      color: var(--primary-color);
+  }
+  
+  .pricing-card .price {
+      font-size: 3rem; /* Larger price */
+      font-weight: bold;
+      margin-bottom: 25px;
+      color: var(--dark-gray);
+  }
+  
+  .pricing-card ul {
+      list-style: none;
+      padding: 0;
+      margin-bottom: 30px;
+      text-align: left; /* Align features left */
+      flex-grow: 1; /* Allow list to grow and push button down */
+  }
+  
+  .pricing-card ul li {
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+  }
+  
+  .pricing-card ul li i {
+      margin-right: 10px;
+      font-size: 0.9rem;
+  }
+  .pricing-card ul li i.available {
+       color: #28a745; /* Green check */
+  }
+  .pricing-card ul li i.unavailable {
+       color: #dc3545; /* Red X */
+  }
+  
+  .pricing-card .btn {
+      margin-top: auto; /* Push button to bottom */
+  }
+  
+  /* CTA Section */
+  .cta {
+      text-align: center;
+  }
+  
+  .cta h2 {
+      font-size: 2.8rem; /* Larger CTA heading */
+      margin-bottom: 20px;
+  }
+  .cta p {
+      font-size: 1.2rem;
+      margin-bottom: 30px;
+  }
+  
+  
+  /* Footer */
+  .footer {
+      background-color: var(--dark-gray);
+      color: #ccc; /* Lighter gray text */
+      text-align: center;
+      padding: 40px 0;
+      font-size: 0.9rem;
+  }
+  
+  .footer a {
+      color: var(--light-gray);
+  }
+  
+  .footer a:hover {
+      color: var(--secondary-color);
+  }
+  
+  .footer p {
+      margin-bottom: 10px;
+  }
+  
+  .footer .disclaimer {
+      font-size: 0.8rem;
+      color: #aaa;
+      max-width: 800px;
+      margin: 20px auto 0 auto;
+      line-height: 1.5;
+  }
+  
+  /* Media Queries (Responsiveness) */
+  @media (max-width: 992px) {
+      .story-content {
+          grid-template-columns: 1fr; /* Stack image and text */
+          text-align: center;
+      }
+      .story-image {
+          margin: 0 auto 30px; /* Center image */
+      }
+       .story h2 {
+          text-align: center; /* Center heading on smaller screens */
+      }
+      .pricing-card.featured {
+          transform: scale(1); /* Don't scale featured card on smaller screens */
+      }
+       .pricing-card.featured:hover {
+          transform: translateY(-5px); /* Normal hover */
+      }
+  
+  }
+  
+  
+  @media (max-width: 768px) {
+      .hero h1 {
+          font-size: 2.8rem;
+      }
+       .hero p {
+          font-size: 1.2rem;
+      }
+      h2 {
+          font-size: 2rem;
+      }
+      .cta h2 {
+          font-size: 2.2rem;
+      }
+      .testimonial-grid {
+          grid-template-columns: 1fr; /* Stack testimonials */
+      }
+  
+  }
+  
+  @media (max-width: 576px) {
+       .hero h1 {
+          font-size: 2.2rem;
+      }
+      .story-image {
+          width: 200px; /* Smaller image */
+          height: 200px;
+      }
+       .btn {
+          padding: 12px 24px;
+          font-size: 1rem;
+       }
+        .pricing-card .price {
+          font-size: 2.5rem;
+        }
+  }
