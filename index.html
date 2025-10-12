@@ -334,11 +334,20 @@
         }
 
         /* Force dark text when a glass card sits inside a primary (blue) section */
-        .bg-primary .glass-card h2,
-        .bg-primary .glass-card h3,
-        .bg-primary .glass-card h4,
-        .bg-primary .glass-card p {
+        .bg-primary .glass-card > h2,
+        .bg-primary .glass-card > h3,
+        .bg-primary .glass-card > h4,
+        .bg-primary .glass-card > p {
             color: var(--text-dark) !important;
+        }
+
+        /* But keep the transformation blocks (red/approved) as light-on-dark for readability */
+        .bg-primary .glass-card .approved-content h2,
+        .bg-primary .glass-card .approved-content p,
+        .bg-primary .glass-card .denial-content h2,
+        .bg-primary .glass-card .denial-content p {
+            color: var(--white) !important;
+            text-shadow: var(--shadow-text);
         }
 
         .card-image {
