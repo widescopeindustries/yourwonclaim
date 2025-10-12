@@ -330,6 +330,15 @@
             border-radius: var(--radius-xl);
             padding: var(--spacing-lg);
             box-shadow: var(--shadow-md);
+            color: var(--text-dark); /* ensure default readable text */
+        }
+
+        /* Force dark text when a glass card sits inside a primary (blue) section */
+        .bg-primary .glass-card h2,
+        .bg-primary .glass-card h3,
+        .bg-primary .glass-card h4,
+        .bg-primary .glass-card p {
+            color: var(--text-dark) !important;
         }
 
         .card-image {
@@ -1107,6 +1116,9 @@
                             <div class="stat-label">Strategic Claim</div>
                         </div>
                     </div>
+                    <p class="text-light mt-md" style="opacity: 0.9;">
+                        1 claim (1 condition) → 1 Supplemental Appeal → 1 Higher-Level Review → a little over 1 year = <strong>100% P&T for Combat‑Related PTSD</strong>. From that journey came <strong>YourWonClaim.com</strong>.
+                    </p>
                 </div>
             </div>
         </div>
