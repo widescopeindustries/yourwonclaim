@@ -1,7 +1,10 @@
 {
   "permissions": {
     "allow": [
-      "Bash(git add:*)"
+      "Bash(git add:*)",
+      "Bash(git commit -m \"$(cat <<''EOF''\nLaunch Combat PTSD First Strategy guide\n\n- New landing page focused on Combat PTSD First Strategy\n- Updated messaging for Gulf War veterans (1990+)\n- Added symptom recognition (modern PTSD vs shell shock)\n- Integrated Stripe payment at $197\n- Clearer value proposition and strategic approach\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n\nCo-Authored-By: Claude <noreply@anthropic.com>\nEOF\n)\")",
+      "Bash(git push:*)",
+      "Bash(git commit:*)"
     ],
     "deny": [],
     "ask": []
