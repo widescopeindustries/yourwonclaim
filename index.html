@@ -359,6 +359,12 @@
             background: var(--success-bg);
             border-radius: var(--radius-md);
         }
+        /* Ensure success badge remains green inside primary sections */
+        .bg-primary .success-badge {
+            color: var(--success);
+            background: var(--success-bg);
+            border: 1px solid #cfe9d7;
+        }
 
         .payment-stat {
             padding: var(--spacing-md);
