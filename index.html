@@ -201,6 +201,7 @@
         }
 
         .text-lg { font-size: var(--text-lg); }
+        .text-dark { color: var(--text-dark); }
         .text-gray { color: var(--text-gray); }
         .text-light { color: var(--text-light); }
 
@@ -213,6 +214,7 @@
 
         /* Ensure readable text inside primary gradient sections */
         .bg-primary .text-gray, .bg-primary .muted { color: var(--text-light); opacity: 0.9; }
+        .bg-primary .text-dark { color: var(--text-dark); }
         .bg-primary strong { color: var(--secondary); }
         .bg-primary a { color: var(--secondary); }
 
@@ -1133,7 +1135,7 @@
                 </div>
 
                 <!-- The Transformation Story -->
-                <div class="mt-2xl mb-lg text-center">
+                <div class="mt-2xl mb-lg text-center bg-light" style="border-radius: var(--radius-xl); padding: var(--spacing-lg);">
                     <h3 class="text-dark text-2xl" style="margin-bottom: var(--spacing-sm);">The Transformation</h3>
                     <p class="text-gray text-lg max-w-sm mx-auto">See the difference between the traditional approach and the Combat PTSD First Strategy</p>
                 </div>
