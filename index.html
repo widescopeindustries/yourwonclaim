@@ -204,6 +204,18 @@
         .text-gray { color: var(--text-gray); }
         .text-light { color: var(--text-light); }
 
+        /* Extended type utilities for consistency */
+        .text-sm { font-size: var(--text-sm); }
+        .text-xl { font-size: var(--text-xl); }
+        .text-2xl { font-size: var(--text-2xl); }
+        .italic { font-style: italic; }
+        .font-semibold { font-weight: var(--font-semibold); }
+
+        /* Ensure readable text inside primary gradient sections */
+        .bg-primary .text-gray, .bg-primary .muted { color: var(--text-light); opacity: 0.9; }
+        .bg-primary strong { color: var(--secondary); }
+        .bg-primary a { color: var(--secondary); }
+
         /* === SPACING UTILITIES === */
         .mt-xs { margin-top: var(--spacing-xs); }
         .mt-sm { margin-top: var(--spacing-sm); }
@@ -238,6 +250,9 @@
         .grid-auto-fit-sm { grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
         .grid-auto-fit-lg { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
         .grid-2 { grid-template-columns: 1fr 1fr; }
+
+        /* === POSITION UTILITIES === */
+        .relative { position: relative; }
 
         /* === BUTTON SYSTEM === */
         .btn {
@@ -322,6 +337,12 @@
             box-shadow: var(--shadow-md);
             display: block;
             margin: 0 auto;
+        }
+
+        /* === MEDIA/AVATAR UTILITIES === */
+        .avatar-lg {
+            width: 200px; height: 200px; border-radius: var(--radius-circle);
+            object-fit: cover; border: 4px solid var(--primary); box-shadow: var(--shadow-md);
         }
 
         .card-image-sm {
@@ -704,6 +725,11 @@
             margin-top: var(--spacing-xs);
         }
 
+        /* Color variants for stats-number to remove inline styles */
+        .stats-number--success { color: var(--success); }
+        .stats-number--primary { color: var(--primary); }
+        .stats-number--secondary { color: var(--secondary); }
+
         /* === CONTENT SECTIONS === */
         .highlight-box {
             background-color: var(--white);
@@ -1063,7 +1089,7 @@
                 <p class="success-badge">
                     ✓ Official VA Rating Decision: 100% for PTSD from January 30, 2023
                 </p>
-                <p class="text-gray mt-sm" style="font-style: italic; font-size: var(--text-sm);">
+                <p class="text-gray mt-sm italic text-sm">
                     Gulf War Era Veteran • Texas Veterans Commission • 13 Months from First Claim
                 </p>
             </div>
@@ -1099,11 +1125,11 @@
 
                 <!-- The Transformation Story -->
                 <div class="mt-2xl mb-lg text-center">
-                    <h3 class="text-dark" style="font-size: var(--text-2xl); margin-bottom: var(--spacing-sm);">The Transformation</h3>
-                    <p class="text-gray" style="font-size: var(--text-lg); max-width: 700px; margin: 0 auto;">See the difference between the traditional approach and the Combat PTSD First Strategy</p>
+                    <h3 class="text-dark text-2xl" style="margin-bottom: var(--spacing-sm);">The Transformation</h3>
+                    <p class="text-gray text-lg max-w-sm mx-auto">See the difference between the traditional approach and the Combat PTSD First Strategy</p>
                 </div>
 
-                <div class="grid grid-2 gap-lg mt-lg" style="position: relative;">
+                <div class="grid grid-2 gap-lg mt-lg relative">
                     <!-- Denial Block (Before) -->
                     <div class="denial-block">
                         <div class="denial-bg"></div>
@@ -1177,9 +1203,9 @@
                     </div>
                 </div>
 
-                <p class="text-gray mt-lg text-center" style="font-style: italic;">
+                <p class="text-gray mt-lg text-center italic">
                     This isn't theory. This is my actual award letter.<br>
-                    <strong style="color: var(--primary);">This is what the Combat PTSD First Strategy achieved.</strong>
+                    <strong>This is what the Combat PTSD First Strategy achieved.</strong>
                 </p>
             </div>
         </div>
@@ -1246,7 +1272,7 @@
                 </div>
             </div>
 
-            <p class="text-center mt-xl text-lg" style="font-weight: var(--font-semibold);">Sound familiar? That's service-connected PTSD. And there's a strategic way to claim it.</p>
+            <p class="text-center mt-xl text-lg font-semibold">Sound familiar? That's service-connected PTSD. And there's a strategic way to claim it.</p>
         </div>
     </section>
 
@@ -1317,8 +1343,8 @@
         <div class="container container-narrow">
             <h2>From No Claim to 100% in 13 Months</h2>
             <div class="text-center mt-lg mb-lg">
-                <img src="images/proof/FB_IMG_1738853381094.jpg" alt="Lyndon Bedford - U.S. Army" style="width: 200px; height: 200px; border-radius: var(--radius-circle); object-fit: cover; border: 4px solid var(--primary); box-shadow: var(--shadow-md);">
-                <p class="text-gray mt-sm" style="font-style: italic;">U.S. Army, 2001-2005 • Iraq Veteran</p>
+                <img src="images/proof/FB_IMG_1738853381094.jpg" alt="Lyndon Bedford - U.S. Army" class="avatar-lg">
+                <p class="text-gray mt-sm italic">U.S. Army, 2001-2005 • Iraq Veteran</p>
             </div>
             <p>After four years in the Army including a year in Iraq, I came home changed. But like many veterans, I never filed a VA claim. I didn't want "handouts" or to get caught in the bureaucracy I'd heard horror stories about.</p>
 
@@ -1379,17 +1405,17 @@
             <div class="glass-card mt-2xl">
                 <div class="grid grid-auto-fit-sm gap-lg text-center">
                     <div>
-                        <div class="stats-number" style="color: var(--success);">13</div>
+                        <div class="stats-number stats-number--success">13</div>
                         <p class="stats-label">Months to 100%</p>
                         <p class="stats-sublabel">vs 3-5 years average</p>
                     </div>
                     <div>
-                        <div class="stats-number" style="color: var(--primary);">100%</div>
+                        <div class="stats-number stats-number--primary">100%</div>
                         <p class="stats-label">P&T Rating Achieved</p>
                         <p class="stats-sublabel">From zero prior claims</p>
                     </div>
                     <div>
-                        <div class="stats-number" style="color: var(--secondary);">1</div>
+                        <div class="stats-number stats-number--secondary">1</div>
                         <p class="stats-label">Strategic Claim First</p>
                         <p class="stats-sublabel">Not 10+ scattered claims</p>
                     </div>
