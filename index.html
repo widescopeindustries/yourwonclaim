@@ -9,65 +9,96 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Open+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
-        /* UNIFIED DESIGN SYSTEM - Based on Hero Section */
+        /* ============================================
+           PROFESSIONAL DESIGN SYSTEM - v2.0
+           Built with 8px spacing scale & semantic tokens
+           ============================================ */
+
         :root {
-            /* Colors - From Hero */
+            /* === COLOR SYSTEM === */
+            /* Primary Colors */
             --primary: #2a5885;
             --primary-dark: #1a3c5e;
             --primary-light: #4378ab;
+
+            /* Accent Colors */
             --secondary: #d4af37;
             --secondary-dark: #b19128;
             --success: #28a745;
+            --success-bg: #e8f5e9;
+            --warning-bg: #fff3cd;
             --danger: #dc3545;
+
+            /* Neutrals */
             --white: #ffffff;
             --text-dark: #333333;
             --text-gray: #666666;
             --text-light: rgba(255,255,255,0.88);
             --bg-light: #f8f9fa;
             --bg-dark: #1a3c5e;
+            --border-light: #e9ecef;
 
-            /* Spacing - From Hero */
-            --section-padding: 5rem 0;
-            --section-padding-sm: 3rem 0;
-            --container-padding: 0 2rem;
-            --card-padding: 2.5rem;
-            --card-gap: 2rem;
+            /* === SPACING SCALE (8px base) === */
+            --spacing-xs: 0.5rem;    /* 8px */
+            --spacing-sm: 1rem;      /* 16px */
+            --spacing-md: 1.5rem;    /* 24px */
+            --spacing-lg: 2rem;      /* 32px */
+            --spacing-xl: 3rem;      /* 48px */
+            --spacing-2xl: 4rem;     /* 64px */
+            --spacing-3xl: 5rem;     /* 80px */
 
-            /* Typography - From Hero */
+            /* === TYPOGRAPHY SYSTEM === */
+            /* Font Families */
             --font-heading: 'Montserrat', sans-serif;
             --font-body: 'Open Sans', sans-serif;
-            --h1-size: 2.8rem;
-            --h2-size: 2.2rem;
-            --h3-size: 1.5rem;
-            --h4-size: 1.3rem;
-            --body-size: 1.05rem;
-            --body-large: 1.3rem;
-            --body-small: 0.95rem;
-            --line-height-tight: 1.2;
-            --line-height-normal: 1.6;
-            --font-weight-normal: 400;
-            --font-weight-semibold: 600;
-            --font-weight-bold: 700;
-            --font-weight-extrabold: 800;
 
-            /* Effects - From Hero */
-            --text-shadow: 0 2px 8px rgba(0,0,0,0.5);
-            --box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            /* Font Sizes */
+            --text-xs: 0.85rem;
+            --text-sm: 0.95rem;
+            --text-base: 1.05rem;
+            --text-lg: 1.3rem;
+            --text-xl: 1.5rem;
+            --text-2xl: 2rem;
+            --text-3xl: 2.2rem;
+            --text-4xl: 2.8rem;
+            --text-5xl: 3.5rem;
+
+            /* Line Heights */
+            --leading-tight: 1.2;
+            --leading-normal: 1.6;
+            --leading-relaxed: 1.8;
+
+            /* Font Weights */
+            --font-normal: 400;
+            --font-medium: 500;
+            --font-semibold: 600;
+            --font-bold: 700;
+            --font-extrabold: 800;
+
+            /* === BORDER RADIUS SCALE === */
+            --radius-sm: 6px;
+            --radius-md: 8px;
+            --radius-lg: 10px;
+            --radius-xl: 15px;
+            --radius-pill: 50px;
+            --radius-circle: 50%;
+
+            /* === EFFECTS === */
+            --shadow-sm: 0 2px 4px rgba(0,0,0,0.1);
+            --shadow-md: 0 4px 15px rgba(0,0,0,0.2);
+            --shadow-lg: 0 6px 20px rgba(0,0,0,0.3);
+            --shadow-text: 0 2px 8px rgba(0,0,0,0.5);
+            --shadow-inset: inset 0 80px 120px rgba(10,20,35,0.25);
+
             --transition: all 0.3s ease;
+            --backdrop-blur: blur(10px);
+
+            /* === GRADIENTS === */
             --gradient-primary: linear-gradient(135deg, #1a3c5e 0%, #2a5885 100%);
             --gradient-overlay: linear-gradient(135deg, rgba(26,60,94,0.92) 0%, rgba(42,88,133,0.6) 45%, rgba(26,60,94,0.25) 100%);
-
-            /* Components - From Hero */
-            --badge-bg: rgba(220, 53, 69, 0.92);
-            --badge-padding: 0.6rem 1.1rem;
-            --badge-radius: 6px;
-            --badge-size: 0.95rem;
-            --btn-padding: 1rem 2rem;
-            --btn-size: 1.1rem;
-            --btn-radius: 50px;
-            --card-radius: 15px;
         }
 
+        /* === RESET & BASE === */
         * {
             margin: 0;
             padding: 0;
@@ -76,33 +107,30 @@
 
         body {
             font-family: var(--font-body);
-            line-height: var(--line-height-normal);
+            line-height: var(--leading-normal);
             color: var(--text-dark);
             background-color: var(--white);
             overflow-x: hidden;
-            font-size: var(--body-size);
+            font-size: var(--text-base);
         }
 
-        /* Typography Hierarchy - Unified */
+        /* === TYPOGRAPHY === */
         h1, h2, h3, h4, h5, h6 {
             font-family: var(--font-heading);
-            font-weight: var(--font-weight-bold);
-            line-height: var(--line-height-tight);
-            margin-bottom: 1.5rem;
+            font-weight: var(--font-bold);
+            line-height: var(--leading-tight);
+            margin-bottom: var(--spacing-md);
             color: var(--text-dark);
         }
 
-        h1 {
-            font-size: var(--h1-size);
-            line-height: var(--line-height-tight);
-        }
-
+        h1 { font-size: var(--text-4xl); }
         h2 {
-            font-size: var(--h2-size);
-            line-height: var(--line-height-tight);
+            font-size: var(--text-3xl);
             position: relative;
-            padding-bottom: 1rem;
+            padding-bottom: var(--spacing-sm);
         }
+        h3 { font-size: var(--text-xl); margin-bottom: var(--spacing-sm); }
+        h4 { font-size: var(--text-lg); margin-bottom: var(--spacing-sm); }
 
         h2:after {
             content: '';
@@ -114,20 +142,10 @@
             background-color: var(--secondary);
         }
 
-        h3 {
-            font-size: var(--h3-size);
-            margin-bottom: 1rem;
-        }
-
-        h4 {
-            font-size: var(--h4-size);
-            margin-bottom: 1rem;
-        }
-
         p {
-            margin-bottom: 1.5rem;
-            font-size: var(--body-size);
-            line-height: var(--line-height-normal);
+            margin-bottom: var(--spacing-md);
+            font-size: var(--text-base);
+            line-height: var(--leading-normal);
         }
 
         a {
@@ -140,28 +158,25 @@
             color: var(--primary-dark);
         }
 
-        /* Container System - Unified */
+        /* === LAYOUT UTILITIES === */
         .container {
             width: 100%;
             max-width: 1200px;
             margin: 0 auto;
-            padding: var(--container-padding);
+            padding: 0 var(--spacing-lg);
         }
 
         .container-narrow {
             max-width: 900px;
         }
 
-        /* Section Padding - Unified */
         .section-padding {
-            padding: var(--section-padding);
+            padding: var(--spacing-3xl) 0;
         }
 
-        /* Background Styles - Unified */
-        .bg-light {
-            background-color: var(--bg-light);
-        }
-
+        /* === BACKGROUND UTILITIES === */
+        .bg-light { background-color: var(--bg-light); }
+        .bg-white { background-color: var(--white); }
         .bg-primary {
             background: var(--gradient-primary);
             color: var(--white);
@@ -178,30 +193,67 @@
             background-color: var(--secondary);
         }
 
-        .text-center {
-            text-align: center;
-        }
-
+        /* === TEXT UTILITIES === */
+        .text-center { text-align: center; }
         .text-center h2:after {
             left: 50%;
             transform: translateX(-50%);
         }
 
-        /* Button System - Unified from Hero */
+        .text-lg { font-size: var(--text-lg); }
+        .text-gray { color: var(--text-gray); }
+        .text-light { color: var(--text-light); }
+
+        /* === SPACING UTILITIES === */
+        .mt-xs { margin-top: var(--spacing-xs); }
+        .mt-sm { margin-top: var(--spacing-sm); }
+        .mt-md { margin-top: var(--spacing-md); }
+        .mt-lg { margin-top: var(--spacing-lg); }
+        .mt-xl { margin-top: var(--spacing-xl); }
+        .mt-2xl { margin-top: var(--spacing-2xl); }
+        .mt-3xl { margin-top: var(--spacing-3xl); }
+
+        .mb-lg { margin-bottom: var(--spacing-lg); }
+        .mb-xl { margin-bottom: var(--spacing-xl); }
+
+        .mx-auto { margin-left: auto; margin-right: auto; }
+
+        .max-w-sm { max-width: 700px; }
+        .max-w-md { max-width: 800px; }
+        .max-w-lg { max-width: 900px; }
+        .max-w-xl { max-width: 1200px; }
+
+        /* === FLEXBOX UTILITIES === */
+        .flex { display: flex; }
+        .flex-wrap { flex-wrap: wrap; }
+        .items-center { align-items: center; }
+        .justify-center { justify-content: center; }
+        .gap-sm { gap: var(--spacing-sm); }
+        .gap-md { gap: var(--spacing-md); }
+        .gap-lg { gap: var(--spacing-lg); }
+
+        /* === GRID UTILITIES === */
+        .grid { display: grid; }
+        .grid-auto-fit { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+        .grid-auto-fit-sm { grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
+        .grid-auto-fit-lg { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
+        .grid-2 { grid-template-columns: 1fr 1fr; }
+
+        /* === BUTTON SYSTEM === */
         .btn {
             display: inline-block;
-            padding: var(--btn-padding);
-            border-radius: var(--btn-radius);
-            font-weight: var(--font-weight-semibold);
+            padding: var(--spacing-sm) var(--spacing-lg);
+            border-radius: var(--radius-pill);
+            font-weight: var(--font-semibold);
+            font-size: var(--text-lg);
+            font-family: var(--font-heading);
             text-transform: uppercase;
             letter-spacing: 0.5px;
             text-align: center;
             cursor: pointer;
             transition: var(--transition);
-            box-shadow: var(--box-shadow);
+            box-shadow: var(--shadow-md);
             border: none;
-            font-size: var(--btn-size);
-            font-family: var(--font-heading);
         }
 
         .btn-primary {
@@ -209,23 +261,9 @@
             color: var(--white);
         }
 
-        .btn-primary:hover {
-            background-color: var(--primary-dark);
-            color: var(--white);
-            transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
-        }
-
         .btn-secondary {
             background-color: var(--secondary);
             color: var(--text-dark);
-        }
-
-        .btn-secondary:hover {
-            background-color: var(--secondary-dark);
-            color: var(--text-dark);
-            transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
         }
 
         .btn-light {
@@ -233,44 +271,182 @@
             color: var(--primary);
         }
 
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-dark);
+            color: var(--white);
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--secondary-dark);
+            color: var(--text-dark);
+        }
+
         .btn-light:hover {
             background-color: var(--bg-light);
-            transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
         }
 
-        /* Badge System - From Hero */
+        /* === BADGE SYSTEM === */
         .badge {
             display: inline-block;
-            background: var(--badge-bg);
+            background: var(--danger);
             color: var(--white);
-            padding: var(--badge-padding);
-            border-radius: var(--badge-radius);
-            font-weight: var(--font-weight-bold);
-            font-size: var(--badge-size);
+            padding: var(--spacing-xs) var(--spacing-sm);
+            border-radius: var(--radius-sm);
+            font-weight: var(--font-bold);
+            font-size: var(--text-sm);
             text-transform: uppercase;
             letter-spacing: 1px;
+            margin-bottom: var(--spacing-md);
         }
 
-        .badge-success {
-            background: var(--success);
-        }
+        .badge-success { background: var(--success); }
 
-        /* Glass Card System - Unified */
+        /* === CARD SYSTEM === */
         .glass-card {
             background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            border-radius: var(--card-radius);
-            padding: var(--card-padding);
-            box-shadow: var(--box-shadow);
+            backdrop-filter: var(--backdrop-blur);
+            border-radius: var(--radius-xl);
+            padding: var(--spacing-lg);
+            box-shadow: var(--shadow-md);
         }
 
-        .glass-card-dark {
-            background: rgba(26, 60, 94, 0.1);
-            backdrop-filter: blur(10px);
+        .card-image {
+            width: 100%;
+            max-width: 800px;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-md);
+            display: block;
+            margin: 0 auto;
         }
 
-        /* Navigation */
+        .card-image-sm {
+            margin-bottom: var(--spacing-md);
+        }
+
+        /* === PROOF/PAYMENT CARDS === */
+        .success-badge {
+            color: var(--success);
+            font-weight: var(--font-bold);
+            font-size: var(--text-lg);
+            margin-top: var(--spacing-lg);
+            padding: var(--spacing-sm);
+            background: var(--success-bg);
+            border-radius: var(--radius-md);
+        }
+
+        .payment-stat {
+            padding: var(--spacing-md);
+            border-radius: var(--radius-md);
+            border: 2px solid var(--success);
+            background: var(--success-bg);
+            text-align: center;
+        }
+
+        .payment-stat-alt {
+            border-color: var(--secondary);
+            background: var(--warning-bg);
+        }
+
+        .payment-amount {
+            font-size: var(--text-2xl);
+            font-weight: var(--font-extrabold);
+            color: var(--success);
+            line-height: 1;
+        }
+
+        .payment-amount-alt {
+            color: var(--secondary);
+        }
+
+        .payment-label {
+            color: var(--text-gray);
+            font-size: var(--text-sm);
+            margin-top: var(--spacing-xs);
+        }
+
+        /* === BENEFIT CARDS === */
+        .benefit-card {
+            background: var(--success-bg);
+            padding: var(--spacing-md) var(--spacing-sm);
+            border-radius: var(--radius-md);
+            border-left: 4px solid var(--success);
+            text-align: center;
+        }
+
+        .benefit-icon {
+            font-size: var(--text-2xl);
+            margin-bottom: var(--spacing-xs);
+        }
+
+        .benefit-title {
+            color: var(--success);
+            font-size: var(--text-base);
+            margin-bottom: var(--spacing-xs);
+            font-weight: var(--font-bold);
+        }
+
+        .benefit-subtitle {
+            color: var(--text-gray);
+            font-size: var(--text-xs);
+            margin: 0;
+        }
+
+        /* === APPROVED SECTION === */
+        .approved-block {
+            position: relative;
+            border-radius: var(--radius-xl);
+            overflow: hidden;
+            min-height: 600px;
+            display: flex;
+            align-items: stretch;
+        }
+
+        .approved-bg {
+            position: absolute;
+            inset: 0;
+            background-image: url('images/proof/approved.jpeg');
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            filter: brightness(0.6) contrast(1.05) saturate(0.9);
+        }
+
+        .approved-overlay {
+            position: absolute;
+            inset: 0;
+            background: var(--gradient-overlay);
+            box-shadow: var(--shadow-inset);
+        }
+
+        .approved-content {
+            position: relative;
+            z-index: 2;
+            padding: var(--spacing-xl);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            color: var(--white);
+        }
+
+        .approved-content h2 {
+            color: var(--white);
+            text-shadow: var(--shadow-text);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .approved-content p {
+            color: var(--white);
+            text-shadow: var(--shadow-text);
+            margin: 0;
+            max-width: 520px;
+        }
+
+        /* === NAVIGATION === */
         .navbar {
             position: fixed;
             top: 0;
@@ -278,14 +454,14 @@
             width: 100%;
             z-index: 1000;
             background-color: transparent;
-            padding: 1.5rem 0;
+            padding: var(--spacing-md) 0;
             transition: var(--transition);
         }
 
         .navbar.scrolled {
             background-color: var(--white);
-            padding: 0.8rem 0;
-            box-shadow: var(--box-shadow);
+            padding: var(--spacing-sm) 0;
+            box-shadow: var(--shadow-md);
         }
 
         .navbar .container {
@@ -296,7 +472,7 @@
 
         .navbar-brand {
             font-family: var(--font-heading);
-            font-weight: var(--font-weight-extrabold);
+            font-weight: var(--font-extrabold);
             font-size: 1.8rem;
             color: var(--white);
             transition: var(--transition);
@@ -316,13 +492,13 @@
         }
 
         .nav-item {
-            margin-left: 2rem;
+            margin-left: var(--spacing-lg);
         }
 
         .nav-link {
             color: var(--white);
-            font-weight: var(--font-weight-semibold);
-            font-size: var(--body-small);
+            font-weight: var(--font-semibold);
+            font-size: var(--text-sm);
             transition: var(--transition);
             position: relative;
         }
@@ -363,7 +539,7 @@
             color: var(--text-dark);
         }
 
-        /* Hero Section - Source of Truth */
+        /* === HERO SECTION === */
         .hero {
             position: relative;
             min-height: 600px;
@@ -391,10 +567,7 @@
         .hero-image::after {
             content: '';
             position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
+            inset: 0;
             background: linear-gradient(to right, transparent 0%, rgba(26, 60, 94, 0.3) 100%);
         }
 
@@ -403,7 +576,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 4rem 3rem;
+            padding: var(--spacing-2xl) var(--spacing-xl);
             background: var(--gradient-primary);
         }
 
@@ -414,66 +587,57 @@
 
         .hero h1 {
             color: var(--white);
-            text-shadow: var(--text-shadow);
-            margin-bottom: 1.5rem;
+            text-shadow: var(--shadow-text);
         }
 
         .hero p {
             color: var(--white);
-            font-size: var(--body-large);
-            text-shadow: var(--text-shadow);
-            margin-bottom: 2rem;
-        }
-
-        .hero .btn {
-            margin-top: 1rem;
+            font-size: var(--text-lg);
+            text-shadow: var(--shadow-text);
+            margin-bottom: var(--spacing-lg);
         }
 
         .hero-stats {
-            margin-top: 2rem;
-            padding-top: 2rem;
+            margin-top: var(--spacing-lg);
+            padding-top: var(--spacing-lg);
             border-top: 1px solid rgba(255,255,255,0.2);
             display: flex;
-            gap: 2rem;
+            gap: var(--spacing-lg);
             flex-wrap: wrap;
-        }
-
-        .stat-item {
-            text-align: left;
         }
 
         .stat-number {
             color: var(--secondary);
-            font-size: 2rem;
-            font-weight: var(--font-weight-extrabold);
+            font-size: var(--text-2xl);
+            font-weight: var(--font-extrabold);
             line-height: 1;
         }
 
         .stat-label {
             color: var(--text-light);
-            font-size: var(--body-small);
-            margin-top: 0.5rem;
+            font-size: var(--text-sm);
+            margin-top: var(--spacing-xs);
         }
 
-        /* Content Sections - Unified Spacing */
+        /* === CONTENT SECTIONS === */
         .highlight-box {
             background-color: var(--white);
-            padding: var(--card-padding);
-            border-radius: var(--card-radius);
-            box-shadow: var(--box-shadow);
-            margin: 2rem 0;
+            padding: var(--spacing-lg);
+            border-radius: var(--radius-xl);
+            box-shadow: var(--shadow-md);
+            margin: var(--spacing-lg) 0;
         }
 
         .highlight-box ul {
             list-style: none;
-            margin-top: 1.5rem;
+            margin-top: var(--spacing-md);
         }
 
         .highlight-box li {
-            margin-bottom: 1rem;
-            padding-left: 2rem;
+            margin-bottom: var(--spacing-sm);
+            padding-left: var(--spacing-lg);
             position: relative;
-            font-size: var(--body-size);
+            font-size: var(--text-base);
         }
 
         .highlight-box li:before {
@@ -481,64 +645,48 @@
             position: absolute;
             left: 0;
             color: var(--success);
-            font-weight: var(--font-weight-bold);
+            font-weight: var(--font-bold);
             font-size: 1.2rem;
         }
 
-        /* Symptoms Grid - Unified */
-        .symptoms-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: var(--card-gap);
-            margin-top: 3rem;
-        }
-
+        /* === SYMPTOM CARDS === */
         .symptom-card {
             background-color: var(--bg-light);
-            padding: var(--card-padding);
-            border-radius: var(--card-radius);
+            padding: var(--spacing-lg);
+            border-radius: var(--radius-xl);
             text-align: center;
             transition: var(--transition);
         }
 
         .symptom-card:hover {
             transform: translateY(-5px);
-            box-shadow: var(--box-shadow);
+            box-shadow: var(--shadow-md);
         }
 
         .symptom-card i {
             color: var(--primary);
-            margin-bottom: 1rem;
+            margin-bottom: var(--spacing-sm);
         }
 
         .symptom-card h3 {
-            font-size: var(--h3-size);
-            margin-bottom: 0.5rem;
+            margin-bottom: var(--spacing-xs);
         }
 
         .symptom-card p {
-            font-size: var(--body-size);
             margin-bottom: 0;
         }
 
-        /* Who For Grid - Unified */
-        .who-for-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: var(--card-gap);
-            margin-top: 3rem;
-        }
-
+        /* === WHO FOR CARDS === */
         .who-for-card {
             background-color: rgba(255, 255, 255, 0.1);
-            padding: var(--card-padding);
-            border-radius: var(--card-radius);
-            backdrop-filter: blur(10px);
+            padding: var(--spacing-lg);
+            border-radius: var(--radius-xl);
+            backdrop-filter: var(--backdrop-blur);
         }
 
         .who-for-card i {
             color: var(--secondary);
-            margin-bottom: 1rem;
+            margin-bottom: var(--spacing-sm);
         }
 
         .who-for-card h3 {
@@ -549,17 +697,16 @@
             color: var(--text-light);
         }
 
-        /* Guide Section - Unified */
+        /* === GUIDE SECTION === */
         .guide-includes ul {
             list-style: none;
-            margin-top: 1.5rem;
+            margin-top: var(--spacing-md);
         }
 
         .guide-includes li {
-            margin-bottom: 1.5rem;
+            margin-bottom: var(--spacing-md);
             padding-left: 2.5rem;
             position: relative;
-            font-size: var(--body-size);
         }
 
         .guide-includes li i {
@@ -574,98 +721,76 @@
             text-align: center;
             background: var(--gradient-primary);
             color: var(--white);
-            padding: 3rem;
-            border-radius: var(--card-radius);
-            margin: 3rem 0;
+            padding: var(--spacing-xl);
+            border-radius: var(--radius-xl);
+            margin: var(--spacing-xl) 0;
         }
 
         .price-box .price {
-            font-size: 3.5rem;
-            font-weight: var(--font-weight-extrabold);
-            margin: 1rem 0;
+            font-size: var(--text-5xl);
+            font-weight: var(--font-extrabold);
+            margin: var(--spacing-sm) 0;
             color: var(--white);
         }
 
         .price-box .price-detail {
-            font-size: var(--body-size);
             opacity: 0.9;
-            margin-bottom: 2rem;
+            margin-bottom: var(--spacing-lg);
         }
 
-        /* Testimonial Grid - Unified */
-        .testimonial-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: var(--card-gap);
-            margin-top: 3rem;
-        }
-
-        .testimonial-card {
-            position: relative;
-        }
-
+        /* === TESTIMONIALS === */
         .testimonial-quote {
             color: var(--secondary);
             font-size: 3rem;
             line-height: 1;
-            margin-bottom: 1rem;
+            margin-bottom: var(--spacing-sm);
         }
 
         .testimonial-text {
             font-style: italic;
-            margin-bottom: 1.5rem;
-            color: var(--text-dark);
+            margin-bottom: var(--spacing-md);
         }
 
         .testimonial-author {
-            border-top: 2px solid var(--bg-light);
-            padding-top: 1rem;
+            border-top: 2px solid var(--border-light);
+            padding-top: var(--spacing-sm);
         }
 
         .testimonial-name {
             margin: 0;
-            font-weight: var(--font-weight-semibold);
+            font-weight: var(--font-semibold);
             color: var(--primary);
         }
 
         .testimonial-service {
             margin: 0;
-            font-size: var(--body-small);
+            font-size: var(--text-sm);
             color: var(--text-gray);
         }
 
-        /* Stats Box - Unified */
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: var(--card-gap);
-            text-align: center;
-        }
-
+        /* === STATS === */
         .stats-number {
             font-size: 3rem;
-            font-weight: var(--font-weight-extrabold);
-            margin-bottom: 0.5rem;
+            font-weight: var(--font-extrabold);
+            margin-bottom: var(--spacing-xs);
         }
 
         .stats-label {
-            font-size: var(--body-size);
             margin: 0;
-            color: var(--text-dark);
         }
 
         .stats-sublabel {
-            font-size: 0.85rem;
-            margin: 0.5rem 0 0 0;
+            font-size: var(--text-xs);
+            margin: var(--spacing-xs) 0 0;
             color: var(--text-gray);
         }
 
-        /* Footer - Unified */
+        /* === FOOTER === */
         .footer {
             background-color: var(--bg-dark);
             color: var(--text-light);
             text-align: center;
-            padding: 4rem 0 2rem;
+            padding: var(--spacing-2xl) 0 var(--spacing-lg);
         }
 
         .footer a {
@@ -679,18 +804,18 @@
         }
 
         .disclaimer {
-            font-size: 0.85rem;
+            font-size: var(--text-xs);
             opacity: 0.7;
             max-width: 800px;
-            margin: 2rem auto 0;
+            margin: var(--spacing-lg) auto 0;
         }
 
-        /* Responsive - Unified Breakpoints */
+        /* === RESPONSIVE === */
         @media (max-width: 992px) {
             :root {
-                --h1-size: 2.5rem;
-                --h2-size: 2rem;
-                --section-padding: 4rem 0;
+                --text-4xl: 2.5rem;
+                --text-3xl: 2rem;
+                --spacing-3xl: 4rem;
             }
 
             .hero-container {
@@ -703,16 +828,24 @@
             }
 
             .hero-content-wrapper {
-                padding: 3rem 2rem !important;
+                padding: var(--spacing-xl) var(--spacing-lg) !important;
+            }
+
+            .grid-2 {
+                grid-template-columns: 1fr !important;
+            }
+
+            .approved-block {
+                min-height: 360px !important;
             }
         }
 
         @media (max-width: 768px) {
             :root {
-                --h1-size: 2.2rem;
-                --h2-size: 1.8rem;
-                --section-padding: 3rem 0;
-                --container-padding: 0 1.5rem;
+                --text-4xl: 2.2rem;
+                --text-3xl: 1.8rem;
+                --spacing-3xl: 3rem;
+                --spacing-lg: 1.5rem;
             }
 
             .hero {
@@ -735,7 +868,7 @@
                 height: 100vh;
                 background-color: var(--white);
                 flex-direction: column;
-                padding-top: 5rem;
+                padding-top: var(--spacing-3xl);
                 transition: 0.4s;
                 box-shadow: -2px 0 10px rgba(0,0,0,0.1);
             }
@@ -746,10 +879,10 @@
 
             .nav-item {
                 margin: 0;
-                padding: 1rem 0;
+                padding: var(--spacing-sm) 0;
                 width: 100%;
                 text-align: center;
-                border-bottom: 1px solid var(--bg-light);
+                border-bottom: 1px solid var(--border-light);
             }
 
             .nav-link, .navbar.scrolled .nav-link {
@@ -762,8 +895,8 @@
 
             .close-menu {
                 position: absolute;
-                top: 1rem;
-                right: 1rem;
+                top: var(--spacing-sm);
+                right: var(--spacing-sm);
                 font-size: 1.5rem;
                 cursor: pointer;
             }
@@ -771,10 +904,10 @@
 
         @media (max-width: 576px) {
             :root {
-                --h1-size: 2rem;
-                --h2-size: 1.6rem;
-                --body-size: 1rem;
-                --body-large: 1.1rem;
+                --text-4xl: 2rem;
+                --text-3xl: 1.6rem;
+                --text-base: 1rem;
+                --text-lg: 1.1rem;
             }
         }
     </style>
@@ -803,29 +936,26 @@
     <!-- Hero Section -->
     <header class="hero">
         <div class="hero-container">
-            <!-- Left Side - Image -->
             <div class="hero-image"></div>
-
-            <!-- Right Side - Content -->
             <div class="hero-content-wrapper">
                 <div class="hero-content">
                     <span class="badge">Stop Getting Denied</span>
                     <h1>The Combat PTSD First Strategy</h1>
                     <p>How I Got 100% VA Disability in 13 Months – And Why This Works for ALL Veterans</p>
-                    <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                    <div class="flex flex-wrap gap-sm mt-sm">
                         <a href="#guide" class="btn btn-secondary">Get The Complete Guide</a>
                         <a href="#strategy" class="btn btn-light">Learn More</a>
                     </div>
                     <div class="hero-stats">
-                        <div class="stat-item">
+                        <div>
                             <div class="stat-number">13</div>
                             <div class="stat-label">Months to 100%</div>
                         </div>
-                        <div class="stat-item">
+                        <div>
                             <div class="stat-number">$4,202</div>
                             <div class="stat-label">Monthly Tax-Free</div>
                         </div>
-                        <div class="stat-item">
+                        <div>
                             <div class="stat-number">1</div>
                             <div class="stat-label">Strategic Claim</div>
                         </div>
@@ -839,126 +969,115 @@
     <section class="section-padding bg-primary text-center">
         <div class="container">
             <h2>This Is Real. This Is Documented. This Is Possible.</h2>
-            <p style="max-width: 700px; margin: 0 auto 3rem; font-size: var(--body-large);">Not just another "guru" claiming success. Here's my actual VA Rating Decision letter:</p>
+            <p class="text-lg max-w-sm mx-auto mb-xl">Not just another "guru" claiming success. Here's my actual VA Rating Decision letter:</p>
 
-            <!-- ACTUAL VA Rating Decision Letter -->
-            <div class="glass-card" style="max-width:900px; margin:0 auto 3rem;">
-                <img src="images/proof/ClaimLetter-2024-3-12_pages-to-jpg-0013.jpg" alt="Official VA Rating Decision" style="width: 100%; max-width: 800px; border-radius: 10px; box-shadow: var(--box-shadow);">
-                <p style="color: var(--success); font-weight: var(--font-weight-bold); font-size: var(--h4-size); margin-top: 2rem; padding: 1rem; background: #e8f5e9; border-radius: 8px;">
+            <!-- VA Rating Decision -->
+            <div class="glass-card max-w-lg mx-auto mb-xl">
+                <img src="images/proof/ClaimLetter-2024-3-12_pages-to-jpg-0013.jpg" alt="Official VA Rating Decision" class="card-image card-image-sm">
+                <p class="success-badge">
                     ✓ Official VA Rating Decision: 100% for PTSD from January 30, 2023
                 </p>
-                <p style="color: var(--text-gray); font-style: italic; margin-top: 1rem; font-size: var(--body-small);">
+                <p class="text-gray mt-sm" style="font-style: italic; font-size: var(--text-sm);">
                     Gulf War Era Veteran • Texas Veterans Commission • 13 Months from First Claim
                 </p>
             </div>
 
-            <!-- Actual Payment Schedule -->
-            <div class="glass-card" style="max-width:900px; margin:0 auto 3rem;">
-                <h3 style="margin-bottom: 1.5rem; color: var(--text-dark);">The Real Money: Monthly Tax-Free Payments</h3>
-                <img src="images/proof/ClaimLetter-2024-3-12_pages-to-jpg-0002.jpg" alt="Monthly Payment Schedule" style="width: 100%; max-width: 800px; border-radius: 10px; box-shadow: var(--box-shadow); margin-bottom: 1.5rem;">
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin-top: 2rem;">
-                    <div style="padding: 1.5rem; background: #e8f5e9; border-radius: 8px; border: 2px solid var(--success);">
-                        <div style="font-size: 2rem; font-weight: var(--font-weight-extrabold); color: var(--success);">$4,072</div>
-                        <p style="color: var(--text-gray); font-size: var(--body-small); margin: 0.5rem 0 0 0;">Initial Monthly Payment</p>
+            <!-- Payment Schedule -->
+            <div class="glass-card max-w-lg mx-auto mb-xl">
+                <h3 class="text-dark">The Real Money: Monthly Tax-Free Payments</h3>
+                <img src="images/proof/ClaimLetter-2024-3-12_pages-to-jpg-0002.jpg" alt="Monthly Payment Schedule" class="card-image card-image-sm">
+                <div class="grid grid-auto-fit-sm gap-md mt-lg">
+                    <div class="payment-stat">
+                        <div class="payment-amount">$4,072</div>
+                        <p class="payment-label">Initial Monthly Payment</p>
                     </div>
-                    <div style="padding: 1.5rem; background: #e8f5e9; border-radius: 8px; border: 2px solid var(--success);">
-                        <div style="font-size: 2rem; font-weight: var(--font-weight-extrabold); color: var(--success);">$4,202</div>
-                        <p style="color: var(--text-gray); font-size: var(--body-small); margin: 0.5rem 0 0 0;">With COLA Adjustment</p>
+                    <div class="payment-stat">
+                        <div class="payment-amount">$4,202</div>
+                        <p class="payment-label">With COLA Adjustment</p>
                     </div>
-                    <div style="padding: 1.5rem; background: #fff3cd; border-radius: 8px; border: 2px solid var(--secondary);">
-                        <div style="font-size: 2rem; font-weight: var(--font-weight-extrabold); color: var(--secondary);">$50K+</div>
-                        <p style="color: var(--text-gray); font-size: var(--body-small); margin: 0.5rem 0 0 0;">Per Year TAX FREE</p>
+                    <div class="payment-stat payment-stat-alt">
+                        <div class="payment-amount payment-amount-alt">$50K+</div>
+                        <p class="payment-label">Per Year TAX FREE</p>
                     </div>
                 </div>
             </div>
 
-            <!-- Actual Benefits Page -->
-            <div class="glass-card" style="max-width:1200px; margin:0 auto;">
-                <h3 style="margin-bottom: 1.5rem; text-align: center; color: var(--text-dark);">What 100% P&T Actually Unlocks</h3>
-                <div class="benefits-approval-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--card-gap); align-items: stretch; margin: 2rem 0;">
-                    <!-- Left: Additional Benefits Breakdown -->
-                    <div style="display:flex; align-items:stretch;">
-                        <img src="images/proof/ClaimLetter-2024-3-12_pages-to-jpg-0006.jpg" alt="Additional Benefits Breakdown" style="width: 100%; object-fit: cover; border-radius: 10px; box-shadow: var(--box-shadow); display: block;">
+            <!-- Benefits Page -->
+            <div class="glass-card max-w-xl mx-auto">
+                <h3 class="text-dark text-center">What 100% P&T Actually Unlocks</h3>
+
+                <div class="grid grid-2 gap-lg mt-lg">
+                    <!-- Benefits Image -->
+                    <div>
+                        <img src="images/proof/ClaimLetter-2024-3-12_pages-to-jpg-0006.jpg" alt="Additional Benefits" class="card-image" style="height: 100%; object-fit: cover;">
                     </div>
 
-                    <!-- Right: Approved block matching hero style -->
-                    <div style="position: relative; border-radius: var(--card-radius); overflow: hidden; min-height: 600px; display: flex; align-items: stretch;">
-                        <div style="position: absolute; inset: 0; background-image: url('images/proof/approved.jpeg'); background-position: center; background-size: cover; background-repeat: no-repeat; filter: brightness(0.6) contrast(1.05) saturate(0.9);"></div>
-                        <div style="position: absolute; inset: 0; background: var(--gradient-overlay); box-shadow: inset 0 80px 120px rgba(10,20,35,0.25);"></div>
-                        <div style="position: relative; z-index: 2; padding: 3rem 3.5rem; display:flex; flex-direction:column; justify-content:center; color: var(--white);">
-                            <span class="badge">Approved</span>
-                            <h2 style="margin: 0 0 1rem 0; font-size: var(--h2-size); color: var(--white); text-shadow: var(--text-shadow);">From Denial to Approval</h2>
-                            <p style="margin:0; color: var(--white); text-shadow: var(--text-shadow); font-size: var(--body-size); max-width: 520px;">This is what strategic thinking looks like. Same veteran. Different approach. 13 months later.</p>
+                    <!-- Approved Block -->
+                    <div class="approved-block">
+                        <div class="approved-bg"></div>
+                        <div class="approved-overlay"></div>
+                        <div class="approved-content">
+                            <span class="badge badge-success">Approved</span>
+                            <h2>From Denial to Approval</h2>
+                            <p>This is what strategic thinking looks like. Same veteran. Different approach. 13 months later.</p>
                         </div>
                     </div>
                 </div>
 
                 <!-- Benefits Grid -->
-                <div style="max-width: 1200px; margin: 2rem auto;">
-                    <h4 style="text-align: center; margin-bottom: 1.5rem; color: var(--text-dark);">Your Complete Benefits Package</h4>
-                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1rem;">
-                        <div style="background: #e8f5e9; padding: 1.25rem; border-radius: 8px; border-left: 4px solid var(--success); text-align: center;">
-                            <div style="font-size: 2rem; margin-bottom: 0.3rem;">✓</div>
-                            <h4 style="color: var(--success); font-size: 1rem; margin-bottom: 0.3rem;">Chapter 35 Education</h4>
-                            <p style="color: var(--text-gray); font-size: 0.85rem; margin: 0;">For Dependents</p>
+                <div class="mt-2xl">
+                    <h4 class="text-center text-dark">Your Complete Benefits Package</h4>
+                    <div class="grid grid-auto-fit gap-sm mt-md">
+                        <div class="benefit-card">
+                            <div class="benefit-icon">✓</div>
+                            <h4 class="benefit-title">Chapter 35 Education</h4>
+                            <p class="benefit-subtitle">For Dependents</p>
                         </div>
-                        <div style="background: #e8f5e9; padding: 1.25rem; border-radius: 8px; border-left: 4px solid var(--success); text-align: center;">
-                            <div style="font-size: 2rem; margin-bottom: 0.3rem;">✓</div>
-                            <h4 style="color: var(--success); font-size: 1rem; margin-bottom: 0.3rem;">Property Tax Exemption</h4>
-                            <p style="color: var(--text-gray); font-size: 0.85rem; margin: 0;">Varies by State</p>
+                        <div class="benefit-card">
+                            <div class="benefit-icon">✓</div>
+                            <h4 class="benefit-title">Property Tax Exemption</h4>
+                            <p class="benefit-subtitle">Varies by State</p>
                         </div>
-                        <div style="background: #e8f5e9; padding: 1.25rem; border-radius: 8px; border-left: 4px solid var(--success); text-align: center;">
-                            <div style="font-size: 2rem; margin-bottom: 0.3rem;">✓</div>
-                            <h4 style="color: var(--success); font-size: 1rem; margin-bottom: 0.3rem;">VA Life Insurance</h4>
-                            <p style="color: var(--text-gray); font-size: 0.85rem; margin: 0;">Up to $40,000</p>
+                        <div class="benefit-card">
+                            <div class="benefit-icon">✓</div>
+                            <h4 class="benefit-title">VA Life Insurance</h4>
+                            <p class="benefit-subtitle">Up to $40,000</p>
                         </div>
-                        <div style="background: #e8f5e9; padding: 1.25rem; border-radius: 8px; border-left: 4px solid var(--success); text-align: center;">
-                            <div style="font-size: 2rem; margin-bottom: 0.3rem;">✓</div>
-                            <h4 style="color: var(--success); font-size: 1rem; margin-bottom: 0.3rem;">Commissary & Exchange</h4>
-                            <p style="color: var(--text-gray); font-size: 0.85rem; margin: 0;">Shopping Privileges</p>
+                        <div class="benefit-card">
+                            <div class="benefit-icon">✓</div>
+                            <h4 class="benefit-title">Commissary & Exchange</h4>
+                            <p class="benefit-subtitle">Shopping Privileges</p>
                         </div>
-                        <div style="background: #e8f5e9; padding: 1.25rem; border-radius: 8px; border-left: 4px solid var(--success); text-align: center;">
-                            <div style="font-size: 2rem; margin-bottom: 0.3rem;">✓</div>
-                            <h4 style="color: var(--success); font-size: 1rem; margin-bottom: 0.3rem;">CHAMPVA Healthcare</h4>
-                            <p style="color: var(--text-gray); font-size: 0.85rem; margin: 0;">For Family Members</p>
+                        <div class="benefit-card">
+                            <div class="benefit-icon">✓</div>
+                            <h4 class="benefit-title">CHAMPVA Healthcare</h4>
+                            <p class="benefit-subtitle">For Family Members</p>
                         </div>
-                        <div style="background: #e8f5e9; padding: 1.25rem; border-radius: 8px; border-left: 4px solid var(--success); text-align: center;">
-                            <div style="font-size: 2rem; margin-bottom: 0.3rem;">✓</div>
-                            <h4 style="color: var(--success); font-size: 1rem; margin-bottom: 0.3rem;">No VA Copays</h4>
-                            <p style="color: var(--text-gray); font-size: 0.85rem; margin: 0;">Service-Connected Care</p>
+                        <div class="benefit-card">
+                            <div class="benefit-icon">✓</div>
+                            <h4 class="benefit-title">No VA Copays</h4>
+                            <p class="benefit-subtitle">Service-Connected Care</p>
                         </div>
-                        <div style="background: #e8f5e9; padding: 1.25rem; border-radius: 8px; border-left: 4px solid var(--success); text-align: center;">
-                            <div style="font-size: 2rem; margin-bottom: 0.3rem;">✓</div>
-                            <h4 style="color: var(--success); font-size: 1rem; margin-bottom: 0.3rem;">Dental Benefits</h4>
-                            <p style="color: var(--text-gray); font-size: 0.85rem; margin: 0;">VA Dental Care</p>
+                        <div class="benefit-card">
+                            <div class="benefit-icon">✓</div>
+                            <h4 class="benefit-title">Dental Benefits</h4>
+                            <p class="benefit-subtitle">VA Dental Care</p>
                         </div>
-                        <div style="background: #e8f5e9; padding: 1.25rem; border-radius: 8px; border-left: 4px solid var(--success); text-align: center;">
-                            <div style="font-size: 2rem; margin-bottom: 0.3rem;">✓</div>
-                            <h4 style="color: var(--success); font-size: 1rem; margin-bottom: 0.3rem;">Home Loan Benefits</h4>
-                            <p style="color: var(--text-gray); font-size: 0.85rem; margin: 0;">VA Funding Fee Waiver</p>
+                        <div class="benefit-card">
+                            <div class="benefit-icon">✓</div>
+                            <h4 class="benefit-title">Home Loan Benefits</h4>
+                            <p class="benefit-subtitle">VA Funding Fee Waiver</p>
                         </div>
                     </div>
                 </div>
 
-                <p style="color: var(--text-gray); font-style: italic; margin-top: 2rem; text-align: center; font-size: var(--body-size);">
+                <p class="text-gray mt-lg text-center" style="font-style: italic;">
                     This isn't theory. This is my actual award letter.<br>
                     <strong style="color: var(--primary);">This is what the Combat PTSD First Strategy achieved.</strong>
                 </p>
             </div>
         </div>
     </section>
-
-    <style>
-        /* Responsive for benefits grid */
-        @media (max-width: 992px) {
-            .benefits-approval-grid {
-                grid-template-columns: 1fr !important;
-            }
-            .benefits-approval-grid > div[style*="min-height: 600px"] {
-                min-height: 360px !important;
-            }
-        }
-    </style>
 
     <!-- What I Discovered Section -->
     <section id="strategy" class="section-padding bg-light">
@@ -983,12 +1102,12 @@
     </section>
 
     <!-- Modern PTSD Section -->
-    <section id="symptoms" class="section-padding" style="background-color: var(--white);">
+    <section id="symptoms" class="section-padding bg-white">
         <div class="container">
             <h2 class="text-center">This Isn't Your Grandfather's "Shell Shock"</h2>
-            <p style="text-align: center; max-width: 800px; margin: 0 auto 3rem;">Most people think PTSD means combat flashbacks and panic attacks. That's the old definition. Modern PTSD includes symptoms you might not even recognize as service-connected:</p>
+            <p class="text-center max-w-md mx-auto mb-xl">Most people think PTSD means combat flashbacks and panic attacks. That's the old definition. Modern PTSD includes symptoms you might not even recognize as service-connected:</p>
 
-            <div class="symptoms-grid">
+            <div class="grid grid-auto-fit gap-lg">
                 <div class="symptom-card">
                     <i class="fas fa-eye fa-3x"></i>
                     <h3>Hypervigilance</h3>
@@ -1021,7 +1140,7 @@
                 </div>
             </div>
 
-            <p style="text-align: center; margin-top: 3rem; font-size: var(--body-large); font-weight: var(--font-weight-semibold);">Sound familiar? That's service-connected PTSD. And there's a strategic way to claim it.</p>
+            <p class="text-center mt-xl text-lg" style="font-weight: var(--font-semibold);">Sound familiar? That's service-connected PTSD. And there's a strategic way to claim it.</p>
         </div>
     </section>
 
@@ -1029,8 +1148,9 @@
     <section class="section-padding bg-primary text-center">
         <div class="container">
             <h2>Who This Strategy Is For: ALL VETERANS</h2>
-            <p style="max-width: 800px; margin: 0 auto 3rem; font-size: var(--body-large);">This strategy works for any veteran with service-connected PTSD symptoms – regardless of when you served or whether you deployed.</p>
-            <div class="who-for-grid">
+            <p class="max-w-md mx-auto mb-xl text-lg">This strategy works for any veteran with service-connected PTSD symptoms – regardless of when you served or whether you deployed.</p>
+
+            <div class="grid grid-auto-fit gap-lg">
                 <div class="who-for-card">
                     <i class="fas fa-flag-usa fa-3x"></i>
                     <h3>All Veterans</h3>
@@ -1059,7 +1179,7 @@
     <section id="guide" class="section-padding bg-light">
         <div class="container container-narrow">
             <h2 class="text-center">The Combat PTSD First Strategy Guide</h2>
-            <p style="text-align: center;">Everything I learned getting 100% in 13 months – no shortcuts, no fraud, just strategic navigation of a complex system.</p>
+            <p class="text-center">Everything I learned getting 100% in 13 months – no shortcuts, no fraud, just strategic navigation of a complex system.</p>
 
             <div class="highlight-box guide-includes">
                 <h3>What You Get:</h3>
@@ -1082,17 +1202,17 @@
                 <a href="https://buy.stripe.com/4gM28remJ42ieGsfsb18c05" class="btn btn-secondary">Get Immediate Access</a>
             </div>
 
-            <p style="text-align: center; font-style: italic; color: var(--text-gray);">This guide teaches you to recognize and properly document real symptoms you're experiencing. It's not about gaming the system – it's about strategic navigation of what you've already earned.</p>
+            <p class="text-center text-gray" style="font-style: italic;">This guide teaches you to recognize and properly document real symptoms you're experiencing. It's not about gaming the system – it's about strategic navigation of what you've already earned.</p>
         </div>
     </section>
 
     <!-- Story Section -->
-    <section id="story" class="section-padding" style="background-color: var(--white);">
+    <section id="story" class="section-padding bg-white">
         <div class="container container-narrow">
             <h2>From No Claim to 100% in 13 Months</h2>
-            <div style="text-align: center; margin: 2rem 0;">
-                <img src="images/proof/FB_IMG_1738853381094.jpg" alt="Lyndon Bedford - U.S. Army" style="width: 200px; height: 200px; border-radius: 50%; object-fit: cover; border: 4px solid var(--primary); box-shadow: var(--box-shadow);">
-                <p style="font-style: italic; color: var(--text-gray); margin-top: 1rem;">U.S. Army, 2001-2005 • Iraq Veteran</p>
+            <div class="text-center mt-lg mb-lg">
+                <img src="images/proof/FB_IMG_1738853381094.jpg" alt="Lyndon Bedford - U.S. Army" style="width: 200px; height: 200px; border-radius: var(--radius-circle); object-fit: cover; border: 4px solid var(--primary); box-shadow: var(--shadow-md);">
+                <p class="text-gray mt-sm" style="font-style: italic;">U.S. Army, 2001-2005 • Iraq Veteran</p>
             </div>
             <p>After four years in the Army including a year in Iraq, I came home changed. But like many veterans, I never filed a VA claim. I didn't want "handouts" or to get caught in the bureaucracy I'd heard horror stories about.</p>
 
@@ -1118,11 +1238,10 @@
     <section class="section-padding bg-light">
         <div class="container">
             <h2 class="text-center">What Veterans Are Saying</h2>
-            <p style="text-align: center; max-width: 700px; margin: 0 auto 3rem; color: var(--text-gray);">Real feedback from veterans who've seen the strategy work in veteran communities</p>
+            <p class="text-center max-w-sm mx-auto mb-xl text-gray">Real feedback from veterans who've seen the strategy work in veteran communities</p>
 
-            <div class="testimonial-grid">
-                <!-- Testimonial 1 -->
-                <div class="glass-card testimonial-card">
+            <div class="grid grid-auto-fit-lg gap-lg">
+                <div class="glass-card">
                     <div class="testimonial-quote">"</div>
                     <p class="testimonial-text">"I was stuck at 70% for three years, fighting appeals. Saw Lyndon's timeline in a forum and realized I was approaching it all wrong. The combat-related angle made so much more sense than throwing everything at the wall."</p>
                     <div class="testimonial-author">
@@ -1131,8 +1250,7 @@
                     </div>
                 </div>
 
-                <!-- Testimonial 2 -->
-                <div class="glass-card testimonial-card">
+                <div class="glass-card">
                     <div class="testimonial-quote">"</div>
                     <p class="testimonial-text">"Never thought basic training counted as combat-related. I've had hypervigilance issues for 15 years and just thought that was 'normal' for veterans. This opened my eyes to what I could actually claim."</p>
                     <div class="testimonial-author">
@@ -1141,8 +1259,7 @@
                     </div>
                 </div>
 
-                <!-- Testimonial 3 -->
-                <div class="glass-card testimonial-card">
+                <div class="glass-card">
                     <div class="testimonial-quote">"</div>
                     <p class="testimonial-text">"The strategic approach makes sense. Most VSOs just have you file everything and hope. This is actually tactical - start with what has the lowest burden of proof and highest value. Wish I'd known this years ago."</p>
                     <div class="testimonial-author">
@@ -1153,8 +1270,8 @@
             </div>
 
             <!-- Social Proof Stats -->
-            <div class="glass-card" style="margin-top: 4rem;">
-                <div class="stats-grid">
+            <div class="glass-card mt-2xl">
+                <div class="grid grid-auto-fit-sm gap-lg text-center">
                     <div>
                         <div class="stats-number" style="color: var(--success);">13</div>
                         <p class="stats-label">Months to 100%</p>
@@ -1227,9 +1344,7 @@
 
                 const targetElement = document.querySelector(targetId);
                 if (targetElement) {
-                    // Close mobile menu if open
                     navMenu.classList.remove('active');
-
                     window.scrollTo({
                         top: targetElement.offsetTop - 80,
                         behavior: 'smooth'
