@@ -446,6 +446,91 @@
             max-width: 520px;
         }
 
+        /* === DENIAL BLOCK (Mirrored Approved Block Style) === */
+        .denial-block {
+            position: relative;
+            border-radius: var(--radius-xl);
+            overflow: hidden;
+            min-height: 600px;
+            display: flex;
+            align-items: stretch;
+        }
+
+        .denial-bg {
+            position: absolute;
+            inset: 0;
+            background-color: #8b0000;
+            background-image: 
+                repeating-linear-gradient(
+                    45deg,
+                    transparent,
+                    transparent 10px,
+                    rgba(0,0,0,.05) 10px,
+                    rgba(0,0,0,.05) 20px
+                );
+        }
+
+        .denial-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(139,0,0,0.92) 0%, rgba(220,53,69,0.6) 45%, rgba(139,0,0,0.25) 100%);
+            box-shadow: var(--shadow-inset);
+        }
+
+        .denial-content {
+            position: relative;
+            z-index: 2;
+            padding: var(--spacing-xl);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            color: var(--white);
+        }
+
+        .denial-content h2 {
+            color: var(--white);
+            text-shadow: var(--shadow-text);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .denial-content p {
+            color: var(--white);
+            text-shadow: var(--shadow-text);
+            margin: 0;
+            max-width: 520px;
+        }
+
+        .badge-danger {
+            background: var(--danger);
+            color: var(--white);
+        }
+
+        /* === TRANSFORMATION ARROW === */
+        .transformation-arrow {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 10;
+            background: var(--white);
+            width: 60px;
+            height: 60px;
+            border-radius: var(--radius-circle);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: var(--shadow-lg);
+            font-size: var(--text-2xl);
+            color: var(--success);
+            font-weight: var(--font-extrabold);
+        }
+
+        @media (max-width: 992px) {
+            .transformation-arrow {
+                display: none;
+            }
+        }
+
         /* === NAVIGATION === */
         .navbar {
             position: fixed;
@@ -835,7 +920,8 @@
                 grid-template-columns: 1fr !important;
             }
 
-            .approved-block {
+            .approved-block,
+            .denial-block {
                 min-height: 360px !important;
             }
         }
@@ -1005,21 +1091,41 @@
             <!-- Benefits Page -->
             <div class="glass-card max-w-xl mx-auto">
                 <h3 class="text-dark text-center">What 100% P&T Actually Unlocks</h3>
+                
+                <!-- Benefits Document -->
+                <div class="mt-lg mb-lg">
+                    <img src="images/proof/ClaimLetter-2024-3-12_pages-to-jpg-0006.jpg" alt="Additional Benefits Breakdown" class="card-image">
+                </div>
 
-                <div class="grid grid-2 gap-lg mt-lg">
-                    <!-- Benefits Image -->
-                    <div>
-                        <img src="images/proof/ClaimLetter-2024-3-12_pages-to-jpg-0006.jpg" alt="Additional Benefits" class="card-image" style="height: 100%; object-fit: cover;">
+                <!-- The Transformation Story -->
+                <div class="mt-2xl mb-lg text-center">
+                    <h3 class="text-dark" style="font-size: var(--text-2xl); margin-bottom: var(--spacing-sm);">The Transformation</h3>
+                    <p class="text-gray" style="font-size: var(--text-lg); max-width: 700px; margin: 0 auto;">See the difference between the traditional approach and the Combat PTSD First Strategy</p>
+                </div>
+
+                <div class="grid grid-2 gap-lg mt-lg" style="position: relative;">
+                    <!-- Denial Block (Before) -->
+                    <div class="denial-block">
+                        <div class="denial-bg"></div>
+                        <div class="denial-overlay"></div>
+                        <div class="denial-content">
+                            <span class="badge badge-danger">Denied</span>
+                            <h2>The Old Way</h2>
+                            <p>Filing multiple claims without strategy. Years of appeals. Frustration and uncertainty. This is what most veterans face.</p>
+                        </div>
                     </div>
 
-                    <!-- Approved Block -->
+                    <!-- Transformation Arrow -->
+                    <div class="transformation-arrow">→</div>
+
+                    <!-- Approved Block (After) -->
                     <div class="approved-block">
                         <div class="approved-bg"></div>
                         <div class="approved-overlay"></div>
                         <div class="approved-content">
                             <span class="badge badge-success">Approved</span>
-                            <h2>From Denial to Approval</h2>
-                            <p>This is what strategic thinking looks like. Same veteran. Different approach. 13 months later.</p>
+                            <h2>The Strategic Way</h2>
+                            <p>Combat PTSD First Strategy. One focused claim. 13 months to 100% P&T. This is what strategic thinking achieves.</p>
                         </div>
                     </div>
                 </div>
