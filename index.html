@@ -410,10 +410,18 @@
             color: var(--text-dark);
         }
 
+        /* explicit overrides when inside gradient sections */
+        .bg-primary .benefit-card { color: var(--text-dark); }
+        .bg-primary .benefit-card .benefit-title { color: var(--text-dark); }
+        .bg-primary .benefit-card .benefit-subtitle { color: var(--text-gray); }
+
         .benefit-icon {
             font-size: var(--text-2xl);
             margin-bottom: var(--spacing-xs);
         }
+
+        /* make the checkmark green for positive benefit */
+        .benefit-card .benefit-icon { color: var(--success); }
 
         .benefit-title {
             color: var(--text-dark);
