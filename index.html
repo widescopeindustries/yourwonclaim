@@ -307,6 +307,25 @@
             background-color: var(--bg-light);
         }
 
+        /* === LEAD FORM === */
+        .lead-form {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--spacing-sm);
+            margin-top: var(--spacing-md);
+        }
+        .lead-form input[type="email"] {
+            flex: 1 1 260px;
+            min-width: 240px;
+            padding: 0.9rem 1rem;
+            border-radius: var(--radius-pill);
+            border: 1px solid rgba(255,255,255,0.35);
+            background: var(--white);
+            color: var(--text-dark);
+            font-size: var(--text-base);
+        }
+        .lead-form .btn { white-space: nowrap; }
+
         /* === BADGE SYSTEM === */
         .badge {
             display: inline-block;
@@ -1135,6 +1154,11 @@
                         <a href="#guide" class="btn btn-secondary">Get The Complete Guide</a>
                         <a href="#strategy" class="btn btn-light">Learn More</a>
                     </div>
+                    <!-- Lead magnet: email capture -->
+                    <form class="lead-form" action="https://formspree.io/f/movkkoyd" method="POST">
+                        <input type="email" name="email" placeholder="Enter your email for the free PTSD checklist" aria-label="Email address" required>
+                        <button type="submit" class="btn btn-primary">Get Free Checklist</button>
+                    </form>
                     <div class="hero-stats">
                         <div>
                             <div class="stat-number">13</div>
