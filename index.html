@@ -313,6 +313,24 @@
             box-shadow: var(--shadow-sm);
         }
 
+        /* Navbar Buy Now visual states */
+        .navbar .btn-cta {
+            border: 2px solid rgba(255,255,255,0.5);
+        }
+        .navbar .btn-cta:hover {
+            border-color: var(--white);
+        }
+        .navbar.scrolled .btn-cta {
+            border-color: var(--secondary-dark);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .btn-sm {
+            padding: 0.5rem 0.9rem;
+            font-size: var(--text-sm);
+            box-shadow: var(--shadow-sm);
+        }
+
         /* === LEAD FORM === */
         .lead-form {
             display: flex;
@@ -1166,7 +1184,7 @@
                 <li class="nav-item"><a href="#symptoms" class="nav-link">Recognize Symptoms</a></li>
                 <li class="nav-item"><a href="#guide" class="nav-link">The Guide</a></li>
                 <li class="nav-item"><a href="#story" class="nav-link">My Story</a></li>
-                <li class="nav-item"><a href="https://buy.stripe.com/4gM28remJ42ieGsfsb18c05" class="btn btn-secondary btn-sm" aria-label="Buy the guide for 197 dollars">Buy Now</a></li>
+                <li class="nav-item"><a href="https://buy.stripe.com/4gM28remJ42ieGsfsb18c05" class="btn btn-secondary btn-sm btn-cta" aria-label="Buy the guide for 197 dollars">Buy Now</a></li>
             </ul>
         </div>
     </nav>
