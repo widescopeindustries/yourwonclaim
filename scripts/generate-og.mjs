@@ -41,7 +41,7 @@ async function createOG({ filename, bgColor = '#0B1F38', title, subtitle }) {
   await fs.writeFile(path.join(outDir, filename), png);
 }
 
-await createOG({ filename: 'home-1200x630.png', title: 'The Combat PTSD First Strategy', subtitle: 'Stop Getting Denied. Clarity. Strategy. Victory.' });
+await createOG({ filename: 'home-1200x630.png', title: 'The Combat-Related PTSD First Strategy', subtitle: 'Stop Getting Denied. Clarity. Strategy. Victory.' });
 await createOG({ filename: 'guide-1200x630.png', title: 'Strategy Guide — $197', subtitle: 'Framework, templates, and C&P prep.' });
 
 console.log('OG images generated in /og');
