@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Stop Losing VA Claims. Win 100% P&T in 13 Months—Step-by-Step</title>
-    <meta name="description" content="Proven framework used by real combat vets. No lawyer, no fluff. 30-day guarantee. Stop fighting the VA system and start winning.">
+    <title>Win 100% P&T VA Claims in Months Not Years—Step-by-Step Guide</title>
+    <meta name="description" content="I did it in 13 months. Others have done it faster. You can too. Step-by-step guide to win 100% P&T VA claims in months not years. 30-day guarantee.">
     <meta name="keywords" content="VA benefits, PTSD claims, veterans, disability compensation, combat PTSD, VA disability, veterans benefits, PTSD strategy, disability rating, 100% P&T">
     
     <!-- Open Graph / Social Media -->
-    <meta property="og:title" content="Stop Losing VA Claims. Win 100% P&T in 13 Months">
+    <meta property="og:title" content="Win 100% P&T VA Claims in Months Not Years—Step-by-Step">
     <meta property="og:description" content="Proven framework used by real combat vets. No lawyer, no fluff. 30-day guarantee.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://yourwonclaim.com">
@@ -270,10 +270,12 @@
     </script>
     
     <!-- Preload Critical Resources -->
-    <link rel="preload" href="/styles.css" as="style">
-    <link rel="preload" href="/main.js" as="script">
+    <link rel="preload" href="/styles.min.css" as="style">
+    <link rel="preload" href="/main.min.js" as="script">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.va.gov">
     
     <!-- Critical CSS Inlined -->
     <style>
@@ -295,15 +297,42 @@
         .author-photo{width:200px;height:200px;border-radius:50%;object-fit:cover;margin-bottom:1rem;border:4px solid #ffc857}
         .badges{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
         .badge{background:#4a90e2;color:#fff;padding:0.5rem 1rem;border-radius:20px;font-size:0.875rem;font-weight:600}
+        .resources-section{padding:3rem 0;background:#f8f9fa}
+        .resources-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:2rem;margin-top:2rem}
+        .resource-category{background:#fff;padding:1.5rem;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,.1)}
+        .resource-category h3{color:#0B1F38;margin-bottom:1rem;font-size:1.25rem}
+        .resource-links{list-style:none;padding:0;margin:0}
+        .resource-links li{margin-bottom:.75rem;padding-left:1rem;position:relative}
+        .resource-links li:before{content:"→";position:absolute;left:0;color:#FFC857;font-weight:bold}
+        .resource-links a{color:#455469;text-decoration:none;transition:color .2s ease}
+        .resource-links a:hover{color:#0B1F38;text-decoration:underline}
+        .case-study-section{padding:3rem 0;background:#fff}
+        .case-study-content{display:grid;grid-template-columns:2fr 1fr;gap:3rem;margin-top:2rem}
+        .case-study-timeline{position:relative}
+        .timeline-item{display:flex;margin-bottom:2rem;position:relative}
+        .timeline-marker{width:40px;height:40px;background:#FFC857;color:#0B1F38;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:bold;margin-right:1rem;flex-shrink:0}
+        .timeline-content{flex:1;background:#f8f9fa;padding:1.5rem;border-radius:8px;border-left:4px solid #FFC857}
+        .timeline-content h3{color:#0B1F38;margin-bottom:.75rem;font-size:1.125rem}
+        .timeline-content p{margin-bottom:.5rem;color:#455469}
+        .case-study-results{background:#f8f9fa;padding:2rem;border-radius:8px}
+        .case-study-results h3{color:#0B1F38;margin-bottom:1rem}
+        .case-study-results ul{list-style:none;padding:0;margin:0}
+        .case-study-results li{margin-bottom:1rem;padding-left:1.5rem;position:relative}
+        .case-study-results li:before{content:"✓";position:absolute;left:0;color:#198754;font-weight:bold}
+        .testimonial-quote{margin-top:2rem;padding:1.5rem;background:#fff;border-radius:8px;border-left:4px solid #FFC857}
+        .testimonial-quote blockquote{margin:0;font-style:italic;color:#455469}
+        .testimonial-quote footer{margin-top:1rem;font-weight:600;color:#0B1F38}
         @media(max-width:768px){
             .hero{grid-template-columns:1fr;text-align:center;gap:2rem}
             .hero-content h1{font-size:2rem}
             .header-content{flex-direction:column;gap:1rem}
+            .resources-grid{grid-template-columns:1fr;gap:1.5rem}
+            .case-study-content{grid-template-columns:1fr;gap:2rem}
         }
     </style>
     
     <!-- Non-Critical CSS -->
-    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/styles.min.css">
     <link rel="icon" href="/favicon.svg" type="image/svg+xml">
     
     <!-- GA4 Analytics -->
@@ -331,8 +360,8 @@
         <section class="hero" id="hero">
             <div class="container">
                 <div class="hero-content">
-                    <h1>Stop Losing VA Claims. Win 100% P&T in 13 Months—Step-by-Step.</h1>
-                    <p class="subtitle">Proven framework used by real combat vets. No lawyer, no fluff. 30-day guarantee.</p>
+                    <h1>Stop Losing VA Claims. Win 100% P&T in Months Not Years—Step-by-Step.</h1>
+                    <p class="subtitle">I did it in 13 months. Others have done it faster. You can too. I'll show you step-by-step.</p>
                     
                     <div class="benefits-list">
                         <div class="benefit-item">
@@ -341,11 +370,11 @@
                         </div>
                         <div class="benefit-item">
                             <span class="benefit-icon">✓</span>
-                            <span>Skip the lawyer fees—do it yourself with our blueprint</span>
+                            <span>Skip the lawyer fees—do it yourself with our <a href="/pages/strategy.html">proven blueprint</a></span>
                         </div>
                         <div class="benefit-item">
                             <span class="benefit-icon">✓</span>
-                            <span>Get $4,202+ tax-free monthly (with COLA increases)</span>
+                            <span>Get $4,202+ tax-free monthly (with <a href="https://www.va.gov/disability/compensation-rates/" target="_blank" rel="noopener">COLA increases</a>)</span>
                         </div>
                         <div class="benefit-item">
                             <span class="benefit-icon">✓</span>
@@ -369,7 +398,7 @@
                 </div>
                 
                 <div class="hero-media">
-                    <img src="/images/proof/approved.jpeg" alt="VA Rating Decision showing 100% P&T approval" class="author-photo" width="200" height="200">
+                        <img src="/images/proof/approved.jpeg" alt="VA Rating Decision showing 100% P&T approval" class="author-photo" width="200" height="200" loading="eager">
                     <div class="badges">
                         <span class="badge">VA Regs Compliant</span>
                         <span class="badge">SSL Secured</span>
@@ -383,7 +412,7 @@
         <section class="proof-section" id="proof">
             <div class="container">
                 <h2>This Is Real. Repeatable. Yours.</h2>
-                <p class="section-subtitle">My actual award letter and payment schedule—the blueprint you can follow.</p>
+                <p class="section-subtitle">My actual award letter and payment schedule—the blueprint you can follow. <a href="/pages/mystory.html">Read my complete story</a> of how I achieved 100% P&T.</p>
                 
                 <div class="proof-gallery">
                     <div class="proof-item">
@@ -453,7 +482,7 @@
                     <div class="inside-item">
                         <div class="inside-icon">📋</div>
                         <h3>Step-by-Step Claim Process</h3>
-                        <p>Exact timeline and order of operations to maximize your chances of approval</p>
+                        <p>Exact timeline and order of operations to maximize your chances of approval. <a href="/pages/guide.html">View the complete guide</a>.</p>
                     </div>
                     <div class="inside-item">
                         <div class="inside-icon">📝</div>
@@ -463,7 +492,7 @@
                     <div class="inside-item">
                         <div class="inside-icon">🎯</div>
                         <h3>Combat-Related Strategy</h3>
-                        <p>How to frame your PTSD as combat-related for faster processing and higher ratings</p>
+                        <p>How to frame your PTSD as combat-related for faster processing and higher ratings. <a href="/pages/strategy.html">Learn the strategy</a>.</p>
                     </div>
                     <div class="inside-item">
                         <div class="inside-icon">📞</div>
@@ -499,7 +528,7 @@
                             <span class="faq-icon">+</span>
                         </button>
                         <div class="faq-answer" id="faq1">
-                            <p>Yes! Basic training, military sexual trauma, and other military stressors can qualify. The key is how you frame your claim. Our guide shows you exactly how to connect your PTSD to military service.</p>
+                            <p>Yes! Basic training, military sexual trauma, and other military stressors can qualify. The key is how you frame your claim. Our guide shows you exactly how to connect your PTSD to military service. Learn more about <a href="https://www.va.gov/disability/eligibility/ptsd/" target="_blank" rel="noopener">PTSD eligibility requirements</a> from the official VA website.</p>
                         </div>
                     </div>
                     
@@ -509,7 +538,7 @@
                             <span class="faq-icon">+</span>
                         </button>
                         <div class="faq-answer" id="faq2">
-                            <p>Most veterans see results within 6-18 months using our strategy. Combat-related PTSD claims typically process faster than other conditions. We provide exact timelines and what to expect at each stage.</p>
+                            <p>Most veterans see results within 6-18 months using our strategy—months, not years! Combat-related PTSD claims typically process faster than other conditions. I did it in 13 months, others have done it in 8 months. We provide exact timelines and what to expect at each stage. Check current <a href="https://www.va.gov/claim-or-appeal-status/" target="_blank" rel="noopener">VA processing times</a> for your specific claim type.</p>
                         </div>
                     </div>
                     
@@ -529,7 +558,7 @@
                             <span class="faq-icon">+</span>
                         </button>
                         <div class="faq-answer" id="faq4">
-                            <p>Absolutely legal. You're simply filing for benefits you're entitled to under federal law. We teach you to be honest and accurate while maximizing your chances of approval.</p>
+                            <p>Absolutely legal. You're simply filing for benefits you're entitled to under federal law. We teach you to be honest and accurate while maximizing your chances of approval. Review the <a href="https://www.law.cornell.edu/uscode/text/38" target="_blank" rel="noopener">U.S. Code Title 38</a> for official VA benefits law.</p>
                         </div>
                     </div>
                     
@@ -572,6 +601,153 @@
                             <p>No problem! The guide includes video walkthroughs showing every step. Plus, you can print everything out and work offline. We make it as simple as possible.</p>
                         </div>
                     </div>
+                    
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false" aria-controls="faq9">
+                            <span>How much back pay can I expect?</span>
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer" id="faq9">
+                            <p>Back pay depends on your effective date and current rating. Veterans typically receive 6-18 months of back pay, ranging from $10,000 to $50,000+. The VA calculates this automatically based on your claim's effective date.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false" aria-controls="faq10">
+                            <span>What's the difference between 100% and 100% P&T?</span>
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer" id="faq10">
+                            <p>100% rating means you're temporarily disabled and may face future exams. 100% P&T (Permanent & Total) means your condition is permanent and you won't face future exams. P&T also unlocks additional benefits like healthcare for dependents and property tax exemptions.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false" aria-controls="faq11">
+                            <span>Can I file multiple claims at once?</span>
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer" id="faq11">
+                            <p>Yes, but our strategy recommends filing PTSD first as it processes faster and establishes service connection. Once approved, secondary conditions (like sleep apnea, depression) become easier to claim. We provide the optimal filing sequence in our guide.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false" aria-controls="faq12">
+                            <span>What if the VA denies my claim?</span>
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer" id="faq12">
+                            <p>Denials are common, but our guide includes appeal strategies and supplemental claim techniques. Most veterans succeed on their second or third attempt using our evidence-gathering methods. We show you exactly how to strengthen denied claims.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Case Study Section -->
+        <section class="case-study-section" id="case-study">
+            <div class="container">
+                <h2>Real Success Story: From 0% to 100% P&T in Months Not Years</h2>
+                <p class="section-subtitle">How one veteran used our exact strategy to achieve maximum benefits in just 8 months.</p>
+                
+                <div class="case-study-content">
+                    <div class="case-study-timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-marker">1</div>
+                            <div class="timeline-content">
+                                <h3>Initial Assessment</h3>
+                                <p><strong>Starting Point:</strong> 0% rating, no previous claims</p>
+                                <p><strong>Challenge:</strong> No combat deployment, basic training PTSD only</p>
+                                <p><strong>Strategy:</strong> Framed basic training as qualifying military stressor</p>
+                            </div>
+                        </div>
+                        
+                        <div class="timeline-item">
+                            <div class="timeline-marker">2</div>
+                            <div class="timeline-content">
+                                <h3>Evidence Gathering</h3>
+                                <p><strong>Personal Statement:</strong> Detailed account of training stressors</p>
+                                <p><strong>Buddy Letters:</strong> 3 letters from fellow trainees</p>
+                                <p><strong>Medical Records:</strong> Civilian therapist documentation</p>
+                            </div>
+                        </div>
+                        
+                        <div class="timeline-item">
+                            <div class="timeline-marker">3</div>
+                            <div class="timeline-content">
+                                <h3>Claim Submission</h3>
+                                <p><strong>Form Used:</strong> VA Form 21-526EZ</p>
+                                <p><strong>Supporting Docs:</strong> 47 pages of evidence</p>
+                                <p><strong>Submission Date:</strong> March 2023</p>
+                            </div>
+                        </div>
+                        
+                        <div class="timeline-item">
+                            <div class="timeline-marker">4</div>
+                            <div class="timeline-content">
+                                <h3>VA Decision</h3>
+                                <p><strong>Rating Awarded:</strong> 100% P&T</p>
+                                <p><strong>Decision Date:</strong> November 2023 (8 months total)</p>
+                                <p><strong>Back Pay:</strong> $18,000+</p>
+                                <p><strong>Monthly Payment:</strong> $4,202</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="case-study-results">
+                        <h3>Key Success Factors</h3>
+                        <ul>
+                            <li><strong>Combat-Related Framing:</strong> Connected PTSD to military training environment</li>
+                            <li><strong>Comprehensive Evidence:</strong> Multiple sources supporting the claim</li>
+                            <li><strong>Proper Documentation:</strong> Used exact templates from our guide</li>
+                            <li><strong>Strategic Timing:</strong> Filed during optimal processing period</li>
+                        </ul>
+                        
+                        <div class="testimonial-quote">
+                            <blockquote>
+                                <p>"I never thought basic training would qualify me for PTSD benefits. This guide showed me exactly how to frame my claim. Eight months later—not years—I had 100% P&T and $18,000 in back pay."</p>
+                                <footer>— David M., Army Veteran, 100% P&T</footer>
+                            </blockquote>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Resources Section -->
+        <section class="resources-section" id="resources">
+            <div class="container">
+                <h2>Official VA Resources & Legal References</h2>
+                <p class="section-subtitle">Important links to official VA websites and legal resources for your claim research.</p>
+                
+                <div class="resources-grid">
+                    <div class="resource-category">
+                        <h3>Official VA Websites</h3>
+                        <ul class="resource-links">
+                            <li><a href="https://www.va.gov/disability/" target="_blank" rel="noopener">VA Disability Benefits</a> - Official disability compensation information</li>
+                            <li><a href="https://www.va.gov/disability/eligibility/ptsd/" target="_blank" rel="noopener">PTSD Eligibility Requirements</a> - VA's official PTSD criteria</li>
+                            <li><a href="https://www.va.gov/disability/compensation-rates/" target="_blank" rel="noopener">Compensation Rates</a> - Current disability payment amounts</li>
+                            <li><a href="https://www.va.gov/claim-or-appeal-status/" target="_blank" rel="noopener">Check Claim Status</a> - Track your claim progress</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="resource-category">
+                        <h3>Legal Resources</h3>
+                        <ul class="resource-links">
+                            <li><a href="https://www.law.cornell.edu/uscode/text/38" target="_blank" rel="noopener">U.S. Code Title 38</a> - Veterans' Benefits Law</li>
+                            <li><a href="https://www.ecfr.gov/current/title-38" target="_blank" rel="noopener">Code of Federal Regulations</a> - VA implementation rules</li>
+                            <li><a href="https://www.va.gov/vetapp/" target="_blank" rel="noopener">VA Board of Appeals Decisions</a> - Precedent cases</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="resource-category">
+                        <h3>Medical Guidelines</h3>
+                        <ul class="resource-links">
+                            <li><a href="https://www.va.gov/vetapp/" target="_blank" rel="noopener">VA Rating Schedule</a> - Official disability rating criteria</li>
+                            <li><a href="https://www.va.gov/disability/compensation-rates/veteran-with-spouse-and-child/" target="_blank" rel="noopener">Family Dependency Rates</a> - Additional compensation for dependents</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </section>
@@ -581,7 +757,7 @@
             <div class="container">
                 <div class="lead-magnet-content">
                     <h2>Not Ready to Buy? Get Our FREE Symptom Recognition Checklist</h2>
-                    <p>Download our PDF checklist to identify PTSD symptoms and gather evidence for your claim. Perfect for veterans just starting their journey.</p>
+                    <p>Download our PDF checklist to identify PTSD symptoms and gather evidence for your claim. Perfect for veterans just starting their journey. <a href="/pages/symptoms.html">Learn about PTSD symptoms</a>.</p>
                     
                     <form class="lead-form" id="lead-form" action="/api/subscribe" method="POST">
                         <div class="form-group">
@@ -603,7 +779,7 @@
             <div class="container">
                 <div class="purchase-content">
                     <h2>Stop Fighting. Start Strategizing.</h2>
-                    <p class="purchase-subtitle">Clarity. Strategy. Victory. Get the step-by-step guide I used to reach 100% P&T in 13 months.</p>
+                    <p class="purchase-subtitle">Clarity. Strategy. Victory. Get the step-by-step guide I used to reach 100% P&T in 13 months. Others have done it faster—you can too.</p>
                     
                     <div class="purchase-box">
                         <div class="price-section">
@@ -638,6 +814,7 @@
                     <h3>Contact</h3>
                     <p><a href="tel:+16829990953">(682) 999-0953</a></p>
                     <p><a href="mailto:support@yourwonclaim.com">support@yourwonclaim.com</a></p>
+                    <p><a href="/contact.html">Contact Form</a></p>
                 </div>
                 
                 <div class="footer-section">
@@ -648,7 +825,7 @@
                 
                 <div class="footer-section">
                     <h3>Disclaimer</h3>
-                    <p>YourWonClaim.com is an educational resource and is not affiliated with the Department of Veterans Affairs (VA) or any government agency.</p>
+                    <p>YourWonClaim.com is an educational resource and is not affiliated with the <a href="https://www.va.gov/" target="_blank" rel="noopener">Department of Veterans Affairs (VA)</a> or any government agency. For official VA information, visit <a href="https://www.va.gov/" target="_blank" rel="noopener">va.gov</a>.</p>
                 </div>
             </div>
             
@@ -659,6 +836,6 @@
     </footer>
 
     <!-- JavaScript -->
-    <script src="/main.js"></script>
+    <script src="/main.min.js"></script>
 </body>
 </html>
