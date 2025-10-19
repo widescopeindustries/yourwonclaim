@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Win 100% P&T VA Claims in Months Not Years—Step-by-Step Guide</title>
+    <title>Win 100% P&T VA Claims in Months—Step-by-Step Guide</title>
     <meta name="description" content="I did it in 13 months. Others have done it faster. You can too. Step-by-step guide to win 100% P&T VA claims in months not years. 30-day guarantee.">
     <meta name="keywords" content="VA benefits, PTSD claims, veterans, disability compensation, combat PTSD, VA disability, veterans benefits, PTSD strategy, disability rating, 100% P&T">
     
@@ -272,10 +272,13 @@
     <!-- Preload Critical Resources -->
     <link rel="preload" href="/styles.min.css" as="style">
     <link rel="preload" href="/main.min.js" as="script">
+    <link rel="preload" href="/images/proof/approved.jpeg" as="image">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="dns-prefetch" href="https://www.googletagmanager.com">
     <link rel="dns-prefetch" href="https://www.va.gov">
+    <link rel="dns-prefetch" href="https://www.law.cornell.edu">
+    <link rel="dns-prefetch" href="https://www.ecfr.gov">
     
     <!-- Critical CSS Inlined -->
     <style>
@@ -297,28 +300,27 @@
         .author-photo{width:200px;height:200px;border-radius:50%;object-fit:cover;margin-bottom:1rem;border:4px solid #ffc857}
         .badges{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
         .badge{background:#4a90e2;color:#fff;padding:0.5rem 1rem;border-radius:20px;font-size:0.875rem;font-weight:600}
-        .resources-section{padding:3rem 0;background:#f8f9fa}
-        .resources-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:2rem;margin-top:2rem}
-        .resource-category{background:#fff;padding:1.5rem;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,.1)}
-        .resource-category h3{color:#0B1F38;margin-bottom:1rem;font-size:1.25rem}
-        .resource-links{list-style:none;padding:0;margin:0}
-        .resource-links li{margin-bottom:.75rem;padding-left:1rem;position:relative}
+        .resources-section,.case-study-section{padding:3rem 0}
+        .resources-section{background:#f8f9fa}
+        .case-study-section{background:#fff}
+        .resources-grid,.case-study-content{display:grid;gap:2rem;margin-top:2rem}
+        .resources-grid{grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
+        .case-study-content{grid-template-columns:2fr 1fr}
+        .resource-category,.timeline-content,.case-study-results{background:#fff;padding:1.5rem;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,.1)}
+        .timeline-content,.case-study-results{background:#f8f9fa;box-shadow:none}
+        .timeline-content{border-left:4px solid #FFC857}
+        .resource-category h3,.case-study-results h3{color:#0B1F38;margin-bottom:1rem;font-size:1.25rem}
+        .resource-links,.case-study-results ul{list-style:none;padding:0;margin:0}
+        .resource-links li,.case-study-results li{margin-bottom:.75rem;padding-left:1rem;position:relative}
+        .case-study-results li{padding-left:1.5rem;margin-bottom:1rem}
         .resource-links li:before{content:"→";position:absolute;left:0;color:#FFC857;font-weight:bold}
+        .case-study-results li:before{content:"✓";position:absolute;left:0;color:#198754;font-weight:bold}
         .resource-links a{color:#455469;text-decoration:none;transition:color .2s ease}
         .resource-links a:hover{color:#0B1F38;text-decoration:underline}
-        .case-study-section{padding:3rem 0;background:#fff}
-        .case-study-content{display:grid;grid-template-columns:2fr 1fr;gap:3rem;margin-top:2rem}
-        .case-study-timeline{position:relative}
         .timeline-item{display:flex;margin-bottom:2rem;position:relative}
         .timeline-marker{width:40px;height:40px;background:#FFC857;color:#0B1F38;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:bold;margin-right:1rem;flex-shrink:0}
-        .timeline-content{flex:1;background:#f8f9fa;padding:1.5rem;border-radius:8px;border-left:4px solid #FFC857}
         .timeline-content h3{color:#0B1F38;margin-bottom:.75rem;font-size:1.125rem}
         .timeline-content p{margin-bottom:.5rem;color:#455469}
-        .case-study-results{background:#f8f9fa;padding:2rem;border-radius:8px}
-        .case-study-results h3{color:#0B1F38;margin-bottom:1rem}
-        .case-study-results ul{list-style:none;padding:0;margin:0}
-        .case-study-results li{margin-bottom:1rem;padding-left:1.5rem;position:relative}
-        .case-study-results li:before{content:"✓";position:absolute;left:0;color:#198754;font-weight:bold}
         .testimonial-quote{margin-top:2rem;padding:1.5rem;background:#fff;border-radius:8px;border-left:4px solid #FFC857}
         .testimonial-quote blockquote{margin:0;font-style:italic;color:#455469}
         .testimonial-quote footer{margin-top:1rem;font-weight:600;color:#0B1F38}
@@ -342,6 +344,19 @@
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
         gtag('config', 'G-GMX19T2GWW');
+        
+        // Performance monitoring
+        window.addEventListener('load', function() {
+            if ('performance' in window) {
+                const perfData = performance.getEntriesByType('navigation')[0];
+                const loadTime = Math.round(perfData.loadEventEnd - perfData.loadEventStart);
+                gtag('event', 'page_load_time', {
+                    'event_category': 'performance',
+                    'event_label': 'milliseconds',
+                    'value': loadTime
+                });
+            }
+        });
     </script>
 </head>
 <body>
@@ -416,15 +431,15 @@
                 
                 <div class="proof-gallery">
                     <div class="proof-item">
-                        <img src="/images/proof/ClaimLetter-2024-3-12_pages-to-jpg-0013.jpg" alt="VA Rating Decision: 100% for PTSD" loading="lazy">
+                        <img src="/images/proof/ClaimLetter-2024-3-12_pages-to-jpg-0013.jpg" alt="VA Rating Decision: 100% for PTSD" loading="lazy" width="300" height="400">
                         <p>100% Rating Decision</p>
                     </div>
                     <div class="proof-item">
-                        <img src="/images/proof/ClaimLetter-2024-3-12_pages-to-jpg-0002.jpg" alt="Payment schedule showing $4,202 monthly" loading="lazy">
+                        <img src="/images/proof/ClaimLetter-2024-3-12_pages-to-jpg-0002.jpg" alt="Payment schedule showing $4,202 monthly" loading="lazy" width="300" height="400">
                         <p>$4,202 Monthly Payment</p>
                     </div>
                     <div class="proof-item">
-                        <img src="/images/proof/ClaimLetter-2024-3-12_pages-to-jpg-0006.jpg" alt="Benefits page showing P&T status" loading="lazy">
+                        <img src="/images/proof/ClaimLetter-2024-3-12_pages-to-jpg-0006.jpg" alt="Benefits page showing P&T status" loading="lazy" width="300" height="400">
                         <p>P&T Benefits Unlocked</p>
                     </div>
                 </div>
