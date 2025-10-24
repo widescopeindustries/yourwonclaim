@@ -21,6 +21,17 @@
   --yc-gray-50:  #F6F8FC;
   --yc-white:    #FFFFFF;
 
+  /* Dark theme accents */
+  --bg: #0A0F1A; /* page background */
+  --surface-1: rgba(255,255,255,.04); /* card background */
+  --surface-2: rgba(255,255,255,.08); /* elevated surfaces */
+  --border: rgba(255,255,255,.12);
+  --text-primary: #E6ECF7;
+  --text-muted: #A5B1C7;
+  --accent: #5CC8FF; /* electric blue */
+  --accent-2: #7C92FF; /* indigo tint for gradients */
+  --glow: 0 0 .8rem rgba(92,200,255,.35), 0 0 2rem rgba(92,200,255,.2);
+
   /* Feedback */
   --yc-success: #198754;
   --yc-danger:  #B00020;
@@ -73,7 +84,7 @@
   --dur-3: 320ms;
 
   /* Focus */
-  --focus: var(--yc-gold);
+  --focus: var(--accent);
 
   /* Layout */
   --container: 1200px;
