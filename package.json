@@ -8,7 +8,8 @@
     "build": "vite build",
     "preview": "vite preview",
     "optimize-images": "node scripts/optimize-images.mjs",
-    "generate-og": "node scripts/generate-og.mjs"
+    "generate-og": "node scripts/generate-og.mjs",
+    "generate-seo": "node scripts/generate-seo-pages.mjs"
   },
   "devDependencies": {
     "vite": "^5.4.0"
@@ -17,5 +18,3 @@
     "sharp": "^0.33.3"
   }
 }
-
-
