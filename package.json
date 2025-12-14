@@ -5,12 +5,13 @@
   "private": true,
   "scripts": {
     "dev": "vite",
-    "prebuild": "npm run generate-seo",
+    "prebuild": "npm run generate-seo && npm run generate-sitemap",
     "build": "node ./node_modules/vite/bin/vite.js build",
     "preview": "vite preview",
     "optimize-images": "node scripts/optimize-images.mjs",
     "generate-og": "node scripts/generate-og.mjs",
-    "generate-seo": "node scripts/generate-seo-pages.mjs"
+    "generate-seo": "node scripts/generate-seo-pages.mjs",
+    "generate-sitemap": "node scripts/generate-sitemap.mjs"
   },
   "dependencies": {
     "vite": "^5.4.0",
