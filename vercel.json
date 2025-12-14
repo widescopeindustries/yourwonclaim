@@ -1,13 +1,5 @@
 {
-    "buildCommand": "npm install && npm run build",
+    "buildCommand": "npm run build",
     "outputDirectory": "dist",
-    "devCommand": "npm run dev",
-    "installCommand": "npm install",
-    "framework": null,
-    "rewrites": [
-        {
-            "source": "/articles/:path*",
-            "destination": "/articles/:path*"
-        }
-    ]
+    "framework": null
 }
