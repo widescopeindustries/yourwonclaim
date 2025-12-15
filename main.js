@@ -1,5 +1,13 @@
 // YourWonClaim.com - Conversion Optimization JavaScript
 
+// Vercel Web Analytics
+import { inject } from '@vercel/analytics';
+
+// Initialize Vercel Analytics on the client side
+if (typeof window !== 'undefined') {
+    inject();
+}
+
 // DOM Content Loaded
 document.addEventListener('DOMContentLoaded', function() {
     initializeCountdown();
