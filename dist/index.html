@@ -22,10 +22,32 @@
     <meta property="og:image" content="https://yourwonclaim.com/og/home-1200x630.png">
     <meta name="twitter:card" content="summary_large_image">
 
-    <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap"
-        rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet" />
+
+    <!-- Preconnect to external domains -->
+    <link rel="preconnect" href="https://cdn.tailwindcss.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://analytics.ahrefs.com">
+
+    <!-- Optimized Tailwind loading -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography" ></script>
+
+    <!-- Optimized font loading with display=swap -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet"
+        media="print" onload="this.media='all'" />
+    <noscript>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap"
+            rel="stylesheet">
+    </noscript>
+
+    <!-- Material Icons - preload and async -->
+    <link rel="preload" href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" as="style"
+        onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
+    </noscript>
+
 
     <script>
         tailwind.config = {
@@ -118,7 +140,7 @@
     </script>
 
     <!-- Ahrefs Analytics -->
-    <script src="https://analytics.ahrefs.com/analytics.js" data-key="adFdR9Raq5TjUy3B5SWDMA" async></script>
+    <script src="https://analytics.ahrefs.com/analytics.js" data-key="adFdR9Raq5TjUy3B5SWDMA" ></script>
 </head>
 
 <body
@@ -136,6 +158,10 @@
                 </div>
                 <div class="hidden md:flex items-center space-x-8">
                     <a class="text-sm font-medium text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white transition-colors"
+                        href="/articles/">
+                        Articles
+                    </a>
+                    <a class="text-sm font-medium text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white transition-colors"
                         href="#testimonials">
                         Success Stories
                     </a>
@@ -145,7 +171,7 @@
                     </a>
                     <a class="inline-flex items-center justify-center px-6 py-2.5 border border-transparent text-sm font-bold rounded-full shadow-sm text-gray-900 bg-primary hover:bg-primary-hover focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary transition-all transform hover:scale-105"
                         href="#purchase">
-                        Get the Guide—$197
+                        Get the Guide—$37
                     </a>
                 </div>
                 <div class="md:hidden flex items-center">
@@ -187,7 +213,7 @@
                 <div class="mt-8 md:hidden">
                     <a class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-bold rounded-full text-gray-900 bg-primary hover:bg-primary-hover md:py-4 md:text-lg md:px-10 shadow-glow"
                         href="#purchase">
-                        Get the Guide—$197
+                        Get the Guide—$37
                     </a>
                 </div>
             </div>
@@ -281,8 +307,62 @@
                     <span class="material-icons-round text-4xl text-gray-400">health_and_safety</span>
                 </div>
             </div>
-        </div>
     </main>
+
+    <!-- VA Claim Status Check Section - PROMINENT -->
+    <section
+        class="py-20 bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-gray-900 dark:to-gray-800 relative overflow-hidden">
+        <!-- Background decoration -->
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute top-0 left-0 w-96 h-96 bg-primary rounded-full mix-blend-multiply filter blur-3xl">
+            </div>
+            <div
+                class="absolute bottom-0 right-0 w-96 h-96 bg-blue-400 rounded-full mix-blend-multiply filter blur-3xl">
+            </div>
+        </div>
+
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl md:text-6xl font-extrabold text-gray-900 dark:text-white mb-6">
+                    📋 Check Your VA Claim Status
+                </h2>
+                <p class="text-xl md:text-2xl text-gray-700 dark:text-gray-300 max-w-3xl mx-auto">
+                    Frustrated waiting for updates? Learn exactly what each status means and what you should do next.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6 mb-12">
+                <div
+                    class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-2xl transition-all transform hover:scale-105">
+                    <div class="text-4xl mb-4">⏱️</div>
+                    <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-2">Timeline Guides</h3>
+                    <p class="text-gray-600 dark:text-gray-400 text-sm">Understand how long each stage takes</p>
+                </div>
+                <div
+                    class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-2xl transition-all transform hover:scale-105">
+                    <div class="text-4xl mb-4">📞</div>
+                    <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-2">Who to Call</h3>
+                    <p class="text-gray-600 dark:text-gray-400 text-sm">Get the right phone numbers and contacts</p>
+                </div>
+                <div
+                    class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-2xl transition-all transform hover:scale-105">
+                    <div class="text-4xl mb-4">✅</div>
+                    <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-2">Next Steps</h3>
+                    <p class="text-gray-600 dark:text-gray-400 text-sm">Know exactly what to do at each stage</p>
+                </div>
+            </div>
+
+            <div class="text-center">
+                <a href="/articles/"
+                    class="inline-flex items-center justify-center px-12 py-5 text-xl font-bold rounded-full text-white bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 shadow-2xl transform hover:scale-105 transition-all">
+                    View All VA Claim Status Guides →
+                </a>
+                <p class="mt-4 text-sm text-gray-600 dark:text-gray-400">
+                    🎯 50+ comprehensive guides covering every claim status
+                </p>
+            </div>
+        </div>
+    </section>
 
     <!-- Purchase Section Placeholder -->
     <section id="purchase" class="py-20 bg-white dark:bg-surface-dark">
@@ -295,7 +375,7 @@
             </p>
             <a href="#"
                 class="inline-flex items-center justify-center px-12 py-4 border border-transparent text-lg font-bold rounded-full text-gray-900 bg-primary hover:bg-primary-hover shadow-glow transform hover:scale-105 transition-all">
-                Get Started Now — $197
+                Get Started Now — $37
             </a>
             <p class="mt-4 text-sm text-gray-500 dark:text-gray-400">
                 ✅ 30-Day Money-Back Guarantee • 127+ Veterans Approved
@@ -318,6 +398,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <p>&copy; 2025 Simple VA Strategy. Not affiliated with the Department of Veterans Affairs.</p>
             <p class="mt-2 text-sm text-gray-400">
+                <a href="/articles/" class="hover:text-primary">Articles</a> •
                 <a href="/privacy-policy.html" class="hover:text-primary">Privacy Policy</a> •
                 <a href="/terms-of-service.html" class="hover:text-primary">Terms of Service</a> •
                 <a href="/contact.html" class="hover:text-primary">Contact</a>
