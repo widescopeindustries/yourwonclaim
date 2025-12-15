@@ -67,7 +67,7 @@ function generateContent(item) {
         <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 2rem; border-radius: 12px; margin: 2rem 0; text-align: center;">
             <h3 style="color: white; margin: 0 0 1rem;">Here's How to Get That Approval Letter</h3>
             <p style="margin: 0 0 1.5rem; font-size: 1.1rem;">I went from checking my status every day to receiving my 100% P&T approval in 13 months. The difference? A proven strategy.</p>
-            <a href="/#purchase" class="cta-btn">Learn the Exact Strategy I Used — $37</a>
+            <a href="https://buy.stripe.com/5kQ00j3I59mC2XKeo718c06" class="cta-btn">Learn the Exact Strategy I Used — $37</a>
             <p style="font-size: 0.9rem; margin-top: 1rem; opacity: 0.95;">✅ 30-Day Money-Back Guarantee</p>
         </div>
 
