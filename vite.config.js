@@ -9,6 +9,7 @@ export default defineConfig({
         rollupOptions: {
             input: {
                 main: 'index.html',
+                calculator: 'calculator.html',
             }
         }
     },
@@ -58,7 +59,7 @@ export default defineConfig({
                 }
 
                 // Copy SEO files (sitemap, robots.txt, etc.)
-                const seoFiles = ['sitemap.xml', 'robots.txt', 'site.webmanifest', 'favicon.svg']
+                const seoFiles = ['sitemap.xml', 'robots.txt', 'site.webmanifest', 'favicon.svg', 'calculator.html']
                 seoFiles.forEach(file => {
                     if (existsSync(file)) {
                         copyFileSync(file, join('dist', file))
