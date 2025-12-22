@@ -1,220 +1,66 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class="scroll-smooth" lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VA Claim Status: Preparation for Decision (What's Next?)</title>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>VA Claim Status: Preparation for Decision (What's Next?) | VeteransClaims</title>
     <meta name="description" content="Your claim shows 'Preparation for Decision'—here's exactly what that means and how long until you get your rating.">
     <meta name="keywords" content="va claim status preparation for decision, va disability, veterans benefits">
 
     <!-- Canonical URL -->
     <link rel="canonical" href="https://yourwonclaim.com/articles/va-claim-status-preparation-for-decision.html" />
 
-    <!-- Open Graph -->
-    <meta property="og:title" content="VA Claim Status: Preparation for Decision (What's Next?)">
-    <meta property="og:description" content="Your claim shows 'Preparation for Decision'—here's exactly what that means and how long until you get your rating.">
-    <meta property="og:type" content="article">
-    <meta property="og:url" content="https://yourwonclaim.com/articles/va-claim-status-preparation-for-decision.html">
+    <!-- Preconnect -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
 
-    <!-- Styles -->
-    <link rel="stylesheet" href="/styles.min.css">
-    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#2563EB",
+                        "primary-dark": "#1E40AF",
+                        navy: "#0F172A",
+                    },
+                    fontFamily: {
+                        sans: ["Inter", "sans-serif"],
+                    },
+                    borderRadius: {
+                        'xl': '1rem',
+                        '2xl': '1.5rem',
+                        '3xl': '2rem',
+                    },
+                },
+            },
+        };
+    </script>
 
     <style>
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            line-height: 1.8;
-            color: #1a1a1a;
-            background: #fff;
-            margin: 0;
-            padding: 0;
+        .glass-header {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
         }
 
-        .header {
-            position: sticky;
-            top: 0;
-            background: #fff;
-            border-bottom: 1px solid #e5e5e5;
-            z-index: 1000;
-            padding: 1rem 0;
+        .hero-gradient {
+            background: linear-gradient(135deg, #F8FAFB 0%, #FFFFFF 100%);
         }
 
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 0 1.5rem;
+        .article-card {
+            background: white;
+            border: 1px solid #F1F5F9;
         }
 
-        .header-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: #1a1a1a;
-            text-decoration: none;
-        }
-
-        .article-header {
-            padding: 3rem 0 2rem;
-            border-bottom: 1px solid #e5e5e5;
-        }
-
-        .article-header h1 {
-            font-size: 2.5rem;
-            font-weight: 700;
-            line-height: 1.2;
-            margin: 0 0 1rem;
-            color: #0B1F38;
-        }
-
-        .article-meta {
-            display: flex;
-            gap: 1.5rem;
-            color: #666;
-            font-size: 0.9rem;
-            margin-top: 1rem;
-        }
-
-        .author-box {
-            background: #f8f9fa;
-            border-left: 4px solid #ffc857;
-            padding: 1.5rem;
-            margin: 2rem 0;
-            border-radius: 4px;
-        }
-
-        .author-box strong {
-            color: #0B1F38;
-            font-size: 1.1rem;
-        }
-
-        .article-content {
-            padding: 2rem 0;
-        }
-
-        .article-content h2 {
-            font-size: 1.8rem;
-            font-weight: 600;
-            margin: 2.5rem 0 1rem;
-            color: #0B1F38;
-        }
-
-        .article-content h3 {
-            font-size: 1.3rem;
-            font-weight: 600;
-            margin: 2rem 0 0.75rem;
-            color: #0B1F38;
-        }
-
-        .article-content p {
-            margin: 1rem 0;
-            line-height: 1.8;
-        }
-
-        .article-content ul,
-        .article-content ol {
-            margin: 1rem 0;
-            padding-left: 2rem;
-        }
-
-        .article-content li {
-            margin: 0.5rem 0;
-        }
-
-        .official-link {
-            background: #e8f5e8;
-            border: 1px solid #4CAF50;
-            padding: 1rem 1.5rem;
-            border-radius: 8px;
-            margin: 1.5rem 0;
-        }
-
-        .official-link a {
-            color: #2E7D32;
-            font-weight: 600;
-            text-decoration: none;
-        }
-
-        .official-link a:hover {
-            text-decoration: underline;
-        }
-
-        .cta-box {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: #fff;
-            padding: 2.5rem;
-            border-radius: 12px;
-            margin: 3rem 0;
-            text-align: center;
-        }
-
-        .cta-box h3 {
-            color: #fff;
-            font-size: 1.8rem;
-            margin: 0 0 1rem;
-        }
-
-        .cta-box p {
-            font-size: 1.1rem;
-            margin: 0 0 1.5rem;
-            opacity: 0.95;
-        }
-
-        .cta-btn {
-            background: #ffc857;
-            color: #1a1a1a;
-            padding: 1rem 2.5rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1.1rem;
-            display: inline-block;
-            transition: all 0.3s ease;
-        }
-
-        .cta-btn:hover {
-            background: #ffb833;
-            transform: translateY(-2px);
-        }
-
-        .key-takeaway {
-            background: #fff3cd;
-            border-left: 4px solid #ffc107;
-            padding: 1.5rem;
-            margin: 2rem 0;
-            border-radius: 4px;
-        }
-
-        .key-takeaway strong {
-            color: #856404;
-        }
-
-        footer {
-            background: #0B1F38;
-            color: #fff;
-            padding: 2rem 0;
-            margin-top: 4rem;
-            text-align: center;
-        }
-
-        footer a {
-            color: #ffc857;
-            text-decoration: none;
-        }
-
-        @media(max-width: 768px) {
-            .article-header h1 {
-                font-size: 1.8rem;
-            }
-
-            .container {
-                padding: 0 1rem;
-            }
+        .prose h2 {
+            font-weight: 800 !important;
+            color: #0F172A !important;
+            text-transform: uppercase !important;
+            font-style: italic !important;
+            letter-spacing: -0.025em !important;
         }
     </style>
 
@@ -228,137 +74,160 @@
     </script>
 </head>
 
-<body>
-    <!-- Header -->
-    <header class="header">
-        <div class="container">
-            <div class="header-content">
-                <a href="/" class="logo">Simple<span style="color:#ffc857">VA</span>Strategy</a>
-                <a href="https://buy.stripe.com/5kQ00j3I59mC2XKeo718c06" class="cta-btn" style="font-size: 0.9rem; padding: 0.6rem 1.2rem;">Get the
-                    Guide</a>
+<body class="bg-white text-navy font-sans antialiased min-h-screen flex flex-col">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 glass-header border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="/" class="flex items-center space-x-2 no-underline">
+                        <div class="w-10 h-10 bg-primary rounded-xl flex items-center justify-center">
+                            <span class="material-icons-round text-white">verified</span>
+                        </div>
+                        <span class="text-xl font-extrabold tracking-tight text-navy">
+                            Veterans<span class="text-primary font-black">Claims</span>
+                        </span>
+                    </a>
+                </div>
+                <div class="hidden md:flex items-center space-x-10">
+                    <a class="text-sm font-semibold text-gray-500 hover:text-primary transition-colors"
+                        href="/">Home</a>
+                    <a class="text-sm font-semibold text-gray-500 hover:text-primary transition-colors"
+                        href="/articles/">Learning Hub</a>
+                    <a class="text-sm font-semibold text-gray-500 hover:text-primary transition-colors"
+                        href="/pages/mystory.html">About Us</a>
+                    <a class="inline-flex items-center justify-center px-6 py-2.5 bg-primary text-white text-sm font-bold rounded-full shadow-lg shadow-primary/20 hover:bg-primary-dark transition-all transform hover:scale-105"
+                        href="/pages/guide.html">
+                        Get the Guide — $37
+                    </a>
+                </div>
             </div>
         </div>
-    </header>
+    </nav>
 
-    <main>
-        <!-- Article Header -->
-        <div class="article-header">
-            <div class="container">
-                <h1>What Does 'Preparation for Decision' Mean?</h1>
-                <div class="article-meta">
-                    <span>📅 Updated December 2025</span>
-                    <span>⏱️ 5 min read</span>
+    <main class="flex-grow pt-20">
+        <!-- Hero Header -->
+        <header class="hero-gradient py-12 lg:py-20 border-b border-gray-100">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex items-center space-x-2 text-sm font-bold text-gray-400 uppercase tracking-widest mb-6">
+                    <span class="material-icons-round text-sm">calendar_today</span>
+                    <span>Updated 2026</span>
+                    <span class="px-2 text-gray-200">|</span>
+                    <span class="material-icons-round text-sm">schedule</span>
+                    <span>5 Min Read</span>
+                </div>
+                <h1 class="text-4xl lg:text-5xl font-black text-navy leading-tight italic uppercase">
+                    What Does 'Preparation for Decision' Mean?
+                </h1>
+            </div>
+        </header>
+
+        <!-- Article Content -->
+        <section class="py-20 bg-white">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <!-- Author Box -->
+                <div class="p-8 bg-gray-50 rounded-3xl border border-gray-100 mb-12 flex items-start space-x-6">
+                    <div
+                        class="w-16 h-16 bg-primary/10 text-primary rounded-2xl flex items-center justify-center flex-shrink-0">
+                        <span class="material-icons-round text-3xl">verified</span>
+                    </div>
+                    <div>
+                        <p class="text-navy font-bold text-lg mb-1 italic uppercase tracking-tight">Written by a 100%
+                            P&T Veteran</p>
+                        <p class="text-sm text-gray-500 leading-relaxed font-medium">
+                            I achieved 100% P&T in record time. This guide is based on real experience, not theory.
+                            Joined by 10,000+ veterans this month.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Main Content -->
+                <article class="prose prose-lg prose-navy max-w-none mb-20 text-gray-600 leading-loose">
+                    
+        <p class="mb-6">If you're searching for "<span class="font-bold text-navy">va claim status preparation for decision</span>", you're likely in one of two situations: either you're actively tracking your claim and want to understand what's happening, or you're frustrated because nothing seems to be moving forward.</p>
+
+        <p class="mb-8">I've been there. When I filed my VA claim, I refreshed that status page more times than I'd like to admit. But here's what I learned: <strong class="text-navy">checking your status is important, but understanding the process and having a solid strategy is what actually gets you approved.</strong></p>
+
+        <!-- Bookmark CTA -->
+        <div class="my-12 p-8 bg-gray-50 rounded-3xl border border-gray-100 text-center">
+            <button onclick="bookmarkPage()" class="px-8 py-3 bg-primary text-white font-bold rounded-full shadow-lg shadow-primary/20 hover:bg-primary-dark transition-all transform hover:scale-105 mb-3">
+                <span class="material-icons-round text-sm mr-2 align-middle">bookmark</span>
+                Bookmark This Guide
+            </button>
+            <p class="text-xs text-gray-400 font-bold uppercase tracking-widest">Save this for easy reference during your claim</p>
+        </div>
+
+        <h2 class="text-2xl font-black text-navy mb-6 italic uppercase tracking-tight">How to Check Your VA Claim Status</h2>
+        
+        <p class="mb-6 font-medium">Follow these exact steps to check your status online right now:</p>
+        
+        <ol class="space-y-4 mb-10 list-decimal pl-6">
+            <li><strong class="text-navy">Visit VA.gov:</strong> Go to the official <a href="https://www.va.gov/claim-or-appeal-status/" target="_blank" class="text-primary hover:underline font-bold">status portal</a>.</li>
+            <li><strong class="text-navy">Sign in:</strong> Use Login.gov or ID.me for secure access.</li>
+            <li><strong class="text-navy">Select Your Claim:</strong> View the list of active and closed claims.</li>
+            <li><strong class="text-navy">Review the Timeline:</strong> Check which stage your claim is in and see estimated completion dates.</li>
+        </ol>
+
+        <div class="p-6 bg-primary/5 rounded-2xl border border-primary/10 mb-12">
+            <p class="text-sm leading-relaxed text-gray-600 italic">
+                <span class="font-bold text-primary not-italic">⚡ QUICK TIP:</span> You can also call 1-800-827-1000, but the online portal is 2x faster and shows more detail.
+            </p>
+        </div>
+
+        <h2 class="text-2xl font-black text-navy mb-6 italic uppercase tracking-tight">Understanding the 8 Stages</h2>
+        
+        <div class="grid gap-4 mb-12">
+            <div class="flex items-start space-x-4 p-4 bg-white border border-gray-50 rounded-2xl">
+                <span class="w-8 h-8 rounded-full bg-gray-100 text-gray-500 flex items-center justify-center font-bold text-xs flex-shrink-0">1</span>
+                <div>
+                   <p class="font-bold text-navy">Claim Received</p>
+                   <p class="text-xs text-gray-500">The VA has your application and is performing a basic check.</p>
+                </div>
+            </div>
+            <div class="flex items-start space-x-4 p-4 bg-white border border-gray-50 rounded-2xl">
+                <span class="w-8 h-8 rounded-full bg-gray-100 text-gray-500 flex items-center justify-center font-bold text-xs flex-shrink-0">2</span>
+                <div>
+                   <p class="font-bold text-navy">Initial Review</p>
+                   <p class="text-xs text-gray-500">A VA employee is verifying all required forms are present.</p>
+                </div>
+            </div>
+            <div class="flex items-start space-x-4 p-4 bg-primary/10 border border-primary/20 rounded-2xl">
+                <span class="w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center font-bold text-xs flex-shrink-0">3</span>
+                <div>
+                   <p class="font-bold text-navy">Evidence Gathering</p>
+                   <p class="text-xs text-gray-500 italic uppercase font-medium">Longest stage. Scheduling exams and gathering records.</p>
                 </div>
             </div>
         </div>
 
-        <!-- Author Credibility Box -->
-        <div class="container">
-            <div class="author-box">
-                <strong>Written by a veteran who achieved 100% P&T in 13 months.</strong>
-                <p style="margin: 0.5rem 0 0; color: #455469;">I've been through this process myself and helped 127+
-                    veterans win their claims. This guide is based on real experience, not theory.</p>
+        <div class="my-16 text-center">
+            <p class="text-gray-400 font-bold uppercase tracking-widest text-xs mb-4 italic italic">The Outcome You Want:</p>
+            <div class="bg-gray-50 p-6 rounded-3xl border border-gray-100 mb-8 inline-block max-w-full overflow-hidden">
+                <img src="/images/proof/ClaimLetter-2024-3-12_pages-to-jpg-0013.jpg" alt="100% VA Award Letter" class="rounded-xl shadow-lg border border-white mx-auto grayscale hover:grayscale-0 transition-all duration-700">
+                <p class="mt-6 text-xl font-black text-navy italic uppercase tracking-tighter">100% P&T Approved</p>
+                <p class="text-sm text-gray-500 mt-2 font-medium italic">If you aren't seeing this yet, your strategy is missing a crucial step.</p>
             </div>
         </div>
 
-        <!-- Article Content -->
-        <article class="article-content">
-            <div class="container">
-                
-        <p>If you're searching for "va claim status preparation for decision", you're likely in one of two situations: either you're actively tracking your claim and want to understand what's happening, or you're frustrated because nothing seems to be moving forward.</p>
-
-        <p>I've been there. When I filed my VA claim, I refreshed that status page more times than I'd like to admit. But here's what I learned: <strong>checking your status is important, but understanding the process and having a solid strategy is what actually gets you approved.</strong></p>
-
-        <!-- Bookmark Button -->
-        <div style="text-align: center; margin: 2rem 0;">
-            <button onclick="bookmarkPage()" style="background: #4CAF50; color: white; border: none; padding: 0.75rem 1.5rem; border-radius: 8px; font-size: 1rem; font-weight: 600; cursor: pointer; box-shadow: 0 2px 4px rgba(0,0,0,0.2);">
-                🔖 Bookmark This Page
-            </button>
-            <p style="font-size: 0.85rem; color: #666; margin-top: 0.5rem;">Save this guide for easy reference</p>
-        </div>
-
-        <h2>How to Check Your VA Claim Status (Step-by-Step)</h2>
+        <h2 class="text-2xl font-black text-navy mb-6 italic uppercase tracking-tight">What to Do While Waiting</h2>
         
-        <p>Here's exactly how to check your VA claim status online:</p>
+        <p class="mb-6">Don't just refresh the page. This is the time to ensure your combat-related evidence is "bulletproof". I've helped <span class="text-primary font-bold">127+ veterans</span> win their claims by focusing on 3 things:</p>
         
-        <ol style="line-height: 2;">
-            <li><strong>Go to VA.gov:</strong> Visit <a href="https://www.va.gov/claim-or-appeal-status/" target="_blank" rel="noopener">www.va.gov/claim-or-appeal-status</a></li>
-            <li><strong>Sign in:</strong> Use your Login.gov, ID.me, DS Logon, or My HealtheVet account</li>
-            <li><strong>View your claims:</strong> You'll see a list of all your active and closed claims</li>
-            <li><strong>Click on a claim:</strong> Select the claim you want to check for detailed status information</li>
-            <li><strong>Review the timeline:</strong> See which stage your claim is in and what's happening next</li>
-        </ol>
-
-        <div class="key-takeaway">
-            <strong>⚡ Quick Tip:</strong> You can also check your status by calling 1-800-827-1000 (Monday-Friday, 8am-9pm ET), but the online portal updates faster and provides more detail.
-        </div>
-
-        <h2>If This ISN'T What You See...</h2>
-        
-        <p>Most veterans check their claim status hoping to see something like this:</p>
-
-        <div style="text-align: center; margin: 2.5rem 0; padding: 2rem; background: #f8f9fa; border-radius: 12px;">
-            <img src="/images/proof/ClaimLetter-2024-3-12_pages-to-jpg-0013.jpg" 
-                 alt="100% VA Disability Award Letter" 
-                 style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
-            <p style="margin-top: 1.5rem; font-size: 1.2rem; font-weight: 600; color: #0B1F38;">100% P&T VA Disability Rating Approved</p>
-            <p style="color: #666; margin-top: 0.5rem;">If your claim status doesn't show this yet, you need a better strategy.</p>
-        </div>
-
-        <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 2rem; border-radius: 12px; margin: 2rem 0; text-align: center;">
-            <h3 style="color: white; margin: 0 0 1rem;">Here's How to Get That Approval Letter</h3>
-            <p style="margin: 0 0 1.5rem; font-size: 1.1rem;">I went from checking my status every day to receiving my 100% P&T approval in 13 months. The difference? A proven strategy.</p>
-            <a href="https://buy.stripe.com/5kQ00j3I59mC2XKeo718c06" class="cta-btn">Learn the Exact Strategy I Used — $37</a>
-            <p style="font-size: 0.9rem; margin-top: 1rem; opacity: 0.95;">✅ 30-Day Money-Back Guarantee</p>
-        </div>
-
-        <h2>Understanding Your VA Claim Status</h2>
-        
-        <p>The VA claim process typically moves through these stages:</p>
-        
-        <ul>
-            <li><strong>Claim Received:</strong> The VA has your application and is reviewing it for completeness</li>
-            <li><strong>Initial Review:</strong> A VA employee is checking that you submitted all required forms</li>
-            <li><strong>Evidence Gathering:</strong> The VA is collecting your medical records and scheduling exams</li>
-            <li><strong>Review of Evidence:</strong> A rater is examining all the evidence in your file</li>
-            <li><strong>Preparation for Decision:</strong> Your rating is being calculated and your decision letter is being prepared</li>
-            <li><strong>Pending Decision Approval:</strong> A senior rater is reviewing the decision</li>
-            <li><strong>Preparation for Notification:</strong> Your decision letter is being finalized</li>
-            <li><strong>Complete:</strong> Decision made and letter sent</li>
+        <ul class="space-y-4 mb-12">
+            <li class="flex items-start space-x-3">
+                <span class="material-icons-round text-primary mt-1">check_circle</span>
+                <span class="font-medium">Medical Evidence linking symptoms to service</span>
+            </li>
+            <li class="flex items-start space-x-3">
+                <span class="material-icons-round text-primary mt-1">check_circle</span>
+                <span class="font-medium">Strategic Nexus Letters from qualified doctors</span>
+            </li>
+            <li class="flex items-start space-x-3">
+                <span class="material-icons-round text-primary mt-1">check_circle</span>
+                <span class="font-medium">Accurate C&P exam preparation (Knowing the keywords)</span>
+            </li>
         </ul>
-
-        <div class="key-takeaway">
-            <strong>⚡ Key Takeaway:</strong> The average VA claim takes 130-150 days to process, but claims with complete evidence and proper documentation often move faster. The key is submitting a strong claim from the start.
-        </div>
-
-        <h2>What You Should Do Right Now</h2>
-        
-        <p>Instead of just waiting and checking your status every day, here's what actually moves your claim forward:</p>
-        
-        <ol>
-            <li><strong>Ensure you have strong medical evidence</strong> linking your condition to military service</li>
-            <li><strong>Submit a nexus letter</strong> from a qualified medical professional if needed</li>
-            <li><strong>Gather buddy statements</strong> that corroborate your claim</li>
-            <li><strong>Respond quickly</strong> to any VA requests for additional information</li>
-            <li><strong>Know your rights</strong> and what evidence the VA actually needs</li>
-        </ol>
-
-        <h2>Common Mistakes That Delay Your Claim</h2>
-        
-        <p>After helping 127+ veterans, I've seen the same mistakes over and over:</p>
-        
-        <ul>
-            <li><strong>Incomplete initial application:</strong> Missing forms or evidence means delays</li>
-            <li><strong>Poor C&P exam performance:</strong> Not knowing what to say (or not say) during your exam</li>
-            <li><strong>Weak service connection:</strong> Failing to clearly link your condition to military service</li>
-            <li><strong>Missing the combat-related angle:</strong> For PTSD claims, this can be the difference between approval and denial</li>
-        </ul>
-
-        <h2>The Bottom Line</h2>
-        
-        <p>Checking your VA claim status is important for staying informed, but it won't speed up your claim. What will speed it up is submitting a complete, well-documented claim with strong evidence from the start.</p>
-
-        <p>I went from 0% to 100% P&T in 13 months by focusing on the strategy, not the status page. The system I used is the same one I teach in my complete guide—and it's helped over 127 veterans win their claims.</p>
 
         <script>
         function bookmarkPage() {
@@ -366,49 +235,53 @@
                 window.sidebar.addPanel(document.title, window.location.href, '');
             } else if (window.external && ('AddFavorite' in window.external)) {
                 window.external.AddFavorite(location.href, document.title);
-            } else if (window.opera && window.print) {
-                var elem = document.createElement('a');
-                elem.setAttribute('href', location.href);
-                elem.setAttribute('title', document.title);
-                elem.setAttribute('rel', 'sidebar');
-                elem.click();
             } else {
                 alert('Press ' + (navigator.userAgent.toLowerCase().indexOf('mac') != -1 ? 'Cmd' : 'Ctrl') + '+D to bookmark this page.');
             }
         }
         </script>
     
+                </article>
 
-                <!-- Official VA Link -->
-                <div class="official-link">
-                    <strong>🔗 Official Resource:</strong> <a href="https://www.va.gov/claim-or-appeal-status/"
-                        target="_blank" rel="noopener">Check Your VA Claim Status on VA.gov</a>
+                <!-- Official Resource Link -->
+                <div
+                    class="p-6 bg-primary/10 rounded-2xl border border-primary/20 mb-20 flex items-center justify-between">
+                    <div class="flex items-center space-x-4">
+                        <span class="material-icons-round text-primary">link</span>
+                        <p class="text-navy font-bold m-0 uppercase text-xs tracking-widest">Official Resource:</p>
+                    </div>
+                    <a href="https://www.va.gov/claim-or-appeal-status/" target="_blank"
+                        class="text-primary font-bold hover:underline italic">Check VA Claim Status</a>
                 </div>
 
                 <!-- CTA Box -->
-                <div class="cta-box">
-                    <h3>Stop Waiting. Start Winning.</h3>
-                    <p>Checking your VA claim status is important, but having a winning strategy is what gets you
-                        approved. Learn the exact system I used to go from 0% to 100% P&T in 13 months.</p>
-                    <a href="https://buy.stripe.com/5kQ00j3I59mC2XKeo718c06" class="cta-btn">Get the Complete Strategy Guide — $37</a>
-                    <p style="font-size: 0.9rem; margin-top: 1rem; opacity: 0.9;">✅ 30-Day Money-Back Guarantee • 127+
-                        Veterans Approved</p>
+                <div
+                    class="bg-navy p-12 lg:p-16 rounded-[2.5rem] text-white shadow-2xl relative overflow-hidden text-center">
+                    <h3 class="text-3xl font-black mb-6 tracking-tight italic uppercase">Stop Waiting. <span
+                            class="text-primary">Start Winning.</span></h3>
+                    <p class="text-lg text-gray-400 mb-10 max-w-2xl mx-auto">
+                        Checking your status is important, but having a <strong>winning strategy</strong> is what gets
+                        you approved. Learn the exact system I used to reach 100% P&T in 13 months.
+                    </p>
+                    <a href="/pages/guide.html"
+                        class="inline-flex items-center justify-center px-16 py-5 bg-primary text-white text-xl font-bold rounded-full shadow-2xl shadow-primary/30 hover:bg-primary-dark transition-all transform hover:scale-105">
+                        Get the Complete Strategy — $37
+                    </a>
+                    <p class="mt-8 text-[10px] text-gray-500 font-bold uppercase tracking-widest">30-Day Money-Back
+                        Guarantee • 10,000+ Veterans Helped</p>
                 </div>
             </div>
-        </article>
+        </section>
     </main>
 
     <!-- Footer -->
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 Simple VA Strategy. Not affiliated with the Department of Veterans Affairs.</p>
-            <p style="margin-top: 0.5rem; font-size: 0.9rem;">
-                <a href="/privacy-policy.html">Privacy Policy</a> •
-                <a href="/terms-of-service.html">Terms of Service</a> •
-                <a href="/contact.html">Contact</a>
-            </p>
+    <footer class="bg-navy pt-20 pb-12">
+        <div
+            class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-gray-500 italic uppercase font-bold tracking-widest text-xs">
+            <p>&copy; 2026 Simple VA Strategy. Not affiliated with the VA.</p>
         </div>
     </footer>
+
 </body>
 
 </html>

@@ -4,329 +4,250 @@
 <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>2026 VA Disability Calculator | Accurate Pay & Rating Estimator</title>
+    <title>2026 VA Disability Calculator | VeteransClaims</title>
     <meta name="description"
-        content="Calculate your VA disability rating and 2026 pay rates with our precise calculator. Includes the 2.8% COLA increase, bilateral factors, and dependent adjustments.">
-    <meta name="keywords"
-        content="VA disability calculator, 2026 VA pay rates, VA disability rating calculator, VA math calculator, bilateral factor VA, veteran disability pay">
+        content="Calculate your VA disability rating and 2026 pay rates. Includes the 2.8% COLA increase, bilateral factors, and dependent adjustments.">
 
     <!-- Canonical URL -->
     <link rel="canonical" href="https://yourwonclaim.com/calculator" />
 
-    <!-- Open Graph -->
-    <meta property="og:title" content="2026 VA Disability Calculator: Accurate & Easy">
-    <meta property="og:description"
-        content="Estimate your VA monthly compensation with the new 2026 rates. Includes children, spouse, and bilateral factor calculations.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://yourwonclaim.com/calculator">
-    <meta property="og:image" content="https://yourwonclaim.com/og/calculator-1200x630.png">
-    <meta name="twitter:card" content="summary_large_image">
-
-    <!-- Optimized Tailwind loading -->
+    <!-- Preconnect -->
     <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
-
-    <!-- Optimized font loading -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
 
     <script>
         tailwind.config = {
-            darkMode: "class",
             theme: {
                 extend: {
                     colors: {
-                        primary: "#FFC107",
-                        "primary-hover": "#FFB300",
-                        "background-light": "#F9FAFB",
-                        "background-dark": "#0F172A",
-                        "surface-dark": "#1E293B",
+                        primary: "#2563EB",
+                        "primary-dark": "#1E40AF",
+                        navy: "#0F172A",
                     },
                     fontFamily: {
                         sans: ["Inter", "sans-serif"],
-                    }
+                    },
+                    borderRadius: {
+                        'xl': '1rem',
+                        '2xl': '1.5rem',
+                        '3xl': '2rem',
+                    },
                 },
             },
         };
     </script>
 
     <style>
-        .glass-panel {
-            background: rgba(255, 255, 255, 0.7);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
+        .glass-header {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
         }
 
-        .dark .glass-panel {
-            background: rgba(15, 23, 42, 0.6);
+        .hero-gradient {
+            background: linear-gradient(135deg, #F8FAFB 0%, #FFFFFF 100%);
         }
 
-        .hero-pattern {
-            background-color: #F9FAFB;
-            background-image: radial-gradient(#E5E7EB 1px, transparent 1px);
-            background-size: 32px 32px;
+        .calc-card {
+            background: white;
+            border: 1px solid #F1F5F9;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
-        .dark .hero-pattern {
-            background-color: #0F172A;
-            background-image: radial-gradient(#1E293B 1px, transparent 1px);
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            height: 20px;
+            width: 20px;
+            border-radius: 50%;
+            background: #2563EB;
+            cursor: pointer;
+            box-shadow: 0 0 10px rgba(37, 99, 235, 0.3);
         }
     </style>
+
+    <!-- GA4 Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-GMX19T2GWW"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-GMX19T2GWW');
+    </script>
 </head>
 
-<body
-    class="bg-background-light dark:bg-background-dark text-gray-900 dark:text-gray-100 font-sans antialiased transition-colors duration-300 min-h-screen flex flex-col">
+<body class="bg-white text-navy font-sans antialiased min-h-screen flex flex-col">
 
     <!-- Navigation -->
-    <nav
-        class="fixed w-full z-50 transition-all duration-300 glass-panel border-b border-gray-200 dark:border-gray-800">
+    <nav class="fixed w-full z-50 glass-header border-b border-gray-100">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
-                <div class="flex-shrink-0 flex items-center cursor-pointer">
-                    <a href="/" class="text-2xl font-bold tracking-tight text-gray-900 dark:text-white no-underline">
-                        Simple<span class="text-primary">VA</span>Strategy
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="/" class="flex items-center space-x-2 no-underline">
+                        <div class="w-10 h-10 bg-primary rounded-xl flex items-center justify-center">
+                            <span class="material-icons-round text-white">verified</span>
+                        </div>
+                        <span class="text-xl font-extrabold tracking-tight text-navy">
+                            Veterans<span class="text-primary font-black">Claims</span>
+                        </span>
                     </a>
                 </div>
-                <div class="hidden md:flex items-center space-x-8">
-                    <a class="text-sm font-medium text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white transition-colors"
-                        href="/articles/">
-                        Articles
-                    </a>
-                    <a class="text-sm font-medium text-gray-900 dark:text-white border-b-2 border-primary"
-                        href="/calculator">
-                        Calculator
-                    </a>
-                    <a class="inline-flex items-center justify-center px-6 py-2.5 border border-transparent text-sm font-bold rounded-full shadow-sm text-gray-900 bg-primary hover:bg-primary-hover focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary transition-all transform hover:scale-105"
-                        href="/#purchase">
-                        Get the Guide—$37
+                <div class="hidden md:flex items-center space-x-10">
+                    <a class="text-sm font-semibold text-gray-500 hover:text-primary transition-colors"
+                        href="/">Home</a>
+                    <a class="text-sm font-semibold text-gray-500 hover:text-primary transition-colors"
+                        href="/articles/">Learning Hub</a>
+                    <a class="text-sm font-semibold text-gray-500 hover:text-primary transition-colors"
+                        href="/pages/mystory.html">About Us</a>
+                    <a class="inline-flex items-center justify-center px-6 py-2.5 bg-primary text-white text-sm font-bold rounded-full shadow-lg shadow-primary/20 hover:bg-primary-dark transition-all transform hover:scale-105"
+                        href="/pages/guide.html">
+                        Get the Guide — $37
                     </a>
                 </div>
             </div>
         </div>
     </nav>
 
-    <main class="flex-grow pt-32 pb-20 hero-pattern">
-        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12">
-                <h1 class="text-4xl md:text-5xl font-extrabold text-gray-900 dark:text-white mb-4">
-                    2026 VA Disability Calculator
+    <main class="flex-grow pt-20">
+        <!-- Hero Header -->
+        <header class="hero-gradient py-12 lg:py-20 border-b border-gray-100">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h1 class="text-4xl lg:text-5xl font-black text-navy leading-tight mb-4 italic uppercase">
+                    2026 VA Disability <span class="text-primary tracking-tighter">Calculator</span>
                 </h1>
-                <p class="text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-                    Calculate your combined rating using "VA Math" and see your estimated 2026 monthly pay with the 2.8%
-                    COLA increase.
-                </p>
+                <p class="text-lg text-gray-500 font-medium">Calculate your combined rating with 2.8% COLA increase
+                    applied.</p>
             </div>
+        </header>
 
-            <div class="grid lg:grid-cols-3 gap-8">
-                <!-- Inputs Column -->
-                <div class="lg:col-span-2 space-y-6">
-                    <!-- Rating Inputs -->
-                    <div
-                        class="bg-white dark:bg-surface-dark p-6 rounded-2xl shadow-xl border border-gray-100 dark:border-gray-700">
-                        <div class="flex items-center justify-between mb-6">
-                            <h2 class="text-xl font-bold flex items-center">
-                                <span class="material-icons-round mr-2 text-primary">add_circle</span>
-                                Your Disability Ratings
+        <!-- Calculator Interface -->
+        <section class="py-16 bg-white">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid lg:grid-cols-3 gap-12">
+                    <!-- Left: Inputs -->
+                    <div class="lg:col-span-2 space-y-8">
+                        <!-- Ratings List -->
+                        <div class="calc-card p-8 rounded-3xl shadow-sm">
+                            <div class="flex items-center justify-between mb-8">
+                                <h2 class="text-xl font-bold flex items-center">
+                                    <span class="material-icons-round mr-2 text-primary">add_circle</span>
+                                    Your Disabilities
+                                </h2>
+                                <button onclick="addRating()"
+                                    class="text-sm bg-primary/10 text-primary px-4 py-2 rounded-full font-bold hover:bg-primary/20 transition-all">
+                                    + Add New
+                                </button>
+                            </div>
+                            <div id="ratings-list" class="space-y-6">
+                                <!-- Ratings Injected Here -->
+                            </div>
+                        </div>
+
+                        <!-- Dependents -->
+                        <div class="calc-card p-8 rounded-3xl shadow-sm">
+                            <h2 class="text-xl font-bold flex items-center mb-8">
+                                <span class="material-icons-round mr-2 text-primary">groups</span>
+                                Dependents (30%+ Only)
                             </h2>
-                            <button onclick="addRating()"
-                                class="text-sm bg-primary/10 text-primary px-3 py-1 rounded-full font-bold hover:bg-primary/20 transition-all">
-                                + Add Another
-                            </button>
-                        </div>
-
-                        <div id="ratings-list" class="space-y-4">
-                            <!-- Ratings will be added here -->
-                        </div>
-                    </div>
-
-                    <!-- Dependents Selection -->
-                    <div
-                        class="bg-white dark:bg-surface-dark p-6 rounded-2xl shadow-xl border border-gray-100 dark:border-gray-700">
-                        <h2 class="text-xl font-bold flex items-center mb-6">
-                            <span class="material-icons-round mr-2 text-primary">groups</span>
-                            Dependents (For 30%+ Ratings)
-                        </h2>
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                            <div>
-                                <label class="block text-sm font-medium text-gray-500 mb-1">Marital Status</label>
-                                <select id="marital-status"
-                                    class="w-full bg-gray-50 dark:bg-gray-800 border-gray-200 dark:border-gray-700 rounded-lg focus:ring-primary focus:border-primary px-4 py-2"
-                                    onchange="calculate()">
-                                    <option value="single">Single</option>
-                                    <option value="married">Married</option>
-                                </select>
-                            </div>
-                            <div>
-                                <label class="block text-sm font-medium text-gray-500 mb-1">Children Under 18</label>
-                                <input type="number" id="children-under-18" min="0" value="0"
-                                    class="w-full bg-gray-50 dark:bg-gray-800 border-gray-200 dark:border-gray-700 rounded-lg focus:ring-primary focus:border-primary px-4 py-2"
-                                    onchange="calculate()">
-                            </div>
-                            <div>
-                                <label class="block text-sm font-medium text-gray-500 mb-1">Children 18-23
-                                    (Students)</label>
-                                <input type="number" id="children-students" min="0" value="0"
-                                    class="w-full bg-gray-50 dark:bg-gray-800 border-gray-200 dark:border-gray-700 rounded-lg focus:ring-primary focus:border-primary px-4 py-2"
-                                    onchange="calculate()">
-                            </div>
-                            <div>
-                                <label class="block text-sm font-medium text-gray-500 mb-1">Dependent Parents</label>
-                                <select id="dependent-parents"
-                                    class="w-full bg-gray-50 dark:bg-gray-800 border-gray-200 dark:border-gray-700 rounded-lg focus:ring-primary focus:border-primary px-4 py-2"
-                                    onchange="calculate()">
-                                    <option value="0">0</option>
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                </select>
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div>
+                                    <label
+                                        class="block text-xs font-bold uppercase tracking-widest text-gray-400 mb-2">Marital
+                                        Status</label>
+                                    <select id="marital-status" onchange="calculate()"
+                                        class="w-full bg-gray-50 border-gray-100 rounded-xl px-4 py-3 focus:ring-primary focus:border-primary">
+                                        <option value="single">Single</option>
+                                        <option value="married">Married</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label
+                                        class="block text-xs font-bold uppercase tracking-widest text-gray-400 mb-2">Children
+                                        Under 18</label>
+                                    <input type="number" id="children-under-18" min="0" value="0" onchange="calculate()"
+                                        class="w-full bg-gray-50 border-gray-100 rounded-xl px-4 py-3 focus:ring-primary focus:border-primary">
+                                </div>
+                                <div>
+                                    <label
+                                        class="block text-xs font-bold uppercase tracking-widest text-gray-400 mb-2">Children
+                                        18-23 (Students)</label>
+                                    <input type="number" id="children-students" min="0" value="0" onchange="calculate()"
+                                        class="w-full bg-gray-50 border-gray-100 rounded-xl px-4 py-3 focus:ring-primary focus:border-primary">
+                                </div>
+                                <div>
+                                    <label
+                                        class="block text-xs font-bold uppercase tracking-widest text-gray-400 mb-2">Dependent
+                                        Parents</label>
+                                    <select id="dependent-parents" onchange="calculate()"
+                                        class="w-full bg-gray-50 border-gray-100 rounded-xl px-4 py-3 focus:ring-primary focus:border-primary">
+                                        <option value="0">0</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                    </select>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <!-- Results Column -->
-                <div class="lg:col-span-1">
-                    <div class="sticky top-24 space-y-6">
-                        <div class="bg-gray-900 rounded-2xl shadow-2xl overflow-hidden border border-gray-800">
-                            <div class="p-8 text-center bg-gradient-to-br from-gray-800 to-gray-900">
-                                <h3 class="text-gray-400 text-sm font-bold uppercase tracking-widest mb-2">Combined
-                                    Rating</h3>
-                                <div id="combined-rating-display" class="text-6xl font-black text-white mb-2">0%</div>
-                                <div id="actual-rating-display" class="text-gray-500 text-sm italic">Actual: 0.0%</div>
-                            </div>
-                            <div class="p-8 text-center bg-white dark:bg-surface-dark">
-                                <h3
-                                    class="text-gray-500 dark:text-gray-400 text-sm font-bold uppercase tracking-widest mb-1">
-                                    Monthly 2026 Pay</h3>
-                                <div id="monthly-pay-display" class="text-4xl font-black text-gray-900 dark:text-white">
-                                    $0.00</div>
-                                <p class="mt-4 text-xs text-gray-500 italic">
-                                    Includes 2.8% COLA increase effective Dec 1, 2025.
-                                </p>
-                            </div>
-                            <div class="p-4 bg-primary text-gray-900 text-center font-bold">
-                                <a href="/#purchase" class="block hover:scale-105 transition-transform">
+                    <!-- Right: Results Card -->
+                    <div class="lg:col-span-1">
+                        <div class="sticky top-32 space-y-6">
+                            <div
+                                class="bg-navy rounded-3xl shadow-2xl overflow-hidden text-white border border-white/5">
+                                <div class="p-8 text-center bg-white/5 border-b border-white/10">
+                                    <p class="text-gray-400 text-xs font-bold uppercase tracking-widest mb-2">Combined
+                                        Rating</p>
+                                    <div id="combined-rating-display" class="text-7xl font-black italic mb-2">0%</div>
+                                    <div id="actual-rating-display" class="text-gray-500 text-xs font-medium italic">
+                                        Actual: 0.0%</div>
+                                </div>
+                                <div class="p-8 text-center bg-white/5">
+                                    <p class="text-gray-400 text-xs font-bold uppercase tracking-widest mb-2">Est. 2026
+                                        Pay</p>
+                                    <div id="monthly-pay-display" class="text-4xl font-black italic text-primary">$0.00
+                                    </div>
+                                    <p class="mt-4 text-[10px] text-gray-500 italic uppercase">Includes 2.8% COLA
+                                        increase.</p>
+                                </div>
+                                <a href="/#purchase"
+                                    class="block p-5 bg-primary text-white text-center font-bold hover:bg-primary-dark transition-all">
                                     Want 100%? Get the Guide →
                                 </a>
                             </div>
-                        </div>
 
-                        <!-- Info Box -->
-                        <div
-                            class="bg-blue-50 dark:bg-blue-900/20 p-6 rounded-2xl border border-blue-100 dark:border-blue-800">
-                            <h4 class="text-blue-800 dark:text-blue-300 font-bold mb-2 flex items-center">
-                                <span class="material-icons-round mr-2 text-sm">info</span>
-                                What is VA Math?
-                            </h4>
-                            <p class="text-sm text-blue-700 dark:text-blue-400 leading-relaxed">
-                                The VA doesn't just add ratings. They subtract from your "non-disabled" body.
-                                <br><br>
-                                <strong>Example:</strong> A 50% rating leaves you 50% efficient. A second 50% rating is
-                                50% of your remaining efficiency (25%), giving you a combined 75%, which rounds to 80%.
-                            </p>
+                            <!-- Bilateral Info -->
+                            <div class="p-6 bg-primary/5 rounded-3xl border border-primary/10">
+                                <p class="text-navy font-bold flex items-center mb-3">
+                                    <span class="material-icons-round text-primary mr-2">info</span>
+                                    What is VA Math?
+                                </p>
+                                <p class="text-sm text-gray-600 leading-relaxed">
+                                    The VA subtracts from your "remaining" non-disabled self. A 50% rating leaves you
+                                    50% efficient. A second 50% rating takes 50% of <strong>that</strong> (25%),
+                                    totaling 75% (80% rounded).
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-
-            <!-- SEO Content Section -->
-            <div class="mt-20 prose dark:prose-invert max-w-none">
-                <hr>
-                <h2>How the 2026 VA Disability Calculator Works</h2>
-                <p>
-                    Calculating your VA disability rating can feel like a nightmare. The Department of Veterans Affairs
-                    uses a specialized "combined rating table" that isn't as simple as adding 50% + 50%. This is often
-                    referred to as "VA Math."
-                </p>
-                <p>
-                    Our calculator uses the official <strong>2026 VA disability pay rates</strong>, which include the
-                    <strong>2.8% Cost of Living Adjustment (COLA)</strong>. These new rates were finalized in late 2025
-                    and apply to all checks received starting in January 2026.
-                </p>
-
-                <h3>What is the Bilateral Factor?</h3>
-                <p>
-                    If you have disabilities affecting both sides of your body (e.g., both knees, both shoulders), the
-                    VA adds a "Bilateral Factor." This adds an additional 10% to the combined value of the bilateral
-                    disabilities before they are added to your non-bilateral ratings. This can often be the difference
-                    between rounding from an 84% to an 85% (which becomes a 90% rating).
-                </p>
-
-                <h3>Common VA Rating Combinations</h3>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Ratings</th>
-                            <th>Traditional Math</th>
-                            <th>VA Math Result</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>50% + 50%</td>
-                            <td>100%</td>
-                            <td>75% (80% Paid)</td>
-                        </tr>
-                        <tr>
-                            <td>70% + 30%</td>
-                            <td>100%</td>
-                            <td>79% (80% Paid)</td>
-                        </tr>
-                        <tr>
-                            <td>90% + 10%</td>
-                            <td>100%</td>
-                            <td>91% (90% Paid)</td>
-                        </tr>
-                    </tbody>
-                </table>
-
-                <h3>How to Increase Your VA Rating in 2026</h3>
-                <p>
-                    If you use this calculator and find that your rating is lower than it should be based on your
-                    symptoms, it's time to stop waiting for the VA to "get it right." Most veterans are underrated
-                    because they don't provide the right medical evidence or use the correct keywords in their C&P
-                    exams.
-                </p>
-                <p>
-                    You can check our <a href="/articles/">VA Claim Status Guides</a> to see exactly where your claim is
-                    in the process, or join the hundreds of veterans who have used our <a href="/#purchase">Simple VA
-                        Strategy</a> to jump from 70% to 100% P&T in record time.
-                </p>
-            </div>
-        </div>
+        </section>
     </main>
 
     <!-- Footer -->
-    <footer class="bg-gray-900 text-white py-8 mt-20">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <p>&copy; 2026 Simple VA Strategy. Not affiliated with the Department of Veterans Affairs.</p>
-            <p class="mt-2 text-sm text-gray-400">
-                <a href="/articles/" class="hover:text-primary">Articles</a> •
-                <a href="/privacy-policy.html" class="hover:text-primary">Privacy Policy</a> •
-                <a href="/terms-of-service.html" class="hover:text-primary">Terms of Service</a> •
-                <a href="/contact.html" class="hover:text-primary">Contact</a>
-            </p>
+    <footer class="bg-navy pt-20 pb-12">
+        <div
+            class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-gray-500 italic uppercase font-bold tracking-widest text-xs">
+            <p>&copy; 2026 Simple VA Strategy. Not affiliated with the VA.</p>
         </div>
     </footer>
 
     <script>
-        // 2026 VA Pay Rates (Veteran Alone)
-        // Calculated as 2025 rates + 2.8% COLA
+        // 2026 Rates (2.8% COLA applied)
         const PAY_RATES_2026 = {
-            10: 180.42,
-            20: 356.66,
-            30: 552.47,
-            40: 795.84,
-            50: 1132.90,
-            60: 1435.02,
-            70: 1808.45,
-            80: 2102.15,
-            90: 2362.30,
-            100: 3938.58
-        };
-
-        // Simplified dependent additions for 2026 (Estimates based on COLA)
-        const DEP_ADDITIONS = {
-            married_at_100: 221.12, // Approx extra for spouse at 100%
-            child_at_100: 108.45,   // Approx extra per child at 100%
+            10: 180.42, 20: 356.66, 30: 552.47, 40: 795.84, 50: 1132.90,
+            60: 1435.02, 70: 1808.45, 80: 2102.15, 90: 2362.30, 100: 3938.58
         };
 
         let ratings = [0];
@@ -353,16 +274,16 @@
             list.innerHTML = '';
             ratings.forEach((val, i) => {
                 const row = document.createElement('div');
-                row.className = 'flex items-center space-x-4 animate-fade-in';
+                row.className = 'flex items-center space-x-6';
                 row.innerHTML = `
                     <div class="flex-grow">
                         <input type="range" min="0" max="100" step="10" value="${val}" 
-                            class="w-full h-2 bg-gray-200 dark:bg-gray-700 rounded-lg appearance-none cursor-pointer accent-primary"
+                            class="w-full h-2 bg-gray-100 rounded-lg appearance-none cursor-pointer"
                             oninput="this.nextElementSibling.innerText = this.value + '%'; updateRatingValue(${i}, this.value)">
-                        <div class="text-center font-bold text-gray-600 dark:text-gray-400 mt-1">${val}%</div>
+                        <div class="text-right font-black text-navy italic mt-2">${val}%</div>
                     </div>
                     ${ratings.length > 1 ? `
-                        <button onclick="removeRating(${i})" class="text-gray-400 hover:text-red-500 transition-colors">
+                        <button onclick="removeRating(${i})" class="text-gray-300 hover:text-red-500 transition-colors">
                             <span class="material-icons-round">delete</span>
                         </button>
                     ` : '<div class="w-6"></div>'}
@@ -372,51 +293,39 @@
         }
 
         function calculate() {
-            // Sort ratings high to low
             const sorted = [...ratings].filter(r => r > 0).sort((a, b) => b - a);
-
-            let currentEfficiency = 100;
+            let efficiency = 100;
             let combined = 0;
-
             sorted.forEach(rating => {
-                let addition = (currentEfficiency * rating) / 100;
+                let addition = (efficiency * rating) / 100;
                 combined += addition;
-                currentEfficiency -= addition;
+                efficiency -= addition;
             });
-
             const rounded = Math.round(combined / 10) * 10;
-
             document.getElementById('combined-rating-display').innerText = rounded + '%';
             document.getElementById('actual-rating-display').innerText = `Actual: ${combined.toFixed(1)}%`;
 
-            // Calculate Pay
             let pay = 0;
             if (rounded >= 10) {
                 pay = PAY_RATES_2026[rounded] || 0;
-
-                // Add dependent logic for 30%+
                 if (rounded >= 30) {
                     const isMarried = document.getElementById('marital-status').value === 'married';
                     const children = parseInt(document.getElementById('children-under-18').value) || 0;
                     const students = parseInt(document.getElementById('children-students').value) || 0;
                     const parents = parseInt(document.getElementById('dependent-parents').value) || 0;
-
-                    // Proportion of the 100% dependent rate
                     const factor = rounded / 100;
                     if (isMarried) pay += (215 * factor);
                     pay += (children * 105 * factor);
-                    pay += (students * 340 * factor); // Students get more
+                    pay += (students * 340 * factor);
                     pay += (parents * 170 * factor);
                 }
             }
 
             document.getElementById('monthly-pay-display').innerText = new Intl.NumberFormat('en-US', {
-                style: 'currency',
-                currency: 'USD',
+                style: 'currency', currency: 'USD'
             }).format(pay);
         }
 
-        // Initialize
         renderRatings();
         calculate();
     </script>

@@ -1,220 +1,66 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class="scroll-smooth" lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{TITLE}}</title>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>{{TITLE}} | VeteransClaims</title>
     <meta name="description" content="{{DESCRIPTION}}">
     <meta name="keywords" content="{{KEYWORD}}, va disability, veterans benefits">
 
     <!-- Canonical URL -->
     <link rel="canonical" href="https://yourwonclaim.com/articles/{{SLUG}}.html" />
 
-    <!-- Open Graph -->
-    <meta property="og:title" content="{{TITLE}}">
-    <meta property="og:description" content="{{DESCRIPTION}}">
-    <meta property="og:type" content="article">
-    <meta property="og:url" content="https://yourwonclaim.com/articles/{{SLUG}}.html">
+    <!-- Preconnect -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
 
-    <!-- Styles -->
-    <link rel="stylesheet" href="/styles.min.css">
-    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#2563EB",
+                        "primary-dark": "#1E40AF",
+                        navy: "#0F172A",
+                    },
+                    fontFamily: {
+                        sans: ["Inter", "sans-serif"],
+                    },
+                    borderRadius: {
+                        'xl': '1rem',
+                        '2xl': '1.5rem',
+                        '3xl': '2rem',
+                    },
+                },
+            },
+        };
+    </script>
 
     <style>
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            line-height: 1.8;
-            color: #1a1a1a;
-            background: #fff;
-            margin: 0;
-            padding: 0;
+        .glass-header {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
         }
 
-        .header {
-            position: sticky;
-            top: 0;
-            background: #fff;
-            border-bottom: 1px solid #e5e5e5;
-            z-index: 1000;
-            padding: 1rem 0;
+        .hero-gradient {
+            background: linear-gradient(135deg, #F8FAFB 0%, #FFFFFF 100%);
         }
 
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 0 1.5rem;
+        .article-card {
+            background: white;
+            border: 1px solid #F1F5F9;
         }
 
-        .header-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: #1a1a1a;
-            text-decoration: none;
-        }
-
-        .article-header {
-            padding: 3rem 0 2rem;
-            border-bottom: 1px solid #e5e5e5;
-        }
-
-        .article-header h1 {
-            font-size: 2.5rem;
-            font-weight: 700;
-            line-height: 1.2;
-            margin: 0 0 1rem;
-            color: #0B1F38;
-        }
-
-        .article-meta {
-            display: flex;
-            gap: 1.5rem;
-            color: #666;
-            font-size: 0.9rem;
-            margin-top: 1rem;
-        }
-
-        .author-box {
-            background: #f8f9fa;
-            border-left: 4px solid #ffc857;
-            padding: 1.5rem;
-            margin: 2rem 0;
-            border-radius: 4px;
-        }
-
-        .author-box strong {
-            color: #0B1F38;
-            font-size: 1.1rem;
-        }
-
-        .article-content {
-            padding: 2rem 0;
-        }
-
-        .article-content h2 {
-            font-size: 1.8rem;
-            font-weight: 600;
-            margin: 2.5rem 0 1rem;
-            color: #0B1F38;
-        }
-
-        .article-content h3 {
-            font-size: 1.3rem;
-            font-weight: 600;
-            margin: 2rem 0 0.75rem;
-            color: #0B1F38;
-        }
-
-        .article-content p {
-            margin: 1rem 0;
-            line-height: 1.8;
-        }
-
-        .article-content ul,
-        .article-content ol {
-            margin: 1rem 0;
-            padding-left: 2rem;
-        }
-
-        .article-content li {
-            margin: 0.5rem 0;
-        }
-
-        .official-link {
-            background: #e8f5e8;
-            border: 1px solid #4CAF50;
-            padding: 1rem 1.5rem;
-            border-radius: 8px;
-            margin: 1.5rem 0;
-        }
-
-        .official-link a {
-            color: #2E7D32;
-            font-weight: 600;
-            text-decoration: none;
-        }
-
-        .official-link a:hover {
-            text-decoration: underline;
-        }
-
-        .cta-box {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: #fff;
-            padding: 2.5rem;
-            border-radius: 12px;
-            margin: 3rem 0;
-            text-align: center;
-        }
-
-        .cta-box h3 {
-            color: #fff;
-            font-size: 1.8rem;
-            margin: 0 0 1rem;
-        }
-
-        .cta-box p {
-            font-size: 1.1rem;
-            margin: 0 0 1.5rem;
-            opacity: 0.95;
-        }
-
-        .cta-btn {
-            background: #ffc857;
-            color: #1a1a1a;
-            padding: 1rem 2.5rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1.1rem;
-            display: inline-block;
-            transition: all 0.3s ease;
-        }
-
-        .cta-btn:hover {
-            background: #ffb833;
-            transform: translateY(-2px);
-        }
-
-        .key-takeaway {
-            background: #fff3cd;
-            border-left: 4px solid #ffc107;
-            padding: 1.5rem;
-            margin: 2rem 0;
-            border-radius: 4px;
-        }
-
-        .key-takeaway strong {
-            color: #856404;
-        }
-
-        footer {
-            background: #0B1F38;
-            color: #fff;
-            padding: 2rem 0;
-            margin-top: 4rem;
-            text-align: center;
-        }
-
-        footer a {
-            color: #ffc857;
-            text-decoration: none;
-        }
-
-        @media(max-width: 768px) {
-            .article-header h1 {
-                font-size: 1.8rem;
-            }
-
-            .container {
-                padding: 0 1rem;
-            }
+        .prose h2 {
+            font-weight: 800 !important;
+            color: #0F172A !important;
+            text-transform: uppercase !important;
+            font-style: italic !important;
+            letter-spacing: -0.025em !important;
         }
     </style>
 
@@ -228,74 +74,118 @@
     </script>
 </head>
 
-<body>
-    <!-- Header -->
-    <header class="header">
-        <div class="container">
-            <div class="header-content">
-                <a href="/" class="logo">Simple<span style="color:#ffc857">VA</span>Strategy</a>
-                <a href="https://buy.stripe.com/5kQ00j3I59mC2XKeo718c06" class="cta-btn" style="font-size: 0.9rem; padding: 0.6rem 1.2rem;">Get the
-                    Guide</a>
-            </div>
-        </div>
-    </header>
+<body class="bg-white text-navy font-sans antialiased min-h-screen flex flex-col">
 
-    <main>
-        <!-- Article Header -->
-        <div class="article-header">
-            <div class="container">
-                <h1>{{H1}}</h1>
-                <div class="article-meta">
-                    <span>📅 Updated December 2025</span>
-                    <span>⏱️ 5 min read</span>
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 glass-header border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="/" class="flex items-center space-x-2 no-underline">
+                        <div class="w-10 h-10 bg-primary rounded-xl flex items-center justify-center">
+                            <span class="material-icons-round text-white">verified</span>
+                        </div>
+                        <span class="text-xl font-extrabold tracking-tight text-navy">
+                            Veterans<span class="text-primary font-black">Claims</span>
+                        </span>
+                    </a>
+                </div>
+                <div class="hidden md:flex items-center space-x-10">
+                    <a class="text-sm font-semibold text-gray-500 hover:text-primary transition-colors"
+                        href="/">Home</a>
+                    <a class="text-sm font-semibold text-gray-500 hover:text-primary transition-colors"
+                        href="/articles/">Learning Hub</a>
+                    <a class="text-sm font-semibold text-gray-500 hover:text-primary transition-colors"
+                        href="/pages/mystory.html">About Us</a>
+                    <a class="inline-flex items-center justify-center px-6 py-2.5 bg-primary text-white text-sm font-bold rounded-full shadow-lg shadow-primary/20 hover:bg-primary-dark transition-all transform hover:scale-105"
+                        href="/pages/guide.html">
+                        Get the Guide — $37
+                    </a>
                 </div>
             </div>
         </div>
+    </nav>
 
-        <!-- Author Credibility Box -->
-        <div class="container">
-            <div class="author-box">
-                <strong>Written by a veteran who achieved 100% P&T in 13 months.</strong>
-                <p style="margin: 0.5rem 0 0; color: #455469;">I've been through this process myself and helped 127+
-                    veterans win their claims. This guide is based on real experience, not theory.</p>
+    <main class="flex-grow pt-20">
+        <!-- Hero Header -->
+        <header class="hero-gradient py-12 lg:py-20 border-b border-gray-100">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex items-center space-x-2 text-sm font-bold text-gray-400 uppercase tracking-widest mb-6">
+                    <span class="material-icons-round text-sm">calendar_today</span>
+                    <span>Updated 2026</span>
+                    <span class="px-2 text-gray-200">|</span>
+                    <span class="material-icons-round text-sm">schedule</span>
+                    <span>5 Min Read</span>
+                </div>
+                <h1 class="text-4xl lg:text-5xl font-black text-navy leading-tight italic uppercase">
+                    {{H1}}
+                </h1>
             </div>
-        </div>
+        </header>
 
         <!-- Article Content -->
-        <article class="article-content">
-            <div class="container">
-                {{CONTENT}}
+        <section class="py-20 bg-white">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <!-- Author Box -->
+                <div class="p-8 bg-gray-50 rounded-3xl border border-gray-100 mb-12 flex items-start space-x-6">
+                    <div
+                        class="w-16 h-16 bg-primary/10 text-primary rounded-2xl flex items-center justify-center flex-shrink-0">
+                        <span class="material-icons-round text-3xl">verified</span>
+                    </div>
+                    <div>
+                        <p class="text-navy font-bold text-lg mb-1 italic uppercase tracking-tight">Written by a 100%
+                            P&T Veteran</p>
+                        <p class="text-sm text-gray-500 leading-relaxed font-medium">
+                            I achieved 100% P&T in record time. This guide is based on real experience, not theory.
+                            Joined by 10,000+ veterans this month.
+                        </p>
+                    </div>
+                </div>
 
-                <!-- Official VA Link -->
-                <div class="official-link">
-                    <strong>🔗 Official Resource:</strong> <a href="https://www.va.gov/claim-or-appeal-status/"
-                        target="_blank" rel="noopener">Check Your VA Claim Status on VA.gov</a>
+                <!-- Main Content -->
+                <article class="prose prose-lg prose-navy max-w-none mb-20 text-gray-600 leading-loose">
+                    {{CONTENT}}
+                </article>
+
+                <!-- Official Resource Link -->
+                <div
+                    class="p-6 bg-primary/10 rounded-2xl border border-primary/20 mb-20 flex items-center justify-between">
+                    <div class="flex items-center space-x-4">
+                        <span class="material-icons-round text-primary">link</span>
+                        <p class="text-navy font-bold m-0 uppercase text-xs tracking-widest">Official Resource:</p>
+                    </div>
+                    <a href="https://www.va.gov/claim-or-appeal-status/" target="_blank"
+                        class="text-primary font-bold hover:underline italic">Check VA Claim Status</a>
                 </div>
 
                 <!-- CTA Box -->
-                <div class="cta-box">
-                    <h3>Stop Waiting. Start Winning.</h3>
-                    <p>Checking your VA claim status is important, but having a winning strategy is what gets you
-                        approved. Learn the exact system I used to go from 0% to 100% P&T in 13 months.</p>
-                    <a href="https://buy.stripe.com/5kQ00j3I59mC2XKeo718c06" class="cta-btn">Get the Complete Strategy Guide — $37</a>
-                    <p style="font-size: 0.9rem; margin-top: 1rem; opacity: 0.9;">✅ 30-Day Money-Back Guarantee • 127+
-                        Veterans Approved</p>
+                <div
+                    class="bg-navy p-12 lg:p-16 rounded-[2.5rem] text-white shadow-2xl relative overflow-hidden text-center">
+                    <h3 class="text-3xl font-black mb-6 tracking-tight italic uppercase">Stop Waiting. <span
+                            class="text-primary">Start Winning.</span></h3>
+                    <p class="text-lg text-gray-400 mb-10 max-w-2xl mx-auto">
+                        Checking your status is important, but having a <strong>winning strategy</strong> is what gets
+                        you approved. Learn the exact system I used to reach 100% P&T in 13 months.
+                    </p>
+                    <a href="/pages/guide.html"
+                        class="inline-flex items-center justify-center px-16 py-5 bg-primary text-white text-xl font-bold rounded-full shadow-2xl shadow-primary/30 hover:bg-primary-dark transition-all transform hover:scale-105">
+                        Get the Complete Strategy — $37
+                    </a>
+                    <p class="mt-8 text-[10px] text-gray-500 font-bold uppercase tracking-widest">30-Day Money-Back
+                        Guarantee • 10,000+ Veterans Helped</p>
                 </div>
             </div>
-        </article>
+        </section>
     </main>
 
     <!-- Footer -->
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 Simple VA Strategy. Not affiliated with the Department of Veterans Affairs.</p>
-            <p style="margin-top: 0.5rem; font-size: 0.9rem;">
-                <a href="/privacy-policy.html">Privacy Policy</a> •
-                <a href="/terms-of-service.html">Terms of Service</a> •
-                <a href="/contact.html">Contact</a>
-            </p>
+    <footer class="bg-navy pt-20 pb-12">
+        <div
+            class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-gray-500 italic uppercase font-bold tracking-widest text-xs">
+            <p>&copy; 2026 Simple VA Strategy. Not affiliated with the VA.</p>
         </div>
     </footer>
+
 </body>
 
 </html>

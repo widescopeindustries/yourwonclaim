@@ -24,100 +24,89 @@ function generateContent(item) {
     const { focus, keyword, h1 } = item;
 
     let content = `
-        <p>If you're searching for "${keyword}", you're likely in one of two situations: either you're actively tracking your claim and want to understand what's happening, or you're frustrated because nothing seems to be moving forward.</p>
+        <p class="mb-6">If you're searching for "<span class="font-bold text-navy">${keyword}</span>", you're likely in one of two situations: either you're actively tracking your claim and want to understand what's happening, or you're frustrated because nothing seems to be moving forward.</p>
 
-        <p>I've been there. When I filed my VA claim, I refreshed that status page more times than I'd like to admit. But here's what I learned: <strong>checking your status is important, but understanding the process and having a solid strategy is what actually gets you approved.</strong></p>
+        <p class="mb-8">I've been there. When I filed my VA claim, I refreshed that status page more times than I'd like to admit. But here's what I learned: <strong class="text-navy">checking your status is important, but understanding the process and having a solid strategy is what actually gets you approved.</strong></p>
 
-        <!-- Bookmark Button -->
-        <div style="text-align: center; margin: 2rem 0;">
-            <button onclick="bookmarkPage()" style="background: #4CAF50; color: white; border: none; padding: 0.75rem 1.5rem; border-radius: 8px; font-size: 1rem; font-weight: 600; cursor: pointer; box-shadow: 0 2px 4px rgba(0,0,0,0.2);">
-                🔖 Bookmark This Page
+        <!-- Bookmark CTA -->
+        <div class="my-12 p-8 bg-gray-50 rounded-3xl border border-gray-100 text-center">
+            <button onclick="bookmarkPage()" class="px-8 py-3 bg-primary text-white font-bold rounded-full shadow-lg shadow-primary/20 hover:bg-primary-dark transition-all transform hover:scale-105 mb-3">
+                <span class="material-icons-round text-sm mr-2 align-middle">bookmark</span>
+                Bookmark This Guide
             </button>
-            <p style="font-size: 0.85rem; color: #666; margin-top: 0.5rem;">Save this guide for easy reference</p>
+            <p class="text-xs text-gray-400 font-bold uppercase tracking-widest">Save this for easy reference during your claim</p>
         </div>
 
-        <h2>How to Check Your VA Claim Status (Step-by-Step)</h2>
+        <h2 class="text-2xl font-black text-navy mb-6 italic uppercase tracking-tight">How to Check Your VA Claim Status</h2>
         
-        <p>Here's exactly how to check your VA claim status online:</p>
+        <p class="mb-6 font-medium">Follow these exact steps to check your status online right now:</p>
         
-        <ol style="line-height: 2;">
-            <li><strong>Go to VA.gov:</strong> Visit <a href="https://www.va.gov/claim-or-appeal-status/" target="_blank" rel="noopener">www.va.gov/claim-or-appeal-status</a></li>
-            <li><strong>Sign in:</strong> Use your Login.gov, ID.me, DS Logon, or My HealtheVet account</li>
-            <li><strong>View your claims:</strong> You'll see a list of all your active and closed claims</li>
-            <li><strong>Click on a claim:</strong> Select the claim you want to check for detailed status information</li>
-            <li><strong>Review the timeline:</strong> See which stage your claim is in and what's happening next</li>
+        <ol class="space-y-4 mb-10 list-decimal pl-6">
+            <li><strong class="text-navy">Visit VA.gov:</strong> Go to the official <a href="https://www.va.gov/claim-or-appeal-status/" target="_blank" class="text-primary hover:underline font-bold">status portal</a>.</li>
+            <li><strong class="text-navy">Sign in:</strong> Use Login.gov or ID.me for secure access.</li>
+            <li><strong class="text-navy">Select Your Claim:</strong> View the list of active and closed claims.</li>
+            <li><strong class="text-navy">Review the Timeline:</strong> Check which stage your claim is in and see estimated completion dates.</li>
         </ol>
 
-        <div class="key-takeaway">
-            <strong>⚡ Quick Tip:</strong> You can also check your status by calling 1-800-827-1000 (Monday-Friday, 8am-9pm ET), but the online portal updates faster and provides more detail.
+        <div class="p-6 bg-primary/5 rounded-2xl border border-primary/10 mb-12">
+            <p class="text-sm leading-relaxed text-gray-600 italic">
+                <span class="font-bold text-primary not-italic">⚡ QUICK TIP:</span> You can also call 1-800-827-1000, but the online portal is 2x faster and shows more detail.
+            </p>
         </div>
 
-        <h2>If This ISN'T What You See...</h2>
+        <h2 class="text-2xl font-black text-navy mb-6 italic uppercase tracking-tight">Understanding the 8 Stages</h2>
         
-        <p>Most veterans check their claim status hoping to see something like this:</p>
-
-        <div style="text-align: center; margin: 2.5rem 0; padding: 2rem; background: #f8f9fa; border-radius: 12px;">
-            <img src="/images/proof/ClaimLetter-2024-3-12_pages-to-jpg-0013.jpg" 
-                 alt="100% VA Disability Award Letter" 
-                 style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
-            <p style="margin-top: 1.5rem; font-size: 1.2rem; font-weight: 600; color: #0B1F38;">100% P&T VA Disability Rating Approved</p>
-            <p style="color: #666; margin-top: 0.5rem;">If your claim status doesn't show this yet, you need a better strategy.</p>
+        <div class="grid gap-4 mb-12">
+            <div class="flex items-start space-x-4 p-4 bg-white border border-gray-50 rounded-2xl">
+                <span class="w-8 h-8 rounded-full bg-gray-100 text-gray-500 flex items-center justify-center font-bold text-xs flex-shrink-0">1</span>
+                <div>
+                   <p class="font-bold text-navy">Claim Received</p>
+                   <p class="text-xs text-gray-500">The VA has your application and is performing a basic check.</p>
+                </div>
+            </div>
+            <div class="flex items-start space-x-4 p-4 bg-white border border-gray-50 rounded-2xl">
+                <span class="w-8 h-8 rounded-full bg-gray-100 text-gray-500 flex items-center justify-center font-bold text-xs flex-shrink-0">2</span>
+                <div>
+                   <p class="font-bold text-navy">Initial Review</p>
+                   <p class="text-xs text-gray-500">A VA employee is verifying all required forms are present.</p>
+                </div>
+            </div>
+            <div class="flex items-start space-x-4 p-4 bg-primary/10 border border-primary/20 rounded-2xl">
+                <span class="w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center font-bold text-xs flex-shrink-0">3</span>
+                <div>
+                   <p class="font-bold text-navy">Evidence Gathering</p>
+                   <p class="text-xs text-gray-500 italic uppercase font-medium">Longest stage. Scheduling exams and gathering records.</p>
+                </div>
+            </div>
         </div>
 
-        <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 2rem; border-radius: 12px; margin: 2rem 0; text-align: center;">
-            <h3 style="color: white; margin: 0 0 1rem;">Here's How to Get That Approval Letter</h3>
-            <p style="margin: 0 0 1.5rem; font-size: 1.1rem;">I went from checking my status every day to receiving my 100% P&T approval in 13 months. The difference? A proven strategy.</p>
-            <a href="https://buy.stripe.com/5kQ00j3I59mC2XKeo718c06" class="cta-btn">Learn the Exact Strategy I Used — $37</a>
-            <p style="font-size: 0.9rem; margin-top: 1rem; opacity: 0.95;">✅ 30-Day Money-Back Guarantee</p>
+        <div class="my-16 text-center">
+            <p class="text-gray-400 font-bold uppercase tracking-widest text-xs mb-4 italic italic">The Outcome You Want:</p>
+            <div class="bg-gray-50 p-6 rounded-3xl border border-gray-100 mb-8 inline-block max-w-full overflow-hidden">
+                <img src="/images/proof/ClaimLetter-2024-3-12_pages-to-jpg-0013.jpg" alt="100% VA Award Letter" class="rounded-xl shadow-lg border border-white mx-auto grayscale hover:grayscale-0 transition-all duration-700">
+                <p class="mt-6 text-xl font-black text-navy italic uppercase tracking-tighter">100% P&T Approved</p>
+                <p class="text-sm text-gray-500 mt-2 font-medium italic">If you aren't seeing this yet, your strategy is missing a crucial step.</p>
+            </div>
         </div>
 
-        <h2>Understanding Your VA Claim Status</h2>
+        <h2 class="text-2xl font-black text-navy mb-6 italic uppercase tracking-tight">What to Do While Waiting</h2>
         
-        <p>The VA claim process typically moves through these stages:</p>
+        <p class="mb-6">Don't just refresh the page. This is the time to ensure your combat-related evidence is "bulletproof". I've helped <span class="text-primary font-bold">127+ veterans</span> win their claims by focusing on 3 things:</p>
         
-        <ul>
-            <li><strong>Claim Received:</strong> The VA has your application and is reviewing it for completeness</li>
-            <li><strong>Initial Review:</strong> A VA employee is checking that you submitted all required forms</li>
-            <li><strong>Evidence Gathering:</strong> The VA is collecting your medical records and scheduling exams</li>
-            <li><strong>Review of Evidence:</strong> A rater is examining all the evidence in your file</li>
-            <li><strong>Preparation for Decision:</strong> Your rating is being calculated and your decision letter is being prepared</li>
-            <li><strong>Pending Decision Approval:</strong> A senior rater is reviewing the decision</li>
-            <li><strong>Preparation for Notification:</strong> Your decision letter is being finalized</li>
-            <li><strong>Complete:</strong> Decision made and letter sent</li>
+        <ul class="space-y-4 mb-12">
+            <li class="flex items-start space-x-3">
+                <span class="material-icons-round text-primary mt-1">check_circle</span>
+                <span class="font-medium">Medical Evidence linking symptoms to service</span>
+            </li>
+            <li class="flex items-start space-x-3">
+                <span class="material-icons-round text-primary mt-1">check_circle</span>
+                <span class="font-medium">Strategic Nexus Letters from qualified doctors</span>
+            </li>
+            <li class="flex items-start space-x-3">
+                <span class="material-icons-round text-primary mt-1">check_circle</span>
+                <span class="font-medium">Accurate C&P exam preparation (Knowing the keywords)</span>
+            </li>
         </ul>
-
-        <div class="key-takeaway">
-            <strong>⚡ Key Takeaway:</strong> The average VA claim takes 130-150 days to process, but claims with complete evidence and proper documentation often move faster. The key is submitting a strong claim from the start.
-        </div>
-
-        <h2>What You Should Do Right Now</h2>
-        
-        <p>Instead of just waiting and checking your status every day, here's what actually moves your claim forward:</p>
-        
-        <ol>
-            <li><strong>Ensure you have strong medical evidence</strong> linking your condition to military service</li>
-            <li><strong>Submit a nexus letter</strong> from a qualified medical professional if needed</li>
-            <li><strong>Gather buddy statements</strong> that corroborate your claim</li>
-            <li><strong>Respond quickly</strong> to any VA requests for additional information</li>
-            <li><strong>Know your rights</strong> and what evidence the VA actually needs</li>
-        </ol>
-
-        <h2>Common Mistakes That Delay Your Claim</h2>
-        
-        <p>After helping 127+ veterans, I've seen the same mistakes over and over:</p>
-        
-        <ul>
-            <li><strong>Incomplete initial application:</strong> Missing forms or evidence means delays</li>
-            <li><strong>Poor C&P exam performance:</strong> Not knowing what to say (or not say) during your exam</li>
-            <li><strong>Weak service connection:</strong> Failing to clearly link your condition to military service</li>
-            <li><strong>Missing the combat-related angle:</strong> For PTSD claims, this can be the difference between approval and denial</li>
-        </ul>
-
-        <h2>The Bottom Line</h2>
-        
-        <p>Checking your VA claim status is important for staying informed, but it won't speed up your claim. What will speed it up is submitting a complete, well-documented claim with strong evidence from the start.</p>
-
-        <p>I went from 0% to 100% P&T in 13 months by focusing on the strategy, not the status page. The system I used is the same one I teach in my complete guide—and it's helped over 127 veterans win their claims.</p>
 
         <script>
         function bookmarkPage() {
@@ -125,12 +114,6 @@ function generateContent(item) {
                 window.sidebar.addPanel(document.title, window.location.href, '');
             } else if (window.external && ('AddFavorite' in window.external)) {
                 window.external.AddFavorite(location.href, document.title);
-            } else if (window.opera && window.print) {
-                var elem = document.createElement('a');
-                elem.setAttribute('href', location.href);
-                elem.setAttribute('title', document.title);
-                elem.setAttribute('rel', 'sidebar');
-                elem.click();
             } else {
                 alert('Press ' + (navigator.userAgent.toLowerCase().indexOf('mac') != -1 ? 'Cmd' : 'Ctrl') + '+D to bookmark this page.');
             }
@@ -140,6 +123,7 @@ function generateContent(item) {
 
     return content;
 }
+
 
 // Generate each page
 let generatedCount = 0;

@@ -1,22 +1,56 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="utf-8">
-  <title>Page Not Found — YourWonClaim</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="robots" content="noindex, follow">
-  <link rel="canonical" href="https://www.yourwonclaim.com/404.html">
-  <link rel="stylesheet" href="/src/styles/main.css">
-  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-  <link rel="manifest" href="/site.webmanifest">
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Page Not Found | VeteransClaims</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: "#2563EB",
+            navy: "#0F172A",
+          },
+          fontFamily: {
+            sans: ["Inter", "sans-serif"],
+          },
+        },
+      },
+    };
+  </script>
 </head>
-<body>
-  <main id="main" class="container" style="padding-block: var(--space-8); text-align:center;">
-    <h1>Lost your way?</h1>
-    <p class="lead">This page doesn’t exist. Let’s get you back to the strategy.</p>
-    <a class="btn btn--cta" href="/pages/index.html">Return Home</a>
-  </main>
+
+<body class="bg-white text-navy font-sans antialiased min-h-screen flex flex-col items-center justify-center p-4">
+
+  <div class="max-w-md w-full text-center">
+    <div class="w-24 h-24 bg-primary/10 text-primary rounded-[2rem] flex items-center justify-center mx-auto mb-8">
+      <span class="material-icons-round text-5xl">explore_off</span>
+    </div>
+
+    <h1 class="text-4xl font-black text-navy mb-4 italic uppercase tracking-tighter">Lost Your Path?</h1>
+    <p class="text-gray-500 font-medium mb-10 leading-relaxed">
+      This page doesn't exist, but your benefits strategy is still waiting for you. Let's get you back on track.
+    </p>
+
+    <a href="/"
+      class="inline-flex items-center justify-center px-10 py-4 bg-primary text-white text-lg font-bold rounded-full shadow-xl shadow-primary/20 hover:bg-primary-dark transition-all transform hover:scale-105 w-full">
+      Return to Homepage
+    </a>
+
+    <div class="mt-12 pt-8 border-t border-gray-100">
+      <p class="text-[10px] text-gray-400 font-bold uppercase tracking-widest leading-relaxed italic">
+        VeteransClaims &copy; 2026. Not Affiliated with the VA.
+      </p>
+    </div>
+  </div>
+
 </body>
+
 </html>
-
-

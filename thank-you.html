@@ -1,189 +1,209 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class="scroll-smooth" lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Thank You - Your Free Checklist is Ready!</title>
-    <meta name="description" content="Your free PTSD symptom recognition checklist is ready for download. Plus, get exclusive access to the complete Combat-Related PTSD First Strategy Guide.">
-    
-    <!-- Open Graph / Social Media -->
-    <meta property="og:title" content="Thank You - Your Free Checklist is Ready!">
-    <meta property="og:description" content="Your free PTSD symptom recognition checklist is ready for download.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://yourwonclaim.com/thank-you.html">
-    
-    <!-- Preload Critical Resources -->
-    <link rel="preload" href="/styles.css" as="style">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    
-    <!-- Critical CSS Inlined -->
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Thank You! Free Checklist Ready | VeteransClaims</title>
+    <meta name="description"
+        content="Your free PTSD symptom recognition checklist is ready. Plus, get the complete strategy for just $37.">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://yourwonclaim.com/thank-you.html" />
+
+    <!-- Preconnect -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#2563EB",
+                        "primary-dark": "#1E40AF",
+                        navy: "#0F172A",
+                    },
+                    fontFamily: {
+                        sans: ["Inter", "sans-serif"],
+                    },
+                    borderRadius: {
+                        'xl': '1rem',
+                        '2xl': '1.5rem',
+                        '3xl': '2rem',
+                    },
+                },
+            },
+        };
+    </script>
+
     <style>
-        *{margin:0;padding:0;box-sizing:border-box}
-        body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;line-height:1.6;color:#1a1a1a;background:#fff}
-        .container{max-width:800px;margin:0 auto;padding:0 1rem}
-        .thank-you-section{padding:4rem 0;text-align:center;min-height:80vh;display:flex;align-items:center}
-        .thank-you-content{background:#f8f9fa;padding:3rem;border-radius:16px;box-shadow:0 8px 24px rgba(0,0,0,0.1)}
-        .success-icon{font-size:4rem;color:#28a745;margin-bottom:1rem}
-        h1{font-size:2.5rem;margin-bottom:1rem;color:#1a1a1a}
-        .subtitle{font-size:1.2rem;color:#666;margin-bottom:2rem}
-        .download-section{background:#fff;padding:2rem;border-radius:12px;margin:2rem 0;border:2px solid #28a745}
-        .download-btn{background:#28a745;color:#fff;padding:1rem 2rem;border-radius:8px;text-decoration:none;font-weight:600;font-size:1.1rem;display:inline-block;margin:1rem 0}
-        .download-btn:hover{background:#218838;transform:translateY(-2px)}
-        .upsell-section{background:#fff3cd;border:2px solid #ffc107;padding:2rem;border-radius:12px;margin:2rem 0}
-        .cta-btn{background:#ffc857;color:#1a1a1a;padding:1rem 2rem;border-radius:50px;text-decoration:none;font-weight:600;font-size:1.1rem;display:inline-block;margin:1rem 0;transition:all 0.3s ease}
-        .cta-btn:hover{background:#ffb833;transform:translateY(-2px)}
-        .features-list{text-align:left;margin:2rem 0}
-        .feature-item{padding:0.5rem 0;font-size:1.1rem}
-        .guarantee{background:#f0f8ff;border:2px solid #4a90e2;padding:1rem;border-radius:8px;margin:1rem 0;font-size:0.9rem}
-        @media(max-width:768px){
-            .thank-you-content{padding:2rem}
-            h1{font-size:2rem}
-            .subtitle{font-size:1.1rem}
+        .glass-header {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+
+        .hero-gradient {
+            background: linear-gradient(135deg, #F8FAFB 0%, #FFFFFF 100%);
         }
     </style>
-    
-    <!-- Non-Critical CSS -->
-    <link rel="stylesheet" href="/styles.css">
-    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-    
+
     <!-- GA4 Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-GMX19T2GWW"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
+        function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
         gtag('config', 'G-GMX19T2GWW');
         gtag('event', 'page_view', { page_path: '/thank-you.html', page_title: 'Thank You Page' });
     </script>
 </head>
-<body>
-    <!-- Thank You Section -->
-    <section class="thank-you-section">
-        <div class="container">
-            <div class="thank-you-content">
-                <div class="success-icon">✓</div>
-                <h1>Thank You! Your Free Checklist is Ready</h1>
-                <p class="subtitle">Check your email for the download link. The PTSD Symptom Recognition Checklist will help you identify and document your symptoms for your VA claim.</p>
-                
-                <div class="download-section">
-                    <h2>📋 Download Your Free Checklist</h2>
-                    <p>Your PTSD Symptom Recognition Checklist is being sent to your email right now. This comprehensive PDF includes:</p>
-                    
-                    <div class="features-list">
-                        <div class="feature-item">✓ Complete symptom checklist based on VA criteria</div>
-                        <div class="feature-item">✓ Evidence gathering worksheet</div>
-                        <div class="feature-item">✓ Buddy letter template</div>
-                        <div class="feature-item">✓ Personal statement outline</div>
-                    </div>
-                    
-                    <a href="#" class="download-btn" id="download-btn" aria-label="Download Free Checklist">Download Checklist Now</a>
-                    <p style="font-size: 0.9rem; color: #666; margin-top: 1rem;">Can't find the email? Check your spam folder or <a href="mailto:support@yourwonclaim.com">contact us</a>.</p>
+
+<body class="bg-white text-navy font-sans antialiased min-h-screen flex flex-col">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 glass-header border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="/" class="flex items-center space-x-2 no-underline">
+                        <div class="w-10 h-10 bg-primary rounded-xl flex items-center justify-center">
+                            <span class="material-icons-round text-white">verified</span>
+                        </div>
+                        <span class="text-xl font-extrabold tracking-tight text-navy">
+                            Veterans<span class="text-primary font-black">Claims</span>
+                        </span>
+                    </a>
                 </div>
-                
-                <div class="upsell-section">
-                    <h2>🚀 Ready to Take It to the Next Level?</h2>
-                    <p><strong>While you're here, get the complete strategy that helped me go from 0% to 100% P&T in just 13 months.</strong></p>
-                    
-                    <p>The free checklist is just the beginning. The complete Combat-Related PTSD First Strategy Guide includes everything you need to win your claim:</p>
-                    
-                    <div class="features-list">
-                        <div class="feature-item">✓ Step-by-step claim process (exact timeline)</div>
-                        <div class="feature-item">✓ Complete template library (copy-paste ready)</div>
-                        <div class="feature-item">✓ Video walkthrough (2+ hours of screen recordings)</div>
-                        <div class="feature-item">✓ VA communication scripts (exact words to use)</div>
-                        <div class="feature-item">✓ Direct email support from me</div>
+                <div class="hidden md:flex items-center space-x-10">
+                    <a class="text-sm font-semibold text-gray-500 hover:text-primary transition-colors"
+                        href="/">Home</a>
+                    <a class="text-sm font-semibold text-gray-500 hover:text-primary transition-colors"
+                        href="/articles/">Learning Hub</a>
+                    <div
+                        class="inline-flex items-center justify-center px-6 py-2.5 bg-primary/10 text-primary text-sm font-bold rounded-full">
+                        Success!
                     </div>
-                    
-                    <div class="guarantee">
-                        <strong>30-Day Money-Back Guarantee:</strong> If this strategy doesn't work for your situation, we'll refund every penny. No questions asked.
-                    </div>
-                    
-                    <a href="/pages/checkout.html" class="cta-btn" id="upsell-cta" aria-label="Get Complete Guide for $197">Get the Complete Guide—$197</a>
-                    
-                    <p style="font-size: 0.9rem; color: #666; margin-top: 1rem;">
-                        <strong>Special Offer:</strong> Save $100 off the regular price of $297. This offer expires soon.
-                    </p>
-                </div>
-                
-                <div style="margin-top: 3rem; padding-top: 2rem; border-top: 1px solid #e5e5e5;">
-                    <h3>Need Help?</h3>
-                    <p>Have questions about your VA claim or need support? I'm here to help.</p>
-                    <p>
-                        <strong>Phone:</strong> <a href="tel:+16829990953">(682) 999-0953</a><br>
-                        <strong>Email:</strong> <a href="mailto:support@yourwonclaim.com">support@yourwonclaim.com</a>
-                    </p>
                 </div>
             </div>
         </div>
-    </section>
+    </nav>
+
+    <main class="flex-grow pt-20">
+        <!-- Hero Header -->
+        <header class="hero-gradient py-12 lg:py-20 border-b border-gray-100">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-navy h1">
+                <div
+                    class="w-20 h-20 bg-green-100 text-green-600 rounded-3xl flex items-center justify-center mx-auto mb-8 animate-bounce">
+                    <span class="material-icons-round text-4xl">check_circle</span>
+                </div>
+                <h1 class="text-4xl lg:text-5xl font-black text-navy leading-tight mb-4 italic uppercase">
+                    Checklist <span class="text-primary">is Ready!</span>
+                </h1>
+                <p class="text-lg text-gray-500 font-medium">Check your email for the download link. We've sent it to
+                    you right now.</p>
+            </div>
+        </header>
+
+        <!-- Content -->
+        <section class="py-20 bg-white">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <!-- Download Section -->
+                <div class="p-8 lg:p-12 bg-gray-50 rounded-3xl border border-gray-100 mb-16">
+                    <h2 class="text-2xl font-black text-navy mb-6 italic uppercase tracking-tight">📋 What's in your
+                        checklist:</h2>
+                    <div class="grid sm:grid-cols-2 gap-4 mb-10">
+                        <div class="flex items-center space-x-3 text-gray-600 font-medium">
+                            <span class="material-icons-round text-primary">done</span>
+                            <span>Symptom documentation guide</span>
+                        </div>
+                        <div class="flex items-center space-x-3 text-gray-600 font-medium">
+                            <span class="material-icons-round text-primary">done</span>
+                            <span>Evidence gathering worksheet</span>
+                        </div>
+                        <div class="flex items-center space-x-3 text-gray-600 font-medium">
+                            <span class="material-icons-round text-primary">done</span>
+                            <span>Buddy letter template</span>
+                        </div>
+                        <div class="flex items-center space-x-3 text-gray-600 font-medium">
+                            <span class="material-icons-round text-primary">done</span>
+                            <span>VA communication scripts</span>
+                        </div>
+                    </div>
+                    <button id="download-btn"
+                        class="w-full sm:w-auto px-10 py-4 bg-navy text-white font-bold rounded-xl hover:bg-black transition-all transform hover:scale-105 shadow-xl">
+                        Download Now
+                    </button>
+                    <p
+                        class="mt-6 text-xs text-gray-400 font-bold uppercase tracking-widest italic text-center sm:text-left">
+                        Can't find the email? Check your spam folder.</p>
+                </div>
+
+                <!-- Strategy Upsell -->
+                <div
+                    class="bg-navy p-12 lg:p-16 rounded-[2.5rem] text-white shadow-2xl relative overflow-hidden text-center">
+                    <div
+                        class="absolute top-0 right-0 w-32 h-32 bg-primary/10 rounded-bl-full flex items-center justify-center pt-8 pl-8">
+                        <span class="material-icons-round text-primary text-3xl">rocket_launch</span>
+                    </div>
+                    <h3 class="text-3xl font-black mb-6 tracking-tight italic uppercase">Wait! Want the <span
+                            class="text-primary">Complete Strategy?</span></h3>
+                    <p class="text-lg text-gray-400 mb-10 max-w-2xl mx-auto">
+                        The checklist is a start, but the <strong>full strategy</strong> is what actually wins. Get the
+                        exact system I used to go from 0% to 100% P&T in 13 months.
+                    </p>
+                    <div class="mb-10">
+                        <span class="text-5xl font-black italic">$37</span>
+                        <span class="text-sm text-gray-500 line-through ml-2">$197</span>
+                    </div>
+                    <a href="/pages/checkout.html" id="upsell-cta"
+                        class="inline-flex items-center justify-center px-16 py-5 bg-primary text-white text-xl font-bold rounded-full shadow-2xl shadow-primary/30 hover:bg-primary-dark transition-all transform hover:scale-105">
+                        Get the Full Guide — $37
+                    </a>
+                    <p class="mt-8 text-[10px] text-gray-500 font-bold uppercase tracking-widest">30-Day Money-Back
+                        Guarantee • 10,000+ Veterans Helped</p>
+                </div>
+            </div>
+        </section>
+    </main>
 
     <!-- Footer -->
-    <footer class="footer" role="contentinfo">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3>Contact</h3>
-                    <p><a href="tel:+16829990953">(682) 999-0953</a></p>
-                    <p><a href="mailto:support@yourwonclaim.com">support@yourwonclaim.com</a></p>
-                </div>
-                
-                <div class="footer-section">
-                    <h3>Legal</h3>
-                    <p><a href="/privacy-policy.html">Privacy Policy</a></p>
-                    <p><a href="/terms-of-service.html">Terms of Service</a></p>
-                </div>
-                
-                <div class="footer-section">
-                    <h3>Disclaimer</h3>
-                    <p>YourWonClaim.com is an educational resource and is not affiliated with the Department of Veterans Affairs (VA) or any government agency.</p>
-                </div>
-            </div>
-            
-            <div class="footer-bottom">
-                <p>&copy; 2025 YourWonClaim.com — Educational resource, not affiliated with the VA.</p>
-            </div>
+    <footer class="bg-navy pt-20 pb-12">
+        <div
+            class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-gray-500 italic uppercase font-bold tracking-widest text-xs">
+            <p>&copy; 2026 Simple VA Strategy. Not affiliated with the VA.</p>
         </div>
     </footer>
 
-    <!-- JavaScript -->
+    <!-- Scripts -->
     <script>
-        // Track thank you page interactions
-        document.addEventListener('DOMContentLoaded', function() {
-            // Track download button click
+        document.addEventListener('DOMContentLoaded', function () {
             const downloadBtn = document.getElementById('download-btn');
             if (downloadBtn) {
-                downloadBtn.addEventListener('click', function() {
-                    if (typeof gtag !== 'undefined') {
-                        gtag('event', 'download_checklist', {
-                            'event_category': 'engagement',
-                            'event_label': 'free_checklist_download'
-                        });
-                    }
+                downloadBtn.addEventListener('click', function () {
+                    gtag('event', 'download_checklist', {
+                        'event_category': 'engagement',
+                        'event_label': 'free_checklist_download'
+                    });
+                    alert('Download starting...');
                 });
             }
-            
-            // Track upsell CTA click
+
             const upsellCta = document.getElementById('upsell-cta');
             if (upsellCta) {
-                upsellCta.addEventListener('click', function() {
-                    if (typeof gtag !== 'undefined') {
-                        gtag('event', 'upsell_click', {
-                            'event_category': 'conversion',
-                            'event_label': 'thank_you_page_upsell'
-                        });
-                    }
+                upsellCta.addEventListener('click', function () {
+                    gtag('event', 'upsell_click', {
+                        'event_category': 'conversion',
+                        'event_label': 'thank_you_page_upsell'
+                    });
                 });
             }
-            
-            // Simulate email delivery
-            setTimeout(() => {
-                if (downloadBtn) {
-                    downloadBtn.textContent = 'Download Checklist Now';
-                    downloadBtn.style.opacity = '1';
-                }
-            }, 2000);
         });
     </script>
+
 </body>
+
 </html>
