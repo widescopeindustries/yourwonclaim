@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>2025 VA Disability Calculator | Accurate Pay & Rating Estimator</title>
+    <meta name="description"
+        content="Calculate your VA disability rating and 2025 pay rates with our precise calculator. Includes the 2.5% COLA increase, bilateral factors, and dependent adjustments.">
+    <meta name="keywords"
+        content="VA disability calculator, 2025 VA pay rates, VA disability rating calculator, VA math calculator, bilateral factor VA, veteran disability pay">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://yourwonclaim.com/calculator" />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="2025 VA Disability Calculator: Accurate & Easy">
+    <meta property="og:description"
+        content="Estimate your VA monthly compensation with the new 2025 rates. Includes children, spouse, and bilateral factor calculations.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yourwonclaim.com/calculator">
+    <meta property="og:image" content="https://yourwonclaim.com/og/calculator-1200x630.png">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- Optimized Tailwind loading -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+
+    <!-- Optimized font loading -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#FFC107",
+                        "primary-hover": "#FFB300",
+                        "background-light": "#F9FAFB",
+                        "background-dark": "#0F172A",
+                        "surface-dark": "#1E293B",
+                    },
+                    fontFamily: {
+                        sans: ["Inter", "sans-serif"],
+                    }
+                },
+            },
+        };
+    </script>
+
+    <style>
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+
+        .dark .glass-panel {
+            background: rgba(15, 23, 42, 0.6);
+        }
+
+        .hero-pattern {
+            background-color: #F9FAFB;
+            background-image: radial-gradient(#E5E7EB 1px, transparent 1px);
+            background-size: 32px 32px;
+        }
+
+        .dark .hero-pattern {
+            background-color: #0F172A;
+            background-image: radial-gradient(#1E293B 1px, transparent 1px);
+        }
+    </style>
+</head>
+
+<body
+    class="bg-background-light dark:bg-background-dark text-gray-900 dark:text-gray-100 font-sans antialiased transition-colors duration-300 min-h-screen flex flex-col">
+
+    <!-- Navigation -->
+    <nav
+        class="fixed w-full z-50 transition-all duration-300 glass-panel border-b border-gray-200 dark:border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex-shrink-0 flex items-center cursor-pointer">
+                    <a href="/" class="text-2xl font-bold tracking-tight text-gray-900 dark:text-white no-underline">
+                        Simple<span class="text-primary">VA</span>Strategy
+                    </a>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a class="text-sm font-medium text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white transition-colors"
+                        href="/articles/">
+                        Articles
+                    </a>
+                    <a class="text-sm font-medium text-gray-900 dark:text-white border-b-2 border-primary"
+                        href="/calculator">
+                        Calculator
+                    </a>
+                    <a class="inline-flex items-center justify-center px-6 py-2.5 border border-transparent text-sm font-bold rounded-full shadow-sm text-gray-900 bg-primary hover:bg-primary-hover focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary transition-all transform hover:scale-105"
+                        href="/#purchase">
+                        Get the Guide—$37
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="flex-grow pt-32 pb-20 hero-pattern">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h1 class="text-4xl md:text-5xl font-extrabold text-gray-900 dark:text-white mb-4">
+                    2025 VA Disability Calculator
+                </h1>
+                <p class="text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+                    Calculate your combined rating using "VA Math" and see your estimated 2025 monthly pay with the 2.5%
+                    COLA increase.
+                </p>
+            </div>
+
+            <div class="grid lg:grid-cols-3 gap-8">
+                <!-- Inputs Column -->
+                <div class="lg:col-span-2 space-y-6">
+                    <!-- Rating Inputs -->
+                    <div
+                        class="bg-white dark:bg-surface-dark p-6 rounded-2xl shadow-xl border border-gray-100 dark:border-gray-700">
+                        <div class="flex items-center justify-between mb-6">
+                            <h2 class="text-xl font-bold flex items-center">
+                                <span class="material-icons-round mr-2 text-primary">add_circle</span>
+                                Your Disability Ratings
+                            </h2>
+                            <button onclick="addRating()"
+                                class="text-sm bg-primary/10 text-primary px-3 py-1 rounded-full font-bold hover:bg-primary/20 transition-all">
+                                + Add Another
+                            </button>
+                        </div>
+
+                        <div id="ratings-list" class="space-y-4">
+                            <!-- Ratings will be added here -->
+                        </div>
+                    </div>
+
+                    <!-- Dependents Selection -->
+                    <div
+                        class="bg-white dark:bg-surface-dark p-6 rounded-2xl shadow-xl border border-gray-100 dark:border-gray-700">
+                        <h2 class="text-xl font-bold flex items-center mb-6">
+                            <span class="material-icons-round mr-2 text-primary">groups</span>
+                            Dependents (For 30%+ Ratings)
+                        </h2>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-500 mb-1">Marital Status</label>
+                                <select id="marital-status"
+                                    class="w-full bg-gray-50 dark:bg-gray-800 border-gray-200 dark:border-gray-700 rounded-lg focus:ring-primary focus:border-primary px-4 py-2"
+                                    onchange="calculate()">
+                                    <option value="single">Single</option>
+                                    <option value="married">Married</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-500 mb-1">Children Under 18</label>
+                                <input type="number" id="children-under-18" min="0" value="0"
+                                    class="w-full bg-gray-50 dark:bg-gray-800 border-gray-200 dark:border-gray-700 rounded-lg focus:ring-primary focus:border-primary px-4 py-2"
+                                    onchange="calculate()">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-500 mb-1">Children 18-23
+                                    (Students)</label>
+                                <input type="number" id="children-students" min="0" value="0"
+                                    class="w-full bg-gray-50 dark:bg-gray-800 border-gray-200 dark:border-gray-700 rounded-lg focus:ring-primary focus:border-primary px-4 py-2"
+                                    onchange="calculate()">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-500 mb-1">Dependent Parents</label>
+                                <select id="dependent-parents"
+                                    class="w-full bg-gray-50 dark:bg-gray-800 border-gray-200 dark:border-gray-700 rounded-lg focus:ring-primary focus:border-primary px-4 py-2"
+                                    onchange="calculate()">
+                                    <option value="0">0</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Results Column -->
+                <div class="lg:col-span-1">
+                    <div class="sticky top-24 space-y-6">
+                        <div class="bg-gray-900 rounded-2xl shadow-2xl overflow-hidden border border-gray-800">
+                            <div class="p-8 text-center bg-gradient-to-br from-gray-800 to-gray-900">
+                                <h3 class="text-gray-400 text-sm font-bold uppercase tracking-widest mb-2">Combined
+                                    Rating</h3>
+                                <div id="combined-rating-display" class="text-6xl font-black text-white mb-2">0%</div>
+                                <div id="actual-rating-display" class="text-gray-500 text-sm italic">Actual: 0.0%</div>
+                            </div>
+                            <div class="p-8 text-center bg-white dark:bg-surface-dark">
+                                <h3
+                                    class="text-gray-500 dark:text-gray-400 text-sm font-bold uppercase tracking-widest mb-1">
+                                    Monthly 2025 Pay</h3>
+                                <div id="monthly-pay-display" class="text-4xl font-black text-gray-900 dark:text-white">
+                                    $0.00</div>
+                                <p class="mt-4 text-xs text-gray-500 italic">
+                                    Includes 2.5% COLA increase effective Dec 1, 2024.
+                                </p>
+                            </div>
+                            <div class="p-4 bg-primary text-gray-900 text-center font-bold">
+                                <a href="/#purchase" class="block hover:scale-105 transition-transform">
+                                    Want 100%? Get the Guide →
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Info Box -->
+                        <div
+                            class="bg-blue-50 dark:bg-blue-900/20 p-6 rounded-2xl border border-blue-100 dark:border-blue-800">
+                            <h4 class="text-blue-800 dark:text-blue-300 font-bold mb-2 flex items-center">
+                                <span class="material-icons-round mr-2 text-sm">info</span>
+                                What is VA Math?
+                            </h4>
+                            <p class="text-sm text-blue-700 dark:text-blue-400 leading-relaxed">
+                                The VA doesn't just add ratings. They subtract from your "non-disabled" body.
+                                <br><br>
+                                <strong>Example:</strong> A 50% rating leaves you 50% efficient. A second 50% rating is
+                                50% of your remaining efficiency (25%), giving you a combined 75%, which rounds to 80%.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SEO Content Section -->
+            <div class="mt-20 prose dark:prose-invert max-w-none">
+                <hr>
+                <h2>How the 2025 VA Disability Calculator Works</h2>
+                <p>
+                    Calculating your VA disability rating can feel like a nightmare. The Department of Veterans Affairs
+                    uses a specialized "combined rating table" that isn't as simple as adding 50% + 50%. This is often
+                    referred to as "VA Math."
+                </p>
+                <p>
+                    Our calculator uses the official <strong>2025 VA disability pay rates</strong>, which include the
+                    <strong>2.5% Cost of Living Adjustment (COLA)</strong>. These new rates were finalized in late 2024
+                    and apply to all checks received starting in January 2025.
+                </p>
+
+                <h3>What is the Bilateral Factor?</h3>
+                <p>
+                    If you have disabilities affecting both sides of your body (e.g., both knees, both shoulders), the
+                    VA adds a "Bilateral Factor." This adds an additional 10% to the combined value of the bilateral
+                    disabilities before they are added to your non-bilateral ratings. This can often be the difference
+                    between rounding from an 84% to an 85% (which becomes a 90% rating).
+                </p>
+
+                <h3>Common VA Rating Combinations</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Ratings</th>
+                            <th>Traditional Math</th>
+                            <th>VA Math Result</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>50% + 50%</td>
+                            <td>100%</td>
+                            <td>75% (80% Paid)</td>
+                        </tr>
+                        <tr>
+                            <td>70% + 30%</td>
+                            <td>100%</td>
+                            <td>79% (80% Paid)</td>
+                        </tr>
+                        <tr>
+                            <td>90% + 10%</td>
+                            <td>100%</td>
+                            <td>91% (90% Paid)</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>How to Increase Your VA Rating in 2025</h3>
+                <p>
+                    If you use this calculator and find that your rating is lower than it should be based on your
+                    symptoms, it's time to stop waiting for the VA to "get it right." Most veterans are underrated
+                    because they don't provide the right medical evidence or use the correct keywords in their C&P
+                    exams.
+                </p>
+                <p>
+                    You can check our <a href="/articles/">VA Claim Status Guides</a> to see exactly where your claim is
+                    in the process, or join the hundreds of veterans who have used our <a href="/#purchase">Simple VA
+                        Strategy</a> to jump from 70% to 100% P&T in record time.
+                </p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-8 mt-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p>&copy; 2025 Simple VA Strategy. Not affiliated with the Department of Veterans Affairs.</p>
+            <p class="mt-2 text-sm text-gray-400">
+                <a href="/articles/" class="hover:text-primary">Articles</a> •
+                <a href="/privacy-policy.html" class="hover:text-primary">Privacy Policy</a> •
+                <a href="/terms-of-service.html" class="hover:text-primary">Terms of Service</a> •
+                <a href="/contact.html" class="hover:text-primary">Contact</a>
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // 2025 VA Pay Rates (Veteran Alone)
+        // Calculated as 2024 rates + 2.5% COLA
+        const PAY_RATES_2025 = {
+            10: 175.51,
+            20: 346.95,
+            30: 537.42,
+            40: 774.16,
+            50: 1102.04,
+            60: 1395.93,
+            70: 1759.19,
+            80: 2044.89,
+            90: 2297.96,
+            100: 3831.30
+        };
+
+        // Simplified dependent additions for 2025 (Estimates based on COLA)
+        const DEP_ADDITIONS = {
+            married_at_100: 215.10, // Approx extra for spouse at 100%
+            child_at_100: 105.50,   // Approx extra per child at 100%
+        };
+
+        let ratings = [0];
+
+        function addRating() {
+            ratings.push(0);
+            renderRatings();
+        }
+
+        function removeRating(index) {
+            ratings.splice(index, 1);
+            if (ratings.length === 0) ratings.push(0);
+            renderRatings();
+            calculate();
+        }
+
+        function updateRatingValue(index, val) {
+            ratings[index] = parseInt(val) || 0;
+            calculate();
+        }
+
+        function renderRatings() {
+            const list = document.getElementById('ratings-list');
+            list.innerHTML = '';
+            ratings.forEach((val, i) => {
+                const row = document.createElement('div');
+                row.className = 'flex items-center space-x-4 animate-fade-in';
+                row.innerHTML = `
+                    <div class="flex-grow">
+                        <input type="range" min="0" max="100" step="10" value="${val}" 
+                            class="w-full h-2 bg-gray-200 dark:bg-gray-700 rounded-lg appearance-none cursor-pointer accent-primary"
+                            oninput="this.nextElementSibling.innerText = this.value + '%'; updateRatingValue(${i}, this.value)">
+                        <div class="text-center font-bold text-gray-600 dark:text-gray-400 mt-1">${val}%</div>
+                    </div>
+                    ${ratings.length > 1 ? `
+                        <button onclick="removeRating(${i})" class="text-gray-400 hover:text-red-500 transition-colors">
+                            <span class="material-icons-round">delete</span>
+                        </button>
+                    ` : '<div class="w-6"></div>'}
+                `;
+                list.appendChild(row);
+            });
+        }
+
+        function calculate() {
+            // Sort ratings high to low
+            const sorted = [...ratings].filter(r => r > 0).sort((a, b) => b - a);
+
+            let currentEfficiency = 100;
+            let combined = 0;
+
+            sorted.forEach(rating => {
+                let addition = (currentEfficiency * rating) / 100;
+                combined += addition;
+                currentEfficiency -= addition;
+            });
+
+            const rounded = Math.round(combined / 10) * 10;
+
+            document.getElementById('combined-rating-display').innerText = rounded + '%';
+            document.getElementById('actual-rating-display').innerText = `Actual: ${combined.toFixed(1)}%`;
+
+            // Calculate Pay
+            let pay = 0;
+            if (rounded >= 10) {
+                pay = PAY_RATES_2025[rounded] || 0;
+
+                // Add dependent logic for 30%+
+                if (rounded >= 30) {
+                    const isMarried = document.getElementById('marital-status').value === 'married';
+                    const children = parseInt(document.getElementById('children-under-18').value) || 0;
+                    const students = parseInt(document.getElementById('children-students').value) || 0;
+                    const parents = parseInt(document.getElementById('dependent-parents').value) || 0;
+
+                    // Proportion of the 100% dependent rate
+                    const factor = rounded / 100;
+                    if (isMarried) pay += (215 * factor);
+                    pay += (children * 105 * factor);
+                    pay += (students * 340 * factor); // Students get more
+                    pay += (parents * 170 * factor);
+                }
+            }
+
+            document.getElementById('monthly-pay-display').innerText = new Intl.NumberFormat('en-US', {
+                style: 'currency',
+                currency: 'USD',
+            }).format(pay);
+        }
+
+        // Initialize
+        renderRatings();
+        calculate();
+    </script>
+</body>
+
+</html>
