@@ -21,7 +21,60 @@ if (!fs.existsSync(outputDir)) {
 
 // Content generation function based on focus
 function generateContent(item) {
-    const { focus, keyword, h1 } = item;
+    const { focus, keyword, h1, type } = item;
+
+    if (type === 'lead-gen') {
+        return `
+            <p class="mb-6">Finding a qualified <span class="font-bold text-navy">${keyword}</span> is one of the most important decisions a veteran can make. When your benefits are on the line, having a local expert who understands both the law and the specific challenges faced by Texas veterans can be the difference between a denial and a 100% P&T rating.</p>
+
+            <p class="mb-8">While many veterans successfully navigate the process using a <a href="/pages/guide.html" class="text-primary hover:underline font-bold">strategic guide</a>, some cases require the heavy lifting that only an experienced attorney can provide—especially for complex appeals or Higher-Level Reviews.</p>
+
+            <!-- Lead Capture Form -->
+            <div class="my-12 p-8 bg-primary/5 rounded-3xl border border-primary/20" id="lead-container">
+                <div id="lead-success" class="hidden text-center py-8">
+                    <span class="material-icons-round text-5xl text-green-500 mb-4">check_circle</span>
+                    <h3 class="text-2xl font-black text-navy mb-2">Request Received</h3>
+                    <p class="text-gray-600">A vetted representative will reach out to you shortly to discuss your case.</p>
+                </div>
+                
+                <form id="lead-capture-form" class="space-y-4">
+                    <input type="hidden" name="keyword" value="${keyword}">
+                    <h3 class="text-xl font-black text-navy italic uppercase mb-4">Get a Free Case Evaluation</h3>
+                    <p class="text-sm text-gray-500 mb-6">Connect with a Texas-based VA disability expert to review your claim at no cost.</p>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <input type="text" name="name" placeholder="Full Name" required class="w-full px-4 py-3 rounded-xl border-gray-200 focus:ring-primary focus:border-primary">
+                        <input type="email" name="email" placeholder="Email Address" required class="w-full px-4 py-3 rounded-xl border-gray-200 focus:ring-primary focus:border-primary">
+                    </div>
+                    <input type="tel" name="phone" placeholder="Phone Number" required class="w-full px-4 py-3 rounded-xl border-gray-200 focus:ring-primary focus:border-primary">
+                    <textarea name="message" placeholder="Briefly describe your situation (e.g., 'Denied for PTSD', 'Need increase')" class="w-full px-4 py-3 rounded-xl border-gray-200 focus:ring-primary focus:border-primary h-32"></textarea>
+                    
+                    <button type="submit" class="w-full py-4 bg-primary text-white font-black rounded-xl shadow-lg shadow-primary/20 hover:bg-primary-dark transition-all transform hover:scale-[1.02] uppercase tracking-wider">
+                        Request Free Evaluation
+                    </button>
+                    <p class="text-[10px] text-gray-400 text-center uppercase font-bold">No obligation • 100% Confidential • Local Texas Experts</p>
+                </form>
+            </div>
+
+            <h2 class="text-2xl font-black text-navy mb-6 italic uppercase tracking-tight">Why Texas Veterans Choose Local Legal Help</h2>
+            
+            <p class="mb-6">Texas has one of the largest veteran populations in the country, and local attorneys are uniquely familiar with the regional offices in Waco and Houston. Here is what to look for when choosing a representative:</p>
+            
+            <ul class="space-y-4 mb-10 list-disc pl-6">
+                <li><strong class="text-navy">Accreditation:</strong> Ensure they are accredited by the VA to represent veterans.</li>
+                <li><strong class="text-navy">No Upfront Fees:</strong> Most VA attorneys work on a contingency basis (they only get paid if you win).</li>
+                <li><strong class="text-navy">Proven Track Record:</strong> Ask about their success rate with your specific condition.</li>
+            </ul>
+
+            <div class="p-6 bg-navy text-white rounded-2xl mb-12">
+                <p class="text-sm leading-relaxed italic">
+                    <span class="font-bold text-primary not-italic">ATTENTION:</span> If you prefer to handle the claim yourself but need the exact "winning" strategy I used to reach 100%, <a href="/pages/guide.html" class="underline hover:text-primary">click here to download the Simple VA Strategy Guide</a>.
+                </p>
+            </div>
+
+            <script src="/scripts/partner-lead.js"></script>
+        `;
+    }
 
     let content = `
         <p class="mb-6">If you're searching for "<span class="font-bold text-navy">${keyword}</span>", you're likely in one of two situations: either you're actively tracking your claim and want to understand what's happening, or you're frustrated because nothing seems to be moving forward.</p>
