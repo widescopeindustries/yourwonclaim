@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>Terms of Service | VeteransClaims</title>
+    <title>Terms of Service | YourWonClaim</title>
     <meta name="description"
         content="Terms of Service for VeteransClaims. Learn about our terms and conditions for using our services.">
 
@@ -49,6 +49,10 @@
         .hero-gradient {
             background: linear-gradient(135deg, #F8FAFB 0%, #FFFFFF 100%);
         }
+
+        .neon-glow-blue {
+            box-shadow: 0 0 20px rgba(37, 99, 235, 0.4), 0 0 40px rgba(37, 99, 235, 0.2);
+        }
     </style>
 
     <!-- GA4 Analytics -->
@@ -72,23 +76,41 @@
                         <div class="w-10 h-10 bg-primary rounded-xl flex items-center justify-center">
                             <span class="material-icons-round text-white">verified</span>
                         </div>
-                        <span class="text-xl font-extrabold tracking-tight text-navy">
-                            Veterans<span class="text-primary font-black">Claims</span>
+                        <span class="text-xl font-extrabold tracking-tight text-navy uppercase italic">
+                            YourWon<span class="text-primary font-black">Claim</span>
                         </span>
                     </a>
                 </div>
                 <div class="hidden md:flex items-center space-x-10">
-                    <a class="text-sm font-semibold text-gray-500 hover:text-primary transition-colors"
+                    <a class="text-sm font-semibold text-gray-500 hover:text-primary transition-colors uppercase tracking-wider"
                         href="/">Home</a>
-                    <a class="text-sm font-semibold text-gray-500 hover:text-primary transition-colors"
-                        href="/articles/">Learning Hub</a>
-                    <a class="text-sm font-semibold text-gray-500 hover:text-primary transition-colors"
-                        href="/pages/mystory.html">About Us</a>
-                    <a class="inline-flex items-center justify-center px-6 py-2.5 bg-primary text-white text-sm font-bold rounded-full shadow-lg shadow-primary/20 hover:bg-primary-dark transition-all transform hover:scale-105"
+                    <a class="text-sm font-semibold text-gray-500 hover:text-primary transition-colors uppercase tracking-wider"
+                        href="/articles/">Articles</a>
+                    <a class="text-sm font-semibold text-gray-500 hover:text-primary transition-colors uppercase tracking-wider"
+                        href="/pages/mystory.html">Our Story</a>
+                    <a class="inline-flex items-center justify-center px-6 py-2.5 bg-primary text-white text-xs font-black rounded-full neon-glow-blue hover:bg-primary-dark transition-all transform hover:scale-105 uppercase italic tracking-tight"
                         href="/pages/guide.html">
-                        Get the Guide — $37
+                        Simple VA Strategy — $37.99
                     </a>
                 </div>
+                <div class="md:hidden flex items-center">
+                    <button class="text-navy p-2 nav-toggle" type="button" aria-expanded="false"
+                        aria-controls="primary-nav">
+                        <span class="material-icons-round text-2xl">menu</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="primary-nav" class="md:hidden bg-white border-b border-gray-100 hidden">
+            <div class="px-4 pt-2 pb-6 space-y-2">
+                <a class="block px-4 py-3 text-base font-bold text-navy hover:bg-gray-50 rounded-xl" href="/">Home</a>
+                <a class="block px-4 py-3 text-base font-bold text-navy hover:bg-gray-50 rounded-xl"
+                    href="/articles/">Articles</a>
+                <a class="block px-4 py-3 text-base font-bold text-navy hover:bg-gray-50 rounded-xl"
+                    href="/pages/mystory.html">Our Story</a>
+                <a class="block px-4 py-4 bg-primary text-white text-center font-black rounded-xl italic uppercase neon-glow-blue"
+                    href="/pages/guide.html">Get THE STRATEGY — $37.99</a>
             </div>
         </div>
     </nav>
@@ -109,14 +131,14 @@
             <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
                 <article class="prose prose-navy max-w-none text-gray-600 leading-relaxed">
                     <h2 class="text-navy font-black italic uppercase tracking-tight">1. Acceptance of Terms</h2>
-                    <p>By accessing and using VeteransClaims, you accept and agree to be bound by the terms and
+                    <p>By accessing and using YourWonClaim, you accept and agree to be bound by the terms and
                         provision of this agreement.</p>
 
                     <div class="p-8 bg-primary/5 rounded-3xl border border-primary/10 my-10">
                         <h3 class="text-primary font-black italic uppercase tracking-tight mt-0">Important Disclaimer
                         </h3>
                         <p class="m-0 font-medium text-navy">
-                            VeteransClaims is NOT affiliated with the Department of Veterans Affairs (VA) or any
+                            YourWonClaim is NOT affiliated with the Department of Veterans Affairs (VA) or any
                             government agency. We are an independent educational resource providing information and
                             strategies based on research and experience.
                         </p>
@@ -150,6 +172,7 @@
         </div>
     </footer>
 
+    <script type="module" src="/src/components/nav.js"></script>
 </body>
 
 </html>

@@ -85,8 +85,21 @@ Monitor these in Google Search Console:
 - Errors: Should be 0 redirect errors
 - Canonical: Should be 0 canonical errors
 
+## 🛠️ API Tools
+
+### SE Ranking (Alternative to Ahrefs)
+For cost-effective keyword and domain analysis.
+1. Add `SERANKING_API_KEY` to `.env`.
+2. Test connection: `node test-seranking.cjs`
+3. Run analysis: `node analyze-seranking.cjs`
+
+### Ahrefs (Legacy)
+1. Ensure `AHREFS_API_KEY` is in `.env`.
+2. Test connection: `node test-ahrefs.cjs`
+3. Run analysis: `node analyze-va-opportunity.cjs`
+
 ---
 
 **Status:** ✅ Ready to Deploy  
-**Date:** December 15, 2025  
-**Next Action:** Deploy and submit sitemap to GSC
+**Date:** December 22, 2025  
+**Next Action:** Deploy and monitor SE Ranking data integration.

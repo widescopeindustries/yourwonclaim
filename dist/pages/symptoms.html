@@ -1,76 +1,214 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="en">
+
 <head>
-  <meta charset="utf-8">
-  <title>Recognize Service‑Connected PTSD Symptoms | YourWonClaim</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Modern PTSD symptoms many veterans miss — learn what counts and why it matters.">
-  <link rel="canonical" href="https://www.yourwonclaim.com/pages/symptoms.html">
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Recognize Service-Connected PTSD Symptoms | VeteransClaims</title>
+  <meta name="description"
+    content="Modern PTSD symptoms many veterans miss — learn what counts and why it matters for your VA claim.">
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://yourwonclaim.com/pages/symptoms.html" />
+
+  <!-- Preconnect -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: "#2563EB",
+            "primary-dark": "#1E40AF",
+            navy: "#0F172A",
+          },
+          fontFamily: {
+            sans: ["Inter", "sans-serif"],
+          },
+          borderRadius: {
+            'xl': '1rem',
+            '2xl': '1.5rem',
+            '3xl': '2rem',
+          },
+        },
+      },
+    };
+  </script>
+
+  <style>
+    .glass-header {
+      background: rgba(255, 255, 255, 0.8);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+
+    .hero-gradient {
+      background: linear-gradient(135deg, #F8FAFB 0%, #FFFFFF 100%);
+    }
+
+    .symptom-card {
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .symptom-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.05);
+    }
+  </style>
+
+  <!-- GA4 Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-GMX19T2GWW"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);} gtag('js', new Date());
-    gtag('config', 'G-GMX19T2GWW', { transport_type: 'beacon' });
-    gtag('event', 'page_view', { page_path: '/pages/symptoms.html', page_title: 'Recognize Symptoms' });
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-GMX19T2GWW');
   </script>
-  <link rel="stylesheet" href="/src/styles/main.css">
-  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-  <link rel="manifest" href="/site.webmanifest">
-  <meta property="og:title" content="Recognize Service‑Connected PTSD Symptoms | YourWonClaim">
-  <meta property="og:description" content="Modern PTSD symptoms many veterans miss — learn what counts and why it matters.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://www.yourwonclaim.com/pages/symptoms.html">
-  <meta property="og:image" content="https://www.yourwonclaim.com/og/home-1200x630.png">
-  <meta name="twitter:card" content="summary_large_image">
 </head>
-<body>
-  <a class="skip-link" href="#main">Skip to main content</a>
-  <header class="site-header">
-    <nav class="nav container" aria-label="Primary">
-      <a class="brand" href="/">Your<span>Won</span>Claim</a>
-      <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Open menu">☰</button>
-      <ul id="primary-nav" class="nav-list" hidden>
-        <li><a href="/pages/index.html">Home</a></li>
-        <li><a href="/pages/mindset.html">Mindset</a></li>
-        <li><a href="/pages/strategy.html">The Strategy</a></li>
-        <li><a href="/pages/symptoms.html" aria-current="page">Recognize Symptoms</a></li>
-        <li><a href="/pages/guide.html">The Guide</a></li>
-        <li><a href="/pages/mystory.html">My Story</a></li>
-        <li><a class="btn btn--gold" href="/pages/checkout.html">Get the Guide — $197</a></li>
-      </ul>
-    </nav>
-  </header>
 
-  <main id="main" class="container grid-12">
-    <header class="col-12">
-      <h1>This Isn’t Your Grandfather’s “Shell Shock”</h1>
-      <p class="lead">Modern PTSD includes symptoms many veterans don’t recognize as service‑connected.</p>
+<body class="bg-white text-navy font-sans antialiased min-h-screen flex flex-col">
+
+  <!-- Navigation -->
+  <nav class="fixed w-full z-50 glass-header border-b border-gray-100">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-20">
+        <div class="flex-shrink-0 flex items-center">
+          <a href="/" class="flex items-center space-x-2 no-underline">
+            <div class="w-10 h-10 bg-primary rounded-xl flex items-center justify-center">
+              <span class="material-icons-round text-white">verified</span>
+            </div>
+            <span class="text-xl font-extrabold tracking-tight text-navy">
+              Veterans<span class="text-primary font-black">Claims</span>
+            </span>
+          </a>
+        </div>
+        <div class="hidden md:flex items-center space-x-10">
+          <a class="text-sm font-semibold text-gray-500 hover:text-primary transition-colors" href="/">Home</a>
+          <a class="text-sm font-semibold text-gray-500 hover:text-primary transition-colors" href="/articles/">Learning
+            Hub</a>
+          <a class="text-sm font-semibold text-gray-500 hover:text-primary transition-colors"
+            href="/pages/mystory.html">About Us</a>
+          <a class="inline-flex items-center justify-center px-6 py-2.5 bg-primary text-white text-sm font-bold rounded-full shadow-lg shadow-primary/20 hover:bg-primary-dark transition-all transform hover:scale-105"
+            href="/pages/guide.html">
+            Get the Guide — $37
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main class="flex-grow pt-20">
+    <!-- Hero Header -->
+    <header class="hero-gradient py-16 lg:py-24 border-b border-gray-100">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-center">
+        <div
+          class="inline-flex items-center px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-bold mb-6 italic uppercase">
+          Recognizing the Impact
+        </div>
+        <h1 class="text-4xl lg:text-6xl font-black text-navy leading-tight mb-8">
+          Not Your Grandfather's <br />
+          <span class="text-primary tracking-tight">"Shell Shock"</span>
+        </h1>
+        <p class="text-xl text-gray-600 leading-relaxed max-w-2xl mx-auto">
+          Modern PTSD includes symptoms many veterans don’t recognize as service-connected. Understanding these is the
+          first step toward your 100% P&T.
+        </p>
+      </div>
     </header>
 
-    <section class="col-12 grid-auto">
-      <article class="card"><h2>Hypervigilance</h2><p>Constant scanning, back‑to‑wall seating, exit‑checking.</p></article>
-      <article class="card"><h2>Social Avoidance</h2><p>Skipping public places, isolating, avoiding crowds.</p></article>
-      <article class="card"><h2>Relationship Strain</h2><p>Anger, emotional distance, difficulty connecting.</p></article>
-      <article class="card"><h2>Sleep Disruption</h2><p>Nightmares, insomnia, hyperarousal at night.</p></article>
-      <article class="card"><h2>Startle Response</h2><p>Exaggerated reactions to sudden sounds or movements.</p></article>
-      <article class="card"><h2>Irritability</h2><p>Quick temper, persistent tension, poor frustration tolerance.</p></article>
+    <!-- Symptoms Grid -->
+    <section class="py-24 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Hypervigilance -->
+          <div class="symptom-card bg-gray-50 p-8 rounded-3xl border border-gray-100">
+            <div class="w-12 h-12 bg-primary/10 text-primary rounded-xl flex items-center justify-center mb-6">
+              <span class="material-icons-round">visibility</span>
+            </div>
+            <h3 class="text-xl font-bold text-navy mb-2 tracking-tight">Hypervigilance</h3>
+            <p class="text-gray-500 text-sm leading-relaxed">Constant scanning, back-to-wall seating, exit-checking in
+              public places.</p>
+          </div>
+
+          <!-- Social Avoidance -->
+          <div class="symptom-card bg-gray-50 p-8 rounded-3xl border border-gray-100">
+            <div class="w-12 h-12 bg-primary/10 text-primary rounded-xl flex items-center justify-center mb-6">
+              <span class="material-icons-round">groups_off</span>
+            </div>
+            <h3 class="text-xl font-bold text-navy mb-2 tracking-tight">Social Avoidance</h3>
+            <p class="text-gray-500 text-sm leading-relaxed">Skipping public events, isolating at home, avoiding crowds
+              or restaurants.</p>
+          </div>
+
+          <!-- Relationship Strain -->
+          <div class="symptom-card bg-gray-50 p-8 rounded-3xl border border-gray-100">
+            <div class="w-12 h-12 bg-primary/10 text-primary rounded-xl flex items-center justify-center mb-6">
+              <span class="material-icons-round">heart_broken</span>
+            </div>
+            <h3 class="text-xl font-bold text-navy mb-2 tracking-tight">Relationship Strain</h3>
+            <p class="text-gray-500 text-sm leading-relaxed">Persistent anger, emotional distance, and difficulty
+              connecting with family.</p>
+          </div>
+
+          <!-- Sleep Disruption -->
+          <div class="symptom-card bg-gray-50 p-8 rounded-3xl border border-gray-100">
+            <div class="w-12 h-12 bg-primary/10 text-primary rounded-xl flex items-center justify-center mb-6">
+              <span class="material-icons-round">bedtime</span>
+            </div>
+            <h3 class="text-xl font-bold text-navy mb-2 tracking-tight">Sleep Disruption</h3>
+            <p class="text-gray-500 text-sm leading-relaxed">Vivid nightmares, chronic insomnia, or hyperarousal during
+              the night.</p>
+          </div>
+
+          <!-- Startle Response -->
+          <div class="symptom-card bg-gray-50 p-8 rounded-3xl border border-gray-100">
+            <div class="w-12 h-12 bg-primary/10 text-primary rounded-xl flex items-center justify-center mb-6">
+              <span class="material-icons-round">warning</span>
+            </div>
+            <h3 class="text-xl font-bold text-navy mb-2 tracking-tight">Startle Response</h3>
+            <p class="text-gray-500 text-sm leading-relaxed">Exaggerated physical reactions to sudden sounds, movements,
+              or surprises.</p>
+          </div>
+
+          <!-- Irritability -->
+          <div class="symptom-card bg-gray-50 p-8 rounded-3xl border border-gray-100">
+            <div class="w-12 h-12 bg-primary/10 text-primary rounded-xl flex items-center justify-center mb-6">
+              <span class="material-icons-round">bolt</span>
+            </div>
+            <h3 class="text-xl font-bold text-navy mb-2 tracking-tight">Irritability</h3>
+            <p class="text-gray-500 text-sm leading-relaxed">Quick temper, persistent tension, and poor tolerance for
+              everyday frustrations.</p>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <section class="col-12 cta">
-      <h2>Sound Familiar?</h2>
-      <p>These are service‑connected PTSD symptoms. The strategic path starts here.</p>
-      <a class="btn btn--cta" href="/pages/guide.html">Get the Recognition Framework</a>
+    <!-- CTA -->
+    <section class="py-24 bg-gray-50">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 class="text-4xl font-black text-navy mb-6 tracking-tight italic uppercase">Sound Familiar?</h2>
+        <p class="text-xl text-gray-500 mb-10">You're not alone. These are recognized service-connected symptoms. The
+          strategic path to your rating starts here.</p>
+        <a href="/pages/guide.html"
+          class="inline-flex items-center justify-center px-10 py-4 bg-primary text-white text-lg font-bold rounded-full shadow-xl shadow-primary/30 hover:bg-primary-dark transition-all transform hover:scale-105">
+          Get the Recognition Framework — $37
+        </a>
+      </div>
     </section>
   </main>
 
-  <footer class="site-footer container">
-    <p>© YourWonClaim.com — Educational resource, not affiliated with the VA.</p>
+  <!-- Footer -->
+  <footer class="bg-navy pt-20 pb-12">
+    <div
+      class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-gray-500 italic uppercase font-bold tracking-widest text-xs">
+      <p>&copy; 2026 Simple VA Strategy. Not affiliated with the VA.</p>
+    </div>
   </footer>
 
-  <script type="module">
-    import "/src/components/nav.js";
-  </script>
 </body>
+
 </html>
-
-

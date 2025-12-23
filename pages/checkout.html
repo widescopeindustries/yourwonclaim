@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8" />
   <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-  <title>Checkout | VeteransClaims</title>
+  <title>Checkout | YourWonClaim</title>
   <meta name="description"
     content="Secure checkout for the Simple VA Strategy Guide. Immediate access. Lifetime updates.">
 
@@ -72,20 +72,22 @@
             <div class="w-10 h-10 bg-primary rounded-xl flex items-center justify-center">
               <span class="material-icons-round text-white">verified</span>
             </div>
-            <span class="text-xl font-extrabold tracking-tight text-navy">
-              Veterans<span class="text-primary font-black">Claims</span>
+            <span class="text-xl font-extrabold tracking-tight text-navy uppercase italic">
+              YourWon<span class="text-primary font-black">Claim</span>
             </span>
           </a>
         </div>
         <div class="hidden md:flex items-center space-x-10">
-          <a class="text-sm font-semibold text-gray-500 hover:text-primary transition-colors" href="/">Home</a>
-          <a class="text-sm font-semibold text-gray-500 hover:text-primary transition-colors" href="/articles/">Learning
-            Hub</a>
-          <a class="text-sm font-semibold text-gray-500 hover:text-primary transition-colors"
-            href="/pages/mystory.html">About Us</a>
           <div
-            class="inline-flex items-center justify-center px-6 py-2.5 bg-primary/10 text-primary text-sm font-bold rounded-full">
+            class="inline-flex items-center justify-center px-6 py-2.5 bg-primary/10 text-primary text-xs font-black rounded-full uppercase italic tracking-tight">
+            <span class="material-icons-round text-sm mr-2">lock</span>
             Secure Checkout
+          </div>
+        </div>
+        <div class="md:hidden flex items-center">
+          <div
+            class="inline-flex items-center justify-center px-4 py-2 bg-primary/10 text-primary text-[10px] font-black rounded-full uppercase italic tracking-tight">
+            Secure
           </div>
         </div>
       </div>
@@ -97,9 +99,10 @@
     <header class="hero-gradient py-12 lg:py-20 border-b border-gray-100">
       <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <h1 class="text-4xl lg:text-5xl font-black text-navy leading-tight mb-4 italic uppercase">
-          Get the Guide — <span class="text-primary">$37</span>
+          The <span class="text-primary italic">Simple VA Strategy</span>
         </h1>
-        <p class="text-lg text-gray-500 font-medium">Secure checkout. Immediate access. Lifetime updates.</p>
+        <p class="text-lg text-gray-500 font-medium">Get the blueprint used by 10,000+ veterans to win their 100% P&T
+          rating.</p>
       </div>
     </header>
 
@@ -153,7 +156,7 @@
           <div class="bg-navy p-8 lg:p-12 rounded-3xl text-white shadow-2xl sticky top-32">
             <div class="flex justify-between items-center pb-6 border-b border-white/10 mb-8">
               <span class="text-gray-400 font-bold uppercase tracking-widest text-sm">Amount Due</span>
-              <span id="display-price" class="text-3xl font-black italic">$37</span>
+              <span id="display-price" class="text-3xl font-black italic">$37.99</span>
             </div>
 
             <!-- Order Bump -->
@@ -188,8 +191,8 @@
                 const priceDisplay = document.getElementById('display-price');
                 const stripeBtn = document.getElementById('stripe-button');
 
-                const basePrice = 37;
-                const bumpPrice = 17;
+                const basePrice = 37.99;
+                const bumpPrice = 17.00;
 
                 bump.addEventListener('click', function (e) {
                   if (e.target !== checkbox) {
@@ -202,7 +205,7 @@
 
                 function updatePrice() {
                   const total = checkbox.checked ? basePrice + bumpPrice : basePrice;
-                  priceDisplay.innerHTML = '$' + total;
+                  priceDisplay.innerHTML = '$' + total.toFixed(2);
 
                   // In a real scenario, you'd swap Stripe links or update a payment intent
                   if (checkbox.checked) {
