@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8" />
   <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-  <title>From 0% to 100% P&amp;T in 13 Months — My Story | VeteransClaims</title>
+  <title>From 0% to 100% P&amp;T in 13 Months — MY STORY | YourWonClaim</title>
   <meta name="description"
     content="I didn’t get lucky. I got strategic — and you can too. The story of Lyndon Bedford's journey to 100% P&T.">
 
@@ -37,8 +37,6 @@
         },
       },
     };
-  </script>
-
   <style>
     .glass-header {
       background: rgba(255, 255, 255, 0.8);
@@ -48,6 +46,10 @@
 
     .hero-gradient {
       background: linear-gradient(135deg, #F8FAFB 0%, #FFFFFF 100%);
+    }
+
+    .neon-glow-blue {
+      box-shadow: 0 0 20px rgba(37, 99, 235, 0.4), 0 0 40px rgba(37, 99, 235, 0.2);
     }
   </style>
 
@@ -72,22 +74,40 @@
             <div class="w-10 h-10 bg-primary rounded-xl flex items-center justify-center">
               <span class="material-icons-round text-white">verified</span>
             </div>
-            <span class="text-xl font-extrabold tracking-tight text-navy">
-              Veterans<span class="text-primary font-black">Claims</span>
+            <span class="text-xl font-extrabold tracking-tight text-navy uppercase italic">
+              YourWon<span class="text-primary font-black">Claim</span>
             </span>
           </a>
         </div>
         <div class="hidden md:flex items-center space-x-10">
-          <a class="text-sm font-semibold text-gray-500 hover:text-primary transition-colors" href="/">Home</a>
-          <a class="text-sm font-semibold text-gray-500 hover:text-primary transition-colors" href="/articles/">Learning
-            Hub</a>
-          <a class="text-sm font-semibold text-gray-500 hover:text-primary transition-colors"
-            href="/pages/mystory.html">About Us</a>
-          <a class="inline-flex items-center justify-center px-6 py-2.5 bg-primary text-white text-sm font-bold rounded-full shadow-lg shadow-primary/20 hover:bg-primary-dark transition-all transform hover:scale-105"
+          <a class="text-sm font-semibold text-gray-500 hover:text-primary transition-colors uppercase tracking-wider"
+            href="/">Home</a>
+          <a class="text-sm font-semibold text-gray-500 hover:text-primary transition-colors uppercase tracking-wider"
+            href="/articles/">Articles</a>
+          <a class="text-sm font-semibold text-gray-900 border-b-2 border-primary uppercase tracking-wider"
+            href="/pages/mystory.html">MY STORY</a>
+          <a class="inline-flex items-center justify-center px-6 py-2.5 bg-primary text-white text-xs font-black rounded-full neon-glow-blue hover:bg-primary-dark transition-all transform hover:scale-105 uppercase italic tracking-tight"
             href="/pages/guide.html">
-            Get the Guide — $37
+            Simple VA Strategy — $37.99
           </a>
         </div>
+        <div class="md:hidden flex items-center">
+          <button class="text-navy p-2 nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav">
+            <span class="material-icons-round text-2xl">menu</span>
+          </button>
+        </div>
+      </div>
+    </div>
+    <!-- Mobile Menu -->
+    <div id="primary-nav" class="md:hidden bg-white border-b border-gray-100 hidden">
+      <div class="px-4 pt-2 pb-6 space-y-2">
+        <a class="block px-4 py-3 text-base font-bold text-navy hover:bg-gray-50 rounded-xl" href="/">Home</a>
+        <a class="block px-4 py-3 text-base font-bold text-navy hover:bg-gray-50 rounded-xl"
+          href="/articles/">Articles</a>
+        <a class="block px-4 py-3 text-base font-bold text-navy hover:bg-gray-50 rounded-xl"
+          href="/pages/mystory.html">MY STORY</a>
+        <a class="block px-4 py-4 bg-primary text-white text-center font-black rounded-xl italic uppercase neon-glow-blue"
+          href="/pages/guide.html">Get THE STRATEGY — $37.99</a>
       </div>
     </div>
   </nav>
@@ -108,18 +128,24 @@
               <span class="text-primary tracking-tight">I got strategic.</span>
             </h1>
             <p class="text-lg text-gray-600 mb-10 max-w-2xl leading-relaxed">
-              My name is Lyndon Bedford. I'm a U.S. Army Iraq Veteran (2001-2005). Like many of you, I struggled with
-              the VA system for years before I finally cracked the code to getting the benefits I earned.
+              My name is Lyndon Bedford. I'm a U.S. Army Iraq Veteran (2001-2005). I waited **18 years** to file my
+              first claim because I simply didn't know I could. That delay cost me big time, but it led me to the
+              knowledge that changed everything.
             </p>
           </div>
           <div class="order-2 mt-16 lg:mt-0 relative">
-            <div class="relative rounded-3xl overflow-hidden shadow-2xl aspect-[4/5]">
-              <img src="/james_mac_portrait_1766368451166.png" alt="Lyndon Bedford" class="w-full h-full object-cover">
+            <div
+              class="relative rounded-3xl overflow-hidden shadow-2xl aspect-[4/5] transform hover:scale-[1.02] transition-transform duration-500">
+              <img src="../images/proof/FB_IMG_1738853381094.jpg" alt="Lyndon Bedford in Service"
+                class="w-full h-full object-cover">
+              <div class="absolute bottom-6 left-6 p-6 glass-header rounded-2xl shadow-xl border border-white/20">
+                <p class="text-navy font-bold text-lg mb-0.5 italic">Lyndon Bedford</p>
+                <p class="text-gray-500 text-sm font-bold tracking-widest uppercase">U.S. Army • Iraq Veteran</p>
+              </div>
             </div>
-            <div class="absolute -bottom-6 -left-6 p-6 glass-header rounded-2xl shadow-xl border border-gray-100">
-              <p class="text-navy font-bold text-lg mb-0.5">Lyndon Bedford</p>
-              <p class="text-gray-500 text-sm">U.S. Army, 2001–2005 • Iraq Veteran</p>
-            </div>
+            <!-- Background Decoration -->
+            <div class="absolute -top-10 -right-10 w-40 h-40 bg-primary/10 rounded-full blur-3xl -z-10"></div>
+            <div class="absolute -bottom-10 -left-10 w-40 h-40 bg-accent/10 rounded-full blur-3xl -z-10"></div>
           </div>
         </div>
       </div>
@@ -129,27 +155,31 @@
     <section class="py-24 bg-white">
       <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
         <article class="prose prose-lg prose-navy max-w-none">
-          <h2 class="text-3xl font-black text-navy tracking-tight mb-8">Why I Filed Differently</h2>
+          <h2 class="text-3xl font-black text-navy tracking-tight mb-8">The Strategy That Changed Everything</h2>
           <p>
-            For years, I followed the conventional wisdom. I filled out the forms, I went to the exams, and I waited.
-            And for years, I was either denied or given a rating that didn't reflect my reality.
+            For 18 years, I sat on the sidelines because I didn't know the rules of the game. When I finally decided to
+            file, I didn't use a "shotgun" approach. I didn't file for 20 different things and hope something stuck.
           </p>
           <p>
-            I realized the system isn't "broken"—it's a bureaucratic machine that runs on specific types of evidence and
-            language. When I shifted my focus to <strong>combat-related PTSD</strong> and documented my symptoms
-            honestly using the VA's own 38 CFR rules, everything changed.
+            I went back to bootcamp—**Combat Craig's Bootcamp**, that is. (RIP Brother... thanks for the guidance and
+            wisdom. You are missed for sure).
+          </p>
+          <p>
+            I learned that the system isn't "broken"—it's a bureaucratic machine that runs on specific types of
+            evidence.
+            Following that wisdom, I filed **exactly 1 claim** comprised of **1 condition**.
           </p>
 
-          <h2 class="text-3xl font-black text-navy tracking-tight mt-16 mb-8 uppercase italic">The Timeline</h2>
+          <h2 class="text-3xl font-black text-navy tracking-tight mt-16 mb-8 uppercase italic">The Real Timeline</h2>
           <ul class="space-y-4 list-none pl-0">
             <li class="flex items-start bg-gray-50 p-6 rounded-2xl border border-gray-100">
               <div
                 class="w-10 h-10 bg-primary text-white rounded-full flex items-center justify-center mr-4 flex-shrink-0 font-bold">
                 1</div>
               <div>
-                <h4 class="font-bold text-navy mb-1">Phase 1: Strategy</h4>
-                <p class="text-gray-600 text-sm m-0">Re-evaluating my medical records and aligning symptoms with 38 CFR
-                  criteria.</p>
+                <h4 class="font-bold text-navy mb-1">Phase 1: The Knowledge Gap</h4>
+                <p class="text-gray-600 text-sm m-0">18 years of waiting because I didn't know my own rights. A costly
+                  mistake I don't want you to repeat.</p>
               </div>
             </li>
             <li class="flex items-start bg-gray-50 p-6 rounded-2xl border border-gray-100">
@@ -157,9 +187,9 @@
                 class="w-10 h-10 bg-primary text-white rounded-full flex items-center justify-center mr-4 flex-shrink-0 font-bold">
                 2</div>
               <div>
-                <h4 class="font-bold text-navy mb-1">Phase 2: Evidence</h4>
-                <p class="text-gray-600 text-sm m-0">Gathering buddy statements and clarifying medical documentation.
-                </p>
+                <h4 class="font-bold text-navy mb-1">Phase 2: The Sniper Approach</h4>
+                <p class="text-gray-600 text-sm m-0">Filing exactly **1 claim** for **1 condition**. Quality over
+                  quantity, backed by bulletproof evidence.</p>
               </div>
             </li>
             <li class="flex items-start bg-primary/10 p-6 rounded-2xl border border-primary/20">
@@ -168,8 +198,8 @@
                 3</div>
               <div>
                 <h4 class="font-bold text-navy mb-1 italic uppercase tracking-tighter">Outcome: 100% P&T</h4>
-                <p class="text-gray-700 text-sm m-0 font-medium">Just over 1 year from the new strategy to a
-                  life-changing decision.</p>
+                <p class="text-gray-700 text-sm m-0 font-medium">Just **13 months later**, my life was transformed by a
+                  decision I earned 18 years prior.</p>
               </div>
             </li>
           </ul>
@@ -182,8 +212,8 @@
           <div class="mt-12 p-8 bg-navy rounded-3xl text-white text-center">
             <p class="text-xl mb-8">Ready to start your own path to 100% P&T?</p>
             <a href="/pages/guide.html"
-              class="inline-flex items-center justify-center px-10 py-4 bg-primary text-white text-lg font-bold rounded-full shadow-xl shadow-primary/30 hover:bg-primary-dark transition-all transform hover:scale-105">
-              Get the Guide — $37
+              class="inline-flex items-center justify-center px-10 py-4 bg-primary text-white text-lg font-bold rounded-full neon-glow-blue hover:bg-primary-dark transition-all transform hover:scale-105 italic uppercase tracking-tighter">
+              Get the Strategy — $37.99
             </a>
           </div>
         </article>
@@ -201,6 +231,7 @@
     </div>
   </footer>
 
+  <script type="module" src="/src/components/nav.js"></script>
 </body>
 
 </html>

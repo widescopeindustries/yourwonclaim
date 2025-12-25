@@ -153,6 +153,10 @@
       color: #0B1F38;
       border: 2px solid #0B1F38
     }
+
+    .neon-glow-blue {
+      box-shadow: 0 0 20px rgba(37, 99, 235, 0.4), 0 0 40px rgba(37, 99, 235, 0.2);
+    }
   </style>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -182,17 +186,17 @@
 
   <header class="site-header">
     <nav class="nav container" aria-label="Primary">
-      <a class="brand" href="/">Your<span>Won</span>Claim</a>
+      <a class="brand uppercase italic" href="/">YourWon<span class="text-primary font-black">Claim</span></a>
       <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Open menu">☰</button>
-      <ul id="primary-nav" class="nav-list" hidden>
-        <li><a href="/pages/index.html">Home</a></li>
-        <li><a href="/pages/mindset.html">Mindset</a></li>
-        <li><a href="/pages/strategy.html">The Strategy</a></li>
-        <li><a href="/pages/symptoms.html">Recognize Symptoms</a></li>
-        <li><a href="/pages/guide.html">The Guide</a></li>
-        <li><a href="/pages/mystory.html">My Story</a></li>
-        <li><a class="btn btn--gold" href="/pages/checkout.html">Get the Guide — $37</a></li>
-      </ul>
+      <div id="primary-nav" class="nav-list-wrapper" hidden>
+        <ul class="nav-list">
+          <li><a class="uppercase tracking-wider text-xs font-bold" href="/">Home</a></li>
+          <li><a class="uppercase tracking-wider text-xs font-bold" href="/articles/">Articles</a></li>
+          <li><a class="uppercase tracking-wider text-xs font-bold" href="/pages/mystory.html">Our Story</a></li>
+          <li><a class="btn btn--cta uppercase italic tracking-tighter" href="/pages/checkout.html">Get the Strategy —
+              $37.99</a></li>
+        </ul>
+      </div>
     </nav>
   </header>
 
@@ -313,7 +317,8 @@
         <p class="small">30‑day money‑back guarantee if this strategy won't work for your situation.</p>
       </div>
       <div class="col-4 align-end">
-        <a class="btn btn--cta btn--block" href="/pages/checkout.html">Get The Guide — $37</a>
+        <a class="btn btn--cta btn--block neon-glow-blue italic uppercase tracking-tighter"
+          href="/pages/checkout.html">Get The Strategy — $37.99</a>
       </div>
     </section>
   </main>

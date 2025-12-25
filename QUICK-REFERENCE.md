@@ -98,6 +98,12 @@ For cost-effective keyword and domain analysis.
 2. Test connection: `node test-ahrefs.cjs`
 3. Run analysis: `node analyze-va-opportunity.cjs`
 
+### Audit & Debugging Tools
+- `node list-broken.cjs`: Lists pages with http4xx and images4xx errors from the latest audit.
+- `node save-broken-data.cjs`: Saves the raw audit data for broken pages/images to `broken_data.json`.
+- `node parse-broken-report.cjs`: Parses `broken_data.json` to list missing URLs and pages with broken images.
+- `node global-replace-www.cjs`: Recursively replaces `www.yourwonclaim.com` with `yourwonclaim.com` in all files.
+
 ---
 
 **Status:** ✅ Ready to Deploy  

@@ -1,0 +1,5 @@
+node_modules
+.env
+broken_data.json
+broken_results.txt
+.DS_Store

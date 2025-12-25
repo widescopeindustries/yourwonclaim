@@ -85,6 +85,14 @@
             background: linear-gradient(135deg, #F8FAFB 0%, #FFFFFF 100%);
         }
 
+        .neon-glow-blue {
+            box-shadow: 0 0 20px rgba(37, 99, 235, 0.4), 0 0 40px rgba(37, 99, 235, 0.2);
+        }
+
+        .neon-text-blue {
+            text-shadow: 0 0 10px rgba(37, 99, 235, 0.5);
+        }
+
         .stat-card {
             background: white;
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -117,6 +125,7 @@
         gtag('js', new Date());
         gtag('config', 'G-GMX19T2GWW');
     </script>
+  <script type="module" crossorigin src="/assets/main-C_R25fzb.js"></script>
 </head>
 
 <body class="bg-white text-navy font-sans antialiased min-h-screen flex flex-col">
@@ -130,30 +139,41 @@
                         <div class="w-10 h-10 bg-primary rounded-xl flex items-center justify-center">
                             <span class="material-icons-round text-white">verified</span>
                         </div>
-                        <span class="text-xl font-extrabold tracking-tight text-navy">
-                            Veterans<span class="text-primary font-black">Claims</span>
+                        <span class="text-xl font-extrabold tracking-tight text-navy uppercase italic">
+                            YourWon<span class="text-primary font-black">Claim</span>
                         </span>
                     </a>
                 </div>
                 <div class="hidden md:flex items-center space-x-10">
-                    <a class="text-sm font-semibold text-gray-500 hover:text-primary transition-colors"
+                    <a class="text-sm font-semibold text-gray-500 hover:text-primary transition-colors uppercase tracking-wider"
                         href="/">Home</a>
-                    <a class="text-sm font-semibold text-gray-500 hover:text-primary transition-colors"
-                        href="/articles/">Learning Hub</a>
-                    <a class="text-sm font-semibold text-gray-500 hover:text-primary transition-colors"
-                        href="/pages/mystory.html">About Us</a>
-                    <a class="text-sm font-semibold text-gray-500 hover:text-primary transition-colors"
-                        href="#testimonials">Success Stories</a>
-                    <a class="inline-flex items-center justify-center px-6 py-2.5 bg-primary text-white text-sm font-bold rounded-full shadow-lg shadow-primary/20 hover:bg-primary-dark transition-all transform hover:scale-105"
+                    <a class="text-sm font-semibold text-gray-500 hover:text-primary transition-colors uppercase tracking-wider"
+                        href="/articles/">Articles</a>
+                    <a class="text-sm font-semibold text-gray-500 hover:text-primary transition-colors uppercase tracking-wider"
+                        href="/pages/mystory.html">MY STORY</a>
+                    <a class="inline-flex items-center justify-center px-6 py-2.5 bg-primary text-white text-xs font-black rounded-full neon-glow-blue hover:bg-primary-dark transition-all transform hover:scale-105 uppercase italic tracking-tight"
                         href="/pages/guide.html">
-                        Get the Guide — $37
+                        Simple VA Strategy — $37.99
                     </a>
                 </div>
                 <div class="md:hidden flex items-center">
-                    <button class="text-navy p-2" type="button">
+                    <button class="text-navy p-2 nav-toggle" type="button" aria-expanded="false"
+                        aria-controls="primary-nav">
                         <span class="material-icons-round text-2xl">menu</span>
                     </button>
                 </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="primary-nav" class="md:hidden bg-white border-b border-gray-100 hidden">
+            <div class="px-4 pt-2 pb-6 space-y-2">
+                <a class="block px-4 py-3 text-base font-bold text-navy hover:bg-gray-50 rounded-xl" href="/">Home</a>
+                <a class="block px-4 py-3 text-base font-bold text-navy hover:bg-gray-50 rounded-xl"
+                    href="/articles/">Articles</a>
+                <a class="block px-4 py-3 text-base font-bold text-navy hover:bg-gray-50 rounded-xl"
+                    href="/pages/mystory.html">MY STORY</a>
+                <a class="block px-4 py-4 bg-primary text-white text-center font-black rounded-xl italic uppercase neon-glow-blue"
+                    href="/pages/guide.html">Get The Strategy — $37.99</a>
             </div>
         </div>
     </nav>
@@ -181,7 +201,7 @@
                             class="flex flex-col sm:flex-row items-center justify-center lg:justify-start space-y-4 sm:space-y-0 sm:space-x-4">
                             <a href="#purchase"
                                 class="w-full sm:w-auto px-10 py-4 bg-primary text-white text-lg font-bold rounded-full shadow-xl shadow-primary/30 hover:bg-primary-dark transition-all transform hover:scale-105">
-                                Get the Guide
+                                Get the Strategy
                             </a>
                             <a href="/articles/"
                                 class="w-full sm:w-auto px-10 py-4 bg-white text-navy text-lg font-bold rounded-full border border-gray-100 shadow-sm hover:bg-gray-50 transition-all">
@@ -391,13 +411,13 @@
                         <h4 class="text-xl font-bold mb-2">Gathering Evidence</h4>
                         <p class="text-gray-400 text-sm">Longest wait time. Learn how to speed it up.</p>
                     </a>
-                    <a href="/articles/va-claim-status-preparation-decision.html"
+                    <a href="/articles/va-claim-status-preparation-for-decision.html"
                         class="bg-navy-light p-8 rounded-3xl hover:bg-navy-light/80 transition-all border border-gray-700/50">
                         <div class="text-3xl mb-4">📞</div>
                         <h4 class="text-xl font-bold mb-2">Review of Evidence</h4>
                         <p class="text-gray-400 text-sm">Decision is coming. Get the right contacts now.</p>
                     </a>
-                    <a href="/articles/va-claim-status-notification.html"
+                    <a href="/articles/va-claim-status-decision-letter.html"
                         class="bg-navy-light p-8 rounded-3xl hover:bg-navy-light/80 transition-all border border-gray-700/50">
                         <div class="text-3xl mb-4">✅</div>
                         <h4 class="text-xl font-bold mb-2">Decision Packet</h4>
@@ -509,18 +529,17 @@
                         class="absolute top-0 right-0 w-32 h-32 bg-accent/10 rounded-bl-full flex items-center justify-center pt-8 pl-8">
                         <span class="material-icons-round text-accent text-3xl">verified_user</span>
                     </div>
-                    <h2 class="text-4xl font-black text-navy mb-6 tracking-tight">The Ultimate Veteran's <br
-                            class="hidden sm:block" /> Strategy Guide</h2>
+                    <h2 class="text-4xl font-black text-navy mb-6 tracking-tight">The Simple VA Strategy</h2>
                     <p class="text-xl text-gray-600 mb-10 leading-relaxed italic uppercase tracking-tight">The same
                         system I used to achieve 100% P&T in 13 months.</p>
                     <div class="mb-10">
-                        <div class="text-5xl font-black text-navy mb-2 tracking-tighter uppercase italic">$37</div>
+                        <div class="text-5xl font-black text-navy mb-2 tracking-tighter uppercase italic">$37.99</div>
                         <p class="text-gray-400 font-bold uppercase tracking-widest text-sm">One-time payment. Lifetime
                             access.</p>
                     </div>
-                    <a href="https://buy.stripe.com/4gM28remJ42ieGsfsb18c05"
-                        class="inline-flex items-center justify-center px-16 py-5 bg-primary text-white text-xl font-bold rounded-full shadow-2xl shadow-primary/30 hover:bg-primary-dark transition-all transform hover:scale-105 w-full sm:w-auto">
-                        Get Instant Access
+                    <a href="/pages/checkout.html"
+                        class="inline-flex items-center justify-center px-16 py-5 bg-primary text-white text-xl font-black rounded-full neon-glow-blue hover:bg-primary-dark transition-all transform hover:scale-105 w-full sm:w-auto italic uppercase tracking-tighter">
+                        Get Instant Access — $37.99
                     </a>
                     <div class="mt-8 pt-8 border-t border-gray-50 flex flex-wrap justify-center gap-8">
                         <div class="flex items-center text-sm font-bold text-gray-500 uppercase tracking-wider">
@@ -548,7 +567,7 @@
                             <span class="material-icons-round text-white text-sm">verified</span>
                         </div>
                         <span class="text-xl font-black tracking-tighter text-white uppercase italic">
-                            Veterans<span class="text-primary">Claims</span>
+                            YourWon<span class="text-primary">Claim</span>
                         </span>
                     </a>
                     <p class="text-gray-400 text-lg max-w-sm leading-relaxed mb-6">Empowering veterans to claim what
@@ -572,15 +591,15 @@
                     <h4 class="text-white font-black uppercase tracking-widest text-xs mb-6 italic">Company</h4>
                     <ul class="space-y-4">
                         <li><a href="/pages/mystory.html"
-                                class="text-gray-400 hover:text-white transition-colors text-sm font-bold uppercase tracking-wider">Our
-                                Story</a></li>
-                        <li><a href="/pages/privacy-policy.html"
+                                class="text-gray-400 hover:text-white transition-colors text-sm font-bold uppercase tracking-wider">MY
+                                STORY</a></li>
+                        <li><a href="/privacy-policy.html"
                                 class="text-gray-400 hover:text-white transition-colors text-sm font-bold uppercase tracking-wider">Privacy
                                 Policy</a></li>
-                        <li><a href="/pages/terms-of-service.html"
+                        <li><a href="/terms-of-service.html"
                                 class="text-gray-400 hover:text-white transition-colors text-sm font-bold uppercase tracking-wider">Terms
                                 of Service</a></li>
-                        <li><a href="/pages/contact.html"
+                        <li><a href="/contact.html"
                                 class="text-gray-400 hover:text-white transition-colors text-sm font-bold uppercase tracking-wider">Contact</a>
                         </li>
                     </ul>
@@ -600,7 +619,7 @@
             </div>
         </div>
     </footer>
-
+
 </body>
 
 </html>
