@@ -184,16 +184,26 @@
               </div>
             </div>
 
+            <!-- Stripe JS -->
+            <script src="https://js.stripe.com/v3/"></script>
             <script>
               document.addEventListener('DOMContentLoaded', function () {
+                // Initialize Stripe with your Publishable Key
+                const stripe = Stripe('pk_live_51R5PbFFHOW0K7xmhiLda6b8HOUqjbIvJOeXFBvwID25F5Xp6d2vCdsjPWKIWlK8yEIzc3M2bufuBbOLG1IOY10XG00xFjaXrcc');
+
                 const bump = document.getElementById('order-bump');
                 const checkbox = document.getElementById('bump-checkbox');
                 const priceDisplay = document.getElementById('display-price');
                 const stripeBtn = document.getElementById('stripe-button');
 
-                const basePrice = 37.99;
-                const bumpPrice = 17.00;
+                // Price Configuration
+                const basePriceId = 'price_1SeS3bFHOW0K7xmhWxKQNhKm'; // $37.99
+                const kickerPriceId = 'price_1Six8CFHOW0K7xmhNEr0cw29'; // $17.00
 
+                const basePriceAmount = 37.99;
+                const bumpPriceAmount = 17.00;
+
+                // Toggle Checkbox on Div Click
                 bump.addEventListener('click', function (e) {
                   if (e.target !== checkbox) {
                     checkbox.checked = !checkbox.checked;
@@ -204,24 +214,45 @@
                 checkbox.addEventListener('change', updatePrice);
 
                 function updatePrice() {
-                  const total = checkbox.checked ? basePrice + bumpPrice : basePrice;
+                  const total = checkbox.checked ? basePriceAmount + bumpPriceAmount : basePriceAmount;
                   priceDisplay.innerHTML = '$' + total.toFixed(2);
-
-                  // In a real scenario, you'd swap Stripe links or update a payment intent
-                  if (checkbox.checked) {
-                    stripeBtn.setAttribute('href', 'https://buy.stripe.com/example_with_bump');
-                  } else {
-                    stripeBtn.setAttribute('href', 'https://buy.stripe.com/4gM28remJ42ieGsfsb18c05');
-                  }
                 }
+
+                // Handle Checkout
+                stripeBtn.addEventListener('click', async function (e) {
+                  e.preventDefault();
+
+                  // Construct Line Items
+                  const lineItems = [{ price: basePriceId, quantity: 1 }];
+                  if (checkbox.checked) {
+                    if (kickerPriceId === 'price_REPLACE_WITH_KICKER_ID') {
+                      alert('Please configure the Kicker Offer Price ID in the code.');
+                      return;
+                    }
+                    lineItems.push({ price: kickerPriceId, quantity: 1 });
+                  }
+
+                  // Redirect to Stripe Checkout
+                  const { error } = await stripe.redirectToCheckout({
+                    lineItems: lineItems,
+                    mode: 'payment',
+                    successUrl: window.location.origin + '/thank-you.html',
+                    cancelUrl: window.location.href,
+                  });
+
+                  if (error) {
+                    console.error('Stripe Error:', error);
+                    alert('Payment Error: ' + error.message);
+                  }
+                });
               });
             </script>
 
-            <a href="https://buy.stripe.com/4gM28remJ42ieGsfsb18c05" id="stripe-button"
+            <button id="stripe-button"
               class="w-full py-5 bg-primary text-white text-xl font-bold rounded-2xl flex items-center justify-center hover:bg-primary-dark transition-all transform hover:scale-[1.02] shadow-xl shadow-primary/20 mb-8">
               Pay with Stripe
               <span class="material-icons-round ml-2">lock</span>
-            </a>
+            </button>
 
             <div class="grid grid-cols-2 gap-4 text-center">
               <div class="p-4 bg-white/5 rounded-xl border border-white/10">
