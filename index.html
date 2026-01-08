@@ -33,8 +33,11 @@
     <!-- Preload Hero Image (LCP Optimization) -->
     <link rel="preload" as="image" href="/images/hero-optimized.webp" type="image/webp" fetchpriority="high">
 
-    <!-- Stylesheet -->
-    <link rel="stylesheet" href="/src/styles/index.css">
+    <!-- Stylesheet (Deferred for FCP speed) -->
+    <link rel="stylesheet" href="/src/styles/index.css" media="print" onload="this.media='all'">
+    <noscript>
+        <link rel="stylesheet" href="/src/styles/index.css">
+    </noscript>
 
     <style>
         /* CRITICAL CSS - INLINED FOR 0.0s RENDER BLOCKING */
@@ -155,6 +158,132 @@
             -webkit-box-orient: vertical;
             overflow: hidden;
             line-clamp: 2;
+        }
+
+        /* CRITICAL LAYOUT STYLES (Inline to prevent CLS while main CSS loads) */
+        .fixed {
+            position: fixed;
+        }
+
+        .absolute {
+            position: absolute;
+        }
+
+        .relative {
+            position: relative;
+        }
+
+        .w-full {
+            width: 100%;
+        }
+
+        .h-20 {
+            height: 5rem;
+        }
+
+        .z-50 {
+            z-index: 50;
+        }
+
+        .flex {
+            display: flex;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .items-center {
+            align-items: center;
+        }
+
+        .justify-between {
+            justify-content: space-between;
+        }
+
+        .justify-center {
+            justify-content: center;
+        }
+
+        .max-w-7xl {
+            max-width: 80rem;
+        }
+
+        .mx-auto {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .px-4 {
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
+
+        /* Hero Criticals */
+        .pt-20 {
+            padding-top: 5rem;
+        }
+
+        .lg\:grid {
+            display: grid;
+        }
+
+        .lg\:grid-cols-2 {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .lg\:gap-16 {
+            gap: 4rem;
+        }
+
+        .aspect-\[4\/3\] {
+            aspect-ratio: 4/3;
+        }
+
+        .object-cover {
+            object-fit: cover;
+        }
+
+        .font-black {
+            font-weight: 900;
+        }
+
+        .text-4xl {
+            font-size: 2.25rem;
+            line-height: 2.5rem;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        @media (min-width: 768px) {
+            .md\:flex {
+                display: flex;
+            }
+
+            .md\:hidden {
+                display: none;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .lg\:text-left {
+                text-align: left;
+            }
+
+            .lg\:text-6xl {
+                font-size: 3.75rem;
+                line-height: 1;
+            }
+
+            .lg\:block {
+                display: block;
+            }
+
+            .lg\:grid {
+                display: grid;
+            }
         }
     </style>
 
