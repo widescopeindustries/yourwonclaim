@@ -11,6 +11,15 @@
   <!-- Canonical URL -->
   <link rel="canonical" href="https://yourwonclaim.com/pages/checkout.html" />
 
+  <!-- Open Graph -->
+  <meta property="og:title" content="Checkout - Simple VA Strategy | YourWonClaim" />
+  <meta property="og:description"
+    content="Secure checkout for the Simple VA Strategy Guide. Immediate access. Lifetime updates." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://yourwonclaim.com/pages/checkout.html" />
+  <meta property="og:image" content="https://yourwonclaim.com/og/home-1200x630.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+
   <!-- Preconnect -->
   <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
@@ -101,7 +110,7 @@
         <h1 class="text-4xl lg:text-5xl font-black text-navy leading-tight mb-4 italic uppercase">
           The <span class="text-primary italic">Simple VA Strategy</span>
         </h1>
-        <p class="text-lg text-gray-500 font-medium">Get the blueprint used by 10,000+ veterans to win their 100% P&T
+        <p class="text-lg text-gray-500 font-medium">Get the blueprint used by 1,200+ veterans to win their 100% P&T
           rating.</p>
       </div>
     </header>
@@ -174,7 +183,7 @@
                   <p class="text-sm font-bold text-white mb-2">Add the CP&P Exam Cheat Sheet + 15 Personal Statement
                     Templates</p>
                   <p class="text-xs text-gray-400 leading-relaxed mb-3">Ensure your evidence is bulletproof with the
-                    exact templates that worked for 10,000+ veterans. (Just $17 extra)</p>
+                    exact templates that worked for 1,200+ veterans. (Just $17 extra)</p>
                   <div
                     class="inline-flex items-center text-[10px] font-black text-primary uppercase tracking-tighter bg-primary/20 px-2 py-1 rounded italic">
                     <span class="material-icons-round text-xs mr-1">bolt</span>
@@ -184,16 +193,26 @@
               </div>
             </div>
 
+            <!-- Stripe JS -->
+            <script src="https://js.stripe.com/v3/"></script>
             <script>
               document.addEventListener('DOMContentLoaded', function () {
+                // Initialize Stripe with your Publishable Key
+                const stripe = Stripe('pk_live_51R5PbFFHOW0K7xmhiLda6b8HOUqjbIvJOeXFBvwID25F5Xp6d2vCdsjPWKIWlK8yEIzc3M2bufuBbOLG1IOY10XG00xFjaXrcc');
+
                 const bump = document.getElementById('order-bump');
                 const checkbox = document.getElementById('bump-checkbox');
                 const priceDisplay = document.getElementById('display-price');
                 const stripeBtn = document.getElementById('stripe-button');
 
-                const basePrice = 37.99;
-                const bumpPrice = 17.00;
+                // Price Configuration
+                const basePriceId = 'price_1SeS3bFHOW0K7xmhWxKQNhKm'; // $37.99
+                const kickerPriceId = 'price_1Six8CFHOW0K7xmhNEr0cw29'; // $17.00
 
+                const basePriceAmount = 37.99;
+                const bumpPriceAmount = 17.00;
+
+                // Toggle Checkbox on Div Click
                 bump.addEventListener('click', function (e) {
                   if (e.target !== checkbox) {
                     checkbox.checked = !checkbox.checked;
@@ -204,24 +223,45 @@
                 checkbox.addEventListener('change', updatePrice);
 
                 function updatePrice() {
-                  const total = checkbox.checked ? basePrice + bumpPrice : basePrice;
+                  const total = checkbox.checked ? basePriceAmount + bumpPriceAmount : basePriceAmount;
                   priceDisplay.innerHTML = '$' + total.toFixed(2);
-
-                  // In a real scenario, you'd swap Stripe links or update a payment intent
-                  if (checkbox.checked) {
-                    stripeBtn.setAttribute('href', 'https://buy.stripe.com/example_with_bump');
-                  } else {
-                    stripeBtn.setAttribute('href', 'https://buy.stripe.com/4gM28remJ42ieGsfsb18c05');
-                  }
                 }
+
+                // Handle Checkout
+                stripeBtn.addEventListener('click', async function (e) {
+                  e.preventDefault();
+
+                  // Construct Line Items
+                  const lineItems = [{ price: basePriceId, quantity: 1 }];
+                  if (checkbox.checked) {
+                    if (kickerPriceId === 'price_REPLACE_WITH_KICKER_ID') {
+                      alert('Please configure the Kicker Offer Price ID in the code.');
+                      return;
+                    }
+                    lineItems.push({ price: kickerPriceId, quantity: 1 });
+                  }
+
+                  // Redirect to Stripe Checkout
+                  const { error } = await stripe.redirectToCheckout({
+                    lineItems: lineItems,
+                    mode: 'payment',
+                    successUrl: window.location.origin + '/thank-you.html',
+                    cancelUrl: window.location.href,
+                  });
+
+                  if (error) {
+                    console.error('Stripe Error:', error);
+                    alert('Payment Error: ' + error.message);
+                  }
+                });
               });
             </script>
 
-            <a href="https://buy.stripe.com/4gM28remJ42ieGsfsb18c05" id="stripe-button"
+            <button id="stripe-button"
               class="w-full py-5 bg-primary text-white text-xl font-bold rounded-2xl flex items-center justify-center hover:bg-primary-dark transition-all transform hover:scale-[1.02] shadow-xl shadow-primary/20 mb-8">
               Pay with Stripe
               <span class="material-icons-round ml-2">lock</span>
-            </a>
+            </button>
 
             <div class="grid grid-cols-2 gap-4 text-center">
               <div class="p-4 bg-white/5 rounded-xl border border-white/10">
