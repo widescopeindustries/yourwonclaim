@@ -22,9 +22,10 @@ const staticPages = [
   { path: '/thank-you.html', priority: '0.4', changefreq: 'monthly', title: 'Thank You' },
 ];
 
-// Define pages directory pages
 const pagesDir = path.join(__dirname, '../pages');
-const pageFiles = fs.existsSync(pagesDir) ? fs.readdirSync(pagesDir).filter(f => f.endsWith('.html')) : [];
+const pageFiles = fs.existsSync(pagesDir)
+  ? fs.readdirSync(pagesDir).filter(f => f.endsWith('.html') && f !== 'index.html')
+  : [];
 
 // Start sitemap with XML declaration
 let sitemap = `<?xml version="1.0" encoding="UTF-8"?>

@@ -33,18 +33,24 @@
     <!-- Preload Hero Image (LCP Optimization) -->
     <link rel="preload" as="image" href="/images/hero-optimized.webp" type="image/webp" fetchpriority="high">
 
-    <!-- Production CSS (High Performance) -->
-    <link rel="stylesheet" href="/src/styles/index.css">
-
     <style>
-        /* Critical CSS & Accessibility Fixes */
+        /* CRITICAL CSS - INLINED FOR 0.0s RENDER BLOCKING */
         :root {
             --primary: #2563EB;
+            --primary-dark: #1E40AF;
             --navy: #0F172A;
+            --accent: #F59E0B;
+        }
+
+        @layer base {
+            html {
+                font-family: 'Inter', sans-serif;
+                scroll-behavior: smooth;
+            }
         }
 
         .glass-header {
-            background: rgba(255, 255, 255, 0.9);
+            background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
         }
@@ -63,24 +69,61 @@
             background-size: 40px 40px;
         }
 
-        /* Fix contrast for gray text on white/light gray */
+        .stat-card {
+            background-color: white;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.05);
+        }
+
+        /* Accessibility: High Contrast Gray Text (Darkened from Tailwind defaults) */
+        .text-gray-700 {
+            color: #374151 !important;
+        }
+
+        /* Gray-700 */
+        .text-gray-600 {
+            color: #4b5563 !important;
+        }
+
+        /* Gray-600 */
         .text-gray-500 {
-            color: #52525b !important;
+            color: #4b5563 !important;
         }
 
+        /* Forced to Gray-600 for contrast */
         .text-gray-400 {
-            color: #71717a !important;
+            color: #3f3f46 !important;
         }
 
-        /* Font display swap is handled via Google Fonts URL */
+        /* Forced to Gray-700ish for contrast */
+
+        /* Force high contrast on links */
+        a {
+            transition: color 0.2s;
+        }
+
+        .text-primary:hover {
+            color: var(--primary-dark) !important;
+        }
+
+        .line-clamp-2 {
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            line-clamp: 2;
+        }
     </style>
 
-    <!-- Font Loading (Swapped for speed) -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
-        rel="stylesheet" />
-
-    <!-- Material Icons -->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
+    <!-- Non-Blocking Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap"
+        media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" media="print"
+        onload="this.media='all'">
 
     <!-- GA4 Analytics (Deferred) -->
     <script defer src="https://www.googletagmanager.com/gtag/js?id=G-GMX19T2GWW"></script>
@@ -88,7 +131,7 @@
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
-        gtag('config', 'G-GMX19T2GWW');
+        gtag('config', 'G-GMX19T2GWW', { 'page_path': window.location.pathname });
     </script>
 
     <!-- Schema Markup -->
@@ -157,12 +200,13 @@
 
     <!-- Urgency Top Bar -->
     <div
-        class="bg-red-600 text-white py-1.5 px-4 text-center text-[10px] sm:text-xs font-black uppercase tracking-widest z-[60] relative">
+        class="bg-red-700 text-white py-2 px-4 text-center text-[10px] sm:text-xs font-black uppercase tracking-widest z-[60] relative">
         <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4">
-            <span>⚠️ LIMITED TIME OFFER: Price increases in <span id="countdown-timer"
-                    class="inline-block min-w-[80px] text-yellow-300">...</span></span>
-            <span class="hidden sm:inline opacity-50">|</span>
-            <span>Ends <span id="countdown-date" class="italic">...</span></span>
+            <span class="flex items-center"><span class="material-icons-round text-sm mr-2">alarm</span> LIMITED TIME
+                OFFER: Price increases in <span id="countdown-timer"
+                    class="inline-block min-w-[80px] text-white">...</span></span>
+            <span class="hidden sm:inline opacity-30">|</span>
+            <span class="opacity-90">Ends <span id="countdown-date" class="italic">...</span></span>
         </div>
     </div>
 

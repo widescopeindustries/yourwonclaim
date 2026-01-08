@@ -68,14 +68,6 @@
     <priority>0.7</priority>
   </url>
 
-  <!-- Index -->
-  <url>
-    <loc>https://yourwonclaim.com/pages/index.html</loc>
-    <lastmod>2026-01-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
   <!-- Landing roast -->
   <url>
     <loc>https://yourwonclaim.com/pages/landing-roast.html</loc>
