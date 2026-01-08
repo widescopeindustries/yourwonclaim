@@ -3,9 +3,9 @@
 
 @layer components {
     .glass-header {
-        background: rgba(255, 255, 255, 0.8);
-        @apply backdrop-blur-xl;
-        /* -webkit-backdrop-filter is handled by autoprefixer */
+        background: rgba(255, 255, 255, 0.9);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
     }
 
     .hero-gradient {
@@ -21,11 +21,15 @@
     }
 
     .stat-card {
-        @apply bg-white transition-all duration-300 ease-[cubic-bezier(0.4, 0, 0.2, 1)];
+        background-color: white;
+        transition-property: all;
+        transition-duration: 300ms;
+        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     }
 
     .stat-card:hover {
-        @apply -translate-y-[5px] shadow-[0_15px_30px_rgba(0, 0, 0, 0.05)];
+        transform: translateY(-5px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.05);
     }
 
     .bg-navy-pattern {
