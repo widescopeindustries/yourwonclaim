@@ -6,10 +6,10 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <title>100% P&T VA Disability: The Definitive 2026 Guide | YourWonClaim</title>
     <meta name="description"
-        content="Stuck on your VA claim? Uncover our simple, proven strategy to achieve 100% P&T VA Disability. Stop waiting, start winning benefits TODAY! Get the free guide.">
-    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+        content="Achieve 100% P&T VA Disability with our proven strategy. Stop the wait and get the compensation you've earned. Get the guide for $37.99 today.">
+    <meta name="robots" content="index, follow" />
     <meta name="keywords"
-        content="VA claim status, va disability claim status, check va claim status, 100% P&T VA disability, increase VA rating, VA disability strategy, DIY VA claim">
+        content="VA claim status, va disability claim status, 100% P&T VA disability, VA disability strategy">
 
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
@@ -72,10 +72,7 @@
             color: #71717a !important;
         }
 
-        /* Font display swap for speed */
-        @font-face {
-            font-display: swap;
-        }
+        /* Font display swap is handled via Google Fonts URL */
     </style>
 
     <!-- Font Loading (Swapped for speed) -->
@@ -155,10 +152,22 @@
     </script>
 </head>
 
+
 <body class="bg-white text-navy font-sans antialiased min-h-screen flex flex-col">
 
+    <!-- Urgency Top Bar -->
+    <div
+        class="bg-red-600 text-white py-1.5 px-4 text-center text-[10px] sm:text-xs font-black uppercase tracking-widest z-[60] relative">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4">
+            <span>⚠️ LIMITED TIME OFFER: Price increases in <span id="countdown-timer"
+                    class="inline-block min-w-[80px] text-yellow-300">...</span></span>
+            <span class="hidden sm:inline opacity-50">|</span>
+            <span>Ends <span id="countdown-date" class="italic">...</span></span>
+        </div>
+    </div>
+
     <!-- Navigation -->
-    <nav class="fixed w-full z-50 glass-header border-b border-gray-100">
+    <nav class="fixed w-full z-50 glass-header border-b border-gray-100 top-0 sm:top-[30px]">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
                 <div class="flex-shrink-0 flex items-center">
@@ -178,9 +187,10 @@
                         href="/articles/">Articles</a>
                     <a class="text-sm font-semibold text-gray-600 hover:text-primary transition-colors uppercase tracking-wider"
                         href="/pages/mystory.html">MY STORY</a>
-                    <a class="inline-flex items-center justify-center px-6 py-3 bg-primary text-white text-sm font-black rounded-full neon-glow-blue hover:bg-primary-dark transition-all transform hover:scale-105 active:scale-95 uppercase italic tracking-tight shadow-md"
+                    <a id="header-cta"
+                        class="inline-flex items-center justify-center px-6 py-3 bg-primary text-white text-sm font-black rounded-full neon-glow-blue hover:bg-primary-dark transition-all transform hover:scale-105 active:scale-95 uppercase italic tracking-tight shadow-md"
                         href="/pages/guide.html">
-                        Simple VA Strategy — $37.99
+                        Simple VA Strategy — <span id="current-price">$37.99</span>
                     </a>
                 </div>
                 <div class="md:hidden flex items-center">
@@ -233,7 +243,7 @@
                         </p>
                         <div
                             class="flex flex-col sm:flex-row items-center justify-center lg:justify-start space-y-4 sm:space-y-0 sm:space-x-4">
-                            <a href="#purchase"
+                            <a href="#purchase" id="hero-cta"
                                 class="w-full sm:w-auto min-h-[56px] px-10 py-5 bg-primary text-white text-lg font-bold rounded-full shadow-lg shadow-primary/30 hover:bg-primary-dark transition-all transform hover:scale-105 active:scale-95 text-center flex items-center justify-center">
                                 Get the Strategy
                             </a>
@@ -605,7 +615,7 @@
                         <p class="text-gray-600 font-black uppercase tracking-widest text-xs">One-time payment. Lifetime
                             access.</p>
                     </div>
-                    <a href="/pages/checkout.html"
+                    <a href="/pages/checkout.html" id="purchase-cta"
                         class="inline-flex items-center justify-center px-16 py-6 bg-primary text-white text-2xl font-black rounded-full neon-glow-blue hover:bg-primary-dark transition-all transform hover:scale-105 active:scale-95 w-full sm:w-auto italic uppercase tracking-tighter shadow-xl min-h-[64px]">
                         Get Instant Access
                     </a>
