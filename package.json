@@ -15,7 +15,12 @@
     "validate-seo": "node scripts/validate-seo.mjs"
   },
   "dependencies": {
-    "vite": "^5.4.0",
-    "sharp": "^0.33.3"
+    "sharp": "^0.33.3",
+    "vite": "^5.4.0"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.23",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^4.1.18"
   }
 }

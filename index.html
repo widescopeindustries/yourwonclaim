@@ -249,14 +249,14 @@
                         <div
                             class="inline-flex items-center px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-bold mb-6">
                             <span class="material-icons-round text-sm mr-2">security</span>
-                            Recovering YOUR Veteran Benefits
+                            Maximizing YOUR Veteran Benefits
                         </div>
-                        <h1 class="text-4xl lg:text-6xl font-black text-navy leading-tight mb-8">
+                        <h1 class="text-4xl lg:text-6xl font-black text-navy leading-tight mb-8 tracking-tight">
                             Secure the Benefits <br class="hidden lg:block" />
-                            <span class="text-primary tracking-tight">You've Earned</span>
+                            <span class="text-primary">You've Earned</span>
                         </h1>
                         <p class="text-lg lg:text-xl text-gray-600 mb-10 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
-                            The non-nonsense guide for navigating solo-va-claims. Learn the process, avoid common
+                            The no-nonsense guide for navigating solo-va-claims. Learn the process, avoid common
                             mistakes, and maximize your rating without the government's red tape.
                         </p>
                         <div
@@ -502,10 +502,11 @@
         <section class="py-24 bg-white">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="lg:grid lg:grid-cols-2 lg:gap-16 items-center">
-                    <div class="order-2 lg:order-1 relative">
-                        <div class="bg-gray-50 rounded-3xl p-8 lg:p-12 border border-gray-100 shadow-premium relative">
+                    <div class="order-2 lg:order-1 relative group cursor-pointer" onclick="window.location.href='/calculator'">
+                        <div class="absolute -top-4 -right-4 bg-accent text-white px-4 py-1 rounded-full text-xs font-bold uppercase tracking-widest shadow-lg z-20 animate-bounce">Try It Free</div>
+                        <div class="bg-gray-50 rounded-3xl p-8 lg:p-12 border border-gray-100 shadow-premium relative transition-transform duration-300 group-hover:scale-[1.02] group-hover:shadow-hover">
                             <!-- Visual mockup of calculator -->
-                            <div class="space-y-6">
+                            <div class="space-y-6 pointer-events-none"> <!-- Disable pointer events on inner elements to treat card as one button -->
                                 <div class="flex items-center justify-between">
                                     <div class="h-4 w-24 bg-gray-200 rounded"></div>
                                     <div
@@ -520,8 +521,7 @@
                                     </div>
                                     <div>
                                         <div class="text-navy font-bold text-lg mb-0.5 tracking-tight uppercase italic">
-                                            <a href="https://www.ptsd.va.gov/" target="_blank" rel="noopener noreferrer"
-                                                class="hover:text-primary transition-colors">PTSD Rating</a>
+                                            PTSD Rating
                                         </div>
                                         <div class="text-gray-400 text-xs font-bold tracking-widest uppercase">70%
                                             Service Connected</div>
@@ -538,9 +538,7 @@
                                     </div>
                                     <div>
                                         <div class="text-navy font-bold text-lg mb-0.5 tracking-tight uppercase italic">
-                                            <a href="https://www.mayoclinic.org/diseases-conditions/tinnitus/symptoms-causes/syc-20350156"
-                                                target="_blank" rel="noopener noreferrer"
-                                                class="hover:text-primary transition-colors">Tinnitus</a>
+                                            Tinnitus
                                         </div>
                                         <div class="text-gray-400 text-xs font-bold tracking-widest uppercase">10%
                                             Service Connected</div>
@@ -552,10 +550,14 @@
                                 <div class="pt-8 border-t border-gray-100 text-center">
                                     <div class="text-gray-400 text-xs font-bold uppercase tracking-widest mb-2">Combined
                                         Rating</div>
-                                    <div class="text-6xl font-black text-navy tracking-tighter uppercase italic">90%
+                                    <div class="text-6xl font-black text-navy tracking-tighter uppercase italic text-primary">90%
                                     </div>
-                                    <div class="text-primary font-bold text-lg mt-2">$2,147.42 / MO</div>
+                                    <div class="text-navy font-bold text-lg mt-2">$2,147.42 / MO</div>
                                 </div>
+                            </div>
+                            <!-- Overlay to indicate clickability -->
+                            <div class="absolute inset-0 bg-primary/0 group-hover:bg-primary/5 transition-colors duration-300 rounded-3xl flex items-center justify-center">
+                                <span class="opacity-0 group-hover:opacity-100 bg-white text-primary px-6 py-3 rounded-full font-bold shadow-xl transform translate-y-4 group-hover:translate-y-0 transition-all duration-300">Open Calculator</span>
                             </div>
                         </div>
                         <div class="absolute -top-10 -left-10 w-40 h-40 bg-blue-400/10 rounded-full blur-3xl -z-10">
