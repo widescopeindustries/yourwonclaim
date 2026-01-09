@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>TheClaimKeeper - Private AI Assistant for VA Claims | No VSO Required</title>
+    <meta name="description"
+        content="Stop explaining your nightmares to strangers. TheClaimKeeper is an air-gapped AI device that translates your story into VA-approved claim language. Record privately at 3 AM when symptoms hit. $149 one-time purchase.">
+    <meta name="robots" content="index, follow" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://yourwonclaim.com/product/theclaimkeeper.html" />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="TheClaimKeeper - Your Private VA Claims Assistant">
+    <meta property="og:description"
+        content="Record your symptoms privately. AI translates them into VA claim language. Air-gapped security. No strangers. No judgment.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yourwonclaim.com/product/theclaimkeeper.html">
+    <meta property="og:image" content="https://yourwonclaim.com/og/theclaimkeeper-og.png">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- Preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="/src/styles/index.css">
+
+    <style>
+        :root {
+            --primary: #2563EB;
+            --primary-dark: #1E40AF;
+            --navy: #0F172A;
+            --accent: #F59E0B;
+            --red-alert: #DC2626;
+            --green-go: #059669;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+        }
+
+        .hero-dark {
+            background: linear-gradient(135deg, #0F172A 0%, #1E293B 100%);
+        }
+
+        .privacy-badge {
+            background: rgba(5, 150, 105, 0.1);
+            border: 2px solid #059669;
+            color: #059669;
+        }
+
+        .feature-card {
+            background: white;
+            border: 1px solid #E5E7EB;
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+        }
+
+        .problem-box {
+            background: #FEF2F2;
+            border-left: 4px solid #DC2626;
+        }
+
+        .solution-box {
+            background: #F0FDF4;
+            border-left: 4px solid #059669;
+        }
+
+        .strikethrough-price {
+            position: relative;
+            color: #9CA3AF;
+        }
+
+        .strikethrough-price::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            width: 100%;
+            height: 2px;
+            background: #DC2626;
+        }
+
+        .urgency-bar {
+            background: linear-gradient(90deg, #DC2626 0%, #F59E0B 100%);
+            color: white;
+            padding: 0.75rem;
+            text-align: center;
+            font-weight: 600;
+            animation: pulse-glow 2s infinite;
+        }
+
+        @keyframes pulse-glow {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.9; }
+        }
+
+        .cta-button {
+            background: #059669;
+            color: white;
+            padding: 1.25rem 3rem;
+            font-size: 1.25rem;
+            font-weight: 700;
+            border-radius: 0.5rem;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(5, 150, 105, 0.3);
+        }
+
+        .cta-button:hover {
+            background: #047857;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(5, 150, 105, 0.4);
+        }
+
+        .translation-example {
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            gap: 1.5rem;
+            align-items: center;
+            margin: 2rem 0;
+        }
+
+        @media (max-width: 768px) {
+            .translation-example {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+            .arrow {
+                display: none;
+            }
+        }
+
+        .before-box {
+            background: #FEF2F2;
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            border-left: 4px solid #DC2626;
+        }
+
+        .after-box {
+            background: #F0FDF4;
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            border-left: 4px solid #059669;
+        }
+
+        .arrow {
+            font-size: 2rem;
+            color: #6B7280;
+        }
+    </style>
+
+    <!-- Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap">
+</head>
+
+<body class="bg-gray-50">
+
+    <!-- Urgency Bar -->
+    <div class="urgency-bar">
+        🚨 Early Bird Special: $149 → $99 for First 100 Orders | Ships March 2026
+    </div>
+
+    <!-- Header -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <nav class="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
+            <a href="/" class="text-xl font-bold text-navy">YourWonClaim</a>
+            <a href="#preorder" class="text-primary font-semibold hover:text-primary-dark">Pre-Order Now</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-dark text-white py-20">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="text-center mb-8">
+                <div class="inline-block privacy-badge px-6 py-2 rounded-full text-sm font-bold mb-6">
+                    🔒 AIR-GAPPED • NEVER CONNECTS TO INTERNET • YOUR DATA STAYS YOURS
+                </div>
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-black mb-6 leading-tight">
+                    Stop Explaining Your Nightmares<br>to Strangers at the VFW
+                </h1>
+                <p class="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto">
+                    TheClaimKeeper is a private, voice-recording AI device that translates your story into VA-approved claim language—without you ever having to relive trauma in front of a VSO.
+                </p>
+                <a href="#preorder" class="cta-button inline-block">
+                    Join the Beta Waitlist → $99 Early Bird
+                </a>
+                <p class="text-sm text-gray-400 mt-4">Limited to first 100 orders • Ships March 2026</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- The Problem (Shame Barrier) -->
+    <section class="py-16 bg-white">
+        <div class="max-w-6xl mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-black text-center mb-12 text-navy">
+                The Real Reason Veterans Don't File Claims
+            </h2>
+            <div class="grid md:grid-cols-2 gap-8 mb-12">
+                <div class="problem-box p-8 rounded-lg">
+                    <h3 class="text-2xl font-bold text-red-alert mb-4">❌ The Shame Barrier</h3>
+                    <ul class="space-y-3 text-gray-700">
+                        <li>✗ Explaining erectile dysfunction to a stranger at the VA</li>
+                        <li>✗ Describing the nightmare you had at 3 AM to a VSO at 2 PM</li>
+                        <li>✗ Admitting you drink to shut your brain off</li>
+                        <li>✗ Talking about what you did overseas in a fluorescent-lit office</li>
+                        <li>✗ Asking your spouse to fill out a form about how you've changed</li>
+                    </ul>
+                </div>
+                <div class="solution-box p-8 rounded-lg">
+                    <h3 class="text-2xl font-bold text-green-go mb-4">✓ TheClaimKeeper Solution</h3>
+                    <ul class="space-y-3 text-gray-700">
+                        <li>✓ Record privately when symptoms actually happen</li>
+                        <li>✓ Voice-to-text AI that understands "vet speak"</li>
+                        <li>✓ Translates your words into VA medical/legal terminology</li>
+                        <li>✓ Air-gapped device—never touches the internet</li>
+                        <li>✓ Generates organized evidence reports for your claim</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="bg-gray-100 p-8 rounded-lg">
+                <h3 class="text-2xl font-bold text-navy mb-6 text-center">You Don't Need to Speak VA. TheClaimKeeper Does.</h3>
+                <div class="translation-example">
+                    <div class="before-box">
+                        <p class="text-sm font-semibold text-red-alert mb-2">What You Say:</p>
+                        <p class="text-gray-800 italic">"I drink about 12 beers every night just to shut my brain off and stop thinking about the deployment."</p>
+                    </div>
+                    <div class="arrow">→</div>
+                    <div class="after-box">
+                        <p class="text-sm font-semibold text-green-go mb-2">What TheClaimKeeper Writes:</p>
+                        <p class="text-gray-800">"Veteran reports maladaptive coping mechanisms, specifically alcohol use disorder secondary to intrusive combat-related recollections consistent with PTSD diagnostic criteria."</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="py-16 bg-gray-50">
+        <div class="max-w-6xl mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-black text-center mb-12 text-navy">
+                How TheClaimKeeper Works
+            </h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="feature-card p-8 rounded-lg text-center">
+                    <div class="text-5xl mb-4">🎙️</div>
+                    <h3 class="text-xl font-bold text-navy mb-3">1. Record When It Happens</h3>
+                    <p class="text-gray-700">
+                        Nightmare at 3 AM? Back pain flare-up at 5:30 PM? Press record and talk. The "Hot Wash" captures symptoms in real-time, not months later in a doctor's office.
+                    </p>
+                </div>
+                <div class="feature-card p-8 rounded-lg text-center">
+                    <div class="text-5xl mb-4">🤖</div>
+                    <h3 class="text-xl font-bold text-navy mb-3">2. AI Translates Your Story</h3>
+                    <p class="text-gray-700">
+                        Plug the device into your computer. TheClaimKeeper's AI (trained on CFR 38 and M21-1) translates your words into the exact language VA raters need to see.
+                    </p>
+                </div>
+                <div class="feature-card p-8 rounded-lg text-center">
+                    <div class="text-5xl mb-4">📄</div>
+                    <h3 class="text-xl font-bold text-navy mb-3">3. Get Organized Evidence</h3>
+                    <p class="text-gray-700">
+                        Generates a structured evidence report, pre-filled forms, and a claim strategy. You file it yourself. No middleman. No stranger hearing your trauma.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Deep Dive -->
+    <section class="py-16 bg-white">
+        <div class="max-w-6xl mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-black text-center mb-12 text-navy">
+                Why Veterans Are Choosing TheClaimKeeper
+            </h2>
+            <div class="space-y-6">
+                <div class="feature-card p-6 rounded-lg flex items-start">
+                    <div class="text-3xl mr-4">🔒</div>
+                    <div>
+                        <h3 class="text-xl font-bold text-navy mb-2">Air-Gapped Security</h3>
+                        <p class="text-gray-700">Never connects to WiFi, Bluetooth, or the internet. Plugs directly into your computer via USB. Your trauma is yours—not ours, not the cloud's.</p>
+                    </div>
+                </div>
+                <div class="feature-card p-6 rounded-lg flex items-start">
+                    <div class="text-3xl mr-4">⏰</div>
+                    <div>
+                        <h3 class="text-xl font-bold text-navy mb-2">Real-Time Symptom Logging ("Hot Wash")</h3>
+                        <p class="text-gray-700">Most veterans minimize symptoms when asked in a clinic. TheClaimKeeper captures them when they're actually happening—3 AM nightmares, midday panic attacks, evening pain flare-ups.</p>
+                    </div>
+                </div>
+                <div class="feature-card p-6 rounded-lg flex items-start">
+                    <div class="text-3xl mr-4">🧠</div>
+                    <div>
+                        <h3 class="text-xl font-bold text-navy mb-2">Trained on CFR 38 & M21-1 Manual</h3>
+                        <p class="text-gray-700">The AI knows the VA's playbook inside and out. It maps your symptoms to diagnostic codes, rating criteria, and secondary conditions automatically.</p>
+                    </div>
+                </div>
+                <div class="feature-card p-6 rounded-lg flex items-start">
+                    <div class="text-3xl mr-4">🎯</div>
+                    <div>
+                        <h3 class="text-xl font-bold text-navy mb-2">Empathetic "Broken NCO" Persona</h3>
+                        <p class="text-gray-700">The AI asks the right questions in the right tone—mission-focused, not clinical. It extracts rating criteria without making you feel like you're in an interrogation.</p>
+                    </div>
+                </div>
+                <div class="feature-card p-6 rounded-lg flex items-start">
+                    <div class="text-3xl mr-4">💵</div>
+                    <div>
+                        <h3 class="text-xl font-bold text-navy mb-2">One-Time Purchase. No Subscriptions.</h3>
+                        <p class="text-gray-700">$149 (Early Bird: $99). No monthly fees. No percentage of your back pay. No upsells. You own the device. Updates included for 2 years.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Proof / Testimonials Placeholder -->
+    <section class="py-16 bg-gray-50">
+        <div class="max-w-6xl mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-black text-center mb-12 text-navy">
+                Built By a Veteran, For Veterans
+            </h2>
+            <div class="bg-white p-8 rounded-lg shadow-md max-w-3xl mx-auto">
+                <p class="text-lg text-gray-700 mb-6">
+                    "I built TheClaimKeeper because I watched too many brothers avoid filing claims they deserved. Not because the VA is hard—but because explaining the worst moments of your life to a stranger at the VFW is harder. This device gives you privacy, dignity, and the language the VA actually listens to."
+                </p>
+                <p class="font-bold text-navy">— Combat Veteran & TheClaimKeeper Founder</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-16 bg-white">
+        <div class="max-w-4xl mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-black text-center mb-12 text-navy">
+                Frequently Asked Questions
+            </h2>
+            <div class="space-y-6">
+                <div class="border-b pb-6">
+                    <h3 class="text-xl font-bold text-navy mb-2">Is this legal? Can I use this instead of a VSO?</h3>
+                    <p class="text-gray-700">Yes. TheClaimKeeper is a self-help software tool—like TurboTax for VA claims. It organizes your information and translates it into VA language, but <strong>you</strong> file the claim yourself. We don't file on your behalf, so no accreditation is required. (Disclaimer: This is not legal advice. Consult an accredited VSO or attorney if you want representation.)</p>
+                </div>
+                <div class="border-b pb-6">
+                    <h3 class="text-xl font-bold text-navy mb-2">How does the AI work if it never connects to the internet?</h3>
+                    <p class="text-gray-700">The AI model runs locally on your computer when you plug the device in via USB. All processing happens offline. Your voice recordings and transcripts never leave your machine.</p>
+                </div>
+                <div class="border-b pb-6">
+                    <h3 class="text-xl font-bold text-navy mb-2">What if I don't know what to claim?</h3>
+                    <p class="text-gray-700">TheClaimKeeper asks guided questions based on your service history and current symptoms. It identifies potential secondary conditions (e.g., sleep apnea secondary to PTSD) you may not have considered.</p>
+                </div>
+                <div class="border-b pb-6">
+                    <h3 class="text-xl font-bold text-navy mb-2">When does it ship?</h3>
+                    <p class="text-gray-700">Target ship date: <strong>March 2026</strong>. Early bird preorders lock in the $99 price (regularly $149). We're building the first 100 units now.</p>
+                </div>
+                <div class="border-b pb-6">
+                    <h3 class="text-xl font-bold text-navy mb-2">What if it doesn't work for me?</h3>
+                    <p class="text-gray-700">30-day money-back guarantee. If TheClaimKeeper doesn't help you organize your claim, return it for a full refund. No questions asked.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pre-Order CTA Section -->
+    <section id="preorder" class="py-20 bg-navy text-white">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <h2 class="text-3xl md:text-5xl font-black mb-6">
+                Ready to File Your Claim—Privately?
+            </h2>
+            <p class="text-xl text-gray-300 mb-8">
+                Join the waitlist now and lock in the $99 Early Bird price.<br>
+                Only 100 units available at this price.
+            </p>
+
+            <div class="bg-white text-navy p-8 rounded-lg shadow-2xl inline-block mb-8">
+                <p class="text-sm font-semibold text-gray-600 mb-2">Early Bird Special</p>
+                <p class="text-5xl font-black mb-2">
+                    <span class="strikethrough-price text-3xl">$149</span> $99
+                </p>
+                <p class="text-sm text-gray-600 mb-6">One-time payment • Ships March 2026</p>
+
+                <!-- Preorder Form -->
+                <form id="preorder-form" class="space-y-4">
+                    <input type="email" id="email" name="email" placeholder="Your Email Address" required
+                        class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-primary text-gray-800">
+                    <input type="text" id="name" name="name" placeholder="First Name" required
+                        class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-primary text-gray-800">
+                    <button type="submit" class="cta-button w-full">
+                        Reserve My Spot → $99
+                    </button>
+                </form>
+                <p class="text-xs text-gray-500 mt-4">No charge today. We'll email you when ready to ship.</p>
+            </div>
+
+            <p class="text-sm text-gray-400">
+                🔒 Your information is private and will never be shared. | 30-day money-back guarantee.
+            </p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-400 py-8">
+        <div class="max-w-6xl mx-auto px-4 text-center">
+            <p class="mb-4">© 2026 YourWonClaim | TheClaimKeeper</p>
+            <p class="text-sm mb-4">
+                <a href="/privacy-policy.html" class="hover:text-white">Privacy Policy</a> |
+                <a href="/terms-of-service.html" class="hover:text-white">Terms of Service</a> |
+                <a href="/contact.html" class="hover:text-white">Contact</a>
+            </p>
+            <p class="text-xs text-gray-500">
+                <strong>Disclaimer:</strong> TheClaimKeeper is a self-help organizational tool. It does not provide legal advice, file claims on your behalf, or guarantee claim approval. Consult an accredited VSO or VA attorney for legal representation.
+            </p>
+        </div>
+    </footer>
+
+    <!-- Simple Form Handler Script -->
+    <script>
+        document.getElementById('preorder-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const email = document.getElementById('email').value;
+            const name = document.getElementById('name').value;
+
+            // TODO: Connect to your email service (ConvertKit, Mailchimp, etc.)
+            // For now, just show confirmation
+
+            alert(`Thanks ${name}! We've added ${email} to the Early Bird waitlist. Check your email for confirmation.`);
+
+            // Optional: Send to Google Sheets, Airtable, or your backend
+            // fetch('/api/waitlist', {
+            //     method: 'POST',
+            //     body: JSON.stringify({ email, name }),
+            //     headers: { 'Content-Type': 'application/json' }
+            // });
+        });
+    </script>
+
+</body>
+</html>
