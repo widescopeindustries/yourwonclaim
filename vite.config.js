@@ -58,6 +58,25 @@ export default defineConfig({
                     console.log(`✅ Copied ${pageFiles.length} pages to dist/pages/`)
                 }
 
+                // Copy product folder to dist
+                const productDir = 'product'
+                const distProductDir = 'dist/product'
+
+                if (existsSync(productDir)) {
+                    if (!existsSync(distProductDir)) {
+                        mkdirSync(distProductDir, { recursive: true })
+                    }
+
+                    const productFiles = readdirSync(productDir)
+                    productFiles.forEach(file => {
+                        copyFileSync(
+                            join(productDir, file),
+                            join(distProductDir, file)
+                        )
+                    })
+                    console.log(`✅ Copied ${productFiles.length} product pages to dist/product/`)
+                }
+
                 // Copy SEO files (sitemap, robots.txt, etc.)
                 const seoFiles = ['sitemap.xml', 'robots.txt', 'site.webmanifest', 'favicon.svg', 'calculator.html']
                 seoFiles.forEach(file => {
