@@ -10,6 +10,7 @@ export default defineConfig({
             input: {
                 main: 'index.html',
                 calculator: 'calculator.html',
+                products: 'products.html',
             }
         }
     },
@@ -78,7 +79,7 @@ export default defineConfig({
                 }
 
                 // Copy SEO files (sitemap, robots.txt, etc.)
-                const seoFiles = ['sitemap.xml', 'robots.txt', 'site.webmanifest', 'favicon.svg', 'calculator.html']
+                const seoFiles = ['sitemap.xml', 'robots.txt', 'site.webmanifest', 'favicon.svg', 'calculator.html', 'products.html']
                 seoFiles.forEach(file => {
                     if (existsSync(file)) {
                         copyFileSync(file, join('dist', file))
