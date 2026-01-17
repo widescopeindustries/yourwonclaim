@@ -94,9 +94,10 @@ export default defineConfig({
                     const cssMatch = readdirSync(join('dist', 'assets'))
                         .find(f => f.startsWith('index-') && f.endsWith('.css'))
                     if (cssMatch) {
+                        // Remove media="print" and update href for all stylesheet links
                         productsContent = productsContent.replace(
-                            /href="\/src\/styles\/index\.css"/g,
-                            `href="/assets/${cssMatch}" crossorigin`
+                            /<link rel="stylesheet" href="\/src\/styles\/index\.css"[^>]*>/g,
+                            `<link rel="stylesheet" href="/assets/${cssMatch}" crossorigin>`
                         )
                         writeFileSync(productsPath, productsContent)
                         console.log(`✅ Fixed CSS link in products.html`)
