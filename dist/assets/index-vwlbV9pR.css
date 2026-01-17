@@ -344,12 +344,14 @@ main, section {
 
 /* ===== TEXT & LINKS ===== */
 
-a {
+/* Only style loose text links, not card/button links */
+p a, li a, div.text-slate-300 a, div.text-slate-400 a {
     color: var(--accent-neon);
     transition: all 0.3s ease;
+    font-weight: bold;
 }
 
-a:hover {
+p a:hover, li a:hover {
     text-shadow: 0 0 10px rgba(0, 217, 255, 0.5);
 }
 
