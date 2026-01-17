@@ -3,284 +3,183 @@
 
 <head>
     <meta charset="utf-8" />
-    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>VA Claim Status Guides & Articles | YourWonClaim</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VA Disability Claims Articles & Guides | YourWonClaim</title>
     <meta name="description"
-        content="Browse 50+ comprehensive VA claim status guides. Find answers about checking, tracking, and understanding your VA disability claim status at every stage.">
-
-    <!-- Canonical URL -->
+        content="Free guides, strategies, and expert articles to help you maximize your VA disability claim. Learn from a veteran who's been there.">
     <link rel="canonical" href="https://yourwonclaim.com/articles/" />
-
-    <!-- Open Graph -->
-    <meta property="og:title" content="VA Claim Status Guides & Articles | YourWonClaim" />
-    <meta property="og:description"
-        content="Browse 50+ comprehensive VA claim status guides. Find answers about checking, tracking, and understanding your VA disability claim status at every stage." />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://yourwonclaim.com/articles/" />
-    <meta property="og:image" content="https://yourwonclaim.com/og/home-1200x630.png" />
-    <meta name="twitter:card" content="summary_large_image" />
-
-    <!-- Preconnect -->
-    <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
-        rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
-
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        primary: "#2563EB",
-                        "primary-dark": "#1E40AF",
-                        navy: "#0F172A",
-                    },
-                    fontFamily: {
-                        sans: ["Inter", "sans-serif"],
-                    },
-                    borderRadius: {
-                        'xl': '1rem',
-                        '2xl': '1.5rem',
-                        '3xl': '2rem',
-                    },
-                },
-            },
-        };
-    </script>
-
-    <style>
-        .glass-header {
-            background: rgba(255, 255, 255, 0.8);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-        }
-
-        .hero-gradient {
-            background: linear-gradient(135deg, #F8FAFB 0%, #FFFFFF 100%);
-        }
-
-        .neon-glow-blue {
-            box-shadow: 0 0 20px rgba(37, 99, 235, 0.4), 0 0 40px rgba(37, 99, 235, 0.2);
-        }
-
-        .category-card {
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .category-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.05);
-        }
-    </style>
-
-    <!-- GA4 Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-GMX19T2GWW"></script>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="stylesheet" href="/src/styles/index.css">
+    <script defer src="https://www.googletagmanager.com/gtag/js?id=G-GMX19T2GWW"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
-        gtag('config', 'G-GMX19T2GWW');
+        gtag('config', 'G-GMX19T2GWW', { 'page_path': window.location.pathname });
     </script>
 </head>
 
-<body class="bg-white text-navy font-sans antialiased min-h-screen flex flex-col">
+<body class="bg-slate-900 text-slate-100 font-sans antialiased min-h-screen flex flex-col" style="background: linear-gradient(180deg, #0A0E27 0%, #0F172A 100%);">
+
+    <!-- Urgency Bar -->
+    <div class="bg-gradient-to-r from-blue-900/80 via-blue-800/80 to-blue-900/80 border-b border-blue-500/30 text-white py-2 px-4 text-center text-[10px] sm:text-xs font-black uppercase tracking-widest z-[60] relative shadow-lg shadow-blue-500/20">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4">
+            <span class="flex items-center"><span class="material-icons-round text-sm mr-2">alarm</span> LIMITED TIME OFFER: Price increases in <span id="countdown-timer">...</span></span>
+            <span class="hidden sm:inline opacity-30">|</span>
+            <span class="opacity-90">Ends <span id="countdown-date" class="italic">...</span></span>
+        </div>
+    </div>
 
     <!-- Navigation -->
-    <nav class="fixed w-full z-50 glass-header border-b border-gray-100">
+    <nav class="fixed w-full z-50 top-0 sm:top-[30px]" style="background: rgba(15, 23, 42, 0.85); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-bottom: 1px solid rgba(37, 99, 235, 0.3);">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
                 <div class="flex-shrink-0 flex items-center">
-                    <a href="/" class="flex items-center space-x-2 no-underline">
-                        <div class="w-10 h-10 bg-primary rounded-xl flex items-center justify-center">
+                    <a href="/" class="flex items-center space-x-2 no-underline" aria-label="YourWonClaim Home">
+                        <div class="w-10 h-10 bg-blue-600 rounded-xl flex items-center justify-center shadow-lg neon-glow-blue">
                             <span class="material-icons-round text-white">verified</span>
                         </div>
-                        <span class="text-xl font-extrabold tracking-tight text-navy uppercase italic">
-                            YourWon<span class="text-primary font-black">Claim</span>
+                        <span class="text-xl font-extrabold tracking-tight text-white uppercase italic">
+                            YourWon<span class="text-cyan-300 font-black">Claim</span>
                         </span>
                     </a>
                 </div>
                 <div class="hidden md:flex items-center space-x-10">
-                    <a class="text-sm font-semibold text-gray-500 hover:text-primary transition-colors uppercase tracking-wider"
-                        href="/">Home</a>
-                    <a class="text-sm font-semibold text-gray-900 border-b-2 border-primary uppercase tracking-wider"
-                        href="/articles/">Articles</a>
-                    <a class="text-sm font-semibold text-gray-500 hover:text-primary transition-colors uppercase tracking-wider"
-                        href="/pages/mystory.html">Our Story</a>
-                    <a class="inline-flex items-center justify-center px-6 py-2.5 bg-primary text-white text-xs font-black rounded-full neon-glow-blue hover:bg-primary-dark transition-all transform hover:scale-105 uppercase italic tracking-tight"
-                        href="/pages/guide.html">
-                        Simple VA Strategy — $37.99
+                    <a class="text-sm font-semibold text-slate-300 hover:text-cyan-300 transition-colors uppercase tracking-wider" href="/">Home</a>
+                    <a class="text-sm font-semibold text-slate-300 hover:text-cyan-300 transition-colors uppercase tracking-wider" href="/products.html">Products</a>
+                    <a class="text-sm font-semibold text-slate-300 hover:text-cyan-300 transition-colors uppercase tracking-wider" href="/articles/">Articles</a>
+                    <a class="text-sm font-semibold text-slate-300 hover:text-cyan-300 transition-colors uppercase tracking-wider" href="/pages/mystory.html">MY STORY</a>
+                    <a id="header-cta" class="inline-flex flex-col items-center justify-center px-8 py-3 bg-blue-600 text-white font-black rounded-full neon-glow-blue hover:bg-blue-500 transition-all transform hover:scale-105 active:scale-95 shadow-md" href="/pages/guide.html">
+                        <span class="text-sm uppercase italic tracking-tight">Download the Strategy</span>
+                        <span class="text-xs opacity-90 mt-0.5">$37.99</span>
                     </a>
                 </div>
                 <div class="md:hidden flex items-center">
-                    <button class="text-navy p-2 nav-toggle" type="button" aria-expanded="false"
-                        aria-controls="primary-nav">
-                        <span class="material-icons-round text-2xl">menu</span>
+                    <button class="text-white p-2 nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Toggle navigation menu">
+                        <span class="material-icons-round text-3xl">menu</span>
                     </button>
                 </div>
             </div>
         </div>
         <!-- Mobile Menu -->
-        <div id="primary-nav" class="md:hidden bg-white border-b border-gray-100 hidden">
+        <div id="primary-nav" class="md:hidden bg-slate-800/50 border-b border-blue-500/30 hidden backdrop-blur">
             <div class="px-4 pt-2 pb-6 space-y-2">
-                <a class="block px-4 py-3 text-base font-bold text-navy hover:bg-gray-50 rounded-xl" href="/">Home</a>
-                <a class="block px-4 py-3 text-base font-bold text-navy hover:bg-gray-50 rounded-xl"
-                    href="/articles/">Articles</a>
-                <a class="block px-4 py-3 text-base font-bold text-navy hover:bg-gray-50 rounded-xl"
-                    href="/pages/mystory.html">Our Story</a>
-                <a class="block px-4 py-4 bg-primary text-white text-center font-black rounded-xl italic uppercase neon-glow-blue"
-                    href="/pages/guide.html">Get THE STRATEGY — $37.99</a>
+                <a class="block px-4 py-3 text-base font-bold text-slate-100 hover:bg-blue-500/20 rounded-xl" href="/">Home</a>
+                <a class="block px-4 py-3 text-base font-bold text-slate-100 hover:bg-blue-500/20 rounded-xl" href="/products.html">Products</a>
+                <a class="block px-4 py-3 text-base font-bold text-slate-100 hover:bg-blue-500/20 rounded-xl" href="/articles/">Articles</a>
+                <a class="block px-4 py-3 text-base font-bold text-slate-100 hover:bg-blue-500/20 rounded-xl" href="/pages/mystory.html">MY STORY</a>
+                <a class="block px-4 py-4 bg-blue-600 text-white text-center font-black rounded-xl neon-glow-blue mt-4" href="/pages/guide.html"><span class="uppercase italic">Download the Strategy</span><br><span class="text-xs opacity-90">$37.99</span></a>
             </div>
         </div>
     </nav>
 
     <main class="flex-grow pt-20">
         <!-- Hero -->
-        <section class="hero-gradient py-16 lg:py-24 overflow-hidden">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="lg:grid lg:grid-cols-2 lg:gap-16 items-center">
-                    <div class="text-center lg:text-left">
-                        <div
-                            class="inline-flex items-center px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-bold mb-6">
-                            <span class="material-icons-round text-sm mr-2">library_books</span>
-                            LEARNING HUB
-                        </div>
-                        <h1 class="text-4xl lg:text-6xl font-black text-navy leading-tight mb-8">
-                            VA Claim <br />
-                            <span class="text-primary tracking-tight">Knowledge Base</span>
-                        </h1>
-                        <p class="text-lg text-gray-600 mb-10 max-w-2xl leading-relaxed">
-                            Stop guessing. Browse our 51 comprehensive guides covering every status code, rating
-                            increase strategy, and medical evidence requirement.
-                        </p>
-                    </div>
-                    <div class="mt-16 lg:mt-0 relative">
-                        <div class="relative rounded-3xl overflow-hidden shadow-2xl">
-                            <img src="/veterans_collaboration_1766368465517.png" alt="Veterans Collaboration"
-                                class="w-full h-full object-cover">
-                        </div>
-                        <div class="absolute -top-10 -right-10 w-40 h-40 bg-primary/20 rounded-full blur-3xl -z-10">
-                        </div>
-                    </div>
-                </div>
+        <section class="bg-gradient-to-b from-slate-800/50 to-slate-900/30 py-16 lg:py-24">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h1 class="text-4xl lg:text-6xl font-black text-white leading-tight mb-6">VA Disability Resources</h1>
+                <p class="text-xl text-slate-300 max-w-2xl mx-auto">Expert guides and strategies to maximize your VA claim. Written by veterans for veterans.</p>
             </div>
         </section>
 
-        <!-- Categories -->
-        <section class="py-24 bg-white">
+        <!-- Articles Grid -->
+        <section class="py-16 lg:py-24 bg-slate-900/30">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <!-- Category 1: The Basics -->
-                    <div class="category-card bg-gray-50 p-8 rounded-3xl border border-gray-100">
-                        <div
-                            class="w-12 h-12 bg-primary/10 text-primary rounded-xl flex items-center justify-center mb-6">
-                            <span class="material-icons-round">help_outline</span>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <!-- Article 1 -->
+                    <a href="va-claim-status-gathering-evidence.html" class="bg-slate-800/50 border border-blue-500/30 p-8 rounded-2xl group hover:border-blue-500/60 hover:bg-slate-800/70 transition-all neon-glow-blue">
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-3xl">📋</span>
+                            <span class="text-xs font-bold uppercase tracking-widest text-cyan-300">Claim Basics</span>
                         </div>
-                        <h3 class="text-xl font-bold text-navy mb-6 uppercase tracking-tight italic">The Basics & How-To
-                        </h3>
-                        <ul class="space-y-4">
-                            <li><a href="how-to-check-va-claim-status.html"
-                                    class="text-gray-600 hover:text-primary transition-colors flex items-center text-sm font-medium"><span
-                                        class="material-icons-round text-xs mr-2">arrow_forward</span>How to Check Your
-                                    Status</a></li>
-                            <li><a href="check-va-claim-status-without-login.html"
-                                    class="text-gray-600 hover:text-primary transition-colors flex items-center text-sm font-medium"><span
-                                        class="material-icons-round text-xs mr-2">arrow_forward</span>Check Status
-                                    Without Login</a></li>
-                            <li><a href="va-claim-status-vagov.html"
-                                    class="text-gray-600 hover:text-primary transition-colors flex items-center text-sm font-medium"><span
-                                        class="material-icons-round text-xs mr-2">arrow_forward</span>Guide to
-                                    VA.gov</a></li>
-                            <li><a href="va-claim-status-ebenefits.html"
-                                    class="text-gray-600 hover:text-primary transition-colors flex items-center text-sm font-medium"><span
-                                        class="material-icons-round text-xs mr-2">arrow_forward</span>eBenefits
-                                    Walkthrough</a></li>
-                        </ul>
-                    </div>
+                        <h3 class="text-2xl font-black text-white mb-3">How to Check Your VA Claim Status</h3>
+                        <p class="text-slate-300 text-sm mb-4">Step-by-step guide to tracking your claim through each stage of the VA process.</p>
+                        <span class="text-sm font-bold text-cyan-300 group-hover:translate-x-1 transition-transform inline-block">Read Article →</span>
+                    </a>
 
-                    <!-- Category 2: Claim Stages -->
-                    <div class="category-card bg-gray-50 p-8 rounded-3xl border border-gray-100">
-                        <div
-                            class="w-12 h-12 bg-primary/10 text-primary rounded-xl flex items-center justify-center mb-6">
-                            <span class="material-icons-round">route</span>
+                    <!-- Article 2 -->
+                    <a href="va-disability-claim-status.html" class="bg-slate-800/50 border border-blue-500/30 p-8 rounded-2xl group hover:border-blue-500/60 hover:bg-slate-800/70 transition-all neon-glow-blue">
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-3xl">⏰</span>
+                            <span class="text-xs font-bold uppercase tracking-widest text-cyan-300">Timeline</span>
                         </div>
-                        <h3 class="text-xl font-bold text-navy mb-6 uppercase tracking-tight italic">Claim Stages</h3>
-                        <ul class="space-y-4">
-                            <li><a href="va-claim-status-initial-review.html"
-                                    class="text-gray-600 hover:text-primary transition-colors flex items-center text-sm font-medium"><span
-                                        class="material-icons-round text-xs mr-2">arrow_forward</span>Initial Review</a>
-                            </li>
-                            <li><a href="va-claim-status-gathering-evidence.html"
-                                    class="text-gray-600 hover:text-primary transition-colors flex items-center text-sm font-medium"><span
-                                        class="material-icons-round text-xs mr-2">arrow_forward</span>Gathering
-                                    Evidence</a></li>
-                            <li><a href="va-claim-status-preparation-for-decision.html"
-                                    class="text-gray-600 hover:text-primary transition-colors flex items-center text-sm font-medium"><span
-                                        class="material-icons-round text-xs mr-2">arrow_forward</span>Preparation for
-                                    Decision</a></li>
-                            <li><a href="va-claim-status-pending-decision-approval.html"
-                                    class="text-gray-600 hover:text-primary transition-colors flex items-center text-sm font-medium"><span
-                                        class="material-icons-round text-xs mr-2">arrow_forward</span>Pending Decision
-                                    Approval</a></li>
-                        </ul>
-                    </div>
+                        <h3 class="text-2xl font-black text-white mb-3">VA Claim Timeline & What to Expect</h3>
+                        <p class="text-slate-300 text-sm mb-4">Realistic timelines for initial claims, decisions, and what each status update means.</p>
+                        <span class="text-sm font-bold text-cyan-300 group-hover:translate-x-1 transition-transform inline-block">Read Article →</span>
+                    </a>
 
-                    <!-- Category 3: Conditions -->
-                    <div class="category-card bg-gray-50 p-8 rounded-3xl border border-gray-100">
-                        <div
-                            class="w-12 h-12 bg-primary/10 text-primary rounded-xl flex items-center justify-center mb-6">
-                            <span class="material-icons-round">psychology</span>
+                    <!-- Article 3 -->
+                    <a href="va-claim-status-appeal.html" class="bg-slate-800/50 border border-blue-500/30 p-8 rounded-2xl group hover:border-blue-500/60 hover:bg-slate-800/70 transition-all neon-glow-blue">
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-3xl">⚖️</span>
+                            <span class="text-xs font-bold uppercase tracking-widest text-cyan-300">Appeals</span>
                         </div>
-                        <h3 class="text-xl font-bold text-navy mb-6 uppercase tracking-tight italic">Conditions</h3>
-                        <ul class="space-y-4">
-                            <li><a href="va-claim-status-ptsd.html"
-                                    class="text-gray-600 hover:text-primary transition-colors flex items-center text-sm font-medium"><span
-                                        class="material-icons-round text-xs mr-2">arrow_forward</span>PTSD Claim
-                                    Status</a></li>
-                            <li><a href="va-claim-status-sleep-apnea.html"
-                                    class="text-gray-600 hover:text-primary transition-colors flex items-center text-sm font-medium"><span
-                                        class="material-icons-round text-xs mr-2">arrow_forward</span>Sleep Apnea
-                                    Timeline</a></li>
-                            <li><a href="va-claim-status-tinnitus.html"
-                                    class="text-gray-600 hover:text-primary transition-colors flex items-center text-sm font-medium"><span
-                                        class="material-icons-round text-xs mr-2">arrow_forward</span>Tinnitus
-                                    Ratings</a></li>
-                            <li><a href="va-claim-status-100-percent.html"
-                                    class="text-gray-600 hover:text-primary transition-colors flex items-center text-sm font-medium"><span
-                                        class="material-icons-round text-xs mr-2">arrow_forward</span>Getting to 100%
-                                    P&T</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- CTA -->
-        <section class="py-24 bg-gray-50">
-            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                <div class="p-12 lg:p-20 bg-navy rounded-3xl text-white shadow-2xl relative overflow-hidden">
-                    <h2 class="text-4xl font-black mb-6 tracking-tight italic uppercase">Still Waiting?</h2>
-                    <p class="text-xl text-gray-400 mb-10">Status updates only tell half the story. Learn the actual
-                        strategy used by veterans to win their 100% P&T.</p>
-                    <a href="/pages/guide.html"
-                        class="inline-flex items-center justify-center px-16 py-5 bg-primary text-white text-xl font-bold rounded-full neon-glow-blue hover:bg-primary-dark transition-all transform hover:scale-105 italic uppercase tracking-tighter">
-                        Get the Strategy Guide — $37.99
+                        <h3 class="text-2xl font-black text-white mb-3">Getting Your Claim Approved on Appeal</h3>
+                        <p class="text-slate-300 text-sm mb-4">How to file appeals, what evidence you need, and how to increase your rating.</p>
+                        <span class="text-sm font-bold text-cyan-300 group-hover:translate-x-1 transition-transform inline-block">Read Article →</span>
                     </a>
                 </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="py-16 lg:py-24 bg-slate-800/40 border-y border-blue-500/20">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h2 class="text-3xl lg:text-5xl font-black text-white mb-6">Ready to Maximize Your Benefits?</h2>
+                <p class="text-lg text-slate-300 mb-8 max-w-2xl mx-auto">Get our proven strategy guide with the exact steps veterans use to win their claims.</p>
+                <a href="/pages/guide.html" class="inline-block px-10 py-5 bg-blue-600 text-white font-black text-lg rounded-lg neon-glow-blue hover:bg-blue-500 transition-all transform hover:scale-105 uppercase italic tracking-tight shadow-lg">
+                    Download the Strategy
+                </a>
             </div>
         </section>
     </main>
 
     <!-- Footer -->
-    <footer class="bg-navy pt-20 pb-12">
+    <footer class="bg-slate-900 text-slate-300 py-12 mt-12 border-t border-blue-500/20">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="pt-8 border-t border-gray-800 text-center">
-                <p class="text-gray-500 text-sm font-bold uppercase tracking-widest mb-2">&copy; 2026 Simple VA
-                    Strategy. Not affiliated with the VA.</p>
+            <div class="grid md:grid-cols-4 gap-12 mb-8">
+                <div>
+                    <div class="text-white font-black text-lg uppercase tracking-tight italic mb-2">
+                        Your<span class="text-cyan-300">Won</span>Claim
+                    </div>
+                    <p class="text-sm">Veteran-Owned · Evidence That Wins</p>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-4 uppercase text-sm tracking-wider">Pages</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="/" class="hover:text-cyan-300 transition-colors">Home</a></li>
+                        <li><a href="/products.html" class="hover:text-cyan-300 transition-colors">Products</a></li>
+                        <li><a href="/articles/" class="hover:text-cyan-300 transition-colors">Articles</a></li>
+                        <li><a href="/pages/mystory.html" class="hover:text-cyan-300 transition-colors">My Story</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-4 uppercase text-sm tracking-wider">Legal</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="/privacy-policy.html" class="hover:text-cyan-300 transition-colors">Privacy</a></li>
+                        <li><a href="/terms-of-service.html" class="hover:text-cyan-300 transition-colors">Terms</a></li>
+                        <li><a href="/contact.html" class="hover:text-cyan-300 transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-4 uppercase text-sm tracking-wider">Tools</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="/calculator.html" class="hover:text-cyan-300 transition-colors">VA Calculator</a></li>
+                        <li><a href="/pages/guide.html" class="hover:text-cyan-300 transition-colors">VA Strategy Guide</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-blue-500/20 pt-8 text-center text-xs text-slate-400">
+                <p>Disclaimer: YourWonClaim provides educational materials only. Not affiliated with the VA.</p>
+                <p class="mt-4">© 2026 YourWonClaim. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
-    <script type="module" src="/src/components/nav.js"></script>
+    <script src="/src/components/nav.js"></script>
+    <script src="/src/scripts/urgency-timer.js"></script>
+    <script defer src="/main.min.js"></script>
+
 </body>
 
 </html>
