@@ -260,71 +260,279 @@
             </div>
         </section>
 
-        <!-- BUNDLE HERO SECTION -->
-        <section class="py-20 lg:py-32 bg-gradient-to-b from-blue-900/30 to-slate-900/30">
-            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="bg-gradient-to-br from-blue-600/25 via-cyan-600/15 to-blue-900/20 p-10 lg:p-16 rounded-3xl border-2 border-blue-500/50 text-center neon-glow-blue relative overflow-hidden">
-                    <!-- Background Glow -->
-                    <div class="absolute top-0 right-0 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl -z-10"></div>
+        <!-- BUILD YOUR BUNDLE TOOL -->
+        <section class="py-16 lg:py-24 bg-gradient-to-b from-blue-900/40 to-slate-900/20" id="bundle-builder">
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="bg-slate-800/80 backdrop-blur-xl p-8 lg:p-12 rounded-3xl border-2 border-blue-500/30 shadow-2xl relative overflow-hidden">
+                    <!-- Decorative background glow -->
+                    <div class="absolute -top-24 -right-24 w-64 h-64 bg-cyan-500/10 rounded-full blur-3xl"></div>
+                    <div class="absolute -bottom-24 -left-24 w-64 h-64 bg-blue-600/10 rounded-full blur-3xl"></div>
 
-                    <div class="text-xs font-black uppercase tracking-widest text-cyan-300 mb-4 relative z-10">⚡ BEST VALUE - LIMITED TIME ⚡</div>
-                    <h2 class="text-4xl lg:text-6xl font-black text-white leading-tight mb-6 relative z-10">
-                        Build Your Custom Bundle
-                    </h2>
-                    <p class="text-xl text-slate-200 mb-8 font-bold relative z-10">Mix & Match Any 3 Templates</p>
+                    <div class="text-center mb-10 relative z-10">
+                        <div class="text-xs font-black uppercase tracking-widest text-cyan-300 mb-4">Interactive Strategy Tool</div>
+                        <h2 class="text-4xl lg:text-6xl font-black text-white leading-tight mb-4">Build Your Evidence Arsenal</h2>
+                        <p class="text-xl text-slate-300 max-w-2xl mx-auto">
+                            Select the conditions you're claiming and we'll bundle the templates for you.
+                        </p>
+                    </div>
 
-                    <!-- Pricing -->
-                    <div class="flex items-center justify-center gap-6 mb-8 relative z-10 flex-wrap">
-                        <div class="flex flex-col items-center px-4 border-r border-slate-500/30">
-                            <span class="text-slate-400 text-sm font-bold uppercase">1 Template</span>
-                            <span class="text-2xl font-black text-white">$29</span>
+                    <!-- Selected Slots -->
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10 relative z-10" id="bundle-slots">
+                        <!-- Slot 1 -->
+                        <div class="bundle-slot border-2 border-dashed border-slate-600 rounded-2xl p-6 flex flex-col items-center justify-center min-h-[140px] transition-all bg-slate-900/30" data-slot="0">
+                            <div class="slot-empty flex flex-col items-center text-slate-500">
+                                <span class="material-icons-round text-4xl mb-2">add_circle_outline</span>
+                                <span class="text-sm font-bold uppercase">Select Condition 1</span>
+                            </div>
+                            <div class="slot-filled hidden w-full">
+                                <div class="flex justify-between items-start mb-2">
+                                    <span class="text-cyan-300 font-black text-sm uppercase tracking-tighter">Selected Item</span>
+                                    <button class="remove-item text-slate-400 hover:text-red-400 transition-colors"><span class="material-icons-round text-lg">cancel</span></button>
+                                </div>
+                                <h4 class="condition-name text-white font-black text-lg leading-tight mb-1">---</h4>
+                                <p class="condition-dc text-xs text-slate-400">---</p>
+                            </div>
                         </div>
-                        <div class="flex flex-col items-center px-4 border-r border-slate-500/30">
-                            <span class="text-slate-400 text-sm font-bold uppercase">2 Templates</span>
-                            <span class="text-2xl font-black text-white">$50</span>
-                            <span class="text-xs text-green-400 font-bold">Save $8</span>
+                        <!-- Slot 2 -->
+                        <div class="bundle-slot border-2 border-dashed border-slate-600 rounded-2xl p-6 flex flex-col items-center justify-center min-h-[140px] transition-all bg-slate-900/30" data-slot="1">
+                            <div class="slot-empty flex flex-col items-center text-slate-500">
+                                <span class="material-icons-round text-4xl mb-2">add_circle_outline</span>
+                                <span class="text-sm font-bold uppercase">Select Condition 2</span>
+                            </div>
+                            <div class="slot-filled hidden w-full">
+                                <div class="flex justify-between items-start mb-2">
+                                    <span class="text-cyan-300 font-black text-sm uppercase tracking-tighter">Selected Item</span>
+                                    <button class="remove-item text-slate-400 hover:text-red-400 transition-colors"><span class="material-icons-round text-lg">cancel</span></button>
+                                </div>
+                                <h4 class="condition-name text-white font-black text-lg leading-tight mb-1">---</h4>
+                                <p class="condition-dc text-xs text-slate-400">---</p>
+                            </div>
                         </div>
-                        <div class="flex flex-col items-center px-4">
-                            <span class="text-slate-400 text-sm font-bold uppercase">3 Templates</span>
-                            <span class="text-4xl font-black text-cyan-300">$60</span>
-                            <span class="text-xs text-green-400 font-bold">Save $27</span>
+                        <!-- Slot 3 -->
+                        <div class="bundle-slot border-2 border-dashed border-slate-600 rounded-2xl p-6 flex flex-col items-center justify-center min-h-[140px] transition-all bg-slate-900/30" data-slot="2">
+                            <div class="slot-empty flex flex-col items-center text-slate-500">
+                                <span class="material-icons-round text-4xl mb-2">add_circle_outline</span>
+                                <span class="text-sm font-bold uppercase">Select Condition 3</span>
+                            </div>
+                            <div class="slot-filled hidden w-full">
+                                <div class="flex justify-between items-start mb-2">
+                                    <span class="text-cyan-300 font-black text-sm uppercase tracking-tighter">Selected Item</span>
+                                    <button class="remove-item text-slate-400 hover:text-red-400 transition-colors"><span class="material-icons-round text-lg">cancel</span></button>
+                                </div>
+                                <h4 class="condition-name text-white font-black text-lg leading-tight mb-1">---</h4>
+                                <p class="condition-dc text-xs text-slate-400">---</p>
+                            </div>
                         </div>
                     </div>
 
-                    <!-- What's Included -->
-                    <div class="grid md:grid-cols-3 gap-4 mb-12 text-left relative z-10">
-                        <div class="bg-slate-700/70 p-5 rounded-xl border border-blue-400/50 backdrop-blur">
-                            <p class="font-bold text-white mb-1 text-base">✓ Pick Any 3</p>
-                            <p class="text-xs text-cyan-300">Your Choice</p>
-                            <p class="text-xs text-slate-400 mt-2">PTSD, Sleep Apnea, Back, Migraines, Tinnitus</p>
+                    <!-- Search / Dropdown Area -->
+                    <div class="max-w-2xl mx-auto relative z-20">
+                        <div class="relative">
+                            <input type="text" id="condition-search" 
+                                   class="w-full bg-slate-900 border-2 border-blue-500/50 rounded-xl px-6 py-4 text-white font-bold placeholder-slate-500 focus:outline-none focus:border-cyan-400 transition-all shadow-lg neon-glow-blue" 
+                                   placeholder="Search 30+ conditions (e.g. Knee, Anxiety, IBS...)"
+                                   autocomplete="off">
+                            <div class="absolute right-4 top-1/2 -translate-y-1/2 flex items-center text-slate-400 pointer-events-none">
+                                <span class="material-icons-round">expand_more</span>
+                            </div>
                         </div>
-                        <div class="bg-slate-700/70 p-5 rounded-xl border border-blue-400/50 backdrop-blur">
-                            <p class="font-bold text-white mb-1 text-base">✓ Instant Access</p>
-                            <p class="text-xs text-cyan-300">PDF Download</p>
-                            <p class="text-xs text-slate-400 mt-2">Print unlimited copies immediately</p>
-                        </div>
-                        <div class="bg-slate-700/70 p-5 rounded-xl border border-blue-400/50 backdrop-blur">
-                            <p class="font-bold text-white mb-1 text-base">✓ Free Updates</p>
-                            <p class="text-xs text-cyan-300">Lifetime</p>
-                            <p class="text-xs text-slate-400 mt-2">Get new versions automatically</p>
+                        
+                        <!-- Dropdown Menu -->
+                        <div id="search-results" class="absolute left-0 right-0 mt-2 bg-slate-800 border border-blue-500/30 rounded-xl overflow-hidden shadow-2xl hidden max-h-[400px] overflow-y-auto z-30">
+                            <!-- Results will be injected here -->
                         </div>
                     </div>
 
-                    <!-- Trust Signals -->
-                    <div class="space-y-3 mb-12 relative z-10 bg-slate-800/50 p-6 rounded-xl">
-                        <p class="text-slate-200 font-bold flex items-center justify-center gap-2"><span class="text-lg">🛡️</span> 100% Risk-Free: Full refund within 30 days if unsatisfied</p>
-                    </div>
+                    <!-- Price & Checkout -->
+                    <div class="mt-12 text-center border-t border-slate-700/50 pt-10 relative z-10">
+                        <div class="flex flex-col sm:flex-row items-center justify-center gap-8 mb-8">
+                            <div class="text-left">
+                                <p class="text-slate-400 text-xs font-black uppercase tracking-widest mb-1">Bundle Summary</p>
+                                <p class="text-white font-bold" id="bundle-summary-text">0 items selected</p>
+                            </div>
+                            <div class="flex items-center gap-4">
+                                <span class="text-slate-400 text-2xl line-through font-bold hidden" id="old-price-display">$0</span>
+                                <span class="text-6xl font-black text-cyan-300" id="current-price-display">$0</span>
+                            </div>
+                            <div class="text-left">
+                                <div class="bg-green-500/20 text-green-300 px-3 py-1 rounded-md text-xs font-black border border-green-500/30 hidden" id="savings-badge">SAVE $27</div>
+                            </div>
+                        </div>
 
-                    <!-- PRIMARY CTA -->
-                    <!-- TODO: Add Stripe Link for 3-pack Bundle -->
-                    <a href="#"
-                       class="inline-block px-12 py-5 bg-gradient-to-r from-blue-600 to-blue-500 text-white font-black rounded-xl neon-glow-blue hover:from-blue-500 hover:to-blue-400 transition-all transform hover:scale-110 active:scale-95 uppercase italic tracking-tight text-xl shadow-xl relative z-10 mb-6 w-full sm:w-auto">
-                        🔥 GET 3 TEMPLATES FOR $60
-                    </a>
-                    <p class="text-sm text-slate-400 relative z-10">Limited time offer</p>
+                        <a href="#" id="bundle-checkout-btn" 
+                           class="inline-block px-12 py-5 bg-gradient-to-r from-blue-600 to-blue-500 text-white font-black rounded-xl neon-glow-blue hover:from-blue-500 hover:to-blue-400 transition-all transform hover:scale-110 active:scale-95 uppercase italic tracking-tight text-xl shadow-xl w-full sm:w-auto opacity-50 cursor-not-allowed">
+                            Select a condition to start
+                        </a>
+                        <p class="text-xs text-slate-500 mt-4 italic">You can select up to 3 templates per bundle. For more than 3, please start a new bundle.</p>
+                    </div>
                 </div>
             </div>
         </section>
+
+        <!-- Script for Bundle Logic -->
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                const conditions = [
+                    { name: 'PTSD (Post-Traumatic Stress)', dc: 'DC 9411', popular: true },
+                    { name: 'Sleep Apnea', dc: 'DC 6847', popular: true },
+                    { name: 'Back Condition (Degenerative Arthritis/Strain)', dc: '38 CFR § 4.71a', popular: true },
+                    { name: 'Migraines (Headaches)', dc: 'DC 8100', popular: true },
+                    { name: 'Tinnitus (Ringing in Ears)', dc: 'DC 6260', popular: true },
+                    { name: 'Knee Pain (Limitation of Motion)', dc: 'DC 5260/5261' },
+                    { name: 'Anxiety & Depression', dc: 'DC 9400 series' },
+                    { name: 'IBS (Irritable Bowel Syndrome)', dc: 'DC 7319' },
+                    { name: 'Radiculopathy (Sciatica/Nerve Pain)', dc: 'DC 8520/8620' },
+                    { name: 'GERD (Acid Reflux)', dc: 'DC 7346' },
+                    { name: 'Plantar Fasciitis', dc: 'DC 5269' },
+                    { name: 'Shoulder Pain (Limitation of Motion)', dc: 'DC 5201' },
+                    { name: 'Neck Pain (Cervical Strain)', dc: 'DC 5237' },
+                    { name: 'Asthma', dc: 'DC 6602' },
+                    { name: 'Sinusitis & Rhinitis', dc: 'DC 6510/6522' },
+                    { name: 'Hypertension (High Blood Pressure)', dc: 'DC 7101' },
+                    { name: 'Peripheral Neuropathy', dc: 'DC 8520-8720' },
+                    { name: 'Hip Pain (Limitation of Motion)', dc: 'DC 5250-5255' },
+                    { name: 'Ankle Pain (Limitation of Motion)', dc: 'DC 5271' },
+                    { name: 'Flat Feet (Pes Planus)', dc: 'DC 5276' },
+                    { name: 'Wrist / Carpal Tunnel', dc: 'DC 5215 / 8515' },
+                    { name: 'Eczema & Skin Conditions', dc: 'DC 7806' },
+                    { name: 'Vertigo & Meniere\'s', dc: 'DC 6204 / 6205' },
+                    { name: 'TBI (Traumatic Brain Injury)', dc: 'DC 8045' },
+                    { name: 'TMJ / TMD (Jaw Pain)', dc: 'DC 9905' },
+                    { name: 'Elbow Pain & Tendonitis', dc: 'DC 5206' },
+                    { name: 'Eye Conditions', dc: 'DC 6000 series' }
+                ];
+
+                let selectedItems = [];
+                const searchInput = document.getElementById('condition-search');
+                const resultsContainer = document.getElementById('search-results');
+                const slots = document.querySelectorAll('.bundle-slot');
+                const priceDisplay = document.getElementById('current-price-display');
+                const summaryText = document.getElementById('bundle-summary-text');
+                const checkoutBtn = document.getElementById('bundle-checkout-btn');
+                const savingsBadge = document.getElementById('savings-badge');
+
+                // Stripe links (Need to be updated with real ones)
+                const stripeLinks = {
+                    1: 'https://buy.stripe.com/4gM6oI5qp4EV3ND2ud5ZC00', // PTSD only used as placeholder for 1-pack
+                    2: 'https://buy.stripe.com/4gM6oI5qp4EV3ND2ud5ZC00', // Placeholder
+                    3: 'https://buy.stripe.com/9B6aEYaKJ8Vb4RHb0J5ZC03'  // Original bundle link
+                };
+
+                function updateUI() {
+                    // Update Slots
+                    slots.forEach((slot, index) => {
+                        const empty = slot.querySelector('.slot-empty');
+                        const filled = slot.querySelector('.slot-filled');
+                        const item = selectedItems[index];
+
+                        if (item) {
+                            empty.classList.add('hidden');
+                            filled.classList.remove('hidden');
+                            slot.querySelector('.condition-name').textContent = item.name;
+                            slot.querySelector('.condition-dc').textContent = item.dc;
+                            slot.classList.add('border-blue-500', 'bg-blue-600/10');
+                            slot.classList.remove('border-slate-600', 'bg-slate-900/30');
+                        } else {
+                            empty.classList.remove('hidden');
+                            filled.classList.add('hidden');
+                            slot.classList.remove('border-blue-500', 'bg-blue-600/10');
+                            slot.classList.add('border-slate-600', 'bg-slate-900/30');
+                        }
+                    });
+
+                    // Update Price
+                    const count = selectedItems.length;
+                    let price = 0;
+                    if (count === 1) price = 29;
+                    if (count === 2) price = 50;
+                    if (count === 3) price = 60;
+
+                    priceDisplay.textContent = '$' + price;
+                    summaryText.textContent = count + (count === 1 ? ' template selected' : ' templates selected');
+
+                    if (count > 0) {
+                        checkoutBtn.classList.remove('opacity-50', 'cursor-not-allowed');
+                        checkoutBtn.textContent = '🚀 GET MY ' + count + '-PACK BUNDLE';
+                        checkoutBtn.href = stripeLinks[count] || '#';
+                    } else {
+                        checkoutBtn.classList.add('opacity-50', 'cursor-not-allowed');
+                        checkoutBtn.textContent = 'Select a condition to start';
+                        checkoutBtn.href = '#';
+                    }
+
+                    if (count === 2) {
+                        savingsBadge.textContent = 'SAVE $8';
+                        savingsBadge.classList.remove('hidden');
+                    } else if (count === 3) {
+                        savingsBadge.textContent = 'SAVE $27';
+                        savingsBadge.classList.remove('hidden');
+                    } else {
+                        savingsBadge.classList.add('hidden');
+                    }
+                }
+
+                function renderResults(query) {
+                    const filtered = conditions.filter(c => 
+                        (c.name.toLowerCase().includes(query.toLowerCase()) || 
+                         c.dc.toLowerCase().includes(query.toLowerCase())) &&
+                        !selectedItems.find(s => s.name === c.name)
+                    );
+
+                    resultsContainer.innerHTML = '';
+                    if (filtered.length === 0) {
+                        resultsContainer.innerHTML = '<div class="p-4 text-slate-400 italic text-center">No matching conditions found...</div>';
+                    } else {
+                        filtered.forEach(c => {
+                            const div = document.createElement('div');
+                            div.className = 'p-4 hover:bg-blue-600/20 cursor-pointer border-b border-slate-700/50 transition-colors group flex justify-between items-center';
+                            div.innerHTML = `
+                                <div>
+                                    <div class="text-white font-bold group-hover:text-cyan-300">${c.name}</div>
+                                    <div class="text-xs text-slate-400">${c.dc}</div>
+                                </div>
+                                <span class="material-icons-round text-blue-500 opacity-0 group-hover:opacity-100 transition-opacity">add_circle</span>
+                            `;
+                            div.onclick = () => {
+                                if (selectedItems.length < 3) {
+                                    selectedItems.push(c);
+                                    searchInput.value = '';
+                                    resultsContainer.classList.add('hidden');
+                                    updateUI();
+                                } else {
+                                    alert('Maximum 3 items per bundle. Please remove one or checkout.');
+                                }
+                            };
+                            resultsContainer.appendChild(div);
+                        });
+                    }
+                    resultsContainer.classList.remove('hidden');
+                }
+
+                searchInput.addEventListener('input', (e) => {
+                    renderResults(e.target.value);
+                });
+
+                searchInput.addEventListener('focus', () => {
+                    renderResults(searchInput.value);
+                });
+
+                // Close dropdown on click outside
+                document.addEventListener('click', (e) => {
+                    if (!searchInput.contains(e.target) && !resultsContainer.contains(e.target)) {
+                        resultsContainer.classList.add('hidden');
+                    }
+                });
+
+                // Remove item logic
+                document.querySelectorAll('.remove-item').forEach((btn, index) => {
+                    btn.onclick = (e) => {
+                        e.stopPropagation();
+                        selectedItems.splice(index, 1);
+                        updateUI();
+                    };
+                });
+            });
+        </script>
 
         <!-- Individual Options Section -->
         <section class="py-16 lg:py-20 bg-slate-900/30">
