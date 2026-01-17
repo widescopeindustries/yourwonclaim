@@ -47,3 +47,149 @@
         overflow: hidden;
     }
 }
+
+/* ===== MOBILE RESPONSIVENESS FIX ===== */
+
+/* Calculator Container - Stack on mobile */
+@media (max-width: 768px) {
+  .calculator-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 1.5rem;
+  }
+
+  .calculator-inputs,
+  .calculator-results {
+    width: 100%;
+  }
+
+  /* Status Breakdown - 3 columns to vertical stack */
+  .status-grid {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem;
+    padding: 1.5rem;
+  }
+
+  .status-card {
+    width: 100%;
+  }
+
+  /* Touch-friendly buttons */
+  button,
+  .btn,
+  .btn-primary,
+  .btn-secondary,
+  .cta-button {
+    min-height: 44px !important;
+    min-width: 44px !important;
+    padding: 0.75rem 1.5rem !important;
+    font-size: 1rem !important;
+  }
+
+  /* Input fields - mobile friendly */
+  input[type="text"],
+  input[type="number"],
+  input[type="email"],
+  select,
+  textarea {
+    min-height: 44px !important;
+    padding: 0.75rem 1rem !important;
+    font-size: 16px !important; /* Prevents iOS zoom on focus */
+  }
+
+  /* Modal/Overlay adjustments */
+  .modal,
+  .overlay {
+    width: 100% !important;
+    margin: 0 !important;
+    border-radius: 0 !important;
+  }
+
+  /* Header - reduce padding on mobile */
+  nav {
+    padding: 0.5rem 1rem !important;
+  }
+
+  .nav-toggle {
+    padding: 0.75rem !important;
+  }
+
+  /* Ensure full viewport width */
+  body {
+    overflow-x: hidden;
+  }
+
+  main {
+    overflow-x: hidden;
+  }
+
+  section {
+    overflow-x: hidden;
+  }
+}
+
+/* Tablet adjustments (768px - 1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .status-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  .calculator-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+}
+
+/* CTA Button Optimization */
+.cta-primary {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, #2563EB 0%, #1E40AF 100%);
+  box-shadow: 0 0 30px rgba(37, 99, 235, 0.4);
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.cta-primary:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 15px 50px rgba(37, 99, 235, 0.5);
+}
+
+.cta-primary:active {
+  transform: translateY(-2px) scale(0.98);
+}
+
+/* Pricing display inside button */
+.cta-price {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-top: 0.5rem;
+  opacity: 1;
+}
+
+.cta-subtext {
+  font-size: 0.75rem;
+  font-weight: 600;
+  opacity: 0.85;
+  margin-top: 0.25rem;
+  letter-spacing: 0.05em;
+}
+
+/* Ensure button is touch-friendly on mobile */
+@media (max-width: 768px) {
+  .cta-primary {
+    min-height: 60px;
+    padding: 1rem !important;
+    font-size: 1rem !important;
+  }
+
+  .cta-price {
+    font-size: 1.125rem;
+  }
+
+  .cta-subtext {
+    font-size: 0.7rem;
+  }
+}
