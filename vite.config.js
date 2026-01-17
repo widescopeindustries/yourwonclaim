@@ -1,5 +1,5 @@
 import { defineConfig } from 'vite'
-import { copyFileSync, mkdirSync, readdirSync, existsSync } from 'fs'
+import { copyFileSync, mkdirSync, readdirSync, existsSync, readFileSync, writeFileSync } from 'fs'
 import { join } from 'path'
 
 export default defineConfig({
@@ -86,6 +86,22 @@ export default defineConfig({
                         console.log(`✅ Copied ${file} to dist/`)
                     }
                 })
+
+                // Fix CSS link in products.html to match compiled CSS
+                const productsPath = join('dist', 'products.html')
+                if (existsSync(productsPath)) {
+                    let productsContent = readFileSync(productsPath, 'utf8')
+                    const cssMatch = readdirSync(join('dist', 'assets'))
+                        .find(f => f.startsWith('index-') && f.endsWith('.css'))
+                    if (cssMatch) {
+                        productsContent = productsContent.replace(
+                            /href="\/src\/styles\/index\.css"/g,
+                            `href="/assets/${cssMatch}" crossorigin`
+                        )
+                        writeFileSync(productsPath, productsContent)
+                        console.log(`✅ Fixed CSS link in products.html`)
+                    }
+                }
             }
         }
     ]
