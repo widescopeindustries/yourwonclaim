@@ -2,7 +2,7 @@
 
 // DOM Content Loaded
 document.addEventListener('DOMContentLoaded', function() {
-    initializeCountdown();
+    // initializeCountdown();
     initializeTestimonials();
     initializeFAQ();
     initializeLeadForm();
