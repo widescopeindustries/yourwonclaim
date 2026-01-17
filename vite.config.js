@@ -1,5 +1,5 @@
 import { defineConfig } from 'vite'
-import { copyFileSync, mkdirSync, readdirSync, existsSync, readFileSync, writeFileSync } from 'fs'
+import { copyFileSync, mkdirSync, readdirSync, existsSync, readFileSync, writeFileSync, statSync } from 'fs'
 import { join } from 'path'
 
 export default defineConfig({
@@ -63,19 +63,25 @@ export default defineConfig({
                 const productDir = 'product'
                 const distProductDir = 'dist/product'
 
-                if (existsSync(productDir)) {
-                    if (!existsSync(distProductDir)) {
-                        mkdirSync(distProductDir, { recursive: true })
+                const copyRecursiveSync = function(src, dest) {
+                    const exists = existsSync(src);
+                    const stats = exists && statSync(src);
+                    const isDirectory = exists && stats.isDirectory();
+                    if (isDirectory) {
+                        if (!existsSync(dest)) {
+                            mkdirSync(dest, { recursive: true });
+                        }
+                        readdirSync(src).forEach(function(childItemName) {
+                            copyRecursiveSync(join(src, childItemName), join(dest, childItemName));
+                        });
+                    } else {
+                        copyFileSync(src, dest);
                     }
+                };
 
-                    const productFiles = readdirSync(productDir)
-                    productFiles.forEach(file => {
-                        copyFileSync(
-                            join(productDir, file),
-                            join(distProductDir, file)
-                        )
-                    })
-                    console.log(`✅ Copied ${productFiles.length} product pages to dist/product/`)
+                if (existsSync(productDir)) {
+                    copyRecursiveSync(productDir, distProductDir);
+                    console.log(`✅ Copied product directory to dist/product/`)
                 }
 
                 // Copy SEO files (sitemap, robots.txt, etc.)
