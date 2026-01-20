@@ -1,3 +1,5 @@
 {
-    "workbench.editor.closeOnFileDelete": true
+    "workbench.editor.closeOnFileDelete": true,
+    "files.autoSave": "afterDelay",
+    "editor.defaultFormatter": "DEVSENSE.composer-php-vscode"
 }
