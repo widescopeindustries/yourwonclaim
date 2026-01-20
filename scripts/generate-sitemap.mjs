@@ -15,7 +15,8 @@ const today = new Date().toISOString().split('T')[0];
 // Define static pages with their priorities
 const staticPages = [
   { path: '/', priority: '1.0', changefreq: 'weekly', title: 'Homepage' },
-  { path: '/articles/', priority: '0.8', changefreq: 'weekly', title: 'Articles Index' },
+  { path: '/articles/index.html', priority: '0.8', changefreq: 'weekly', title: 'Articles Index' },
+  { path: '/calculator.html', priority: '0.7', changefreq: 'monthly', title: 'Calculator' },
   { path: '/contact.html', priority: '0.6', changefreq: 'monthly', title: 'Contact' },
   { path: '/privacy-policy.html', priority: '0.3', changefreq: 'yearly', title: 'Privacy Policy' },
   { path: '/terms-of-service.html', priority: '0.3', changefreq: 'yearly', title: 'Terms of Service' },

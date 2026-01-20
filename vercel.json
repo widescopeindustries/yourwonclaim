@@ -14,6 +14,18 @@
     ],
     "redirects": [
         {
+            "source": "/:path*",
+            "has": [
+                {
+                    "type": "host",
+                    "value": "www.yourwonclaim.com"
+                }
+            ],
+            "destination": "https://yourwonclaim.com/:path*",
+            "statusCode": 301,
+            "permanent": true
+        },
+        {
             "source": "/index.html",
             "destination": "/",
             "statusCode": 301

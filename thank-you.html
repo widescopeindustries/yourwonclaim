@@ -143,10 +143,10 @@
                             <span>VA communication scripts</span>
                         </div>
                     </div>
-                    <button id="download-btn"
-                        class="w-full sm:w-auto px-10 py-4 bg-navy text-white font-bold rounded-xl hover:bg-black transition-all transform hover:scale-105 shadow-xl">
-                        Download Now
-                    </button>
+                    <a id="download-btn" href="/templates_bundle.zip" download
+                        class="inline-block w-full sm:w-auto px-10 py-4 bg-navy text-white font-bold rounded-xl hover:bg-black transition-all transform hover:scale-105 shadow-xl text-center no-underline cursor-pointer">
+                        Download All Templates (Zip)
+                    </a>
                     <p
                         class="mt-6 text-xs text-gray-400 font-bold uppercase tracking-widest italic text-center sm:text-left">
                         Can't find the email? Check your spam folder.</p>
@@ -241,7 +241,7 @@
                         'event_category': 'engagement',
                         'event_label': 'free_checklist_download'
                     });
-                    alert('Download starting...');
+                    // Download triggers automatically via href
                 });
             }
 
