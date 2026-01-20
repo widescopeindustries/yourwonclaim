@@ -170,8 +170,17 @@
 
             <!-- Order Bump -->
             <div
-              class="mb-8 p-6 bg-primary/10 border-2 border-dashed border-primary/30 rounded-2xl relative group cursor-pointer hover:bg-primary/20 transition-all"
+              class="mb-8 p-6 bg-primary/10 border-2 border-dashed border-primary/50 rounded-2xl relative group cursor-pointer hover:bg-primary/20 transition-all shadow-[0_0_15px_rgba(37,99,235,0.2)] animate-pulse-slow"
               id="order-bump">
+              <style>
+                @keyframes pulse-slow {
+                  0%, 100% { box-shadow: 0 0 15px rgba(37,99,235,0.2); border-color: rgba(37,99,235,0.5); }
+                  50% { box-shadow: 0 0 25px rgba(37,99,235,0.4); border-color: rgba(37,99,235,0.8); }
+                }
+                .animate-pulse-slow {
+                  animation: pulse-slow 3s infinite;
+                }
+              </style>
               <div class="flex items-start">
                 <div class="flex-shrink-0 mt-1">
                   <input type="checkbox" id="bump-checkbox"
