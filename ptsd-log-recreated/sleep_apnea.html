@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sleep Apnea Evidence Log</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
+        :root {
+            --primary-color: #1a365d; /* Navy Blue */
+            --secondary-color: #c53030; /* Dark Red for warnings */
+            --accent-color: #2b6cb0; /* Lighter Blue */
+            --bg-color: #ffffff;
+            --text-color: #2d3748;
+            --border-color: #e2e8f0;
+            --table-header-bg: #2c5282;
+            --table-header-text: #ffffff;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 0;
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+        }
+
+        .container {
+            max-width: 850px;
+            margin: 40px auto;
+            padding: 40px;
+            background: white;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        h1, h2, h3 {
+            color: var(--primary-color);
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .subtitle {
+            text-align: center;
+            font-style: italic;
+            color: #4a5568;
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            border-bottom: 3px solid #ecc94b;
+            padding-bottom: 20px;
+        }
+
+        .highlight-box {
+            border: 2px solid #ecc94b;
+            padding: 15px;
+            background-color: #fffff0;
+            text-align: center;
+            font-weight: bold;
+            font-size: 1.1rem;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+
+        section {
+            margin-bottom: 40px;
+        }
+
+        h2 {
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 10px;
+            margin-top: 30px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 0.95rem;
+        }
+
+        th, td {
+            border: 1px solid var(--border-color);
+            padding: 12px;
+            text-align: left;
+            vertical-align: top;
+        }
+
+        th {
+            background-color: var(--table-header-bg);
+            color: var(--table-header-text);
+            font-weight: 600;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f7fafc;
+        }
+
+        .warning-text {
+            color: var(--secondary-color);
+            font-weight: bold;
+            text-transform: uppercase;
+            text-align: center;
+            margin-top: 20px;
+            border: 2px solid var(--secondary-color);
+            padding: 10px;
+        }
+
+        .strong-example {
+            background-color: #f0fff4;
+            border-left: 4px solid #48bb78;
+            padding: 15px;
+            margin: 10px 0;
+        }
+
+        .weak-example {
+            background-color: #fff5f5;
+            border-left: 4px solid #f56565;
+            padding: 15px;
+            margin: 10px 0;
+        }
+
+        .input-line {
+            border-bottom: 1px solid #000;
+            display: inline-block;
+            width: 200px;
+            margin-left: 10px;
+        }
+        
+        .full-width-input {
+            width: 100%;
+            display: block;
+            margin-top: 5px;
+            border-bottom: 1px solid #000;
+        }
+
+        .signature-section {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 50px;
+            gap: 20px;
+        }
+
+        .signature-block {
+            flex: 1;
+        }
+        
+        .signature-line {
+            border-bottom: 1px solid #000;
+            margin-top: 40px;
+            margin-bottom: 5px;
+        }
+
+        .footer {
+            font-size: 0.8rem;
+            color: #718096;
+            text-align: center;
+            margin-top: 40px;
+            font-style: italic;
+            border-top: 1px solid var(--border-color);
+            padding-top: 10px;
+        }
+
+        /* Print Specific Styles */
+        @media print {
+            body {
+                background: white;
+            }
+            .container {
+                box-shadow: none;
+                margin: 0;
+                padding: 0;
+                max-width: 100%;
+            }
+            .page-break {
+                page-break-before: always;
+            }
+            .no-print {
+                display: none;
+            }
+            a {
+                text-decoration: none;
+                color: black;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <!-- Page 1: Introduction -->
+    <header>
+        <h1>EVIDENCE LOG</h1>
+        <div class="subtitle">For Sleep Apnea VA Disability Claims</div>
+    </header>
+
+    <section>
+        <h2>The Smoking Gun Evidence</h2>
+        <p>After years of navigating the VA claims process—as veterans ourselves—we discovered something that changes everything: <strong>the single most powerful piece of evidence you can submit isn't officially part of a Fully Developed Claim.</strong></p>
+
+        <div class="highlight-box">
+            "No more convincing. Just corroboration."
+        </div>
+
+        <p>When you walk into a C&P exam without this documentation, the examiner's job is to <strong>investigate whether your condition exists and how severe it is</strong>. They're playing detective. You're trying to convince them.</p>
+
+        <p>When you walk in WITH a properly completed Evidence Log, the dynamic completely shifts. The examiner's job becomes <strong>corroborating what you've already documented</strong>. They're not investigating—they're verifying. That's a fundamentally different exam.</p>
+    </section>
+
+    <section>
+        <h2>How VA Raters Actually Evaluate Your Claim</h2>
+        <p>Every VA disability rating—regardless of condition—is based on three core factors. Raters are trained to look for evidence of these specific elements:</p>
+
+        <table>
+            <thead>
+                <tr>
+                    <th style="width: 20%;">Factor</th>
+                    <th style="width: 35%;">What It Means</th>
+                    <th style="width: 45%;">What Raters Look For</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>FREQUENCY</strong></td>
+                    <td>How often do your symptoms occur?</td>
+                    <td>Daily? Weekly? Constant? Episodic? Document specific patterns.</td>
+                </tr>
+                <tr>
+                    <td><strong>SEVERITY</strong></td>
+                    <td>How intense are your symptoms when they occur?</td>
+                    <td>Mild, moderate, severe? Specific descriptions of pain levels, intensity of panic attacks, etc.</td>
+                </tr>
+                <tr>
+                    <td><strong>FUNCTIONAL IMPACT</strong></td>
+                    <td>How do symptoms affect your daily life and ability to work?</td>
+                    <td>Can't work? Can't sleep? Can't maintain relationships? Specific limitations.</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p><strong>Why This Evidence Log Works:</strong> The template you're about to use is specifically designed to capture all three factors in a format that's easy for raters to process. When a rater opens your file and sees 30 days of documented symptoms with frequency, severity, and functional impact clearly recorded, they don't have to guess or interpret. The evidence speaks for itself.</p>
+
+        <div class="warning-text">
+            DO NOT FILE ANY CLAIM UNTIL THIS LOG IS COMPLETED AND INCLUDED WITH YOUR SUBMISSION
+        </div>
+    </section>
+
+    <div class="page-break"></div>
+
+    <!-- Page 2: Guidance -->
+    <section>
+        <h2>Sleep Apnea: Condition-Specific Guidance</h2>
+        <p>Sleep Apnea is rated under 38 CFR § 4.97, Diagnostic Code 6847. Unlike many conditions, sleep apnea ratings are heavily dependent on <strong>objective medical evidence</strong> (sleep studies) combined with documentation of <strong>required treatment and residual symptoms</strong>.</p>
+
+        <h3>What C&P Examiners Focus On:</h3>
+        <ul>
+            <li><strong>Sleep study results:</strong> AHI (Apnea-Hypopnea Index) score, oxygen desaturation levels</li>
+            <li><strong>Treatment compliance:</strong> CPAP/BiPAP usage, hours per night, nights per week</li>
+            <li><strong>Persistent daytime hypersomnolence:</strong> Excessive daytime sleepiness DESPITE treatment</li>
+            <li><strong>Respiratory failure:</strong> Need for supplemental oxygen, CO2 retention</li>
+            <li><strong>Functional impact:</strong> Falling asleep at inappropriate times, cognitive impairment, safety concerns</li>
+        </ul>
+
+        <h3>Sleep Apnea Rating Levels:</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th style="width: 15%;">Rating</th>
+                    <th style="width: 85%;">Criteria</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>0%</td>
+                    <td>Asymptomatic but with documented sleep disorder breathing</td>
+                </tr>
+                <tr>
+                    <td>30%</td>
+                    <td>Persistent daytime hypersomnolence</td>
+                </tr>
+                <tr>
+                    <td>50%</td>
+                    <td>Requires use of breathing assistance device such as CPAP machine</td>
+                </tr>
+                <tr>
+                    <td>100%</td>
+                    <td>Chronic respiratory failure with carbon dioxide retention, cor pulmonale, OR requires tracheostomy</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="warning-text" style="color: #c53030; border: 2px solid #c53030; background: #fff5f5; margin: 20px 0; padding: 15px;">
+            CRITICAL FOR 50% RATING: The VA requires proof that you USE the CPAP, not just that you were prescribed one. Your Evidence Log combined with CPAP machine data downloads provides this proof.
+        </div>
+
+        <h3>How to Use the Evidence Log for Sleep Apnea:</h3>
+        <p>Your log should document both your CPAP compliance AND your residual symptoms. Many veterans get stuck at 50% when they could qualify for consideration of additional ratings based on secondary conditions (like depression from chronic fatigue) or demonstrating that symptoms persist despite treatment.</p>
+
+        <div class="strong-example">
+            <strong>Strong Entry Example:</strong> "CPAP usage: 6.5 hours (mask seal issues, woke twice to adjust). Still exhausted upon waking despite full night with CPAP. Fell asleep at desk at work around 1400—coworker had to wake me. Near-miss driving home—caught myself drifting in lane. Wife says I still stop breathing even with CPAP on (she counted 3 episodes). Headache most of morning. Had to cancel evening plans due to fatigue."
+        </div>
+
+        <p><em>The strong entry documents compliance (6.5 hours), persistent symptoms despite treatment (exhausted, fell asleep at desk, near-miss driving), and functional impact (couldn't complete work tasks alertly, had to cancel plans). This demonstrates that the 50% rating criteria may not fully capture your impairment.</em></p>
+
+        <div class="weak-example">
+            <strong>Weak Entry Example:</strong> "Used CPAP. Still tired."
+        </div>
+    </section>
+
+    <div class="page-break"></div>
+
+    <!-- Page 3: Example Log -->
+    <section>
+        <h2>Completed Example: 7-Day Evidence Log</h2>
+        <p>Below is an example of a properly completed Evidence Log. Notice how each entry captures specific details about symptoms, their severity, and their impact on daily functioning. Your log should follow this format.</p>
+
+        <table>
+            <thead>
+                <tr>
+                    <th style="width: 15%;">Date</th>
+                    <th style="width: 15%;">CPAP Data</th>
+                    <th style="width: 35%;">Symptoms Despite Treatment</th>
+                    <th style="width: 35%;">Functional Impact</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Mon 1/6</strong></td>
+                    <td>5.2 hrs<br>AHI: 3.2<br>2 mask leaks</td>
+                    <td>Woke exhausted despite CPAP. Headache until 1000. Wife says I stopped breathing twice that she noticed.</td>
+                    <td>Fell asleep in morning meeting—very embarrassing. Energy crash at 1400. Needed coffee to drive home safely.</td>
+                </tr>
+                <tr>
+                    <td><strong>Tue 1/7</strong></td>
+                    <td>6.8 hrs<br>AHI: 1.8<br>Good seal</td>
+                    <td>Better night but still tired by afternoon. Excessive yawning starting at 1300.</td>
+                    <td>Brain fog slowed me down—estimate 60% of normal. Took 20 min "rest" in car at lunch.</td>
+                </tr>
+                <tr>
+                    <td><strong>Wed 1/8</strong></td>
+                    <td>4.1 hrs<br>AHI: 4.5<br>Removed at 0300</td>
+                    <td>Woke gasping, removed mask in frustration. Severe fatigue all day. Morning headache 8/10.</td>
+                    <td>Called in sick. Napped twice for 1-2 hrs during day. Still felt unrested. Cancelled evening gym session.</td>
+                </tr>
+                <tr>
+                    <td><strong>Thu 1/9</strong></td>
+                    <td>7.0 hrs<br>AHI: 2.1<br>Good seal</td>
+                    <td>Good compliance night. Still daytime sleepiness 6/10. Near-sleep episodes driving home.</td>
+                    <td>Wife had to take over driving. Fell asleep on couch at 1830. Missed family dinner.</td>
+                </tr>
+                <tr>
+                    <td><strong>Fri 1/10</strong></td>
+                    <td>5.5 hrs<br>AHI: 2.8<br>1 mask leak</td>
+                    <td>Woke with dry mouth despite humidifier. Fatigue 7/10 by afternoon. Brain fog (forgot coworker's name).</td>
+                    <td>Made error at work—had to re-do 2 hrs of work. Too tired for hobbies.</td>
+                </tr>
+                 <tr>
+                    <td><strong>Sat 1/11</strong></td>
+                    <td>6.2 hrs<br>AHI: 2.4</td>
+                    <td>Weekend but still need CPAP. Tired despite sleeping in. Afternoon nap 2.5 hrs.</td>
+                    <td>Could not help with yard work as planned. Wife frustrated. Fell asleep during movie.</td>
+                </tr>
+                <tr>
+                    <td><strong>Sun 1/12</strong></td>
+                    <td>7.5 hrs<br>AHI: 1.5</td>
+                    <td>Best night this week. Still tired by 1400. Needed rest before dinner.</td>
+                    <td>Low energy for family activities. Kids asked why I'm "always tired." Napped 1.5 hrs.</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <div class="page-break"></div>
+
+    <!-- Page 4+: Template -->
+    <section>
+        <h2>Your Evidence Log: 30-Day Template</h2>
+        <p><strong>Instructions:</strong> Complete one row per day for at least 30 consecutive days before your C&P exam or claim submission. Be specific, honest, and focus on frequency, severity, and functional impact. Print additional copies as needed.</p>
+
+        <div style="margin-bottom: 30px; border: 1px solid #ccc; padding: 15px;">
+            <div style="margin-bottom: 10px;">
+                <strong>VETERAN NAME:</strong> <span class="input-line" style="width: 300px;"></span>
+                <span style="float: right;"><strong>CLAIM #:</strong> <span class="input-line"></span></span>
+            </div>
+            <div>
+                <strong>CONDITION:</strong> <span class="input-line" style="width: 300px;">Sleep Apnea</span>
+                <span style="float: right;"><strong>START DATE:</strong> <span class="input-line"></span></span>
+            </div>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th style="width: 15%;">Date</th>
+                    <th style="width: 15%;">CPAP Data<br><span style="font-weight: normal; font-size: 0.8em;">(HRS/AHI)</span></th>
+                    <th style="width: 35%;">Symptoms Despite Treatment<br><span style="font-weight: normal; font-size: 0.8em;">(fatigue, sleepiness, headaches, etc.)</span></th>
+                    <th style="width: 35%;">Functional Impact<br><span style="font-weight: normal; font-size: 0.8em;">(work, driving, daily activities)</span></th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Generating 30 empty rows for the template -->
+                <script>
+                    for(let i=1; i<=30; i++) {
+                        document.write(`
+                        <tr style="height: 100px;">
+                            <td><strong>Day ${i}</strong><br>__/__</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        `);
+                        // Add page break after every 7 rows to keep it readable on print
+                        if (i % 7 === 0 && i !== 30) {
+                            document.write('</tbody></table><div class="page-break"></div><table><thead><tr><th style="width: 15%;">Date</th><th style="width: 15%;">CPAP Data</th><th style="width: 35%;">Symptoms Despite Treatment</th><th style="width: 35%;">Functional Impact</th></tr></thead><tbody>');
+                        }
+                    }
+                </script>
+            </tbody>
+        </table>
+
+        <div class="signature-section">
+            <div class="signature-block">
+                <strong>VETERAN CERTIFICATION:</strong> I certify that the information recorded in this Evidence Log is true and accurate to the best of my knowledge. I understand that false statements may result in denial of benefits or other penalties.
+                <div class="signature-line"></div>
+                <div>Veteran Signature</div>
+                <div class="signature-line" style="width: 150px; margin-top: 20px;"></div>
+                <div>Date</div>
+            </div>
+            <div class="signature-block">
+                <br><br><br>
+                <div class="signature-line"></div>
+                <div>Witness (optional)</div>
+                <div class="signature-line" style="width: 150px; margin-top: 20px;"></div>
+                <div>Date</div>
+            </div>
+        </div>
+
+        <div class="footer">
+            DISCLAIMER: This template is provided for educational purposes only. It is not legal advice and does not constitute representation before the VA. Consult with an accredited Veterans Service Organization (VSO) or VA-accredited attorney for assistance with your specific claim.
+        </div>
+    </section>
+
+</div>
+
+</body>
+</html>

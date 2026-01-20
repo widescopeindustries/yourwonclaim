@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Back Condition Evidence Log</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
+        :root {
+            --primary-color: #1a365d; /* Navy Blue */
+            --secondary-color: #c53030; /* Dark Red for warnings */
+            --accent-color: #2b6cb0; /* Lighter Blue */
+            --bg-color: #ffffff;
+            --text-color: #2d3748;
+            --border-color: #e2e8f0;
+            --table-header-bg: #2c5282;
+            --table-header-text: #ffffff;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 0;
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+        }
+
+        .container {
+            max-width: 850px;
+            margin: 40px auto;
+            padding: 40px;
+            background: white;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        h1, h2, h3 {
+            color: var(--primary-color);
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .subtitle {
+            text-align: center;
+            font-style: italic;
+            color: #4a5568;
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            border-bottom: 3px solid #ecc94b;
+            padding-bottom: 20px;
+        }
+
+        .highlight-box {
+            border: 2px solid #ecc94b;
+            padding: 15px;
+            background-color: #fffff0;
+            text-align: center;
+            font-weight: bold;
+            font-size: 1.1rem;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+
+        section {
+            margin-bottom: 40px;
+        }
+
+        h2 {
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 10px;
+            margin-top: 30px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 0.95rem;
+        }
+
+        th, td {
+            border: 1px solid var(--border-color);
+            padding: 12px;
+            text-align: left;
+            vertical-align: top;
+        }
+
+        th {
+            background-color: var(--table-header-bg);
+            color: var(--table-header-text);
+            font-weight: 600;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f7fafc;
+        }
+
+        .warning-text {
+            color: var(--secondary-color);
+            font-weight: bold;
+            text-transform: uppercase;
+            text-align: center;
+            margin-top: 20px;
+            border: 2px solid var(--secondary-color);
+            padding: 10px;
+        }
+
+        .strong-example {
+            background-color: #f0fff4;
+            border-left: 4px solid #48bb78;
+            padding: 15px;
+            margin: 10px 0;
+        }
+
+        .weak-example {
+            background-color: #fff5f5;
+            border-left: 4px solid #f56565;
+            padding: 15px;
+            margin: 10px 0;
+        }
+
+        .input-line {
+            border-bottom: 1px solid #000;
+            display: inline-block;
+            width: 200px;
+            margin-left: 10px;
+        }
+        
+        .full-width-input {
+            width: 100%;
+            display: block;
+            margin-top: 5px;
+            border-bottom: 1px solid #000;
+        }
+
+        .signature-section {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 50px;
+            gap: 20px;
+        }
+
+        .signature-block {
+            flex: 1;
+        }
+        
+        .signature-line {
+            border-bottom: 1px solid #000;
+            margin-top: 40px;
+            margin-bottom: 5px;
+        }
+
+        .footer {
+            font-size: 0.8rem;
+            color: #718096;
+            text-align: center;
+            margin-top: 40px;
+            font-style: italic;
+            border-top: 1px solid var(--border-color);
+            padding-top: 10px;
+        }
+
+        /* Print Specific Styles */
+        @media print {
+            body {
+                background: white;
+            }
+            .container {
+                box-shadow: none;
+                margin: 0;
+                padding: 0;
+                max-width: 100%;
+            }
+            .page-break {
+                page-break-before: always;
+            }
+            .no-print {
+                display: none;
+            }
+            a {
+                text-decoration: none;
+                color: black;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <!-- Page 1: Introduction -->
+    <header>
+        <h1>EVIDENCE LOG</h1>
+        <div class="subtitle">For Back Conditions (Lumbar/Thoracic Spine) VA Disability Claims</div>
+    </header>
+
+    <section>
+        <h2>The Smoking Gun Evidence</h2>
+        <p>After years of navigating the VA claims process—as veterans ourselves—we discovered something that changes everything: <strong>the single most powerful piece of evidence you can submit isn't officially part of a Fully Developed Claim.</strong></p>
+
+        <div class="highlight-box">
+            "No more convincing. Just corroboration."
+        </div>
+
+        <p>When you walk into a C&P exam without this documentation, the examiner's job is to <strong>investigate whether your condition exists and how severe it is</strong>. They're playing detective. You're trying to convince them.</p>
+
+        <p>When you walk in WITH a properly completed Evidence Log, the dynamic completely shifts. The examiner's job becomes <strong>corroborating what you've already documented</strong>. They're not investigating—they're verifying. That's a fundamentally different exam.</p>
+    </section>
+
+    <section>
+        <h2>How VA Raters Actually Evaluate Your Claim</h2>
+        <p>Every VA disability rating—regardless of condition—is based on three core factors. Raters are trained to look for evidence of these specific elements:</p>
+
+        <table>
+            <thead>
+                <tr>
+                    <th style="width: 20%;">Factor</th>
+                    <th style="width: 35%;">What It Means</th>
+                    <th style="width: 45%;">What Raters Look For</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>FREQUENCY</strong></td>
+                    <td>How often do your symptoms occur?</td>
+                    <td>Daily? Weekly? Constant? Episodic? Document specific patterns.</td>
+                </tr>
+                <tr>
+                    <td><strong>SEVERITY</strong></td>
+                    <td>How intense are your symptoms when they occur?</td>
+                    <td>Mild, moderate, severe? Specific descriptions of pain levels, intensity of pain, etc.</td>
+                </tr>
+                <tr>
+                    <td><strong>FUNCTIONAL IMPACT</strong></td>
+                    <td>How do symptoms affect your daily life and ability to work?</td>
+                    <td>Can't work? Can't sleep? Can't maintain relationships? Specific limitations.</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p><strong>Why This Evidence Log Works:</strong> The template you're about to use is specifically designed to capture all three factors in a format that's easy for raters to process. When a rater opens your file and sees 30 days of documented symptoms with frequency, severity, and functional impact clearly recorded, they don't have to guess or interpret. The evidence speaks for itself.</p>
+
+        <div class="warning-text">
+            DO NOT FILE ANY CLAIM UNTIL THIS LOG IS COMPLETED AND INCLUDED WITH YOUR SUBMISSION
+        </div>
+    </section>
+
+    <div class="page-break"></div>
+
+    <!-- Page 2: Guidance -->
+    <section>
+        <h2>Back Conditions: Condition-Specific Guidance</h2>
+        <p>Back conditions (including lumbar strain, degenerative disc disease, herniated discs, and spinal stenosis) are rated under 38 CFR § 4.71a using either the General Rating Formula for Diseases and Injuries of the Spine or the Formula for Rating Intervertebral Disc Syndrome (IVDS). Ratings are based primarily on <strong>range of motion limitations</strong> and <strong>incapacitating episodes</strong>.</p>
+
+        <h3>What C&P Examiners Measure:</h3>
+        <ul>
+            <li><strong>Range of Motion:</strong> Forward flexion, extension, lateral flexion (both sides), rotation (both sides)</li>
+            <li><strong>Pain on motion:</strong> Where in the range does pain begin? Does pain limit motion?</li>
+            <li><strong>Flare-ups:</strong> How often? How severe? How long do they last? What triggers them?</li>
+            <li><strong>Incapacitating episodes:</strong> Periods requiring bed rest PRESCRIBED by a physician</li>
+            <li><strong>Neurological symptoms:</strong> Radiculopathy (pain/numbness/weakness radiating to legs)</li>
+            <li><strong>Functional impact:</strong> Difficulty sitting, standing, walking, lifting, bending</li>
+        </ul>
+
+        <h3>Back Condition Rating Levels (General Formula):</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th style="width: 15%;">Rating</th>
+                    <th style="width: 85%;">Range of Motion Criteria</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>10%</td>
+                    <td>Forward flexion greater than 60° but not greater than 85°; OR combined ROM greater than 120° but not greater than 235°; OR muscle spasm/guarding.</td>
+                </tr>
+                <tr>
+                    <td>20%</td>
+                    <td>Forward flexion greater than 30° but not greater than 60°; OR combined ROM not greater than 120°; OR muscle spasm or guarding severe enough to result in abnormal gait or abnormal spinal contour.</td>
+                </tr>
+                <tr>
+                    <td>40%</td>
+                    <td>Forward flexion 30° or less; OR favorable ankylosis of entire thoracolumbar spine</td>
+                </tr>
+                <tr>
+                    <td>50%</td>
+                    <td>Unfavorable ankylosis of entire thoracolumbar spine</td>
+                </tr>
+                <tr>
+                    <td>100%</td>
+                    <td>Unfavorable ankylosis of entire spine</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="warning-text" style="color: #c53030; border: 2px solid #c53030; background: #fff5f5; margin: 20px 0; padding: 15px;">
+            THE FLARE-UP FACTOR: C&P exams capture your range of motion on ONE day. But the VA acknowledges that your condition may be worse during flare-ups. Your Evidence Log documents these flare-ups so the examiner can estimate additional functional loss during flares. This can increase your rating.
+        </div>
+
+        <h3>How to Use the Evidence Log for Back Conditions:</h3>
+        <p>Document your daily pain levels, but more importantly, document what you <strong>cannot do</strong> because of your back. The VA rates based on functional impairment, not just pain. Also track flare-ups meticulously— when they happen, how severe, what triggered them, and how long they lasted.</p>
+
+        <div class="strong-example">
+            <strong>Strong Entry Example:</strong> "Pain level 6/10 at rest, 8/10 with movement. Could not bend to tie shoes—wife had to help. Standing limited to 10 minutes before pain forced me to sit. Walking limited to approximately 100 yards. Could not lift laundry basket (~15 lbs). Shooting pain down left leg when sitting more than 20 minutes. Took 800mg ibuprofen at 0800 and 1400 with minimal relief. Had to lie down flat for 2 hours mid-day. Cancelled dinner plans because cannot sit in restaurant chairs."
+        </div>
+
+        <div class="strong-example" style="border-left-color: #c53030; background-color: #fffaf0;">
+            <strong>FLARE-UP Entry Example:</strong> "FLARE-UP DAY 1: Woke with severe spasm after [trigger - yard work yesterday]. Pain 9/10. Cannot bend forward at all. Getting out of bed took 15 minutes. Called in sick to work. Spent most of day lying flat with ice/heat rotation. Could not prepare meals—wife brought food to bedroom. Pain medication barely touching it."
+        </div>
+
+        <div class="weak-example">
+            <strong>Weak Entry Example:</strong> "Back hurt today. Took some Advil."
+        </div>
+    </section>
+
+    <div class="page-break"></div>
+
+    <!-- Page 3: Example Log -->
+    <section>
+        <h2>Completed Example: 7-Day Evidence Log</h2>
+        <p>Below is an example of a properly completed Evidence Log. Notice how each entry captures specific details about symptoms, their severity, and their impact on daily functioning. Your log should follow this format.</p>
+
+        <table>
+            <thead>
+                <tr>
+                    <th style="width: 15%;">Date</th>
+                    <th style="width: 15%;">Pain Level<br>(0-10)</th>
+                    <th style="width: 35%;">Symptoms & Limitations</th>
+                    <th style="width: 35%;">Functional Impact</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Mon 1/6</strong></td>
+                    <td>AM: 5<br>PM: 7</td>
+                    <td>Stiffness upon waking—30 min to loosen up. Pain increased with sitting at desk. Shooting pain down left leg after 2 hrs sitting.</td>
+                    <td>Could not tie shoes. Needed sit-stand desk adjustments every 20 min. Could not help with dinner cleanup.</td>
+                </tr>
+                <tr>
+                    <td><strong>Tue 1/7</strong></td>
+                    <td>AM: 6<br>PM: 8</td>
+                    <td>Spasm mid-morning reaching for file. Sharp pain with any twisting. Radiating pain L leg to knee.</td>
+                    <td>Had to leave office early. Cannot sit in car comfortably. Driving home painful—every bump was agony.</td>
+                </tr>
+                <tr>
+                    <td><strong>Wed 1/8</strong></td>
+                    <td>AM: 7<br>PM: 7</td>
+                    <td>FLARE-UP DAY 1. Woke with severe stiffness. Could not bend past 20°. Locked up.</td>
+                    <td>Called in sick. Spent day alternating ice/heat lying flat. Wife had to help me to bathroom.</td>
+                </tr>
+                <tr>
+                    <td><strong>Thu 1/9</strong></td>
+                    <td>AM: 8<br>PM: 6</td>
+                    <td>FLARE-UP DAY 2. Pain 8/10 upon waking. Muscle relaxer helped by afternoon. Still cannot bend or pick anything up.</td>
+                    <td>Second sick day. Did not leave bedroom/bed except for bathroom. Could not sit in waiting room at doctor's.</td>
+                </tr>
+                <tr>
+                    <td><strong>Fri 1/10</strong></td>
+                    <td>AM: 6<br>PM: 5</td>
+                    <td>Flare subsiding but still significant. Forward flexion maybe 45°. Nerve pain stopped (can feel toes).</td>
+                    <td>Worked from home (cannot sit in office chair this long). Standing desk 50% of day.</td>
+                </tr>
+                 <tr>
+                    <td><strong>Sat 1/11</strong></td>
+                    <td>AM: 5<br>PM: 6</td>
+                    <td>Better but not baseline. Pain with prolonged any position. Changed position every 15-20 min.</td>
+                    <td>Could not do planned yard work. Could not lift grandchild (15 lbs). Grocery shopping limited—wife carried bags.</td>
+                </tr>
+                <tr>
+                    <td><strong>Sun 1/12</strong></td>
+                    <td>AM: 4<br>PM: 5</td>
+                    <td>Closest to baseline this week. Still cannot bend fully. Aching constant (4/10). Leg numbness returns if I sit.</td>
+                    <td>Light activity only. Rested frequently. Could not sit through entire church service—had to stand in back.</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <div class="page-break"></div>
+
+    <!-- Page 4+: Template -->
+    <section>
+        <h2>Your Evidence Log: 30-Day Template</h2>
+        <p><strong>Instructions:</strong> Complete one row per day for at least 30 consecutive days before your C&P exam or claim submission. Be specific, honest, and focus on frequency, severity, and functional impact. Print additional copies as needed.</p>
+
+        <div style="margin-bottom: 30px; border: 1px solid #ccc; padding: 15px;">
+            <div style="margin-bottom: 10px;">
+                <strong>VETERAN NAME:</strong> <span class="input-line" style="width: 300px;"></span>
+                <span style="float: right;"><strong>CLAIM #:</strong> <span class="input-line"></span></span>
+            </div>
+            <div>
+                <strong>CONDITION:</strong> <span class="input-line" style="width: 300px;">Back Condition / Spine</span>
+                <span style="float: right;"><strong>START DATE:</strong> <span class="input-line"></span></span>
+            </div>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th style="width: 15%;">Date</th>
+                    <th style="width: 15%;">Pain Level<br><span style="font-weight: normal; font-size: 0.8em;">(0-10)</span></th>
+                    <th style="width: 35%;">Symptoms & Limitations<br><span style="font-weight: normal; font-size: 0.8em;">(stiffness, spasms, radiating pain, ROM)</span></th>
+                    <th style="width: 35%;">Functional Impact<br><span style="font-weight: normal; font-size: 0.8em;">(work, mobility, daily activities)</span></th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Generating 30 empty rows for the template -->
+                <script>
+                    for(let i=1; i<=30; i++) {
+                        document.write(`
+                        <tr style="height: 100px;">
+                            <td><strong>Day ${i}</strong><br>__/__</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        `);
+                        // Add page break after every 7 rows to keep it readable on print
+                        if (i % 7 === 0 && i !== 30) {
+                            document.write('</tbody></table><div class="page-break"></div><table><thead><tr><th style="width: 15%;">Date</th><th style="width: 15%;">Pain Level</th><th style="width: 35%;">Symptoms & Limitations</th><th style="width: 35%;">Functional Impact</th></tr></thead><tbody>');
+                        }
+                    }
+                </script>
+            </tbody>
+        </table>
+
+        <div class="signature-section">
+            <div class="signature-block">
+                <strong>VETERAN CERTIFICATION:</strong> I certify that the information recorded in this Evidence Log is true and accurate to the best of my knowledge. I understand that false statements may result in denial of benefits or other penalties.
+                <div class="signature-line"></div>
+                <div>Veteran Signature</div>
+                <div class="signature-line" style="width: 150px; margin-top: 20px;"></div>
+                <div>Date</div>
+            </div>
+            <div class="signature-block">
+                <br><br><br>
+                <div class="signature-line"></div>
+                <div>Witness (optional)</div>
+                <div class="signature-line" style="width: 150px; margin-top: 20px;"></div>
+                <div>Date</div>
+            </div>
+        </div>
+
+        <div class="footer">
+            DISCLAIMER: This template is provided for educational purposes only. It is not legal advice and does not constitute representation before the VA. Consult with an accredited Veterans Service Organization (VSO) or VA-accredited attorney for assistance with your specific claim.
+        </div>
+    </section>
+
+</div>
+
+</body>
+</html>
