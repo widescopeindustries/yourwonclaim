@@ -4,66 +4,124 @@
 <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>2026 VA Disability Calculator | VeteransClaims</title>
+    <title>2026 VA Disability Calculator | YourWonClaim</title>
     <meta name="description"
         content="Calculate your VA disability rating and 2026 pay rates. Includes the 2.8% COLA increase, bilateral factors, and dependent adjustments.">
 
     <!-- Canonical URL -->
     <link rel="canonical" href="https://yourwonclaim.com/calculator" />
 
-    <!-- Preconnect -->
-    <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
-        rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        primary: "#2563EB",
-                        "primary-dark": "#1E40AF",
-                        navy: "#0F172A",
-                    },
-                    fontFamily: {
-                        sans: ["Inter", "sans-serif"],
-                    },
-                    borderRadius: {
-                        'xl': '1rem',
-                        '2xl': '1.5rem',
-                        '3xl': '2rem',
-                    },
-                },
-            },
-        };
-    </script>
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="/src/styles/index.css">
+
+    <!-- Fonts: Inter + Sora -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Sora:wght@400;600;700;800&display=swap"
+        rel="stylesheet" />
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
 
     <style>
+        /* Design System Tokens */
+        :root {
+            --bg-primary: #0B1A2F;
+            --text-light: #F6F7FB;
+            --text-muted: #A9B3C2;
+            --accent: #C21818;
+            --accent-hover: #a01414;
+            --border-5: rgba(255, 255, 255, 0.05);
+            --border-10: rgba(255, 255, 255, 0.10);
+            --border-20: rgba(255, 255, 255, 0.20);
+        }
+
+        html {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        .font-heading {
+            font-family: 'Sora', 'Inter', sans-serif;
+        }
+
+        /* Grain Overlay */
+        .grain-overlay {
+            position: fixed;
+            inset: 0;
+            z-index: 9999;
+            pointer-events: none;
+            opacity: 0.03;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+        }
+
+        /* Glass Header */
         .glass-header {
-            background: rgba(255, 255, 255, 0.8);
+            background: rgba(11, 26, 47, 0.9);
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
         }
 
+        /* Hero Gradient (dark) */
         .hero-gradient {
-            background: linear-gradient(135deg, #F8FAFB 0%, #FFFFFF 100%);
+            background: linear-gradient(135deg, #0d2240 0%, #0B1A2F 100%);
         }
 
+        /* Calculator Card */
         .calc-card {
-            background: white;
-            border: 1px solid #F1F5F9;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.10);
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
+        /* Range Input Thumb */
         input[type="range"]::-webkit-slider-thumb {
             -webkit-appearance: none;
             height: 20px;
             width: 20px;
             border-radius: 50%;
-            background: #2563EB;
+            background: #C21818;
             cursor: pointer;
-            box-shadow: 0 0 10px rgba(37, 99, 235, 0.3);
+            box-shadow: 0 0 10px rgba(194, 24, 24, 0.3);
+        }
+
+        input[type="range"]::-moz-range-thumb {
+            height: 20px;
+            width: 20px;
+            border-radius: 50%;
+            background: #C21818;
+            cursor: pointer;
+            border: none;
+            box-shadow: 0 0 10px rgba(194, 24, 24, 0.3);
+        }
+
+        /* Dark form inputs */
+        select, input[type="number"] {
+            background: rgba(255, 255, 255, 0.05) !important;
+            border-color: rgba(255, 255, 255, 0.10) !important;
+            color: #F6F7FB !important;
+        }
+
+        select:focus, input[type="number"]:focus {
+            border-color: #C21818 !important;
+            ring-color: #C21818 !important;
+            outline: none;
+            box-shadow: 0 0 0 2px rgba(194, 24, 24, 0.3);
+        }
+
+        select option {
+            background: #0B1A2F;
+            color: #F6F7FB;
+        }
+
+        /* Touch target sizing */
+        button, a.inline-flex, .nav-toggle {
+            min-height: 48px;
+            min-width: 48px;
         }
     </style>
 
@@ -77,110 +135,115 @@
     </script>
 </head>
 
-<body class="bg-white text-navy font-sans antialiased min-h-screen flex flex-col">
+<body style="background: #0B1A2F; color: #F6F7FB; font-family: 'Inter', sans-serif; -webkit-font-smoothing: antialiased; min-height: 100vh; display: flex; flex-direction: column;">
+
+    <!-- Grain Overlay -->
+    <div class="grain-overlay"></div>
 
     <!-- Navigation -->
-    <nav class="fixed w-full z-50 glass-header border-b border-gray-100">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-20">
-                <div class="flex-shrink-0 flex items-center">
-                    <a href="/" class="flex items-center space-x-2 no-underline">
-                        <div class="w-10 h-10 bg-primary rounded-xl flex items-center justify-center">
-                            <span class="material-icons-round text-white">verified</span>
+    <nav class="fixed w-full z-50 top-0" style="background: rgba(11, 26, 47, 0.9); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255, 255, 255, 0.05);">
+        <div style="max-width: 80rem; margin: 0 auto; padding: 0 1rem;">
+            <div style="display: flex; justify-content: space-between; align-items: center; height: 4rem;">
+                <div style="flex-shrink: 0; display: flex; align-items: center;">
+                    <a href="/" style="display: flex; align-items: center; gap: 0.75rem; text-decoration: none;">
+                        <div style="width: 2.25rem; height: 2.25rem; background: #C21818; border-radius: 0.5rem; display: flex; align-items: center; justify-content: center;">
+                            <i data-lucide="shield-check" style="width: 1.25rem; height: 1.25rem; color: white;"></i>
                         </div>
-                        <span class="text-xl font-extrabold tracking-tight text-navy">
-                            Veterans<span class="text-primary font-black">Claims</span>
-                        </span>
+                        <span class="font-heading" style="font-size: 1.125rem; font-weight: 700; letter-spacing: 0.05em; color: #F6F7FB;">YOURWONCLAIM.COM</span>
                     </a>
                 </div>
-                <div class="hidden md:flex items-center space-x-10">
-                    <a class="text-sm font-semibold text-gray-500 hover:text-primary transition-colors"
-                        href="/">Home</a>
-                    <a class="text-sm font-semibold text-gray-500 hover:text-primary transition-colors"
-                        href="/articles/">Learning Hub</a>
-                    <a class="text-sm font-semibold text-gray-500 hover:text-primary transition-colors"
-                        href="/pages/mystory.html">About Us</a>
-                    <a class="inline-flex items-center justify-center px-6 py-2.5 bg-primary text-white text-sm font-bold rounded-full shadow-lg shadow-primary/20 hover:bg-primary-dark transition-all transform hover:scale-105"
-                        href="/pages/guide.html">
-                        Get the Guide — $37
+                <div class="nav-desktop" style="display: none; align-items: center; gap: 2.5rem;">
+                    <a href="/" style="font-size: 0.75rem; font-weight: 700; color: #A9B3C2; text-decoration: none; text-transform: uppercase; letter-spacing: 0.1em; transition: color 0.2s;" onmouseover="this.style.color='#C21818'" onmouseout="this.style.color='#A9B3C2'">Home</a>
+                    <a href="/products.html" style="font-size: 0.75rem; font-weight: 700; color: #A9B3C2; text-decoration: none; text-transform: uppercase; letter-spacing: 0.1em; transition: color 0.2s;" onmouseover="this.style.color='#C21818'" onmouseout="this.style.color='#A9B3C2'">Templates</a>
+                    <a href="/articles/" style="font-size: 0.75rem; font-weight: 700; color: #A9B3C2; text-decoration: none; text-transform: uppercase; letter-spacing: 0.1em; transition: color 0.2s;" onmouseover="this.style.color='#C21818'" onmouseout="this.style.color='#A9B3C2'">Articles</a>
+                    <a href="/pages/mystory.html" style="font-size: 0.75rem; font-weight: 700; color: #A9B3C2; text-decoration: none; text-transform: uppercase; letter-spacing: 0.1em; transition: color 0.2s;" onmouseover="this.style.color='#C21818'" onmouseout="this.style.color='#A9B3C2'">My Story</a>
+                    <a href="/products.html" style="display: inline-flex; align-items: center; justify-content: center; padding: 0.625rem 1.5rem; background: #C21818; color: white; font-size: 0.75rem; font-weight: 800; border-radius: 9999px; text-decoration: none; text-transform: uppercase; letter-spacing: -0.02em; transition: all 0.2s; box-shadow: 0 0 20px rgba(194, 24, 24, 0.3);" onmouseover="this.style.background='#a01414';this.style.transform='scale(1.05)'" onmouseout="this.style.background='#C21818';this.style.transform='scale(1)'">
+                        Browse Templates <span style="opacity: 0.7;">$29</span>
                     </a>
                 </div>
+                <div class="nav-mobile-toggle" style="display: block;">
+                    <button onclick="document.getElementById('mobile-nav').classList.toggle('hidden')" style="color: #F6F7FB; padding: 0.5rem; background: transparent; border: none; cursor: pointer;" aria-label="Toggle navigation menu" aria-expanded="false">
+                        <i data-lucide="menu" style="width: 1.5rem; height: 1.5rem;"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-nav" class="hidden" style="background: rgba(11, 26, 47, 0.95); border-bottom: 1px solid rgba(255, 255, 255, 0.05);">
+            <div style="padding: 0.5rem 1rem 1.5rem;">
+                <a href="/" style="display: block; padding: 0.75rem 1rem; font-weight: 700; color: #F6F7FB; text-decoration: none; border-radius: 0.75rem;">Home</a>
+                <a href="/products.html" style="display: block; padding: 0.75rem 1rem; font-weight: 700; color: #F6F7FB; text-decoration: none; border-radius: 0.75rem;">Templates</a>
+                <a href="/articles/" style="display: block; padding: 0.75rem 1rem; font-weight: 700; color: #F6F7FB; text-decoration: none; border-radius: 0.75rem;">Articles</a>
+                <a href="/pages/mystory.html" style="display: block; padding: 0.75rem 1rem; font-weight: 700; color: #F6F7FB; text-decoration: none; border-radius: 0.75rem;">My Story</a>
+                <a href="/products.html" style="display: block; padding: 0.75rem 1rem; margin-top: 0.5rem; background: #C21818; color: white; text-align: center; font-weight: 800; border-radius: 0.75rem; text-decoration: none; text-transform: uppercase;">Browse Templates — From $29</a>
             </div>
         </div>
     </nav>
 
-    <main class="flex-grow pt-20">
+    <main style="flex-grow: 1; padding-top: 4rem;">
         <!-- Hero Header -->
-        <header class="hero-gradient py-12 lg:py-20 border-b border-gray-100">
-            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                <h1 class="text-4xl lg:text-5xl font-black text-navy leading-tight mb-4 italic uppercase">
-                    2026 VA Disability <span class="text-primary tracking-tighter">Calculator</span>
+        <header class="hero-gradient" style="padding: 3rem 0; border-bottom: 1px solid rgba(255, 255, 255, 0.05);">
+            <div style="max-width: 56rem; margin: 0 auto; padding: 0 1rem; text-align: center;">
+                <h1 class="font-heading" style="font-size: 2.5rem; font-weight: 800; color: #F6F7FB; line-height: 1.1; margin-bottom: 1rem; font-style: italic; text-transform: uppercase;">
+                    2026 VA Disability <span style="color: #C21818; letter-spacing: -0.02em;">Calculator</span>
                 </h1>
-                <p class="text-lg text-gray-500 font-medium">Calculate your combined rating with 2.8% COLA increase
-                    applied.</p>
+                <p style="font-size: 1.125rem; color: #A9B3C2; font-weight: 500;">Calculate your combined rating with 2.8% COLA increase applied.</p>
             </div>
         </header>
 
         <!-- Calculator Interface -->
-        <section class="py-16 bg-white">
-            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="grid lg:grid-cols-3 gap-12">
-                    <!-- Left: Inputs -->
-                    <div class="lg:col-span-2 space-y-8">
+        <section style="padding: 4rem 0;">
+            <div style="max-width: 72rem; margin: 0 auto; padding: 0 1rem;">
+                <div style="display: grid; grid-template-columns: 1fr; gap: 3rem;">
+                    <!-- Inputs Column -->
+                    <div style="display: flex; flex-direction: column; gap: 2rem;">
                         <!-- Ratings List -->
-                        <div class="calc-card p-8 rounded-3xl shadow-sm">
-                            <div class="flex items-center justify-between mb-8">
-                                <h2 class="text-xl font-bold flex items-center">
-                                    <span class="material-icons-round mr-2 text-primary">add_circle</span>
+                        <div class="calc-card" style="padding: 2rem; border-radius: 1.5rem;">
+                            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 2rem;">
+                                <h2 class="font-heading" style="font-size: 1.25rem; font-weight: 700; display: flex; align-items: center; color: #F6F7FB;">
+                                    <i data-lucide="plus-circle" style="width: 1.25rem; height: 1.25rem; margin-right: 0.5rem; color: #C21818;"></i>
                                     Your Disabilities
                                 </h2>
                                 <button onclick="addRating()"
-                                    class="text-sm bg-primary/10 text-primary px-4 py-2 rounded-full font-bold hover:bg-primary/20 transition-all">
+                                    style="font-size: 0.875rem; background: rgba(194, 24, 24, 0.15); color: #C21818; padding: 0.5rem 1rem; border-radius: 9999px; font-weight: 700; border: none; cursor: pointer; transition: all 0.2s;"
+                                    onmouseover="this.style.background='rgba(194, 24, 24, 0.25)'" onmouseout="this.style.background='rgba(194, 24, 24, 0.15)'">
                                     + Add New
                                 </button>
                             </div>
-                            <div id="ratings-list" class="space-y-6">
+                            <div id="ratings-list" style="display: flex; flex-direction: column; gap: 1.5rem;">
                                 <!-- Ratings Injected Here -->
                             </div>
                         </div>
 
                         <!-- Dependents -->
-                        <div class="calc-card p-8 rounded-3xl shadow-sm">
-                            <h2 class="text-xl font-bold flex items-center mb-8">
-                                <span class="material-icons-round mr-2 text-primary">groups</span>
+                        <div class="calc-card" style="padding: 2rem; border-radius: 1.5rem;">
+                            <h2 class="font-heading" style="font-size: 1.25rem; font-weight: 700; display: flex; align-items: center; margin-bottom: 2rem; color: #F6F7FB;">
+                                <i data-lucide="users" style="width: 1.25rem; height: 1.25rem; margin-right: 0.5rem; color: #C21818;"></i>
                                 Dependents (30%+ Only)
                             </h2>
-                            <div class="grid md:grid-cols-2 gap-6">
+                            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem;">
                                 <div>
-                                    <label
-                                        class="block text-xs font-bold uppercase tracking-widest text-gray-400 mb-2">Marital
-                                        Status</label>
+                                    <label style="display: block; font-size: 0.625rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #A9B3C2; margin-bottom: 0.5rem;">Marital Status</label>
                                     <select id="marital-status" onchange="calculate()"
-                                        class="w-full bg-gray-50 border-gray-100 rounded-xl px-4 py-3 focus:ring-primary focus:border-primary">
+                                        style="width: 100%; border-radius: 0.75rem; padding: 0.75rem 1rem; font-size: 0.875rem;">
                                         <option value="single">Single</option>
                                         <option value="married">Married</option>
                                     </select>
                                 </div>
                                 <div>
-                                    <label
-                                        class="block text-xs font-bold uppercase tracking-widest text-gray-400 mb-2">Children
-                                        Under 18</label>
+                                    <label style="display: block; font-size: 0.625rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #A9B3C2; margin-bottom: 0.5rem;">Children Under 18</label>
                                     <input type="number" id="children-under-18" min="0" value="0" onchange="calculate()"
-                                        class="w-full bg-gray-50 border-gray-100 rounded-xl px-4 py-3 focus:ring-primary focus:border-primary">
+                                        style="width: 100%; border-radius: 0.75rem; padding: 0.75rem 1rem; font-size: 0.875rem; box-sizing: border-box;">
                                 </div>
                                 <div>
-                                    <label
-                                        class="block text-xs font-bold uppercase tracking-widest text-gray-400 mb-2">Children
-                                        18-23 (Students)</label>
+                                    <label style="display: block; font-size: 0.625rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #A9B3C2; margin-bottom: 0.5rem;">Children 18-23 (Students)</label>
                                     <input type="number" id="children-students" min="0" value="0" onchange="calculate()"
-                                        class="w-full bg-gray-50 border-gray-100 rounded-xl px-4 py-3 focus:ring-primary focus:border-primary">
+                                        style="width: 100%; border-radius: 0.75rem; padding: 0.75rem 1rem; font-size: 0.875rem; box-sizing: border-box;">
                                 </div>
                                 <div>
-                                    <label
-                                        class="block text-xs font-bold uppercase tracking-widest text-gray-400 mb-2">Dependent
-                                        Parents</label>
+                                    <label style="display: block; font-size: 0.625rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #A9B3C2; margin-bottom: 0.5rem;">Dependent Parents</label>
                                     <select id="dependent-parents" onchange="calculate()"
-                                        class="w-full bg-gray-50 border-gray-100 rounded-xl px-4 py-3 focus:ring-primary focus:border-primary">
+                                        style="width: 100%; border-radius: 0.75rem; padding: 0.75rem 1rem; font-size: 0.875rem;">
                                         <option value="0">0</option>
                                         <option value="1">1</option>
                                         <option value="2">2</option>
@@ -190,41 +253,37 @@
                         </div>
                     </div>
 
-                    <!-- Right: Results Card -->
-                    <div class="lg:col-span-1">
-                        <div class="sticky top-32 space-y-6">
-                            <div
-                                class="bg-navy rounded-3xl shadow-2xl overflow-hidden text-white border border-white/5">
-                                <div class="p-8 text-center bg-white/5 border-b border-white/10">
-                                    <p class="text-gray-400 text-xs font-bold uppercase tracking-widest mb-2">Combined
-                                        Rating</p>
-                                    <div id="combined-rating-display" class="text-7xl font-black italic mb-2">0%</div>
-                                    <div id="actual-rating-display" class="text-gray-500 text-xs font-medium italic">
-                                        Actual: 0.0%</div>
+                    <!-- Results Card -->
+                    <div>
+                        <div style="position: sticky; top: 6rem; display: flex; flex-direction: column; gap: 1.5rem;">
+                            <div style="background: rgba(255, 255, 255, 0.03); border-radius: 1.5rem; box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3); overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.05);">
+                                <div style="padding: 2rem; text-align: center; background: rgba(255, 255, 255, 0.05); border-bottom: 1px solid rgba(255, 255, 255, 0.10);">
+                                    <p style="color: #A9B3C2; font-size: 0.625rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; margin: 0 0 0.5rem;">Combined Rating</p>
+                                    <div id="combined-rating-display" class="font-heading" style="font-size: 4.5rem; font-weight: 800; font-style: italic; margin-bottom: 0.5rem; color: #F6F7FB;">0%</div>
+                                    <div id="actual-rating-display" style="color: #A9B3C2; font-size: 0.75rem; font-weight: 500; font-style: italic;">Actual: 0.0%</div>
                                 </div>
-                                <div class="p-8 text-center bg-white/5">
-                                    <p class="text-gray-400 text-xs font-bold uppercase tracking-widest mb-2">Est. 2026
-                                        Pay</p>
-                                    <div id="monthly-pay-display" class="text-4xl font-black italic text-primary">$0.00
-                                    </div>
-                                    <p class="mt-4 text-[10px] text-gray-500 italic uppercase">Includes 2.8% COLA
-                                        increase.</p>
+                                <div style="padding: 2rem; text-align: center; background: rgba(255, 255, 255, 0.05);">
+                                    <p style="color: #A9B3C2; font-size: 0.625rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; margin: 0 0 0.5rem;">Est. 2026 Pay</p>
+                                    <div id="monthly-pay-display" class="font-heading" style="font-size: 2.25rem; font-weight: 800; font-style: italic; color: #C21818;">$0.00</div>
+                                    <p style="margin-top: 1rem; font-size: 0.625rem; color: #A9B3C2; font-style: italic; text-transform: uppercase;">Includes 2.8% COLA increase.</p>
                                 </div>
-                                <a href="/#purchase"
-                                    class="block p-5 bg-primary text-white text-center font-bold hover:bg-primary-dark transition-all">
-                                    Want 100%? Get the Guide →
+                                <a href="/products.html"
+                                    style="display: block; padding: 1.25rem; background: #C21818; color: white; text-align: center; font-weight: 700; text-decoration: none; transition: all 0.2s;"
+                                    onmouseover="this.style.background='#a01414'" onmouseout="this.style.background='#C21818'">
+                                    Want 100%? Get the Templates
+                                    <i data-lucide="arrow-right" style="width: 1rem; height: 1rem; display: inline; vertical-align: middle; margin-left: 0.25rem;"></i>
                                 </a>
                             </div>
 
-                            <!-- Bilateral Info -->
-                            <div class="p-6 bg-primary/5 rounded-3xl border border-primary/10">
-                                <p class="text-navy font-bold flex items-center mb-3">
-                                    <span class="material-icons-round text-primary mr-2">info</span>
+                            <!-- VA Math Info Box -->
+                            <div style="padding: 1.5rem; background: rgba(194, 24, 24, 0.08); border-radius: 1.5rem; border: 1px solid rgba(194, 24, 24, 0.15);">
+                                <p style="font-weight: 700; display: flex; align-items: center; margin-bottom: 0.75rem; color: #F6F7FB;">
+                                    <i data-lucide="info" style="width: 1.25rem; height: 1.25rem; color: #C21818; margin-right: 0.5rem;"></i>
                                     What is VA Math?
                                 </p>
-                                <p class="text-sm text-gray-600 leading-relaxed">
+                                <p style="font-size: 0.875rem; color: #A9B3C2; line-height: 1.6;">
                                     The VA subtracts from your "remaining" non-disabled self. A 50% rating leaves you
-                                    50% efficient. A second 50% rating takes 50% of <strong>that</strong> (25%),
+                                    50% efficient. A second 50% rating takes 50% of <strong style="color: #F6F7FB;">that</strong> (25%),
                                     totaling 75% (80% rounded).
                                 </p>
                             </div>
@@ -236,13 +295,52 @@
     </main>
 
     <!-- Footer -->
-    <footer class="bg-navy pt-20 pb-12">
-        <div
-            class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-gray-500 italic uppercase font-bold tracking-widest text-xs">
-            <p>&copy; 2026 Simple VA Strategy. Not affiliated with the VA.</p>
+    <footer style="background: #070f1d; padding: 3rem 0 2rem; border-top: 1px solid rgba(255, 255, 255, 0.05);">
+        <div style="max-width: 80rem; margin: 0 auto; padding: 0 1rem;">
+            <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 3rem; margin-bottom: 2rem;">
+                <div>
+                    <div class="font-heading" style="color: #F6F7FB; font-weight: 800; font-size: 1.125rem; text-transform: uppercase; letter-spacing: -0.02em; font-style: italic; margin-bottom: 0.5rem;">
+                        Your<span style="color: #C21818;">Won</span>Claim
+                    </div>
+                    <p style="font-size: 0.875rem; color: #A9B3C2;">Veteran-Owned. Evidence That Wins.</p>
+                </div>
+                <div>
+                    <h4 style="color: #F6F7FB; font-weight: 700; margin-bottom: 1rem; text-transform: uppercase; font-size: 0.75rem; letter-spacing: 0.1em;">Pages</h4>
+                    <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.875rem;">
+                        <li><a href="/" style="color: #A9B3C2; text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='#C21818'" onmouseout="this.style.color='#A9B3C2'">Home</a></li>
+                        <li><a href="/products.html" style="color: #A9B3C2; text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='#C21818'" onmouseout="this.style.color='#A9B3C2'">Templates</a></li>
+                        <li><a href="/articles/" style="color: #A9B3C2; text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='#C21818'" onmouseout="this.style.color='#A9B3C2'">Articles</a></li>
+                        <li><a href="/pages/mystory.html" style="color: #A9B3C2; text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='#C21818'" onmouseout="this.style.color='#A9B3C2'">My Story</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 style="color: #F6F7FB; font-weight: 700; margin-bottom: 1rem; text-transform: uppercase; font-size: 0.75rem; letter-spacing: 0.1em;">Legal</h4>
+                    <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.875rem;">
+                        <li><a href="/privacy-policy.html" style="color: #A9B3C2; text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='#C21818'" onmouseout="this.style.color='#A9B3C2'">Privacy</a></li>
+                        <li><a href="/terms-of-service.html" style="color: #A9B3C2; text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='#C21818'" onmouseout="this.style.color='#A9B3C2'">Terms</a></li>
+                        <li><a href="/contact.html" style="color: #A9B3C2; text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='#C21818'" onmouseout="this.style.color='#A9B3C2'">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 style="color: #F6F7FB; font-weight: 700; margin-bottom: 1rem; text-transform: uppercase; font-size: 0.75rem; letter-spacing: 0.1em;">Tools</h4>
+                    <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.875rem;">
+                        <li><a href="/calculator.html" style="color: #C21818; text-decoration: none; font-weight: 600;">VA Calculator</a></li>
+                        <li><a href="/products.html" style="color: #A9B3C2; text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='#C21818'" onmouseout="this.style.color='#A9B3C2'">Evidence Templates</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div style="border-top: 1px solid rgba(255, 255, 255, 0.05); padding-top: 2rem; text-align: center;">
+                <p style="font-size: 0.6875rem; color: #A9B3C2; max-width: 48rem; margin: 0 auto; line-height: 1.6;">
+                    Disclaimer: YourWonClaim provides educational materials only. This is not legal advice and does not
+                    constitute representation before the VA. We are not affiliated with or endorsed by the Department of
+                    Veterans Affairs. Consult an accredited VSO or VA-accredited attorney for claims assistance.
+                </p>
+                <p style="margin-top: 1rem; font-size: 0.6875rem; color: #A9B3C2; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em;">&copy; 2026 YourWonClaim. All rights reserved.</p>
+            </div>
         </div>
     </footer>
 
+    <!-- Calculator Logic (PRESERVED EXACTLY) -->
     <script>
         // 2026 Rates (2.8% COLA applied)
         const PAY_RATES_2026 = {
@@ -274,22 +372,24 @@
             list.innerHTML = '';
             ratings.forEach((val, i) => {
                 const row = document.createElement('div');
-                row.className = 'flex items-center space-x-6';
+                row.style.cssText = 'display: flex; align-items: center; gap: 1.5rem;';
                 row.innerHTML = `
-                    <div class="flex-grow">
-                        <input type="range" min="0" max="100" step="10" value="${val}" 
-                            class="w-full h-2 bg-gray-100 rounded-lg appearance-none cursor-pointer"
+                    <div style="flex-grow: 1;">
+                        <input type="range" min="0" max="100" step="10" value="${val}"
+                            style="width: 100%; height: 0.5rem; background: rgba(255,255,255,0.1); border-radius: 0.5rem; appearance: none; -webkit-appearance: none; cursor: pointer;"
                             oninput="this.nextElementSibling.innerText = this.value + '%'; updateRatingValue(${i}, this.value)">
-                        <div class="text-right font-black text-navy italic mt-2">${val}%</div>
+                        <div style="text-align: right; font-weight: 800; color: #F6F7FB; font-style: italic; margin-top: 0.5rem;">${val}%</div>
                     </div>
                     ${ratings.length > 1 ? `
-                        <button onclick="removeRating(${i})" class="text-gray-300 hover:text-red-500 transition-colors">
-                            <span class="material-icons-round">delete</span>
+                        <button onclick="removeRating(${i})" style="color: #A9B3C2; background: transparent; border: none; cursor: pointer; padding: 0.25rem; transition: color 0.2s;" onmouseover="this.style.color='#C21818'" onmouseout="this.style.color='#A9B3C2'">
+                            <i data-lucide="trash-2" style="width: 1.25rem; height: 1.25rem;"></i>
                         </button>
-                    ` : '<div class="w-6"></div>'}
+                    ` : '<div style="width: 1.5rem;"></div>'}
                 `;
                 list.appendChild(row);
             });
+            // Re-init Lucide icons for newly rendered elements
+            if (window.lucide) lucide.createIcons();
         }
 
         function calculate() {
@@ -328,6 +428,81 @@
 
         renderRatings();
         calculate();
+    </script>
+
+    <!-- Lucide Init & Responsive Nav -->
+    <script>
+        // Initialize Lucide icons
+        document.addEventListener('DOMContentLoaded', function () {
+            if (window.lucide) lucide.createIcons();
+
+            // Responsive nav: show desktop nav on md+
+            function handleResize() {
+                const desktopNav = document.querySelector('.nav-desktop');
+                const mobileToggle = document.querySelector('.nav-mobile-toggle');
+                if (window.innerWidth >= 768) {
+                    desktopNav.style.display = 'flex';
+                    mobileToggle.style.display = 'none';
+                } else {
+                    desktopNav.style.display = 'none';
+                    mobileToggle.style.display = 'block';
+                }
+            }
+            handleResize();
+            window.addEventListener('resize', handleResize);
+
+            // Responsive grid: side by side on large screens
+            function handleGridResize() {
+                const grid = document.querySelector('section > div > div[style*="display: grid"]');
+                if (!grid) return;
+                if (window.innerWidth >= 1024) {
+                    grid.style.gridTemplateColumns = '2fr 1fr';
+                } else {
+                    grid.style.gridTemplateColumns = '1fr';
+                }
+            }
+            handleGridResize();
+            window.addEventListener('resize', handleGridResize);
+
+            // Responsive footer grid
+            function handleFooterResize() {
+                const footerGrid = document.querySelector('footer > div > div[style*="grid-template-columns: repeat(4"]');
+                if (!footerGrid) return;
+                if (window.innerWidth >= 768) {
+                    footerGrid.style.gridTemplateColumns = 'repeat(4, 1fr)';
+                } else {
+                    footerGrid.style.gridTemplateColumns = '1fr';
+                }
+            }
+            handleFooterResize();
+            window.addEventListener('resize', handleFooterResize);
+
+            // Responsive dependents grid
+            function handleDependentsResize() {
+                const depGrid = document.querySelector('div[style*="grid-template-columns: repeat(2"]');
+                if (!depGrid) return;
+                if (window.innerWidth >= 640) {
+                    depGrid.style.gridTemplateColumns = 'repeat(2, 1fr)';
+                } else {
+                    depGrid.style.gridTemplateColumns = '1fr';
+                }
+            }
+            handleDependentsResize();
+            window.addEventListener('resize', handleDependentsResize);
+
+            // Responsive hero heading
+            function handleHeroResize() {
+                const h1 = document.querySelector('header h1');
+                if (!h1) return;
+                if (window.innerWidth >= 1024) {
+                    h1.style.fontSize = '3rem';
+                } else {
+                    h1.style.fontSize = '2.5rem';
+                }
+            }
+            handleHeroResize();
+            window.addEventListener('resize', handleHeroResize);
+        });
     </script>
 </body>
 

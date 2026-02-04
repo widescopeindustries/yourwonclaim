@@ -1,12 +1,18 @@
-/* Design tokens for YourWonClaim (Phase 2) */
+/* Design tokens for YourWonClaim - Kimi Theme */
 
-/* Color palette */
 :root {
   /* Brand */
-  --yc-navy: #0B1F38;
-  --yc-teal: #20B2AA;
-  --yc-gold: #FFC857;
-  --yc-flag: #B22234;
+  --yc-navy: #0B1A2F;
+  --yc-navy-light: #0d1f38;
+  --yc-navy-dark: #071525;
+  --yc-red: #C21818;
+  --yc-red-dark: #a01414;
+  --yc-cream: #F4F1EA;
+
+  /* Text */
+  --yc-text-primary: #F6F7FB;
+  --yc-text-muted: #A9B3C2;
+  --yc-text-dark: #3D4A5C;
 
   /* Neutrals */
   --yc-gray-900: #0E1217;
@@ -21,16 +27,14 @@
   --yc-gray-50:  #F6F8FC;
   --yc-white:    #FFFFFF;
 
-  /* Dark theme accents */
-  --bg: #0A0F1A; /* page background */
-  --surface-1: rgba(255,255,255,.04); /* card background */
-  --surface-2: rgba(255,255,255,.08); /* elevated surfaces */
-  --border: rgba(255,255,255,.12);
-  --text-primary: #E6ECF7;
-  --text-muted: #A5B1C7;
-  --accent: #5CC8FF; /* electric blue */
-  --accent-2: #7C92FF; /* indigo tint for gradients */
-  --glow: 0 0 .8rem rgba(92,200,255,.35), 0 0 2rem rgba(92,200,255,.2);
+  /* Dark theme surfaces */
+  --bg: #0B1A2F;
+  --surface-1: rgba(255,255,255,.05);
+  --surface-2: rgba(255,255,255,.08);
+  --border: rgba(255,255,255,.10);
+  --border-strong: rgba(255,255,255,.20);
+  --text-primary: #F6F7FB;
+  --text-muted: #A9B3C2;
 
   /* Feedback */
   --yc-success: #198754;
@@ -38,10 +42,10 @@
   --yc-warning: #B8860B;
 
   /* Typography */
-  --font-heading: "Poppins", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  --font-heading: "Sora", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
   --font-body: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
 
-  /* Type scale (base 16, ratio 1.125 approx) */
+  /* Type scale */
   --fs-xxs: 0.875rem;
   --fs-xs:  0.9375rem;
   --fs-sm:  1rem;
@@ -51,18 +55,18 @@
   --fs-2xl: 2.2rem;
   --fs-3xl: 2.8rem;
 
-  --lh-tight: 1.2;
+  --lh-tight: 1.05;
   --lh-normal: 1.6;
 
-  /* Spacing (4-8-12-16-24-32-48-64) */
-  --space-1: 0.25rem;  /* 4 */
-  --space-2: 0.5rem;   /* 8 */
-  --space-3: 0.75rem;  /* 12 */
-  --space-4: 1rem;     /* 16 */
-  --space-5: 1.5rem;   /* 24 */
-  --space-6: 2rem;     /* 32 */
-  --space-7: 3rem;     /* 48 */
-  --space-8: 4rem;     /* 64 */
+  /* Spacing */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 3rem;
+  --space-8: 4rem;
 
   /* Radius */
   --radius-sm: 4px;
@@ -70,7 +74,6 @@
   --radius-lg: 12px;
   --radius-xl: 16px;
   --radius-pill: 999px;
-  --radius-circle: 50%;
 
   /* Shadows */
   --shadow-sm: 0 1px 2px rgba(0,0,0,.1);
@@ -83,21 +86,11 @@
   --dur-2: 200ms;
   --dur-3: 320ms;
 
-  /* Focus */
-  --focus: var(--accent);
-
   /* Layout */
   --container: 1200px;
   --gutter: var(--space-4);
-
-  /* Breakpoints */
-  --bp-sm: 480px;
-  --bp-md: 768px;
-  --bp-lg: 1024px;
-  --bp-xl: 1280px;
 }
 
-/* Reduced motion */
 @media (prefers-reduced-motion: reduce) {
   :root {
     --dur-1: 1ms;
@@ -105,5 +98,3 @@
     --dur-3: 1ms;
   }
 }
-
-
