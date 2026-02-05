@@ -4,3 +4,5 @@ broken_data.json
 broken_results.txt
 .DS_Store
 dist/
+.vercel
+.env*.local

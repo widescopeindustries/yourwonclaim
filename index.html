@@ -103,6 +103,10 @@
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest" defer></script>
 
+    <!-- GSAP Animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
+
     <!-- GA4 Analytics -->
     <script defer src="https://www.googletagmanager.com/gtag/js?id=G-GMX19T2GWW"></script>
     <script>
@@ -235,26 +239,33 @@
                 <div class="absolute inset-0 bg-gradient-to-t from-[#0B1A2F] via-transparent to-transparent"></div>
             </div>
 
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <!-- Vertical Wordmark (Desktop) -->
+            <div class="hidden xl:block absolute left-8 top-1/2 -translate-y-1/2 z-10">
+                <span class="vertical-wordmark font-heading font-extrabold text-6xl tracking-[0.15em] text-white/10 uppercase">
+                    YOURWONCLAIM
+                </span>
+            </div>
+
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 xl:pl-32 relative z-10">
                 <div class="lg:grid lg:grid-cols-2 lg:gap-20 items-center">
                     <div class="lg:order-2 hidden lg:block">
                         <!-- Empty - image is the background -->
                     </div>
                     <div class="lg:order-1 max-w-2xl">
-                        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#C21818]/10 text-[#C21818] text-sm font-semibold mb-6 border border-[#C21818]/20">
+                        <div class="hero-headline opacity-0 inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#C21818]/10 text-[#C21818] text-sm font-semibold mb-6 border border-[#C21818]/20">
                             <i data-lucide="shield" class="w-4 h-4"></i>
                             Maximizing YOUR Veteran Benefits
                         </div>
 
-                        <h1 class="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-heading font-bold text-[#F6F7FB] leading-[1.05] mb-6">
-                            Secure the Benefits<br>You've Earned
+                        <h1 class="hero-headline opacity-0 text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-heading font-bold text-[#F6F7FB] leading-[1.05] mb-6">
+                            Secure the Benefits<br><span class="text-[#C21818]">You've Earned</span>
                         </h1>
 
-                        <p class="text-lg text-[#A9B3C2] mb-10 leading-relaxed max-w-lg">
+                        <p class="hero-subheadline opacity-0 text-lg text-[#A9B3C2] mb-10 leading-relaxed max-w-lg">
                             The no-nonsense guide for navigating solo-VA-claims. Learn the process, avoid common mistakes, and maximize your rating without the government's red tape.
                         </p>
 
-                        <div class="flex flex-col sm:flex-row gap-4 mb-8">
+                        <div class="hero-cta opacity-0 flex flex-col sm:flex-row gap-4 mb-8">
                             <a href="/products.html" id="hero-cta"
                                 class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-[#C21818] hover:bg-[#a01414] text-white font-semibold rounded-md transition-all btn-hover-lift text-lg">
                                 Browse Evidence Templates
@@ -266,18 +277,18 @@
                             </a>
                         </div>
 
-                        <div class="flex items-center gap-3">
+                        <div class="hero-stats opacity-0 flex items-center gap-3">
                             <div class="flex -space-x-3">
-                                <div class="w-9 h-9 bg-[#0B1A2F] border-2 border-[#0B1A2F] rounded-full flex items-center justify-center text-white font-bold text-xs">V</div>
-                                <div class="w-9 h-9 bg-[#0B1A2F] border-2 border-[#0B1A2F] rounded-full flex items-center justify-center text-white font-bold text-xs">V</div>
-                                <div class="w-9 h-9 bg-[#0B1A2F] border-2 border-[#0B1A2F] rounded-full flex items-center justify-center text-white font-bold text-xs">V</div>
+                                <div class="w-9 h-9 bg-gradient-to-br from-[#C21818] to-[#0B1A2F] border-2 border-[#0B1A2F] rounded-full flex items-center justify-center text-white font-bold text-xs">V</div>
+                                <div class="w-9 h-9 bg-gradient-to-br from-[#C21818] to-[#0B1A2F] border-2 border-[#0B1A2F] rounded-full flex items-center justify-center text-white font-bold text-xs">V</div>
+                                <div class="w-9 h-9 bg-gradient-to-br from-[#C21818] to-[#0B1A2F] border-2 border-[#0B1A2F] rounded-full flex items-center justify-center text-white font-bold text-xs">V</div>
                             </div>
-                            <p class="text-sm text-[#A9B3C2]">Joined by 1,000+ veterans</p>
+                            <p class="text-sm text-[#A9B3C2]">Joined by <span class="text-white font-semibold">1,000+ veterans</span></p>
                         </div>
 
-                        <div class="mt-8 bg-white/5 rounded-lg p-4 border border-white/10 max-w-sm">
-                            <p class="text-[#F6F7FB] italic text-sm">"This guide changed my life."</p>
-                            <p class="text-[#A9B3C2] text-xs mt-1">- Sgt. Richard S., USMC Vet</p>
+                        <div class="hero-stats opacity-0 mt-8 bg-white/5 rounded-xl p-6 border border-white/10 max-w-md">
+                            <p class="text-[#F6F7FB] italic text-lg mb-2">"This guide changed my life."</p>
+                            <p class="text-[#A9B3C2] text-sm">- Sgt. Richard S., USMC Vet</p>
                         </div>
                     </div>
                 </div>
@@ -321,21 +332,25 @@
         </section>
 
         <!-- Problem Section -->
-        <section class="py-20 lg:py-32 bg-gradient-to-b from-[#0B1A2F] to-[#0d1f38]">
+        <section id="problem-section" class="py-20 lg:py-32 bg-gradient-to-b from-[#0B1A2F] to-[#0d1f38]">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="lg:grid lg:grid-cols-2 lg:gap-20 items-center">
                     <!-- Image Side -->
-                    <div class="relative mb-12 lg:mb-0">
-                        <img src="/images/hero-optimized.webp" alt="Veteran reading denial letter"
-                            class="rounded-2xl object-cover aspect-[4/5] w-full shadow-2xl" loading="lazy">
-                        <div class="absolute bottom-6 left-6 bg-[#0B1A2F]/90 backdrop-blur-md rounded-xl p-4 border border-white/10">
-                            <div class="text-[#C21818] font-heading font-bold text-4xl">70%</div>
-                            <div class="text-[#A9B3C2] text-sm font-medium">First Claims Denied</div>
+                    <div class="problem-image opacity-0 relative mb-12 lg:mb-0">
+                        <div class="relative aspect-[4/5] rounded-2xl overflow-hidden">
+                            <img src="/images/hero-optimized.webp" alt="Veteran reading denial letter"
+                                class="w-full h-full object-cover img-navy-grade" loading="lazy">
+                            <div class="absolute inset-0 bg-gradient-to-t from-[#0B1A2F]/60 to-transparent"></div>
+                        </div>
+                        <!-- Floating Badge -->
+                        <div class="absolute -bottom-6 -right-6 bg-[#C21818] text-white px-6 py-4 rounded-lg shadow-2xl">
+                            <div class="text-3xl font-bold font-heading">70%</div>
+                            <div class="text-xs uppercase tracking-wider">First Claims Denied</div>
                         </div>
                     </div>
 
                     <!-- Content Side -->
-                    <div>
+                    <div class="problem-content opacity-0">
                         <h2 class="text-3xl lg:text-5xl font-heading font-bold text-white leading-tight mb-6">
                             Stop Guessing Your<br><span class="text-[#C21818]">VA Claim Status</span>
                         </h2>
@@ -434,10 +449,10 @@
         </section>
 
         <!-- Solution Section -->
-        <section class="py-20 lg:py-32 bg-gradient-to-b from-[#0d1f38] to-[#0B1A2F]">
+        <section id="solution-section" class="py-20 lg:py-32 bg-gradient-to-b from-[#0d1f38] to-[#0B1A2F]">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="lg:grid lg:grid-cols-2 lg:gap-20 items-center">
-                    <div class="order-2 lg:order-1">
+                    <div class="solution-content opacity-0 order-2 lg:order-1">
                         <h2 class="text-3xl lg:text-5xl font-heading font-bold text-white leading-tight mb-6">
                             We Help You Get to<br><span class="text-[#C21818]">'Approved'</span>
                         </h2>
@@ -450,32 +465,36 @@
                                 Browse Evidence Templates
                             </a>
                             <a href="#how-it-works"
-                                class="inline-flex items-center gap-2 text-[#C21818] font-semibold hover:gap-3 transition-all">
+                                class="inline-flex items-center gap-2 text-[#A9B3C2] hover:text-white font-medium transition-all link-underline">
                                 See how we build your case
                                 <i data-lucide="arrow-right" class="w-4 h-4"></i>
                             </a>
                         </div>
-                        <div class="flex gap-8">
+                        <div class="grid grid-cols-3 gap-6">
                             <div>
-                                <div class="text-2xl font-heading font-bold text-white">2,000+</div>
-                                <div class="text-xs text-[#A9B3C2]">Wins</div>
+                                <div class="text-2xl lg:text-3xl font-heading font-bold text-[#C21818]">2,000+</div>
+                                <div class="text-xs text-[#A9B3C2] uppercase tracking-wider mt-1">Wins</div>
                             </div>
                             <div>
-                                <div class="text-2xl font-heading font-bold text-white">100%</div>
-                                <div class="text-xs text-[#A9B3C2]">No Win, No Fee</div>
+                                <div class="text-2xl lg:text-3xl font-heading font-bold text-[#C21818]">100%</div>
+                                <div class="text-xs text-[#A9B3C2] uppercase tracking-wider mt-1">No Win, No Fee</div>
                             </div>
                             <div>
-                                <div class="text-2xl font-heading font-bold text-white">50</div>
-                                <div class="text-xs text-[#A9B3C2]">States</div>
+                                <div class="text-2xl lg:text-3xl font-heading font-bold text-[#C21818]">50</div>
+                                <div class="text-xs text-[#A9B3C2] uppercase tracking-wider mt-1">States</div>
                             </div>
                         </div>
                     </div>
-                    <div class="order-1 lg:order-2 mb-12 lg:mb-0 relative">
-                        <img src="/images/hero-optimized.webp" alt="Veteran with approval letter"
-                            class="rounded-2xl object-cover aspect-[4/5] w-full shadow-2xl" loading="lazy">
-                        <div class="absolute bottom-6 right-6 bg-[#0B1A2F]/90 backdrop-blur-md rounded-xl p-4 border border-white/10">
-                            <div class="text-[#C21818] font-heading font-bold text-3xl">100%</div>
-                            <div class="text-[#A9B3C2] text-sm font-medium">P&T Achieved</div>
+                    <div class="solution-image opacity-0 order-1 lg:order-2 mb-12 lg:mb-0 relative">
+                        <div class="relative aspect-[4/5] rounded-2xl overflow-hidden">
+                            <img src="/images/hero-optimized.webp" alt="Veteran with approval letter"
+                                class="w-full h-full object-cover" loading="lazy">
+                            <div class="absolute inset-0 bg-gradient-to-t from-[#0B1A2F]/60 to-transparent"></div>
+                        </div>
+                        <!-- Floating Badge -->
+                        <div class="absolute -bottom-6 -left-6 bg-white text-[#0B1A2F] px-6 py-4 rounded-lg shadow-2xl">
+                            <div class="text-3xl font-bold font-heading text-[#C21818]">100%</div>
+                            <div class="text-xs uppercase tracking-wider font-semibold">P&T Achieved</div>
                         </div>
                     </div>
                 </div>
@@ -483,7 +502,7 @@
         </section>
 
         <!-- Three Steps Section -->
-        <section id="how-it-works" class="py-20 lg:py-32 bg-[#0B1A2F] border-y border-white/5">
+        <section id="how-it-works" class="py-20 lg:py-32 bg-gradient-to-b from-[#0d1f38] to-[#0B1A2F]">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center max-w-3xl mx-auto mb-16">
                     <h2 class="text-3xl lg:text-5xl font-heading font-bold text-white mb-4">
@@ -493,35 +512,29 @@
                 </div>
 
                 <div class="grid md:grid-cols-3 gap-8">
-                    <div class="bg-white/5 p-8 rounded-2xl border border-white/10 card-hover relative">
-                        <div class="text-6xl lg:text-9xl font-heading font-extrabold text-white/5 absolute top-4 right-6">01</div>
-                        <div class="relative z-10">
-                            <div class="w-14 h-14 bg-[#C21818]/10 rounded-xl flex items-center justify-center mb-6">
-                                <i data-lucide="file-text" class="w-7 h-7 text-[#C21818]"></i>
-                            </div>
-                            <h3 class="text-xl font-heading font-semibold text-white mb-3">Free Case Review</h3>
-                            <p class="text-[#A9B3C2] text-sm leading-relaxed">We analyze your VA decision and identify exactly what's missing from your claim.</p>
+                    <div class="process-card opacity-0 bg-white/5 p-8 rounded-xl border border-white/10 card-hover">
+                        <div class="text-5xl font-heading font-bold text-[#C21818]/20 mb-6">01</div>
+                        <div class="w-14 h-14 bg-[#C21818]/10 rounded-lg flex items-center justify-center mb-6">
+                            <i data-lucide="file-text" class="w-7 h-7 text-[#C21818]"></i>
                         </div>
+                        <h3 class="text-xl font-heading font-bold text-white mb-3">Free Case Review</h3>
+                        <p class="text-[#A9B3C2] leading-relaxed">We analyze your VA decision and identify exactly what's missing from your claim.</p>
                     </div>
-                    <div class="bg-white/5 p-8 rounded-2xl border border-white/10 card-hover relative">
-                        <div class="text-6xl lg:text-9xl font-heading font-extrabold text-white/5 absolute top-4 right-6">02</div>
-                        <div class="relative z-10">
-                            <div class="w-14 h-14 bg-[#C21818]/10 rounded-xl flex items-center justify-center mb-6">
-                                <i data-lucide="shield" class="w-7 h-7 text-[#C21818]"></i>
-                            </div>
-                            <h3 class="text-xl font-heading font-semibold text-white mb-3">Build the Evidence</h3>
-                            <p class="text-[#A9B3C2] text-sm leading-relaxed">Nexus letters, medical opinions, buddy statements, and legal arguments—all in VA language.</p>
+                    <div class="process-card opacity-0 bg-white/5 p-8 rounded-xl border border-white/10 card-hover">
+                        <div class="text-5xl font-heading font-bold text-[#C21818]/20 mb-6">02</div>
+                        <div class="w-14 h-14 bg-[#C21818]/10 rounded-lg flex items-center justify-center mb-6">
+                            <i data-lucide="shield" class="w-7 h-7 text-[#C21818]"></i>
                         </div>
+                        <h3 class="text-xl font-heading font-bold text-white mb-3">Build the Evidence</h3>
+                        <p class="text-[#A9B3C2] leading-relaxed">Nexus letters, medical opinions, buddy statements, and legal arguments—all in VA language.</p>
                     </div>
-                    <div class="bg-white/5 p-8 rounded-2xl border border-white/10 card-hover relative">
-                        <div class="text-6xl lg:text-9xl font-heading font-extrabold text-white/5 absolute top-4 right-6">03</div>
-                        <div class="relative z-10">
-                            <div class="w-14 h-14 bg-[#C21818]/10 rounded-xl flex items-center justify-center mb-6">
-                                <i data-lucide="award" class="w-7 h-7 text-[#C21818]"></i>
-                            </div>
-                            <h3 class="text-xl font-heading font-semibold text-white mb-3">Appeal & Win</h3>
-                            <p class="text-[#A9B3C2] text-sm leading-relaxed">Higher-Level Review, Supplemental Claim, or BVA hearing—chosen specifically for your case.</p>
+                    <div class="process-card opacity-0 bg-white/5 p-8 rounded-xl border border-white/10 card-hover">
+                        <div class="text-5xl font-heading font-bold text-[#C21818]/20 mb-6">03</div>
+                        <div class="w-14 h-14 bg-[#C21818]/10 rounded-lg flex items-center justify-center mb-6">
+                            <i data-lucide="award" class="w-7 h-7 text-[#C21818]"></i>
                         </div>
+                        <h3 class="text-xl font-heading font-bold text-white mb-3">Appeal & Win</h3>
+                        <p class="text-[#A9B3C2] leading-relaxed">Higher-Level Review, Supplemental Claim, or BVA hearing—chosen specifically for your case.</p>
                     </div>
                 </div>
             </div>
@@ -572,42 +585,42 @@
         </section>
 
         <!-- Trust / Why Us Section -->
-        <section class="py-20 lg:py-32 bg-[#0B1A2F] border-y border-white/5">
+        <section id="trust-section" class="py-20 lg:py-32 bg-[#0B1A2F] border-y border-white/5">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="lg:grid lg:grid-cols-2 lg:gap-20 items-start">
-                    <div class="mb-12 lg:mb-0">
-                        <div class="text-[#C21818] font-heading font-bold text-5xl lg:text-7xl mb-2">2,000+</div>
-                        <div class="text-white font-heading font-semibold text-xl mb-6">Claims Won</div>
-                        <p class="text-[#A9B3C2] leading-relaxed">
+                <div class="lg:grid lg:grid-cols-2 lg:gap-20 items-center">
+                    <div class="trust-stat opacity-0 text-center lg:text-left mb-12 lg:mb-0">
+                        <div class="text-7xl lg:text-9xl font-heading font-bold text-[#C21818] leading-none mb-4">2,000+</div>
+                        <div class="text-2xl lg:text-3xl font-heading font-semibold text-white mb-6">Claims Won</div>
+                        <p class="text-[#A9B3C2] text-lg leading-relaxed max-w-md mx-auto lg:mx-0">
                             We focus on VA appeals. That focus shows in the details: stronger nexus letters, tighter timelines, and clear communication.
                         </p>
                     </div>
                     <div class="space-y-6">
-                        <div class="flex gap-4 bg-white/5 p-6 rounded-xl border border-white/10">
-                            <div class="w-12 h-12 bg-[#C21818]/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                        <div class="trust-feature opacity-0 flex gap-4 bg-white/5 p-6 rounded-xl border border-white/10">
+                            <div class="flex-shrink-0 w-12 h-12 bg-[#C21818]/10 rounded-lg flex items-center justify-center">
                                 <i data-lucide="lock" class="w-6 h-6 text-[#C21818]"></i>
                             </div>
                             <div>
-                                <h3 class="text-lg font-heading font-semibold text-white mb-1">No Fees Unless We Win</h3>
-                                <p class="text-[#A9B3C2] text-sm">You only pay if we secure your benefits. No upfront costs, no hidden fees.</p>
+                                <h3 class="font-semibold text-lg text-white mb-1">No Fees Unless We Win</h3>
+                                <p class="text-[#A9B3C2] text-sm leading-relaxed">You only pay if we secure your benefits. No upfront costs, no hidden fees.</p>
                             </div>
                         </div>
-                        <div class="flex gap-4 bg-white/5 p-6 rounded-xl border border-white/10">
-                            <div class="w-12 h-12 bg-[#C21818]/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                        <div class="trust-feature opacity-0 flex gap-4 bg-white/5 p-6 rounded-xl border border-white/10">
+                            <div class="flex-shrink-0 w-12 h-12 bg-[#C21818]/10 rounded-lg flex items-center justify-center">
+                                <i data-lucide="shield" class="w-6 h-6 text-[#C21818]"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold text-lg text-white mb-1">Nationwide Representation</h3>
+                                <p class="text-[#A9B3C2] text-sm leading-relaxed">We help veterans in all 50 states navigate the VA system successfully.</p>
+                            </div>
+                        </div>
+                        <div class="trust-feature opacity-0 flex gap-4 bg-white/5 p-6 rounded-xl border border-white/10">
+                            <div class="flex-shrink-0 w-12 h-12 bg-[#C21818]/10 rounded-lg flex items-center justify-center">
                                 <i data-lucide="users" class="w-6 h-6 text-[#C21818]"></i>
                             </div>
                             <div>
-                                <h3 class="text-lg font-heading font-semibold text-white mb-1">Nationwide Representation</h3>
-                                <p class="text-[#A9B3C2] text-sm">We help veterans in all 50 states navigate the VA system successfully.</p>
-                            </div>
-                        </div>
-                        <div class="flex gap-4 bg-white/5 p-6 rounded-xl border border-white/10">
-                            <div class="w-12 h-12 bg-[#C21818]/10 rounded-xl flex items-center justify-center flex-shrink-0">
-                                <i data-lucide="heart" class="w-6 h-6 text-[#C21818]"></i>
-                            </div>
-                            <div>
-                                <h3 class="text-lg font-heading font-semibold text-white mb-1">Direct Attorney/Agent Access</h3>
-                                <p class="text-[#A9B3C2] text-sm">Talk directly to the people handling your case. No call centers, no runaround.</p>
+                                <h3 class="font-semibold text-lg text-white mb-1">Direct Attorney/Agent Access</h3>
+                                <p class="text-[#A9B3C2] text-sm leading-relaxed">Talk directly to the people handling your case. No call centers, no runaround.</p>
                             </div>
                         </div>
                     </div>
@@ -715,38 +728,43 @@
         </section>
 
         <!-- CTA Section -->
-        <section class="py-20 lg:py-32 bg-gradient-to-b from-[#0B1A2F] to-[#0d1f38] border-t border-white/5">
-            <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                <h2 class="text-3xl lg:text-5xl font-heading font-bold text-white leading-tight mb-6">
-                    Ready to Turn a Denial<br>Into an <span class="text-[#C21818]">Approval?</span>
-                </h2>
-                <p class="text-lg text-[#A9B3C2] mb-10 max-w-xl mx-auto">
-                    Tell us what happened. We'll outline your next steps—free. The same system I used to achieve 100% P&T in 13 months.
-                </p>
-                <div class="flex flex-col sm:flex-row items-center justify-center gap-6 mb-8">
-                    <div class="text-center">
-                        <div class="text-4xl font-heading font-bold text-[#C21818]">From $29</div>
-                        <div class="text-sm text-[#A9B3C2]">Per template</div>
+        <section id="cta-section" class="py-20 lg:py-32 bg-gradient-to-b from-[#0d1f38] to-[#0B1A2F]">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="cta-card opacity-0 bg-white/5 border border-white/10 rounded-2xl p-8 lg:p-12 text-center">
+                    <h2 class="text-3xl lg:text-5xl font-heading font-bold text-white leading-tight mb-6">
+                        Ready to Turn a Denial<br><span class="text-[#C21818]">Into an Approval?</span>
+                    </h2>
+                    <p class="text-lg text-[#A9B3C2] mb-10 max-w-2xl mx-auto">
+                        Tell us what happened. We'll outline your next steps—free. The same system I used to achieve 100% P&T in 13 months.
+                    </p>
+
+                    <div class="flex flex-col sm:flex-row items-center justify-center gap-6 mb-10">
+                        <div class="text-center">
+                            <div class="text-4xl font-heading font-bold text-[#C21818]">$29</div>
+                            <div class="text-sm text-[#A9B3C2]">Per Template</div>
+                        </div>
+                        <div class="hidden sm:block w-px h-12 bg-white/20"></div>
+                        <div class="text-center">
+                            <div class="text-4xl font-heading font-bold text-white">$60</div>
+                            <div class="text-sm text-[#A9B3C2]">3-Pack Bundle (Save $27)</div>
+                        </div>
                     </div>
-                    <div class="hidden sm:block w-px h-12 bg-white/10"></div>
-                    <div class="text-center">
-                        <div class="text-4xl font-heading font-bold text-white">Lifetime</div>
-                        <div class="text-sm text-[#A9B3C2]">Access</div>
-                    </div>
-                </div>
-                <a href="/products.html"
-                    class="inline-flex items-center justify-center gap-2 px-12 py-4 bg-[#C21818] hover:bg-[#a01414] text-white font-semibold text-lg rounded-md transition-all btn-hover-lift mb-6">
-                    <i data-lucide="shield-check" class="w-5 h-5"></i>
-                    Get Instant Access
-                </a>
-                <div class="flex items-center justify-center gap-6 text-sm text-[#A9B3C2]">
-                    <div class="flex items-center gap-2">
-                        <i data-lucide="lock" class="w-4 h-4"></i>
-                        30-Day Guarantee
-                    </div>
-                    <div class="flex items-center gap-2">
-                        <i data-lucide="shield" class="w-4 h-4"></i>
-                        Check Out Securely
+
+                    <a href="/products.html"
+                        class="inline-flex items-center justify-center gap-2 px-12 py-4 bg-[#C21818] hover:bg-[#a01414] text-white font-semibold text-lg rounded-md transition-all btn-hover-lift mb-6">
+                        <i data-lucide="lock" class="w-5 h-5"></i>
+                        Get Instant Access
+                    </a>
+
+                    <div class="flex items-center justify-center gap-6 text-sm text-[#A9B3C2]">
+                        <span class="flex items-center gap-2">
+                            <i data-lucide="circle-check" class="w-4 h-4 text-[#C21818]"></i>
+                            30-Day Guarantee
+                        </span>
+                        <span class="flex items-center gap-2">
+                            <i data-lucide="lock" class="w-4 h-4 text-[#C21818]"></i>
+                            Secure Checkout
+                        </span>
                     </div>
                 </div>
             </div>
@@ -820,6 +838,108 @@
         // Initialize Lucide icons after DOM loads
         document.addEventListener('DOMContentLoaded', function() {
             if (window.lucide) lucide.createIcons();
+        });
+
+        // GSAP Scroll Animations
+        document.addEventListener('DOMContentLoaded', function() {
+            if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') return;
+
+            gsap.registerPlugin(ScrollTrigger);
+
+            // Hero animations (immediate on load)
+            gsap.fromTo('.hero-headline',
+                { y: 50, opacity: 0 },
+                { y: 0, opacity: 1, duration: 0.8, ease: 'power3.out', delay: 0.3 }
+            );
+            gsap.fromTo('.hero-subheadline',
+                { y: 30, opacity: 0 },
+                { y: 0, opacity: 1, duration: 0.6, ease: 'power3.out', delay: 0.5 }
+            );
+            gsap.fromTo('.hero-cta',
+                { y: 20, opacity: 0 },
+                { y: 0, opacity: 1, duration: 0.6, ease: 'power3.out', delay: 0.7 }
+            );
+            gsap.fromTo('.hero-stats',
+                { y: 20, opacity: 0 },
+                { y: 0, opacity: 1, duration: 0.6, ease: 'power3.out', delay: 0.9 }
+            );
+
+            // Problem section scroll animation
+            ScrollTrigger.create({
+                trigger: '#problem-section',
+                start: 'top 80%',
+                onEnter: () => {
+                    gsap.fromTo('.problem-image',
+                        { x: -100, opacity: 0 },
+                        { x: 0, opacity: 1, duration: 0.9, ease: 'power3.out' }
+                    );
+                    gsap.fromTo('.problem-content',
+                        { x: 100, opacity: 0 },
+                        { x: 0, opacity: 1, duration: 0.9, ease: 'power3.out', delay: 0.2 }
+                    );
+                },
+                once: true
+            });
+
+            // Solution section scroll animation
+            ScrollTrigger.create({
+                trigger: '#solution-section',
+                start: 'top 80%',
+                onEnter: () => {
+                    gsap.fromTo('.solution-content',
+                        { x: -100, opacity: 0 },
+                        { x: 0, opacity: 1, duration: 0.9, ease: 'power3.out' }
+                    );
+                    gsap.fromTo('.solution-image',
+                        { x: 100, opacity: 0 },
+                        { x: 0, opacity: 1, duration: 0.9, ease: 'power3.out', delay: 0.2 }
+                    );
+                },
+                once: true
+            });
+
+            // Process cards stagger animation
+            ScrollTrigger.create({
+                trigger: '#how-it-works',
+                start: 'top 75%',
+                onEnter: () => {
+                    gsap.fromTo('.process-card',
+                        { y: 60, opacity: 0 },
+                        { y: 0, opacity: 1, duration: 0.7, ease: 'power3.out', stagger: 0.15 }
+                    );
+                },
+                once: true
+            });
+
+            // Trust section animations
+            ScrollTrigger.create({
+                trigger: '#trust-section',
+                start: 'top 75%',
+                onEnter: () => {
+                    gsap.fromTo('.trust-stat',
+                        { scale: 0.9, opacity: 0 },
+                        { scale: 1, opacity: 1, duration: 0.7, ease: 'power3.out' }
+                    );
+                    gsap.fromTo('.trust-feature',
+                        { y: 40, opacity: 0 },
+                        { y: 0, opacity: 1, duration: 0.6, ease: 'power3.out', stagger: 0.1, delay: 0.3 }
+                    );
+                },
+                once: true
+            });
+
+            // CTA section animation
+            ScrollTrigger.create({
+                trigger: '#cta-section',
+                start: 'top 80%',
+                onEnter: () => {
+                    gsap.fromTo('.cta-card',
+                        { y: 60, opacity: 0 },
+                        { y: 0, opacity: 1, duration: 0.8, ease: 'power3.out' }
+                    );
+                },
+                once: true
+            });
         });
     </script>
 </body>

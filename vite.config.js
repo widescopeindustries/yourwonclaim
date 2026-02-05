@@ -108,20 +108,57 @@ export default defineConfig({
                     }
                 })
 
-                // Fix CSS link in products.html to match compiled CSS
-                const productsPath = join('dist', 'products.html')
-                if (existsSync(productsPath)) {
-                    let productsContent = readFileSync(productsPath, 'utf8')
-                    const cssMatch = readdirSync(join('dist', 'assets'))
-                        .find(f => f.startsWith('index-') && f.endsWith('.css'))
-                    if (cssMatch) {
-                        // Remove media="print" and update href for all stylesheet links
-                        productsContent = productsContent.replace(
-                            /<link rel="stylesheet" href="\/src\/styles\/index\.css"[^>]*>/g,
-                            `<link rel="stylesheet" href="/assets/${cssMatch}" crossorigin>`
-                        )
-                        writeFileSync(productsPath, productsContent)
+                // Fix CSS links in all HTML files to match compiled CSS
+                const cssMatch = readdirSync(join('dist', 'assets'))
+                    .find(f => f.startsWith('index-') && f.endsWith('.css'))
+
+                if (cssMatch) {
+                    const fixCssLinks = (filePath) => {
+                        if (existsSync(filePath)) {
+                            let content = readFileSync(filePath, 'utf8')
+                            if (content.includes('/src/styles/index.css')) {
+                                content = content.replace(
+                                    /<link rel="stylesheet" href="\/src\/styles\/index\.css"[^>]*>/g,
+                                    `<link rel="stylesheet" href="/assets/${cssMatch}" crossorigin>`
+                                )
+                                writeFileSync(filePath, content)
+                                return true
+                            }
+                        }
+                        return false
+                    }
+
+                    // Fix products.html
+                    if (fixCssLinks(join('dist', 'products.html'))) {
                         console.log(`✅ Fixed CSS link in products.html`)
+                    }
+
+                    // Fix all articles
+                    if (existsSync(distArticlesDir)) {
+                        const articleFiles = readdirSync(distArticlesDir).filter(f => f.endsWith('.html'))
+                        let fixedCount = 0
+                        articleFiles.forEach(file => {
+                            if (fixCssLinks(join(distArticlesDir, file))) {
+                                fixedCount++
+                            }
+                        })
+                        if (fixedCount > 0) {
+                            console.log(`✅ Fixed CSS links in ${fixedCount} article files`)
+                        }
+                    }
+
+                    // Fix all pages
+                    if (existsSync(distPagesDir)) {
+                        const pageFiles = readdirSync(distPagesDir).filter(f => f.endsWith('.html'))
+                        let fixedCount = 0
+                        pageFiles.forEach(file => {
+                            if (fixCssLinks(join(distPagesDir, file))) {
+                                fixedCount++
+                            }
+                        })
+                        if (fixedCount > 0) {
+                            console.log(`✅ Fixed CSS links in ${fixedCount} page files`)
+                        }
                     }
                 }
             }
