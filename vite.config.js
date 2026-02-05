@@ -99,8 +99,20 @@ export default defineConfig({
                     console.log(`✅ Copied ${pdfFiles.length} PDFs to dist/product/pdfs/`)
                 }
 
-                // Copy SEO files (sitemap, robots.txt, etc.)
-                const seoFiles = ['sitemap.xml', 'robots.txt', 'site.webmanifest', 'favicon.svg', 'calculator.html', 'products.html']
+                // Copy SEO files and standalone pages
+                const seoFiles = [
+                    'sitemap.xml',
+                    'robots.txt',
+                    'site.webmanifest',
+                    'favicon.svg',
+                    'calculator.html',
+                    'products.html',
+                    'privacy-policy.html',
+                    'terms-of-service.html',
+                    'contact.html',
+                    'thank-you.html',
+                    '404.html'
+                ]
                 seoFiles.forEach(file => {
                     if (existsSync(file)) {
                         copyFileSync(file, join('dist', file))
@@ -128,10 +140,20 @@ export default defineConfig({
                         return false
                     }
 
-                    // Fix products.html
-                    if (fixCssLinks(join('dist', 'products.html'))) {
-                        console.log(`✅ Fixed CSS link in products.html`)
-                    }
+                    // Fix standalone HTML pages
+                    const standalonePagesToFix = [
+                        'products.html',
+                        'privacy-policy.html',
+                        'terms-of-service.html',
+                        'contact.html',
+                        'thank-you.html',
+                        '404.html'
+                    ]
+                    standalonePagesToFix.forEach(file => {
+                        if (fixCssLinks(join('dist', file))) {
+                            console.log(`✅ Fixed CSS link in ${file}`)
+                        }
+                    })
 
                     // Fix all articles
                     if (existsSync(distArticlesDir)) {
