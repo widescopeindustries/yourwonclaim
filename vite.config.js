@@ -128,10 +128,12 @@ export default defineConfig({
                     const fixCssLinks = (filePath) => {
                         if (existsSync(filePath)) {
                             let content = readFileSync(filePath, 'utf8')
-                            if (content.includes('/src/styles/index.css')) {
+                            // Handle both standard link tags and our optimized preload tags
+                            const cssRegex = /<link rel="(?:stylesheet|preload)" href="\/src\/styles\/index\.css"[^>]*>/g
+                            if (cssRegex.test(content)) {
                                 content = content.replace(
-                                    /<link rel="stylesheet" href="\/src\/styles\/index\.css"[^>]*>/g,
-                                    `<link rel="stylesheet" href="/assets/${cssMatch}" crossorigin>`
+                                    cssRegex,
+                                    `<link rel="preload" href="/assets/${cssMatch}" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/assets/${cssMatch}"></noscript>`
                                 )
                                 writeFileSync(filePath, content)
                                 return true

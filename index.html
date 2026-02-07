@@ -264,7 +264,7 @@
             <div class="absolute inset-0 z-0">
                 <img src="/images/hero-optimized.webp"
                     alt="Veteran on bench" class="w-full h-full object-cover"
-                    width="1920" height="1080" fetchpriority="high" loading="eager">
+                    width="1920" height="1080" fetchpriority="high" loading="eager" decoding="async">
                 <div class="absolute inset-0 bg-gradient-to-r from-[#0B1A2F]/98 via-[#0B1A2F]/90 to-[#0B1A2F]/60"></div>
                 <div class="absolute inset-0 bg-gradient-to-t from-[#0B1A2F] via-transparent to-transparent"></div>
             </div>
@@ -870,116 +870,124 @@
 
         // GSAP Scroll Animations - Optimized for performance
         window.addEventListener('load', function() {
-            // Further delay to ensure main thread is free for initial paint
-            setTimeout(function() {
-                if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') return;
+            // Wait for idle time to ensure main thread is free for LCP paint
+            const initAnimations = () => {
+                setTimeout(function() {
+                    if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') return;
 
-                gsap.registerPlugin(ScrollTrigger);
+                    gsap.registerPlugin(ScrollTrigger);
 
-                // Use requestAnimationFrame to ensure smooth initialization
-                requestAnimationFrame(() => {
-                    // Hero animations (slightly delayed to prioritize render)
-                    gsap.fromTo('.hero-headline',
-                        { y: 50, opacity: 0 },
-                        { y: 0, opacity: 1, duration: 0.8, ease: 'power3.out', delay: 0.1 }
-                    );
-                    gsap.fromTo('.hero-subheadline',
-                        { y: 30, opacity: 0 },
-                        { y: 0, opacity: 1, duration: 0.6, ease: 'power3.out', delay: 0.3 }
-                    );
-                    gsap.fromTo('.hero-cta',
-                        { y: 20, opacity: 0 },
-                        { y: 0, opacity: 1, duration: 0.6, ease: 'power3.out', delay: 0.5 }
-                    );
-                    gsap.fromTo('.hero-stats',
-                        { y: 20, opacity: 0 },
-                        { y: 0, opacity: 1, duration: 0.6, ease: 'power3.out', delay: 0.7 }
-                    );
+                    // Use requestAnimationFrame to ensure smooth initialization
+                    requestAnimationFrame(() => {
+                        // Hero animations (slightly delayed to prioritize render)
+                        gsap.fromTo('.hero-headline',
+                            { y: 50, opacity: 0 },
+                            { y: 0, opacity: 1, duration: 0.8, ease: 'power3.out', delay: 0.1 }
+                        );
+                        gsap.fromTo('.hero-subheadline',
+                            { y: 30, opacity: 0 },
+                            { y: 0, opacity: 1, duration: 0.6, ease: 'power3.out', delay: 0.3 }
+                        );
+                        gsap.fromTo('.hero-cta',
+                            { y: 20, opacity: 0 },
+                            { y: 0, opacity: 1, duration: 0.6, ease: 'power3.out', delay: 0.5 }
+                        );
+                        gsap.fromTo('.hero-stats',
+                            { y: 20, opacity: 0 },
+                            { y: 0, opacity: 1, duration: 0.6, ease: 'power3.out', delay: 0.7 }
+                        );
 
-                    // Defer ScrollTrigger for below-the-fold content to avoid layout thrashing
-                    setTimeout(() => {
-                        // Problem section scroll animation
-                        ScrollTrigger.create({
-                            trigger: '#problem-section',
-                            start: 'top 85%',
-                            onEnter: () => {
-                                gsap.fromTo('.problem-image',
-                                    { x: -50, opacity: 0 },
-                                    { x: 0, opacity: 1, duration: 0.8, ease: 'power3.out' }
-                                );
-                                gsap.fromTo('.problem-content',
-                                    { x: 50, opacity: 0 },
-                                    { x: 0, opacity: 1, duration: 0.8, ease: 'power3.out', delay: 0.2 }
-                                );
-                            },
-                            once: true
-                        });
+                        // Defer ScrollTrigger for below-the-fold content to avoid layout thrashing
+                        setTimeout(() => {
+                            // Problem section scroll animation
+                            ScrollTrigger.create({
+                                trigger: '#problem-section',
+                                start: 'top 85%',
+                                onEnter: () => {
+                                    gsap.fromTo('.problem-image',
+                                        { x: -50, opacity: 0 },
+                                        { x: 0, opacity: 1, duration: 0.8, ease: 'power3.out' }
+                                    );
+                                    gsap.fromTo('.problem-content',
+                                        { x: 50, opacity: 0 },
+                                        { x: 0, opacity: 1, duration: 0.8, ease: 'power3.out', delay: 0.2 }
+                                    );
+                                },
+                                once: true
+                            });
 
-                        // Solution section scroll animation
-                        ScrollTrigger.create({
-                            trigger: '#solution-section',
-                            start: 'top 85%',
-                            onEnter: () => {
-                                gsap.fromTo('.solution-content',
-                                    { x: -50, opacity: 0 },
-                                    { x: 0, opacity: 1, duration: 0.8, ease: 'power3.out' }
-                                );
-                                gsap.fromTo('.solution-image',
-                                    { x: 50, opacity: 0 },
-                                    { x: 0, opacity: 1, duration: 0.8, ease: 'power3.out', delay: 0.2 }
-                                );
-                            },
-                            once: true
-                        });
+                            // Solution section scroll animation
+                            ScrollTrigger.create({
+                                trigger: '#solution-section',
+                                start: 'top 85%',
+                                onEnter: () => {
+                                    gsap.fromTo('.solution-content',
+                                        { x: -50, opacity: 0 },
+                                        { x: 0, opacity: 1, duration: 0.8, ease: 'power3.out' }
+                                    );
+                                    gsap.fromTo('.solution-image',
+                                        { x: 50, opacity: 0 },
+                                        { x: 0, opacity: 1, duration: 0.8, ease: 'power3.out', delay: 0.2 }
+                                    );
+                                },
+                                once: true
+                            });
 
-                        // Process cards stagger animation
-                        ScrollTrigger.create({
-                            trigger: '#how-it-works',
-                            start: 'top 80%',
-                            onEnter: () => {
-                                gsap.fromTo('.process-card',
-                                    { y: 40, opacity: 0 },
-                                    { y: 0, opacity: 1, duration: 0.6, ease: 'power3.out', stagger: 0.1 }
-                                );
-                            },
-                            once: true
-                        });
+                            // Process cards stagger animation
+                            ScrollTrigger.create({
+                                trigger: '#how-it-works',
+                                start: 'top 80%',
+                                onEnter: () => {
+                                    gsap.fromTo('.process-card',
+                                        { y: 40, opacity: 0 },
+                                        { y: 0, opacity: 1, duration: 0.6, ease: 'power3.out', stagger: 0.1 }
+                                    );
+                                },
+                                once: true
+                            });
 
-                        // Trust section animations
-                        ScrollTrigger.create({
-                            trigger: '#trust-section',
-                            start: 'top 80%',
-                            onEnter: () => {
-                                gsap.fromTo('.trust-stat',
-                                    { scale: 0.95, opacity: 0 },
-                                    { scale: 1, opacity: 1, duration: 0.6, ease: 'power3.out' }
-                                );
-                                gsap.fromTo('.trust-feature',
-                                    { y: 30, opacity: 0 },
-                                    { y: 0, opacity: 1, duration: 0.5, ease: 'power3.out', stagger: 0.08, delay: 0.2 }
-                                );
-                            },
-                            once: true
-                        });
+                            // Trust section animations
+                            ScrollTrigger.create({
+                                trigger: '#trust-section',
+                                start: 'top 80%',
+                                onEnter: () => {
+                                    gsap.fromTo('.trust-stat',
+                                        { scale: 0.95, opacity: 0 },
+                                        { scale: 1, opacity: 1, duration: 0.6, ease: 'power3.out' }
+                                    );
+                                    gsap.fromTo('.trust-feature',
+                                        { y: 30, opacity: 0 },
+                                        { y: 0, opacity: 1, duration: 0.5, ease: 'power3.out', stagger: 0.08, delay: 0.2 }
+                                    );
+                                },
+                                once: true
+                            });
 
-                        // CTA section animation
-                        ScrollTrigger.create({
-                            trigger: '#cta-section',
-                            start: 'top 85%',
-                            onEnter: () => {
-                                gsap.fromTo('.cta-card',
-                                    { y: 40, opacity: 0 },
-                                    { y: 0, opacity: 1, duration: 0.7, ease: 'power3.out' }
-                                );
-                            },
-                            once: true
-                        });
+                            // CTA section animation
+                            ScrollTrigger.create({
+                                trigger: '#cta-section',
+                                start: 'top 85%',
+                                onEnter: () => {
+                                    gsap.fromTo('.cta-card',
+                                        { y: 40, opacity: 0 },
+                                        { y: 0, opacity: 1, duration: 0.7, ease: 'power3.out' }
+                                    );
+                                },
+                                once: true
+                            });
 
-                        // Important: Refresh ScrollTrigger after all initial animations and setup
-                        ScrollTrigger.refresh();
-                    }, 500);
-                });
-            }, 200);
+                            // Important: Refresh ScrollTrigger after all initial animations and setup
+                            ScrollTrigger.refresh();
+                        }, 500);
+                    });
+                }, 500);
+            };
+
+            if ('requestIdleCallback' in window) {
+                requestIdleCallback(initAnimations);
+            } else {
+                initAnimations();
+            }
         });
     </script>
 </body>
