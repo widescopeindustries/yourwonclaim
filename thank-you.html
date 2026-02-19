@@ -4,67 +4,35 @@
 <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>Thank You! Free Checklist Ready | YourWonClaim</title>
+    <title>You're In — YourWonClaim</title>
     <meta name="description"
-        content="Your free PTSD symptom recognition checklist is ready. Plus, get the complete strategy for just $37.99.">
+        content="Your VA Claim Status Success Roadmap is on its way. Check your email — and take the next step.">
+    <meta name="robots" content="noindex, follow" />
 
     <!-- Canonical URL -->
-    <link rel="canonical" href="https://yourwonclaim.com/" />
+    <link rel="canonical" href="https://yourwonclaim.com/thank-you.html" />
 
     <!-- Open Graph -->
-    <meta property="og:title" content="Thank You! Free Checklist Ready | YourWonClaim" />
-    <meta property="og:description"
-        content="Your free PTSD symptom recognition checklist is ready. Plus, get the complete strategy for just $37.99." />
+    <meta property="og:title" content="You're In — YourWonClaim" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://yourwonclaim.com/thank-you.html" />
     <meta property="og:image" content="https://yourwonclaim.com/og/home-1200x630.png" />
     <meta name="twitter:card" content="summary_large_image" />
 
-    <!-- Preconnect -->
-    <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
-        rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        primary: "#2563EB",
-                        "primary-dark": "#1E40AF",
-                        navy: "#0F172A",
-                    },
-                    fontFamily: {
-                        sans: ["Inter", "sans-serif"],
-                    },
-                    borderRadius: {
-                        'xl': '1rem',
-                        '2xl': '1.5rem',
-                        '3xl': '2rem',
-                    },
-                },
-            },
-        };
-    </script>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://unpkg.com">
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
 
-    <style>
-        .glass-header {
-            background: rgba(255, 255, 255, 0.8);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-        }
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest" async></script>
 
-        .hero-gradient {
-            background: linear-gradient(135deg, #F8FAFB 0%, #FFFFFF 100%);
-        }
-
-        .neon-glow-blue {
-            box-shadow: 0 0 20px rgba(37, 99, 235, 0.4), 0 0 40px rgba(37, 99, 235, 0.2);
-        }
-    </style>
-
-    <!-- GA4 Analytics -->
+    <!-- GA4 -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-GMX19T2GWW"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -73,178 +41,430 @@
         gtag('config', 'G-GMX19T2GWW');
         gtag('event', 'page_view', { page_path: '/thank-you.html', page_title: 'Thank You Page' });
     </script>
+
+    <style>
+        :root {
+            --navy: #0B1A2F;
+            --navy-light: #0d1f38;
+            --red: #C21818;
+            --red-dark: #a01414;
+            --text-light: #F6F7FB;
+            --text-muted: #A9B3C2;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        html {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        body {
+            background: var(--navy);
+            color: var(--text-light);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .font-heading { font-family: 'Sora', sans-serif; }
+
+        /* Header */
+        .glass-header {
+            background: rgba(11, 26, 47, 0.92);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255,255,255,0.06);
+            position: fixed;
+            width: 100%;
+            z-index: 50;
+            top: 0;
+        }
+
+        .nav-inner {
+            max-width: 80rem;
+            margin: 0 auto;
+            padding: 0 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 4rem;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            text-decoration: none;
+        }
+
+        .brand-icon {
+            width: 2.25rem; height: 2.25rem;
+            background: var(--red);
+            border-radius: 0.5rem;
+            display: flex; align-items: center; justify-content: center;
+        }
+
+        .brand-name {
+            font-family: 'Sora', sans-serif;
+            font-weight: 700;
+            font-size: 1.1rem;
+            letter-spacing: 0.05em;
+            color: var(--text-light);
+        }
+
+        .success-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.35rem 0.9rem;
+            background: rgba(34,197,94,0.12);
+            color: #4ade80;
+            border: 1px solid rgba(34,197,94,0.25);
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+        }
+
+        /* Hero */
+        main { flex-grow: 1; padding-top: 4rem; }
+
+        .hero {
+            padding: 5rem 1rem 4rem;
+            text-align: center;
+            border-bottom: 1px solid rgba(255,255,255,0.06);
+            background: linear-gradient(180deg, rgba(194,24,24,0.06) 0%, transparent 100%);
+        }
+
+        .check-icon {
+            width: 5rem; height: 5rem;
+            background: rgba(34,197,94,0.12);
+            border: 2px solid rgba(34,197,94,0.3);
+            border-radius: 9999px;
+            display: flex; align-items: center; justify-content: center;
+            margin: 0 auto 2rem;
+            animation: pulse-ring 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse-ring {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(34,197,94,0.3); }
+            50% { box-shadow: 0 0 0 12px rgba(34,197,94,0); }
+        }
+
+        .hero h1 {
+            font-family: 'Sora', sans-serif;
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 800;
+            color: var(--text-light);
+            line-height: 1.1;
+            margin-bottom: 1rem;
+        }
+
+        .hero h1 span { color: var(--red); }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            max-width: 36rem;
+            margin: 0 auto;
+            line-height: 1.65;
+        }
+
+        /* Content */
+        .content {
+            max-width: 52rem;
+            margin: 0 auto;
+            padding: 4rem 1rem;
+        }
+
+        /* What you'll receive card */
+        .receive-card {
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.09);
+            border-radius: 1.25rem;
+            padding: 2.5rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .receive-card h2 {
+            font-family: 'Sora', sans-serif;
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+        }
+
+        .receive-list {
+            list-style: none;
+            display: grid;
+            gap: 1rem;
+        }
+
+        .receive-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        .receive-list li .icon {
+            color: var(--red);
+            flex-shrink: 0;
+            margin-top: 0.1rem;
+        }
+
+        .receive-list li strong { color: var(--text-light); }
+
+        .spam-note {
+            margin-top: 1.5rem;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            opacity: 0.7;
+        }
+
+        /* Divider */
+        .divider {
+            text-align: center;
+            margin: 0.5rem 0 2.5rem;
+            position: relative;
+        }
+
+        .divider::before {
+            content: '';
+            position: absolute;
+            top: 50%; left: 0; right: 0;
+            height: 1px;
+            background: rgba(255,255,255,0.07);
+        }
+
+        .divider span {
+            position: relative;
+            background: var(--navy);
+            padding: 0 1rem;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--text-muted);
+            font-weight: 600;
+        }
+
+        /* Upsell card */
+        .upsell-card {
+            background: rgba(194,24,24,0.07);
+            border: 1px solid rgba(194,24,24,0.25);
+            border-radius: 1.25rem;
+            padding: 2.5rem;
+            text-align: center;
+        }
+
+        .upsell-eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.3rem 0.8rem;
+            background: rgba(194,24,24,0.12);
+            color: var(--red);
+            border: 1px solid rgba(194,24,24,0.2);
+            border-radius: 9999px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-bottom: 1.25rem;
+        }
+
+        .upsell-card h2 {
+            font-family: 'Sora', sans-serif;
+            font-size: clamp(1.4rem, 3vw, 2rem);
+            font-weight: 800;
+            color: var(--text-light);
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+
+        .upsell-card h2 span { color: var(--red); }
+
+        .upsell-card p {
+            color: var(--text-muted);
+            font-size: 1rem;
+            line-height: 1.65;
+            max-width: 36rem;
+            margin: 0 auto 2rem;
+        }
+
+        .upsell-features {
+            list-style: none;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.75rem;
+            max-width: 32rem;
+            margin: 0 auto 2rem;
+            text-align: left;
+        }
+
+        .upsell-features li {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.875rem;
+            color: var(--text-muted);
+        }
+
+        .upsell-features li .icon { color: var(--red); flex-shrink: 0; }
+
+        .btn-cta {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            padding: 1rem 2.5rem;
+            background: var(--red);
+            color: #fff;
+            font-weight: 700;
+            font-size: 1rem;
+            border-radius: 0.5rem;
+            text-decoration: none;
+            transition: background 0.2s, transform 0.15s;
+            margin-bottom: 1rem;
+        }
+
+        .btn-cta:hover { background: var(--red-dark); transform: translateY(-1px); }
+
+        .guarantee-note {
+            font-size: 0.78rem;
+            color: var(--text-muted);
+            opacity: 0.75;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--navy);
+            border-top: 1px solid rgba(255,255,255,0.06);
+            padding: 2rem 1rem;
+            text-align: center;
+        }
+
+        footer p {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            opacity: 0.6;
+        }
+
+        @media (max-width: 600px) {
+            .upsell-features { grid-template-columns: 1fr; }
+            .receive-card, .upsell-card { padding: 1.75rem; }
+        }
+    </style>
 </head>
 
-<body class="bg-white text-navy font-sans antialiased min-h-screen flex flex-col">
+<body>
 
     <!-- Navigation -->
-    <nav class="fixed w-full z-50 glass-header border-b border-gray-100">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-20">
-                <div class="flex-shrink-0 flex items-center">
-                    <a href="/" class="flex items-center space-x-2 no-underline">
-                        <div class="w-10 h-10 bg-primary rounded-xl flex items-center justify-center">
-                            <span class="material-icons-round text-white">verified</span>
-                        </div>
-                        <span class="text-xl font-extrabold tracking-tight text-navy uppercase italic">
-                            YourWon<span class="text-primary font-black">Claim</span>
-                        </span>
-                    </a>
+    <nav class="glass-header">
+        <div class="nav-inner">
+            <a href="/" class="brand" aria-label="YourWonClaim Home">
+                <div class="brand-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
                 </div>
-                <div class="hidden md:flex items-center space-x-10">
-                    <div
-                        class="inline-flex items-center justify-center px-6 py-2.5 bg-primary/10 text-primary text-xs font-black rounded-full uppercase italic tracking-tight">
-                        <span class="material-icons-round text-sm mr-2">check_circle</span>
-                        Success!
-                    </div>
-                </div>
+                <span class="brand-name">YOURWONCLAIM.COM</span>
+            </a>
+            <div class="success-badge">
+                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                You're In
             </div>
         </div>
     </nav>
 
-    <main class="flex-grow pt-20">
-        <!-- Hero Header -->
-        <header class="hero-gradient py-12 lg:py-20 border-b border-gray-100">
-            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-navy h1">
-                <div
-                    class="w-20 h-20 bg-green-100 text-green-600 rounded-3xl flex items-center justify-center mx-auto mb-8 animate-bounce">
-                    <span class="material-icons-round text-4xl">check_circle</span>
-                </div>
-                <h1 class="text-4xl lg:text-5xl font-black text-navy leading-tight mb-4 italic uppercase">
-                    Checklist <span class="text-primary">is Ready!</span>
-                </h1>
-                <p class="text-lg text-gray-500 font-medium">Check your email for the download link. We've sent it to
-                    you right now.</p>
+    <main>
+        <!-- Hero -->
+        <header class="hero">
+            <div class="check-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#4ade80" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
             </div>
+            <h1 class="font-heading">Your Roadmap Is<br><span>On Its Way</span></h1>
+            <p>Check your inbox — we just sent your <strong style="color: #F6F7FB;">VA Claim Status Success Roadmap</strong> and Symptom Recognition Checklist. It's free, and it's yours.</p>
         </header>
 
         <!-- Content -->
-        <section class="py-20 bg-white">
-            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-                <!-- Download Section -->
-                <div class="p-8 lg:p-12 bg-gray-50 rounded-3xl border border-gray-100 mb-16">
-                    <h2 class="text-2xl font-black text-navy mb-6 italic uppercase tracking-tight">📋 What's in your
-                        checklist:</h2>
-                    <div class="grid sm:grid-cols-2 gap-4 mb-10">
-                        <div class="flex items-center space-x-3 text-gray-600 font-medium">
-                            <span class="material-icons-round text-primary">done</span>
-                            <span>Symptom documentation guide</span>
-                        </div>
-                        <div class="flex items-center space-x-3 text-gray-600 font-medium">
-                            <span class="material-icons-round text-primary">done</span>
-                            <span>Evidence gathering worksheet</span>
-                        </div>
-                        <div class="flex items-center space-x-3 text-gray-600 font-medium">
-                            <span class="material-icons-round text-primary">done</span>
-                            <span>Buddy letter template</span>
-                        </div>
-                        <div class="flex items-center space-x-3 text-gray-600 font-medium">
-                            <span class="material-icons-round text-primary">done</span>
-                            <span>VA communication scripts</span>
-                        </div>
-                    </div>
-                    <a id="download-btn" href="/templates_bundle.zip" download
-                        class="inline-block w-full sm:w-auto px-10 py-4 bg-navy text-white font-bold rounded-xl hover:bg-black transition-all transform hover:scale-105 shadow-xl text-center no-underline cursor-pointer">
-                        Download All Templates (Zip)
-                    </a>
-                    <p
-                        class="mt-6 text-xs text-gray-400 font-bold uppercase tracking-widest italic text-center sm:text-left">
-                        Can't find the email? Check your spam folder.</p>
-                </div>
+        <div class="content">
 
-                <!-- Recommended Next Steps (Affiliate Offers) -->
-                <div class="mb-16">
-                    <h2 class="text-2xl font-black text-navy mb-8 italic uppercase tracking-tight text-center">🏆
-                        Recommended Next Steps</h2>
-                    <div class="grid md:grid-cols-2 gap-8">
-                        <!-- Nexus Letter Offer -->
-                        <div
-                            class="bg-white p-8 rounded-3xl border border-gray-100 shadow-premium flex flex-col hover:border-primary/30 transition-all">
-                            <div
-                                class="w-12 h-12 bg-primary/10 text-primary rounded-xl flex items-center justify-center mb-6">
-                                <span class="material-icons-round">description</span>
-                            </div>
-                            <h3 class="text-xl font-bold text-navy mb-3">Get Your "Nexus Letter"</h3>
-                            <p class="text-sm text-gray-500 mb-6 flex-grow">The #1 reason claims are denied is "lack of
-                                service connection." Professional medical nexus letters bridge that gap. We recommend
-                                **NexusLetters.com** for their high success rate.</p>
-                            <a href="https://nexusletters.com/?ref=yourwonclaim" target="_blank"
-                                class="inline-flex items-center justify-center px-6 py-3 bg-primary/10 text-primary text-sm font-bold rounded-xl hover:bg-primary hover:text-white transition-all">
-                                Get Evidence Help
-                                <span class="material-icons-round text-sm ml-2">open_in_new</span>
-                            </a>
-                        </div>
-
-                        <!-- VA Loan Offer -->
-                        <div
-                            class="bg-white p-8 rounded-3xl border border-gray-100 shadow-premium flex flex-col hover:border-primary/30 transition-all">
-                            <div
-                                class="w-12 h-12 bg-accent/10 text-accent rounded-xl flex items-center justify-center mb-6">
-                                <span class="material-icons-round">home</span>
-                            </div>
-                            <h3 class="text-xl font-bold text-navy mb-3">Maximize Your VA Loan</h3>
-                            <p class="text-sm text-gray-500 mb-6 flex-grow">Did you know a 100% P&T rating often exempts
-                                you from the VA Funding Fee? Speak with our veteran-friendly lending partners to unlock
-                                $0 down home ownership.</p>
-                            <a href="https://valoanpartners.com/?ref=yourwonclaim" target="_blank"
-                                class="inline-flex items-center justify-center px-6 py-3 bg-accent/10 text-accent text-sm font-bold rounded-xl hover:bg-accent hover:text-white transition-all">
-                                Unlock Benefits
-                                <span class="material-icons-round text-sm ml-2">open_in_new</span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Strategy Upsell -->
-                <div
-                    class="bg-navy p-12 lg:p-16 rounded-[2.5rem] text-white shadow-2xl relative overflow-hidden text-center">
-                    <div
-                        class="absolute top-0 right-0 w-32 h-32 bg-primary/10 rounded-bl-full flex items-center justify-center pt-8 pl-8">
-                        <span class="material-icons-round text-primary text-3xl">rocket_launch</span>
-                    </div>
-                    <h3 class="text-3xl font-black mb-6 tracking-tight italic uppercase">Wait! Want the <span
-                            class="text-primary">Simple VA Strategy?</span></h3>
-                    <p class="text-lg text-gray-400 mb-10 max-w-2xl mx-auto">
-                        The checklist is a start, but the <strong>full strategy</strong> is what actually wins. Get the
-                        exact system I used to go from 0% to 100% P&T in 13 months.
-                    </p>
-                    <div class="mb-10">
-                        <span class="text-5xl font-black italic">$37.99</span>
-                        <span class="text-sm text-gray-500 line-through ml-2">$197</span>
-                    </div>
-                    <a href="/pages/checkout.html" id="upsell-cta"
-                        class="inline-flex items-center justify-center px-16 py-5 bg-primary text-white text-xl font-bold rounded-full neon-glow-blue hover:bg-primary-dark transition-all transform hover:scale-105 italic uppercase tracking-tighter">
-                        Get the Strategy — $37.99
-                    </a>
-                    <p class="mt-8 text-[10px] text-gray-500 font-bold uppercase tracking-widest">30-Day Money-Back
-                        Guarantee • 1,200+ Veterans Helped</p>
-                </div>
+            <!-- What you'll get -->
+            <div class="receive-card">
+                <h2>📬 What's heading to your inbox:</h2>
+                <ul class="receive-list">
+                    <li>
+                        <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                        <span><strong>The 5-Stage Claim Status Breakdown</strong> — know exactly what each VA status means and what to do next</span>
+                    </li>
+                    <li>
+                        <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                        <span><strong>Evidence Checklists for PTSD & Tinnitus</strong> — the specific things raters look for, in plain English</span>
+                    </li>
+                    <li>
+                        <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                        <span><strong>Buddy Letter "Cheat Sheet"</strong> — how to ask someone to write one that actually helps your claim</span>
+                    </li>
+                </ul>
+                <p class="spam-note">📁 Can't find it? Check your spam or promotions folder.</p>
             </div>
-        </section>
+
+            <div class="divider"><span>While you wait — take the next step</span></div>
+
+            <!-- Upsell -->
+            <div class="upsell-card">
+                <div class="upsell-eyebrow">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                    From Lyndon Bedford — 100% P&T, Iraq Veteran
+                </div>
+                <h2 class="font-heading">The Roadmap Tells You What.<br>The <span>Templates</span> Help You Say It.</h2>
+                <p>Knowing what the VA wants is step one. The hard part is documenting your symptoms in the language a rater actually evaluates. That's exactly what these templates are built to do — help you articulate your story clearly, credibly, and in the format that gets results.</p>
+                <ul class="upsell-features">
+                    <li>
+                        <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                        Condition-specific 30-day logs
+                    </li>
+                    <li>
+                        <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                        Written in VA rater language
+                    </li>
+                    <li>
+                        <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                        PTSD, Tinnitus, Back, Migraines & more
+                    </li>
+                    <li>
+                        <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                        Instant PDF — print or fill digitally
+                    </li>
+                    <li>
+                        <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                        Used for initial claims, HLRs & appeals
+                    </li>
+                    <li>
+                        <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                        From $29 — no lawyer needed
+                    </li>
+                </ul>
+                <a href="/products.html" id="upsell-cta" class="btn-cta">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                    Browse the Evidence Templates
+                </a>
+                <p class="guarantee-note">30-day money-back guarantee. If it's not the right tool for where you are, you get every dollar back.</p>
+            </div>
+
+        </div>
     </main>
 
     <!-- Footer -->
-    <footer class="bg-navy pt-20 pb-12">
-        <div
-            class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-gray-500 italic uppercase font-bold tracking-widest text-xs">
-            <p>&copy; 2026 Simple VA Strategy. Not affiliated with the VA.</p>
-        </div>
+    <footer>
+        <p>© YourWonClaim.com — Educational resource. Not affiliated with the VA. Not legal advice.</p>
     </footer>
 
-    <!-- Scripts -->
     <script>
         document.addEventListener('DOMContentLoaded', function () {
-            const downloadBtn = document.getElementById('download-btn');
-            if (downloadBtn) {
-                downloadBtn.addEventListener('click', function () {
-                    gtag('event', 'download_checklist', {
-                        'event_category': 'engagement',
-                        'event_label': 'free_checklist_download'
-                    });
-                    // Download triggers automatically via href
-                });
-            }
-
             const upsellCta = document.getElementById('upsell-cta');
             if (upsellCta) {
                 upsellCta.addEventListener('click', function () {
