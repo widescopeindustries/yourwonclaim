@@ -232,6 +232,7 @@
     </footer>
 
     <!-- Scripts -->
+    <script src="/js/tracking.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             const downloadBtn = document.getElementById('download-btn');
@@ -253,6 +254,26 @@
                         'event_label': 'thank_you_page_upsell'
                     });
                 });
+            }
+            
+            // Track thank-you page view as potential conversion
+            const checkoutData = localStorage.getItem('yw_checkout_clicked');
+            if (checkoutData) {
+                const data = JSON.parse(checkoutData);
+                const minutesSinceClick = (Date.now() - data.timestamp) / 60000;
+                
+                if (minutesSinceClick < 15) {
+                    gtag('event', 'purchase', {
+                        'event_category': 'conversion',
+                        'event_label': data.product,
+                        'value': data.price,
+                        'currency': 'USD',
+                        'transaction_id': data.sessionId
+                    });
+                    
+                    localStorage.removeItem('yw_checkout_clicked');
+                    console.log('Purchase tracked on thank-you:', data.product, '$' + data.price);
+                }
             }
         });
     </script>
