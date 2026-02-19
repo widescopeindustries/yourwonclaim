@@ -25,12 +25,12 @@ function initializeLeadForm() {
     const leadForm = document.getElementById('lead-form');
     if (!leadForm) return;
 
-    leadForm.addEventListener('submit', function(e) {
+    leadForm.addEventListener('submit', async function(e) {
         e.preventDefault();
 
         const formData = new FormData(this);
-        const name = formData.get('name');
-        const email = formData.get('email');
+        const name = (formData.get('name') || '').trim();
+        const email = (formData.get('email') || '').trim();
 
         if (!name || !email) {
             alert('Please fill in all fields.');
@@ -42,24 +42,53 @@ function initializeLeadForm() {
             return;
         }
 
-        // Track lead generation
+        const submitBtn = this.querySelector('button[type="submit"]');
+        if (submitBtn) {
+            submitBtn.textContent = 'Submitting...';
+            submitBtn.disabled = true;
+        }
+
+        // Track lead generation event
         if (typeof gtag !== 'undefined') {
             gtag('event', 'lead_generation', {
                 'event_category': 'engagement',
-                'event_label': 'free_checklist',
-                'value': 0
+                'event_label': 'free_checklist'
             });
         }
 
-        const submitBtn = this.querySelector('button[type="submit"]');
-        submitBtn.textContent = 'Submitting...';
-        submitBtn.disabled = true;
+        // Save lead locally as an instant fallback (data is never silently lost)
+        try {
+            const leads = JSON.parse(localStorage.getItem('ywc_leads') || '[]');
+            leads.push({ name, email, ts: new Date().toISOString() });
+            localStorage.setItem('ywc_leads', JSON.stringify(leads));
+        } catch (_) {}
 
-        setTimeout(() => {
-            window.location.href = '/thank-you.html';
-        }, 1000);
+        // Extract UTM params from the current URL
+        const params = new URLSearchParams(window.location.search);
+        const payload = {
+            name,
+            email,
+            sourceUrl: window.location.pathname,
+            utmSource: params.get('utm_source') || null,
+            utmMedium: params.get('utm_medium') || null,
+            utmCampaign: params.get('utm_campaign') || null,
+        };
+
+        // POST to Vercel serverless function → Supabase + Resend
+        try {
+            await fetch('/api/leads', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(payload)
+            });
+        } catch (_) {
+            // Non-blocking — localStorage fallback already saved the lead
+        }
+
+        window.location.href = '/thank-you.html';
     });
 }
+
 
 function isValidEmail(email) {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
