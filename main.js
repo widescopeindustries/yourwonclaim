@@ -36,7 +36,7 @@ function initializeLeadForm() {
             alert('Please fill in all fields.');
             return;
         }
-
+e 
         if (!isValidEmail(email)) {
             alert('Please enter a valid email address.');
             return;
