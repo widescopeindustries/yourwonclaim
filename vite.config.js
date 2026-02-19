@@ -84,6 +84,22 @@ export default defineConfig({
                     console.log(`✅ Copied product directory to dist/product/`)
                 }
 
+                // Copy images folder to dist (photos, proof screenshots, etc.)
+                const imagesDir = 'images'
+                const distImagesDir = 'dist/images'
+                if (existsSync(imagesDir)) {
+                    copyRecursiveSync(imagesDir, distImagesDir);
+                    console.log(`✅ Copied images directory to dist/images/`)
+                }
+
+                // Copy og folder to dist (Open Graph images)
+                const ogDir = 'og'
+                const distOgDir = 'dist/og'
+                if (existsSync(ogDir)) {
+                    copyRecursiveSync(ogDir, distOgDir);
+                    console.log(`✅ Copied og directory to dist/og/`)
+                }
+
                 // Copy generated PDFs to dist
                 const pdfsDir = 'product/pdfs'
                 const distPdfsDir = 'dist/product/pdfs'
