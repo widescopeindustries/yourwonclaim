@@ -387,7 +387,14 @@
                     });
                 }
 
-                // Call it immediately
+                // Save selected conditions to localStorage before Stripe redirect
+                checkoutBtn.addEventListener('click', function(e) {
+                    if (!this.href || this.href === '#' || this.href.endsWith('#')) return;
+                    localStorage.setItem('yw_selected_conditions', JSON.stringify(selectedItems.map(i => i.name)));
+                    localStorage.setItem('yw_pack_size', String(selectedItems.length));
+                });
+
+                // Also wire individual product buttons
                 initIndividualButtons();
 
                 const stripeLinks = {

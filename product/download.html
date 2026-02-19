@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Download Your Templates — YourWonClaim</title>
+    <meta name="robots" content="noindex, nofollow" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- GA4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-GMX19T2GWW"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-GMX19T2GWW');
+    </script>
+
+    <style>
+        :root {
+            --navy: #0B1A2F;
+            --navy-light: #0d1f38;
+            --red: #C21818;
+            --red-dark: #a01414;
+            --text-light: #F6F7FB;
+            --text-muted: #A9B3C2;
+            --green: #4ade80;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        html { font-family: 'Inter', sans-serif; -webkit-font-smoothing: antialiased; }
+        body { background: var(--navy); color: var(--text-light); min-height: 100vh; }
+        .font-heading { font-family: 'Sora', sans-serif; }
+
+        .header {
+            background: rgba(11,26,47,0.95);
+            border-bottom: 1px solid rgba(255,255,255,0.06);
+            padding: 0 1.5rem;
+            height: 4rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .brand { display: flex; align-items: center; gap: 0.6rem; text-decoration: none; }
+        .brand-icon { width: 2rem; height: 2rem; background: var(--red); border-radius: 0.4rem; display: flex; align-items: center; justify-content: center; }
+        .brand-name { font-family: 'Sora', sans-serif; font-weight: 700; font-size: 1rem; color: var(--text-light); letter-spacing: 0.04em; }
+
+        .hero {
+            text-align: center;
+            padding: 4rem 1.5rem 3rem;
+            border-bottom: 1px solid rgba(255,255,255,0.06);
+            background: linear-gradient(180deg, rgba(74,222,128,0.05) 0%, transparent 100%);
+        }
+        .check-circle {
+            width: 4.5rem; height: 4.5rem;
+            background: rgba(74,222,128,0.12);
+            border: 2px solid rgba(74,222,128,0.3);
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            margin: 0 auto 1.5rem;
+            animation: pulse 2s ease-in-out infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(74,222,128,0.3); }
+            50% { box-shadow: 0 0 0 10px rgba(74,222,128,0); }
+        }
+        .hero h1 { font-family: 'Sora', sans-serif; font-size: clamp(1.8rem, 4vw, 3rem); font-weight: 800; margin-bottom: 0.75rem; }
+        .hero h1 span { color: var(--green); }
+        .hero p { color: var(--text-muted); font-size: 1.05rem; max-width: 34rem; margin: 0 auto; line-height: 1.65; }
+
+        .content { max-width: 56rem; margin: 0 auto; padding: 3rem 1.5rem 5rem; }
+
+        .section-label {
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+        }
+        .section-label.primary { color: var(--green); }
+
+        /* Template grid */
+        .template-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .template-card {
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 0.875rem;
+            padding: 1.25rem 1.25rem 1rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            transition: border-color 0.2s;
+        }
+        .template-card:hover { border-color: rgba(255,255,255,0.18); }
+        .template-card.selected {
+            background: rgba(74,222,128,0.06);
+            border-color: rgba(74,222,128,0.35);
+        }
+
+        .card-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 0.5rem; }
+        .card-name { font-weight: 600; font-size: 0.95rem; color: var(--text-light); line-height: 1.35; }
+        .card-dc { font-size: 0.7rem; color: var(--text-muted); margin-top: 0.2rem; }
+        .badge-yours {
+            flex-shrink: 0;
+            background: rgba(74,222,128,0.15);
+            color: var(--green);
+            border: 1px solid rgba(74,222,128,0.3);
+            border-radius: 9999px;
+            font-size: 0.65rem;
+            font-weight: 700;
+            padding: 0.2rem 0.55rem;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+        }
+
+        .btn-download {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.4rem;
+            width: 100%;
+            padding: 0.6rem 1rem;
+            background: var(--red);
+            color: #fff;
+            font-weight: 600;
+            font-size: 0.85rem;
+            border-radius: 0.5rem;
+            text-decoration: none;
+            transition: background 0.15s, transform 0.1s;
+        }
+        .btn-download:hover { background: var(--red-dark); transform: translateY(-1px); }
+        .btn-download.secondary {
+            background: rgba(255,255,255,0.06);
+            color: var(--text-muted);
+        }
+        .btn-download.secondary:hover { background: rgba(255,255,255,0.1); color: var(--text-light); }
+
+        /* Email reminder */
+        .email-notice {
+            background: rgba(194,24,24,0.07);
+            border: 1px solid rgba(194,24,24,0.2);
+            border-radius: 0.875rem;
+            padding: 1.25rem 1.5rem;
+            margin-bottom: 2.5rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 0.875rem;
+        }
+        .email-notice p { font-size: 0.9rem; color: var(--text-muted); line-height: 1.6; }
+        .email-notice p strong { color: var(--text-light); }
+
+        /* Support note */
+        .support-note { text-align: center; margin-top: 3rem; font-size: 0.85rem; color: var(--text-muted); }
+        .support-note a { color: var(--red); text-decoration: none; }
+
+        footer { border-top: 1px solid rgba(255,255,255,0.06); padding: 1.5rem; text-align: center; }
+        footer p { font-size: 0.75rem; color: var(--text-muted); opacity: 0.6; }
+
+        @media (max-width: 480px) {
+            .template-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+<header class="header">
+    <a href="/" class="brand">
+        <div class="brand-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+        </div>
+        <span class="brand-name">YOURWONCLAIM.COM</span>
+    </a>
+    <span style="font-size:0.8rem;color:var(--green);font-weight:700;">✓ Purchase Confirmed</span>
+</header>
+
+<main>
+    <div class="hero">
+        <div class="check-circle">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#4ade80" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        </div>
+        <h1 class="font-heading">Your Templates Are <span>Ready</span></h1>
+        <p>Download the evidence log templates below. Your selected conditions are highlighted — but all templates are included with your purchase.</p>
+    </div>
+
+    <div class="content">
+
+        <!-- Email reminder -->
+        <div class="email-notice">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#C21818" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            <p><strong>Bookmark this page</strong> — or check your email for a copy of your download links. These PDFs are printable and can also be filled digitally. If you have any issues, email <a href="mailto:support@yourwonclaim.com" style="color:var(--red)">support@yourwonclaim.com</a>.</p>
+        </div>
+
+        <!-- Selected conditions (shown first if available) -->
+        <div id="selected-section" style="display:none; margin-bottom:2.5rem;">
+            <p class="section-label primary">⭐ Your Selected Templates</p>
+            <div id="selected-grid" class="template-grid"></div>
+        </div>
+
+        <!-- All templates -->
+        <div>
+            <p class="section-label" id="all-label">All 27 Evidence Log Templates</p>
+            <div id="all-grid" class="template-grid"></div>
+        </div>
+
+        <div class="support-note">
+            <p>Questions or issues? Email <a href="mailto:support@yourwonclaim.com">support@yourwonclaim.com</a> — Lyndon personally reads every message.</p>
+            <p style="margin-top:0.5rem;">30-day money-back guarantee. If these templates aren't the right tool for where you are, reply to your receipt email and you'll get a full refund.</p>
+        </div>
+    </div>
+</main>
+
+<footer>
+    <p>© YourWonClaim.com — Educational resource. Not affiliated with the VA. Not legal advice.</p>
+</footer>
+
+<script>
+// Condition name → PDF filename mapping
+const CONDITION_MAP = {
+    'Ankle Pain (Limitation of Motion)':               'Ankle_Pain_Evidence_Log_Template.pdf',
+    'Anxiety & Depression':                            'Anxiety_Depression_Evidence_Log_Template.pdf',
+    'Asthma':                                         'Asthma_Evidence_Log_Template.pdf',
+    'Back Condition (Degenerative Arthritis/Strain)':  'Back_Condition_Evidence_Log_Template.pdf',
+    'Eczema & Skin Conditions':                        'Eczema_Skin_Evidence_Log_Template.pdf',
+    'Elbow Pain & Tendonitis':                         'Elbow_Pain_Evidence_Log_Template.pdf',
+    'Eye Conditions':                                  'Eye_Conditions_Evidence_Log_Template.pdf',
+    'Flat Feet (Pes Planus)':                          'Pes_Planus_Evidence_Log_Template.pdf',
+    'GERD (Acid Reflux)':                              'GERD_Evidence_Log_Template.pdf',
+    'Hip Pain (Limitation of Motion)':                 'Hip_Pain_Evidence_Log_Template.pdf',
+    'Hypertension (High Blood Pressure)':              'Hypertension_Evidence_Log_Template.pdf',
+    'IBS (Irritable Bowel Syndrome)':                  'IBS_Evidence_Log_Template.pdf',
+    'Knee Pain (Limitation of Motion)':                'Knee_Pain_Evidence_Log_Template.pdf',
+    'Migraines (Headaches)':                           'Migraines_Evidence_Log_Template.pdf',
+    'Neck Pain (Cervical Strain)':                     'Neck_Pain_Evidence_Log_Template.pdf',
+    'Peripheral Neuropathy':                           'Peripheral_Neuropathy_Evidence_Log_Template.pdf',
+    'Plantar Fasciitis':                               'Plantar_Fasciitis_Evidence_Log_Template.pdf',
+    'PTSD (Post-Traumatic Stress)':                    'PTSD_Evidence_Log_Template.pdf',
+    'Radiculopathy (Sciatica/Nerve Pain)':             'Radiculopathy_Evidence_Log_Template.pdf',
+    'Shoulder Pain (Limitation of Motion)':            'Shoulder_Pain_Evidence_Log_Template.pdf',
+    'Sinusitis & Rhinitis':                            'Sinusitis_Rhinitis_Evidence_Log_Template.pdf',
+    'Sleep Apnea':                                     'Sleep_Apnea_Evidence_Log_Template.pdf',
+    'TBI (Traumatic Brain Injury)':                    'TBI_Evidence_Log_Template.pdf',
+    'Tinnitus (Ringing in Ears)':                      'Tinnitus_Evidence_Log_Template.pdf',
+    'TMJ / TMD (Jaw Pain)':                            'TMJ_TMD_Evidence_Log_Template.pdf',
+    "Vertigo & Meniere's":                             'Vertigo_Evidence_Log_Template.pdf',
+    'Wrist / Carpal Tunnel':                           'Wrist_Carpal_Tunnel_Evidence_Log_Template.pdf',
+};
+
+const DC_MAP = {
+    'Ankle Pain (Limitation of Motion)': 'DC 5271',
+    'Anxiety & Depression': 'DC 9400 series',
+    'Asthma': 'DC 6602',
+    'Back Condition (Degenerative Arthritis/Strain)': '38 CFR § 4.71a',
+    'Eczema & Skin Conditions': 'DC 7806',
+    'Elbow Pain & Tendonitis': 'DC 5206',
+    'Eye Conditions': 'DC 6000 series',
+    'Flat Feet (Pes Planus)': 'DC 5276',
+    'GERD (Acid Reflux)': 'DC 7346',
+    'Hip Pain (Limitation of Motion)': 'DC 5250-5255',
+    'Hypertension (High Blood Pressure)': 'DC 7101',
+    'IBS (Irritable Bowel Syndrome)': 'DC 7319',
+    'Knee Pain (Limitation of Motion)': 'DC 5260/5261',
+    'Migraines (Headaches)': 'DC 8100',
+    'Neck Pain (Cervical Strain)': 'DC 5237',
+    'Peripheral Neuropathy': 'DC 8520-8720',
+    'Plantar Fasciitis': 'DC 5269',
+    'PTSD (Post-Traumatic Stress)': 'DC 9411',
+    'Radiculopathy (Sciatica/Nerve Pain)': 'DC 8520/8620',
+    'Shoulder Pain (Limitation of Motion)': 'DC 5201',
+    'Sinusitis & Rhinitis': 'DC 6510/6522',
+    'Sleep Apnea': 'DC 6847',
+    'TBI (Traumatic Brain Injury)': 'DC 8045',
+    'Tinnitus (Ringing in Ears)': 'DC 6260',
+    'TMJ / TMD (Jaw Pain)': 'DC 9905',
+    "Vertigo & Meniere's": 'DC 6204/6205',
+    'Wrist / Carpal Tunnel': 'DC 5215/8515',
+};
+
+function makeCard(name, isSelected) {
+    const filename = CONDITION_MAP[name];
+    const dc = DC_MAP[name] || '';
+    const url = '/product/pdfs/' + filename;
+    const card = document.createElement('div');
+    card.className = 'template-card' + (isSelected ? ' selected' : '');
+    card.innerHTML = `
+        <div class="card-top">
+            <div>
+                <div class="card-name">${name}</div>
+                <div class="card-dc">${dc}</div>
+            </div>
+            ${isSelected ? '<span class="badge-yours">Yours</span>' : ''}
+        </div>
+        <a href="${url}" download="${filename}" class="btn-download ${isSelected ? '' : 'secondary'}" onclick="trackDownload('${name}')">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Download PDF
+        </a>
+    `;
+    return card;
+}
+
+function trackDownload(conditionName) {
+    if (typeof gtag !== 'undefined') {
+        gtag('event', 'template_download', {
+            'event_category': 'conversion',
+            'event_label': conditionName,
+        });
+    }
+}
+
+function init() {
+    const allConditions = Object.keys(CONDITION_MAP).sort();
+    let selected = [];
+    try {
+        const raw = localStorage.getItem('yw_selected_conditions');
+        if (raw) selected = JSON.parse(raw);
+    } catch(e) {}
+
+    const selectedSection = document.getElementById('selected-section');
+    const selectedGrid = document.getElementById('selected-grid');
+    const allGrid = document.getElementById('all-grid');
+    const allLabel = document.getElementById('all-label');
+
+    // Show selected conditions section if we have them
+    if (selected.length > 0) {
+        selectedSection.style.display = 'block';
+        allLabel.textContent = 'All Templates (Included With Your Purchase)';
+        selected.forEach(name => {
+            if (CONDITION_MAP[name]) {
+                selectedGrid.appendChild(makeCard(name, true));
+            }
+        });
+        // Clear stored selection
+        localStorage.removeItem('yw_selected_conditions');
+        localStorage.removeItem('yw_pack_size');
+    }
+
+    // Render all templates
+    allConditions.forEach(name => {
+        allGrid.appendChild(makeCard(name, false));
+    });
+
+    // Track purchase confirmation
+    const checkoutData = localStorage.getItem('yw_checkout_clicked');
+    if (checkoutData) {
+        try {
+            const data = JSON.parse(checkoutData);
+            const minutesSince = (Date.now() - data.timestamp) / 60000;
+            if (minutesSince < 30) {
+                gtag('event', 'purchase', {
+                    'event_category': 'conversion',
+                    'event_label': data.product,
+                    'value': data.price,
+                    'currency': 'USD',
+                    'transaction_id': data.sessionId
+                });
+                localStorage.removeItem('yw_checkout_clicked');
+            }
+        } catch(e) {}
+    }
+}
+
+document.addEventListener('DOMContentLoaded', init);
+</script>
+
+</body>
+</html>
