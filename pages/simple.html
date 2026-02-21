@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Missing Link in Your VA Claim | YourWonClaim</title>
+  <meta name="description" content="The VA process is simpler when your evidence is presented in the right language. Condition-specific templates built around what VA raters actually evaluate.">
+  <meta name="robots" content="noindex, follow" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- GA4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-GMX19T2GWW"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-GMX19T2GWW');
+  </script>
+
+  <style>
+    :root {
+      --navy: #0B1A2F;
+      --navy2: #0d2040;
+      --red: #C21818;
+      --red2: #a01414;
+      --gold: #D4A017;
+      --green: #4ade80;
+      --light: #F6F7FB;
+      --muted: #8A94A6;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { font-family: 'Inter', sans-serif; -webkit-font-smoothing: antialiased; scroll-behavior: smooth; }
+    body { background: var(--navy); color: var(--light); }
+    .sora { font-family: 'Sora', sans-serif; }
+
+    /* ─── NAV ─── */
+    nav {
+      position: sticky; top: 0; z-index: 50;
+      background: rgba(11,26,47,0.96);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      padding: 0 1.5rem;
+      height: 3.75rem;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .brand { display: flex; align-items: center; gap: 0.5rem; text-decoration: none; }
+    .brand-box { width: 1.75rem; height: 1.75rem; background: var(--red); border-radius: 0.3rem; display: flex; align-items: center; justify-content: center; }
+    .brand-name { font-family: 'Sora', sans-serif; font-weight: 700; font-size: 0.9rem; color: var(--light); letter-spacing: 0.05em; }
+    .nav-cta {
+      background: var(--red); color: #fff;
+      font-weight: 700; font-size: 0.8rem;
+      padding: 0.5rem 1.1rem; border-radius: 0.375rem;
+      text-decoration: none; transition: background 0.15s;
+    }
+    .nav-cta:hover { background: var(--red2); }
+
+    /* ─── HERO ─── */
+    .hero {
+      padding: 5rem 1.5rem 4rem;
+      text-align: center;
+      background: radial-gradient(ellipse 80% 50% at 50% -10%, rgba(194,24,24,0.12) 0%, transparent 70%);
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+    .hero-eyebrow {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      background: rgba(212,160,23,0.12); border: 1px solid rgba(212,160,23,0.3);
+      color: var(--gold); font-size: 0.75rem; font-weight: 700;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      padding: 0.35rem 0.85rem; border-radius: 9999px; margin-bottom: 1.75rem;
+    }
+    .hero h1 {
+      font-family: 'Sora', sans-serif;
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-weight: 800; line-height: 1.12;
+      letter-spacing: -0.02em;
+      max-width: 800px; margin: 0 auto 1.25rem;
+    }
+    .hero h1 em { font-style: normal; color: var(--red); }
+    .hero-sub {
+      font-size: clamp(1rem, 2vw, 1.2rem);
+      color: var(--muted); max-width: 540px;
+      margin: 0 auto 2.5rem; line-height: 1.65;
+    }
+    .hero-cta {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      background: var(--red); color: #fff;
+      font-family: 'Sora', sans-serif; font-weight: 700; font-size: 1.05rem;
+      padding: 1rem 2.25rem; border-radius: 0.5rem;
+      text-decoration: none; transition: background 0.15s, transform 0.1s;
+      box-shadow: 0 4px 24px rgba(194,24,24,0.35);
+    }
+    .hero-cta:hover { background: var(--red2); transform: translateY(-2px); }
+    .hero-trust {
+      margin-top: 1.25rem; font-size: 0.8rem; color: var(--muted);
+      display: flex; align-items: center; justify-content: center; gap: 1.25rem; flex-wrap: wrap;
+    }
+    .trust-item { display: flex; align-items: center; gap: 0.3rem; }
+
+    /* ─── BRIDGE SECTION ─── */
+    .bridge {
+      max-width: 720px; margin: 0 auto;
+      padding: 4.5rem 1.5rem;
+      text-align: center;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+    .bridge h2 { font-family: 'Sora', sans-serif; font-size: clamp(1.5rem, 3vw, 2.25rem); font-weight: 800; margin-bottom: 1.25rem; line-height: 1.25; }
+    .bridge h2 span { color: var(--red); }
+    .bridge p { color: var(--muted); font-size: 1.05rem; line-height: 1.75; margin-bottom: 1rem; }
+    .bridge p strong { color: var(--light); }
+
+    /* ─── HOW IT WORKS ─── */
+    .how { background: rgba(255,255,255,0.02); border-top: 1px solid rgba(255,255,255,0.05); border-bottom: 1px solid rgba(255,255,255,0.05); padding: 4.5rem 1.5rem; }
+    .how-inner { max-width: 960px; margin: 0 auto; }
+    .section-label { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; color: var(--red); margin-bottom: 0.75rem; }
+    .how h2 { font-family: 'Sora', sans-serif; font-size: clamp(1.5rem, 3vw, 2.25rem); font-weight: 800; margin-bottom: 3rem; }
+    .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem; }
+    .step {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 1rem; padding: 1.75rem 1.5rem;
+    }
+    .step-num {
+      width: 2.25rem; height: 2.25rem;
+      background: rgba(194,24,24,0.15); border: 1px solid rgba(194,24,24,0.3);
+      color: var(--red); font-family: 'Sora', sans-serif; font-weight: 800; font-size: 0.95rem;
+      border-radius: 50%; display: flex; align-items: center; justify-content: center;
+      margin-bottom: 1rem;
+    }
+    .step h3 { font-weight: 700; font-size: 1rem; margin-bottom: 0.5rem; }
+    .step p { font-size: 0.9rem; color: var(--muted); line-height: 1.6; }
+
+    /* ─── CONTRAST SECTION ─── */
+    .contrast { max-width: 860px; margin: 0 auto; padding: 4.5rem 1.5rem; border-bottom: 1px solid rgba(255,255,255,0.05); }
+    .contrast h2 { font-family: 'Sora', sans-serif; font-size: clamp(1.4rem, 3vw, 2rem); font-weight: 800; text-align: center; margin-bottom: 2.5rem; }
+    .compare { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .compare-col { border-radius: 1rem; padding: 1.75rem 1.5rem; }
+    .compare-col.bad { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); }
+    .compare-col.good { background: rgba(194,24,24,0.07); border: 1px solid rgba(194,24,24,0.2); }
+    .compare-col h3 { font-weight: 700; font-size: 0.85rem; letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 1rem; color: var(--muted); }
+    .compare-col.good h3 { color: var(--red); }
+    .compare-col li { font-size: 0.9rem; color: var(--muted); line-height: 1.6; margin-bottom: 0.6rem; padding-left: 1.25rem; position: relative; list-style: none; }
+    .compare-col li::before { content: "✗"; position: absolute; left: 0; color: rgba(255,255,255,0.2); }
+    .compare-col.good li::before { content: "✓"; color: var(--green); }
+    .compare-col.good li { color: var(--light); }
+    @media (max-width: 560px) { .compare { grid-template-columns: 1fr; } }
+
+    /* ─── TEMPLATES ─── */
+    .templates { padding: 4.5rem 1.5rem; background: rgba(255,255,255,0.02); border-bottom: 1px solid rgba(255,255,255,0.05); }
+    .templates-inner { max-width: 960px; margin: 0 auto; }
+    .templates h2 { font-family: 'Sora', sans-serif; font-size: clamp(1.5rem, 3vw, 2.25rem); font-weight: 800; margin-bottom: 0.75rem; }
+    .templates .sub { color: var(--muted); font-size: 1rem; margin-bottom: 2.5rem; }
+    .template-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1rem; margin-bottom: 2.5rem; }
+    .t-card {
+      background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 0.875rem; padding: 1.25rem 1.25rem 1rem;
+      display: flex; flex-direction: column; gap: 0.75rem;
+      transition: border-color 0.2s;
+    }
+    .t-card:hover { border-color: rgba(255,255,255,0.18); }
+    .t-card.featured { border-color: rgba(194,24,24,0.35); background: rgba(194,24,24,0.06); }
+    .t-name { font-weight: 600; font-size: 0.95rem; }
+    .t-dc { font-size: 0.7rem; color: var(--muted); }
+    .t-badge { background: rgba(194,24,24,0.15); color: var(--red); border: 1px solid rgba(194,24,24,0.3); border-radius: 9999px; font-size: 0.65rem; font-weight: 700; padding: 0.2rem 0.55rem; text-transform: uppercase; letter-spacing: 0.06em; white-space: nowrap; }
+    .t-btn {
+      display: flex; align-items: center; justify-content: center; gap: 0.4rem;
+      width: 100%; padding: 0.6rem 1rem;
+      background: var(--red); color: #fff; font-weight: 700; font-size: 0.85rem;
+      border-radius: 0.5rem; text-decoration: none; border: none; cursor: pointer;
+      transition: background 0.15s;
+    }
+    .t-btn:hover { background: var(--red2); }
+    .pack-options { display: flex; gap: 0.75rem; flex-wrap: wrap; }
+    .pack-btn {
+      flex: 1; min-width: 180px;
+      display: flex; flex-direction: column; align-items: center;
+      background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 0.875rem; padding: 1.25rem 1rem; text-decoration: none;
+      transition: border-color 0.2s, background 0.2s; position: relative;
+    }
+    .pack-btn:hover { border-color: rgba(194,24,24,0.5); background: rgba(194,24,24,0.06); }
+    .pack-btn.best { border-color: rgba(194,24,24,0.45); background: rgba(194,24,24,0.07); }
+    .pack-badge { position: absolute; top: -0.6rem; left: 50%; transform: translateX(-50%); background: var(--red); color: #fff; font-size: 0.65rem; font-weight: 700; padding: 0.2rem 0.65rem; border-radius: 9999px; text-transform: uppercase; letter-spacing: 0.06em; white-space: nowrap; }
+    .pack-title { font-family: 'Sora', sans-serif; font-weight: 700; font-size: 1rem; color: var(--light); margin-bottom: 0.25rem; }
+    .pack-price { font-family: 'Sora', sans-serif; font-weight: 800; font-size: 1.5rem; color: var(--light); margin-bottom: 0.25rem; }
+    .pack-per { font-size: 0.75rem; color: var(--muted); margin-bottom: 0.75rem; }
+    .pack-cta { font-weight: 700; font-size: 0.8rem; color: var(--red); }
+
+    /* ─── CREDIBILITY ─── */
+    .cred { max-width: 720px; margin: 0 auto; padding: 4.5rem 1.5rem; text-align: center; border-bottom: 1px solid rgba(255,255,255,0.05); }
+    .cred-avatar { width: 5rem; height: 5rem; border-radius: 50%; background: rgba(194,24,24,0.15); border: 2px solid rgba(194,24,24,0.3); margin: 0 auto 1.25rem; display: flex; align-items: center; justify-content: center; font-family: 'Sora', sans-serif; font-size: 1.5rem; font-weight: 800; color: var(--red); }
+    .cred h2 { font-family: 'Sora', sans-serif; font-size: 1.5rem; font-weight: 800; margin-bottom: 0.75rem; }
+    .cred p { color: var(--muted); font-size: 1rem; line-height: 1.75; margin-bottom: 1rem; }
+    .cred p strong { color: var(--light); }
+
+    /* ─── FINAL CTA ─── */
+    .final-cta {
+      padding: 5rem 1.5rem;
+      text-align: center;
+      background: radial-gradient(ellipse 60% 40% at 50% 100%, rgba(194,24,24,0.1) 0%, transparent 70%);
+    }
+    .final-cta h2 { font-family: 'Sora', sans-serif; font-size: clamp(1.75rem, 4vw, 2.75rem); font-weight: 800; margin-bottom: 1rem; max-width: 640px; margin-left: auto; margin-right: auto; }
+    .final-cta p { color: var(--muted); font-size: 1rem; max-width: 440px; margin: 0 auto 2rem; line-height: 1.65; }
+
+    /* ─── FOOTER ─── */
+    footer { border-top: 1px solid rgba(255,255,255,0.06); padding: 2rem 1.5rem; text-align: center; }
+    footer p { font-size: 0.75rem; color: var(--muted); opacity: 0.7; line-height: 1.8; max-width: 600px; margin: 0 auto; }
+
+    /* ─── UTILS ─── */
+    .text-red { color: var(--red); }
+    .text-green { color: var(--green); }
+    .mb-0 { margin-bottom: 0 !important; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="brand">
+    <div class="brand-box">
+      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+    </div>
+    <span class="brand-name">YOURWONCLAIM.COM</span>
+  </a>
+  <a href="#get-templates" class="nav-cta">Get Templates →</a>
+</nav>
+
+<!-- ─── HERO ─── -->
+<section class="hero">
+  <div class="hero-eyebrow">
+    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+    From the Video — Here's the Tool
+  </div>
+  <h1 class="sora">The VA Process Is Simpler.<br><em>When Your Evidence Speaks Their Language.</em></h1>
+  <p class="hero-sub">VA raters score your claim against a diagnostic code. They're looking for specific language — frequency, functional impact, nexus. Most veterans write in plain English. These templates bridge that gap.</p>
+  <a href="#get-templates" class="hero-cta" onclick="trackClick('hero-cta')">
+    Get Your Templates — From $29
+    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+  </a>
+  <div class="hero-trust">
+    <span class="trust-item"><span class="text-green">✓</span> 27 condition-specific templates</span>
+    <span class="trust-item"><span class="text-green">✓</span> Built by a 100% P&T veteran</span>
+    <span class="trust-item"><span class="text-green">✓</span> 30-day money-back guarantee</span>
+  </div>
+</section>
+
+<!-- ─── BRIDGE ─── -->
+<section class="bridge">
+  <h2 class="sora">Here's What <span>Nobody Tells You</span><br>About VA Claims</h2>
+  <p>VA raters don't evaluate how bad your condition <em>feels</em>. They evaluate how well your evidence matches the diagnostic criteria for your specific condition code. It's a language — and most vets don't know it.</p>
+  <p>That's not a knock on veterans. The VA system was never designed to be intuitive. But once you understand that your job is to <strong>document in the language the rater is scoring against</strong>, the whole process gets a lot clearer.</p>
+  <p>That's what these templates do. Every field, every prompt, every section maps to what a rater is actually looking for when they open your file. <strong>Stop guessing. Start documenting in the right language.</strong></p>
+</section>
+
+<!-- ─── HOW IT WORKS ─── -->
+<section class="how">
+  <div class="how-inner">
+    <p class="section-label">How It Works</p>
+    <h2 class="sora">Three Steps. That's It.</h2>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <h3>Pick Your Condition</h3>
+        <p>Choose from 27 templates covering the most common VA-rated conditions — PTSD, Sleep Apnea, Tinnitus, Back Pain, Migraines, and more.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <h3>Log Daily for 30 Days</h3>
+        <p>Each template prompts you for exactly what raters look for: frequency, severity, functional impact. 5 minutes a day. Plain language turned into rater-ready documentation.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <h3>Submit as Evidence</h3>
+        <p>Print or attach as a PDF. Your log becomes a 30-day evidence record — the kind that moves claims from denied to approved, and from 70% to 100%.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── CONTRAST ─── -->
+<section class="contrast">
+  <h2 class="sora">What Changes When You Use The Right Language</h2>
+  <div class="compare">
+    <div class="compare-col bad">
+      <h3>Without Templates</h3>
+      <ul>
+        <li>Writing "my back hurts all the time" — vague, unscored</li>
+        <li>No functional impact documented</li>
+        <li>Rater has nothing to pin a rating to</li>
+        <li>Claim sits at whatever the C&P exam said</li>
+        <li>Filing supplemental with the same weak evidence</li>
+      </ul>
+    </div>
+    <div class="compare-col good">
+      <h3>With Templates</h3>
+      <ul>
+        <li>"Unable to stand >20 min 14/30 days, rated under DC 5237" — scoreable</li>
+        <li>Functional impact documented daily</li>
+        <li>Rater can connect your evidence to the criteria</li>
+        <li>Supplemental claims have new, structured evidence</li>
+        <li>You submitted what the code actually requires</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ─── TEMPLATES / BUY ─── -->
+<section class="templates" id="get-templates">
+  <div class="templates-inner">
+    <p class="section-label">The Templates</p>
+    <h2 class="sora">27 Conditions. One Standard.</h2>
+    <p class="sub">Every template maps to the VA diagnostic code for that condition. Built around what raters actually evaluate — not what sounds convincing.</p>
+
+    <!-- Featured templates -->
+    <div class="template-grid">
+      <div class="t-card featured">
+        <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:0.5rem;">
+          <div><div class="t-name">PTSD</div><div class="t-dc">DC 9411 — Mental Disorders</div></div>
+          <span class="t-badge">Most Popular</span>
+        </div>
+        <a href="https://buy.stripe.com/9B69AU7yx8Vb1Fv6Kt5ZC02" class="t-btn" onclick="trackStripe('ptsd', 29)">Get for $29 →</a>
+      </div>
+      <div class="t-card featured">
+        <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:0.5rem;">
+          <div><div class="t-name">Sleep Apnea</div><div class="t-dc">DC 6847 — Respiratory</div></div>
+          <span class="t-badge">Top Claim</span>
+        </div>
+        <a href="https://buy.stripe.com/9B69AU7yx8Vb1Fv6Kt5ZC02" class="t-btn" onclick="trackStripe('sleep-apnea', 29)">Get for $29 →</a>
+      </div>
+      <div class="t-card featured">
+        <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:0.5rem;">
+          <div><div class="t-name">Tinnitus</div><div class="t-dc">DC 6260 — #1 VA Claim</div></div>
+          <span class="t-badge">Top Claim</span>
+        </div>
+        <a href="https://buy.stripe.com/9B69AU7yx8Vb1Fv6Kt5ZC02" class="t-btn" onclick="trackStripe('tinnitus', 29)">Get for $29 →</a>
+      </div>
+      <div class="t-card featured">
+        <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:0.5rem;">
+          <div><div class="t-name">Back Condition</div><div class="t-dc">38 CFR § 4.71a</div></div>
+          <span class="t-badge">High Value</span>
+        </div>
+        <a href="https://buy.stripe.com/9B69AU7yx8Vb1Fv6Kt5ZC02" class="t-btn" onclick="trackStripe('back', 29)">Get for $29 →</a>
+      </div>
+    </div>
+
+    <!-- Pack options -->
+    <p style="font-size:0.8rem;color:var(--muted);margin-bottom:1.25rem;text-align:center;">Or save more — grab a bundle for multiple conditions:</p>
+    <div class="pack-options">
+      <a href="https://buy.stripe.com/9B69AU7yx8Vb1Fv6Kt5ZC02" class="pack-btn" onclick="trackStripe('1-pack', 29)">
+        <div class="pack-title">1 Template</div>
+        <div class="pack-price">$29</div>
+        <div class="pack-per">$29 per template</div>
+        <div class="pack-cta">Get Started →</div>
+      </a>
+      <a href="https://buy.stripe.com/5kQ8wQ2ed7R7esh0m55ZC04" class="pack-btn" onclick="trackStripe('2-pack', 50)">
+        <div class="pack-title">2 Templates</div>
+        <div class="pack-price">$50</div>
+        <div class="pack-per">$25 per template</div>
+        <div class="pack-cta">Save $8 →</div>
+      </a>
+      <a href="https://buy.stripe.com/28E00k4ml8Vb6ZPgl35ZC05" class="pack-btn best" onclick="trackStripe('3-pack', 60)">
+        <span class="pack-badge">Best Value</span>
+        <div class="pack-title">3 Templates</div>
+        <div class="pack-price">$60</div>
+        <div class="pack-per">$20 per template</div>
+        <div class="pack-cta">Save $27 →</div>
+      </a>
+    </div>
+
+    <p style="text-align:center;font-size:0.8rem;color:var(--muted);margin-top:1.5rem;">
+      30-day money-back guarantee &nbsp;·&nbsp; Instant PDF download after purchase &nbsp;·&nbsp; All 27 templates available
+    </p>
+  </div>
+</section>
+
+<!-- ─── CREDIBILITY ─── -->
+<section class="cred">
+  <div class="cred-avatar">LB</div>
+  <h2 class="sora">Built By a Vet Who's Been There</h2>
+  <p>I'm Lyndon — <strong>100% P&T, Iraq veteran</strong>. I went through the VA claims process myself. I know what it feels like to have a real condition and still get denied because the paperwork didn't say the right things.</p>
+  <p>These templates are what I wish I had. They're not magic — you still have to document your symptoms honestly. But they make sure your documentation actually gets scored.</p>
+  <p>Questions? Email <a href="mailto:support@yourwonclaim.com" style="color:var(--red);text-decoration:none;">support@yourwonclaim.com</a> — I personally read every message.</p>
+</section>
+
+<!-- ─── FINAL CTA ─── -->
+<section class="final-cta">
+  <h2 class="sora">You Already Know the VA Process<br>Can Be Simpler. Here's the Tool.</h2>
+  <p>Pick your condition, log for 30 days, submit evidence that actually speaks the rater's language.</p>
+  <a href="#get-templates" class="hero-cta" onclick="trackClick('final-cta')">
+    Get Your Templates — From $29
+    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+  </a>
+  <p style="margin-top:1rem;font-size:0.8rem;">30-day money-back guarantee. No questions asked.</p>
+</section>
+
+<footer>
+  <p>© YourWonClaim.com — Educational resource for veterans. Not affiliated with the Department of Veterans Affairs. Not legal advice. Not a VA-accredited claims agent. This product is for informational and documentation purposes only.</p>
+</footer>
+
+<script>
+function trackClick(label) {
+  if (typeof gtag !== 'undefined') {
+    gtag('event', 'cta_click', { event_category: 'conversion', event_label: label });
+  }
+}
+function trackStripe(product, price) {
+  if (typeof gtag !== 'undefined') {
+    gtag('event', 'stripe_checkout_click', { event_category: 'conversion', event_label: product, value: price, currency: 'USD' });
+  }
+  localStorage.setItem('yw_checkout_clicked', JSON.stringify({ product, price, timestamp: Date.now() }));
+}
+</script>
+
+</body>
+</html>
