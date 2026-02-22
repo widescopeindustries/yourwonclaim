@@ -120,64 +120,84 @@
       display: flex; justify-content: center; align-items: flex-start;
       gap: 1.5rem; flex-wrap: wrap;
     }
-    /* Document card — looks like a real PDF page */
+    /* Document card — matches actual PDF styling (white bg, navy text, gold accent) */
     .doc-card {
-      background: #fff; color: #1a1a2e;
-      border-radius: 0.5rem;
-      width: 320px; max-width: 90vw;
-      box-shadow: 0 20px 60px rgba(0,0,0,0.5), 0 4px 20px rgba(0,0,0,0.3);
+      background: #fff; color: #0B1A2F;
+      border-radius: 0.375rem;
+      width: 300px; max-width: 88vw;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.55), 0 4px 20px rgba(0,0,0,0.3);
       overflow: hidden; text-align: left;
       font-family: 'Inter', sans-serif;
       transform-origin: top center;
     }
     .doc-card:nth-child(1) { transform: rotate(-1.5deg); }
-    .doc-card:nth-child(2) { transform: rotate(1deg) translateY(12px); }
+    .doc-card:nth-child(2) { transform: rotate(1deg) translateY(14px); }
+    /* Top strip — matches PDF's navy top bar */
     .doc-header {
-      background: var(--navy); padding: 0.9rem 1.1rem;
-      border-bottom: 3px solid var(--red);
+      background: #0B1A2F;
+      padding: 0.75rem 1.1rem 0.6rem;
     }
     .doc-header-top {
       display: flex; align-items: center; justify-content: space-between;
-      margin-bottom: 0.25rem;
+      margin-bottom: 0.15rem;
     }
-    .doc-logo { font-size: 0.6rem; font-weight: 700; color: rgba(255,255,255,0.5); letter-spacing: 0.08em; text-transform: uppercase; }
-    .doc-dc { font-size: 0.6rem; color: var(--red); font-weight: 700; background: rgba(194,24,24,0.15); border: 1px solid rgba(194,24,24,0.3); padding: 0.15rem 0.4rem; border-radius: 3px; }
-    .doc-title { font-family: 'Sora', sans-serif; font-size: 0.95rem; font-weight: 800; color: #fff; }
-    .doc-subtitle { font-size: 0.65rem; color: rgba(255,255,255,0.5); margin-top: 0.1rem; }
-    .doc-body { padding: 0.85rem 1.1rem; }
-    .doc-instruction {
-      font-size: 0.62rem; color: #555; line-height: 1.5;
-      background: #f8f8f8; border-left: 3px solid var(--red);
-      padding: 0.4rem 0.6rem; border-radius: 0 3px 3px 0; margin-bottom: 0.75rem;
+    .doc-logo { font-size: 0.55rem; font-weight: 600; color: rgba(255,255,255,0.4); letter-spacing: 0.08em; text-transform: uppercase; }
+    .doc-dc { font-size: 0.55rem; color: #D4A017; font-weight: 700; letter-spacing: 0.05em; }
+    /* Big centered title — matches "EVIDENCE LOG" in PDF */
+    .doc-title-block { padding: 0.9rem 1.1rem 0; text-align: center; }
+    .doc-big-title {
+      font-family: 'Sora', sans-serif; font-weight: 800;
+      font-size: 1.1rem; letter-spacing: 0.08em; text-transform: uppercase;
+      color: #0B1A2F; margin-bottom: 0.2rem;
     }
-    .doc-field { margin-bottom: 0.6rem; }
+    .doc-subtitle { font-size: 0.65rem; color: #555; font-style: italic; margin-bottom: 0.5rem; }
+    /* Gold rule — matches the gold line in the PDF */
+    .doc-gold-rule { height: 2px; background: #D4A017; margin: 0 1.1rem 0.75rem; }
+    .doc-body { padding: 0 1.1rem 0.75rem; }
+    /* Strong entry block — matches PDF's green-left-border example boxes */
+    .doc-entry-label {
+      font-size: 0.6rem; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 0.07em; color: #888; margin-bottom: 0.2rem;
+    }
+    .doc-strong-entry {
+      font-size: 0.67rem; color: #1a1a2e; line-height: 1.5;
+      border-left: 3px solid #16a34a; background: #f0fdf4;
+      padding: 0.4rem 0.55rem; border-radius: 0 3px 3px 0;
+      margin-bottom: 0.5rem;
+    }
+    .doc-strong-entry strong { color: #15803d; }
+    .doc-weak-entry {
+      font-size: 0.67rem; color: #666; line-height: 1.5;
+      border-left: 3px solid #dc2626; background: #fef2f2;
+      padding: 0.4rem 0.55rem; border-radius: 0 3px 3px 0;
+    }
+    .doc-weak-entry strong { color: #dc2626; }
+    .doc-field { margin-bottom: 0.55rem; }
     .doc-field-label {
-      font-size: 0.58rem; font-weight: 700; text-transform: uppercase;
-      letter-spacing: 0.06em; color: #888; margin-bottom: 0.2rem;
+      font-size: 0.57rem; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 0.06em; color: #0B1A2F; margin-bottom: 0.15rem;
     }
     .doc-field-line {
-      font-size: 0.72rem; color: #1a1a2e; border-bottom: 1px solid #ddd;
-      padding-bottom: 0.2rem; min-height: 1rem; line-height: 1.4;
+      font-size: 0.7rem; color: #333; border-bottom: 1px solid #ccc;
+      padding-bottom: 0.2rem; line-height: 1.4;
     }
-    .doc-field-line.filled { color: #333; font-style: italic; }
-    .doc-field-line.highlight { color: #c21818; font-style: italic; font-weight: 600; }
-    .doc-row { display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; margin-bottom: 0.6rem; }
+    .doc-row { display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; margin-bottom: 0.55rem; }
     .doc-scale {
-      display: flex; gap: 0.2rem; align-items: center; margin-top: 0.15rem;
+      display: flex; gap: 0.18rem; align-items: center; margin-top: 0.15rem;
     }
     .doc-scale span {
-      width: 1.3rem; height: 1.3rem; border-radius: 50%;
-      border: 1px solid #ddd; font-size: 0.55rem; font-weight: 700;
-      display: flex; align-items: center; justify-content: center; color: #aaa;
+      width: 1.2rem; height: 1.2rem; border-radius: 50%;
+      border: 1px solid #ddd; font-size: 0.52rem; font-weight: 700;
+      display: flex; align-items: center; justify-content: center; color: #bbb;
     }
-    .doc-scale span.active { background: var(--red); border-color: var(--red); color: #fff; }
+    .doc-scale span.active { background: #0B1A2F; border-color: #0B1A2F; color: #fff; }
     .doc-footer {
-      background: #f5f5f5; border-top: 1px solid #e5e5e5;
-      padding: 0.5rem 1.1rem;
+      background: #f8f8f8; border-top: 1px solid #e8e8e8;
+      padding: 0.4rem 1.1rem;
       display: flex; justify-content: space-between; align-items: center;
     }
-    .doc-footer-text { font-size: 0.55rem; color: #999; }
-    .doc-page-num { font-size: 0.55rem; color: #bbb; }
+    .doc-footer-text { font-size: 0.52rem; color: #aaa; }
+    .doc-page-num { font-size: 0.52rem; color: #ccc; }
     .preview-disclaimer {
       margin-top: 2rem; font-size: 0.75rem; color: var(--muted);
     }
@@ -343,20 +363,20 @@
           <span class="doc-logo">YourWonClaim.com</span>
           <span class="doc-dc">DC 9411</span>
         </div>
-        <div class="doc-title">PTSD Daily Evidence Log</div>
-        <div class="doc-subtitle">30-Day Symptom Documentation Template</div>
       </div>
+      <div class="doc-title-block">
+        <div class="doc-big-title">Evidence Log</div>
+        <div class="doc-subtitle">For PTSD VA Disability Claims</div>
+      </div>
+      <div class="doc-gold-rule"></div>
       <div class="doc-body">
-        <div class="doc-instruction">
-          Complete one entry per day. Use clinical language. Describe functional impact in measurable terms (hours lost, activities avoided, frequency per week).
-        </div>
         <div class="doc-row">
           <div class="doc-field">
             <div class="doc-field-label">Date</div>
-            <div class="doc-field-line filled">02 / 14 / 2026</div>
+            <div class="doc-field-line">02 / 14 / 2026</div>
           </div>
           <div class="doc-field">
-            <div class="doc-field-label">Overall Severity (1–10)</div>
+            <div class="doc-field-label">Severity (1–10)</div>
             <div class="doc-scale">
               <span>1</span><span>2</span><span>3</span><span>4</span><span>5</span>
               <span>6</span><span class="active">7</span><span>8</span><span>9</span><span>10</span>
@@ -364,20 +384,17 @@
           </div>
         </div>
         <div class="doc-field">
-          <div class="doc-field-label">Hypervigilance / Startle Response</div>
-          <div class="doc-field-line highlight">Startled by car backfire at 0800; elevated HR 30+ min. Unable to re-enter store.</div>
+          <div class="doc-field-label">Today's Entry</div>
         </div>
-        <div class="doc-field">
-          <div class="doc-field-label">Functional Impact (work / daily tasks)</div>
-          <div class="doc-field-line highlight">Missed 3 hrs work — could not concentrate following episode. Avoided crowded grocery store.</div>
+        <div class="doc-strong-entry">
+          <strong>Strong:</strong> "Startled by car backfire at 0800; elevated HR 30+ min, unable to re-enter store. Missed 3 hrs work. Symptoms consistent with hyperarousal cluster (DSM-5 Criterion E)."
         </div>
-        <div class="doc-field">
-          <div class="doc-field-label">Nexus Statement</div>
-          <div class="doc-field-line highlight">Symptoms consistent with hyperarousal cluster (DSM-5 E criteria); directly linked to Iraq deployment 2004.</div>
+        <div class="doc-weak-entry">
+          <strong>Weak:</strong> "Bad day. Anxious."
         </div>
       </div>
       <div class="doc-footer">
-        <span class="doc-footer-text">PTSD Evidence Log — DC 9411 · Veteran Copy</span>
+        <span class="doc-footer-text">PTSD Evidence Log · DC 9411</span>
         <span class="doc-page-num">Page 1 of 30</span>
       </div>
     </div>
@@ -389,38 +406,35 @@
           <span class="doc-logo">YourWonClaim.com</span>
           <span class="doc-dc">DC 6847</span>
         </div>
-        <div class="doc-title">Sleep Apnea Evidence Log</div>
-        <div class="doc-subtitle">30-Day Symptom Documentation Template</div>
       </div>
+      <div class="doc-title-block">
+        <div class="doc-big-title">Evidence Log</div>
+        <div class="doc-subtitle">For Sleep Apnea VA Disability Claims</div>
+      </div>
+      <div class="doc-gold-rule"></div>
       <div class="doc-body">
-        <div class="doc-instruction">
-          Document CPAP use, apnea events, and daytime impairment daily. Include functional impact — raters score on occupational and social impairment.
-        </div>
         <div class="doc-row">
           <div class="doc-field">
             <div class="doc-field-label">Date</div>
-            <div class="doc-field-line filled">02 / 14 / 2026</div>
+            <div class="doc-field-line">02 / 14 / 2026</div>
           </div>
           <div class="doc-field">
-            <div class="doc-field-label">CPAP Compliance</div>
-            <div class="doc-field-line filled">✓ Used 6h 22min (AHI: 4.2)</div>
+            <div class="doc-field-label">CPAP Use</div>
+            <div class="doc-field-line">✓ 6h 22min · AHI: 4.2</div>
           </div>
         </div>
         <div class="doc-field">
-          <div class="doc-field-label">Daytime Symptoms</div>
-          <div class="doc-field-line highlight">Excessive daytime somnolence — fell asleep at desk 1400. Fatigue rating 8/10 despite 7 hrs with CPAP.</div>
+          <div class="doc-field-label">Today's Entry</div>
         </div>
-        <div class="doc-field">
-          <div class="doc-field-label">Occupational / Social Impairment</div>
-          <div class="doc-field-line highlight">Unable to attend 1500 meeting; canceled plans with family due to exhaustion. 2nd occurrence this week.</div>
+        <div class="doc-strong-entry">
+          <strong>Strong:</strong> "Fell asleep at desk 1400 despite CPAP. Near-miss driving home — caught myself drifting. Had to cancel evening plans. Wife counted 3 apnea episodes with mask on."
         </div>
-        <div class="doc-field">
-          <div class="doc-field-label">Required Use of CPAP Note</div>
-          <div class="doc-field-line highlight">Prescribed by VA physician 2022. CPAP required nightly — rated separately under 38 CFR § 4.97.</div>
+        <div class="doc-weak-entry">
+          <strong>Weak:</strong> "Used CPAP. Still tired."
         </div>
       </div>
       <div class="doc-footer">
-        <span class="doc-footer-text">Sleep Apnea Log — DC 6847 · Veteran Copy</span>
+        <span class="doc-footer-text">Sleep Apnea Log · DC 6847</span>
         <span class="doc-page-num">Page 1 of 30</span>
       </div>
     </div>

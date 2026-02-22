@@ -68,6 +68,14 @@
     <priority>0.7</priority>
   </url>
 
+  <!-- Download -->
+  <url>
+    <loc>https://yourwonclaim.com/pages/download</loc>
+    <lastmod>2026-02-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
   <!-- Guide -->
   <url>
     <loc>https://yourwonclaim.com/pages/guide</loc>
