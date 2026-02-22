@@ -120,18 +120,45 @@
       display: flex; justify-content: center; align-items: flex-start;
       gap: 1.5rem; flex-wrap: wrap;
     }
+    /* Stack wrapper — holds fanned pages + main card */
+    .doc-stack {
+      position: relative;
+      width: 300px; max-width: 88vw;
+      /* extra bottom space for the fanned pages poking out below */
+      padding-bottom: 18px;
+    }
+    .doc-stack:nth-child(1) { transform: rotate(-1.5deg); transform-origin: top center; }
+    .doc-stack:nth-child(2) { transform: rotate(1deg) translateY(14px); transform-origin: top center; }
+    /* Fanned pages behind the main card */
+    .doc-stack::before,
+    .doc-stack::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: calc(100% - 18px);
+      background: #fff;
+      border-radius: 0.375rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      z-index: 0;
+    }
+    .doc-stack::before {
+      transform: rotate(-2.5deg) translateY(10px);
+      background: #f0f0f0;
+    }
+    .doc-stack::after {
+      transform: rotate(2deg) translateY(6px);
+      background: #f7f7f7;
+    }
     /* Document card — matches actual PDF styling (white bg, navy text, gold accent) */
     .doc-card {
       background: #fff; color: #0B1A2F;
       border-radius: 0.375rem;
-      width: 300px; max-width: 88vw;
+      width: 100%;
       box-shadow: 0 20px 60px rgba(0,0,0,0.55), 0 4px 20px rgba(0,0,0,0.3);
       overflow: hidden; text-align: left;
       font-family: 'Inter', sans-serif;
-      transform-origin: top center;
+      position: relative; z-index: 1;
     }
-    .doc-card:nth-child(1) { transform: rotate(-1.5deg); }
-    .doc-card:nth-child(2) { transform: rotate(1deg) translateY(14px); }
     /* Top strip — matches PDF's navy top bar */
     .doc-header {
       background: #0B1A2F;
@@ -351,12 +378,13 @@
 <!-- ─── PRODUCT PREVIEW ─── -->
 <section class="preview-section">
   <p class="preview-label">📄 What You're Getting</p>
-  <h2 class="preview-heading sora">Structured Templates That Speak the Rater's Language</h2>
-  <p class="preview-sub">Every field maps to what the VA actually scores. Here's a look at two of the 27 templates.</p>
+  <h2 class="preview-heading sora">12–15 Pages That Make You an Expert in Your Own Condition</h2>
+  <p class="preview-sub">Every template includes the 38 CFR criteria, the VA rating guide, detailed instructions on how to use the evidence log — and exactly what a rater is looking for when they open your file. Once you know your conditions, these templates give you the fluency to document them like a pro.</p>
 
   <div class="preview-stack">
 
     <!-- Template 1: PTSD -->
+    <div class="doc-stack">
     <div class="doc-card">
       <div class="doc-header">
         <div class="doc-header-top">
@@ -395,11 +423,13 @@
       </div>
       <div class="doc-footer">
         <span class="doc-footer-text">PTSD Evidence Log · DC 9411</span>
-        <span class="doc-page-num">Page 1 of 30</span>
+        <span class="doc-page-num">12 pages</span>
       </div>
     </div>
+    </div><!-- end doc-stack -->
 
     <!-- Template 2: Sleep Apnea -->
+    <div class="doc-stack">
     <div class="doc-card">
       <div class="doc-header">
         <div class="doc-header-top">
@@ -435,12 +465,13 @@
       </div>
       <div class="doc-footer">
         <span class="doc-footer-text">Sleep Apnea Log · DC 6847</span>
-        <span class="doc-page-num">Page 1 of 30</span>
+        <span class="doc-page-num">15 pages</span>
       </div>
     </div>
+    </div><!-- end doc-stack -->
 
   </div>
-  <p class="preview-disclaimer">Sample entries shown for illustration. Your symptoms, your words — the templates teach you the vocabulary VA raters actually score against.</p>
+  <p class="preview-disclaimer">Sample entries shown for illustration. Each template is 12–15 pages — 38 CFR, rating criteria, condition guide, and the daily log. You walk into your C&P exam knowing exactly what the rater has to see.</p>
 </section>
 
 <!-- ─── BRIDGE ─── -->
