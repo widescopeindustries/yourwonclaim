@@ -45,10 +45,10 @@
                 if (!href || href === '#') return;
                 
                 let productType, price;
-                if (href.includes('5kQ8wQ2ed7R7esh0m55ZC04')) {
+                if (href.includes('28E9AT6UhdCSeGsbbV18c0d')) {
                     productType = '2-pack-bundle';
                     price = 50;
-                } else if (href.includes('28E00k4ml8Vb6ZPgl35ZC05')) {
+                } else if (href.includes('aFa00j7YlfL07e0bbV18c0e')) {
                     productType = '3-pack-bundle';
                     price = 60;
                 } else {
