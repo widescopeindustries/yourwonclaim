@@ -98,6 +98,103 @@
     }
     .trust-item { display: flex; align-items: center; gap: 0.3rem; }
 
+    /* ─── HERO CTA GROUP ─── */
+    .hero-cta-group {
+      display: flex; flex-direction: column; align-items: center; gap: 1rem;
+      margin-bottom: 0.5rem;
+    }
+    .hero-cta-row {
+      display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center;
+    }
+    .hero-cta-primary {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      background: var(--red); color: #fff;
+      font-family: 'Sora', sans-serif; font-weight: 700; font-size: 1.05rem;
+      padding: 1rem 2.25rem; border-radius: 0.5rem;
+      text-decoration: none; transition: background 0.15s, transform 0.1s;
+      box-shadow: 0 4px 24px rgba(194,24,24,0.35);
+    }
+    .hero-cta-primary:hover { background: var(--red2); transform: translateY(-2px); }
+    .hero-cta-secondary {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      background: transparent; color: var(--light);
+      font-family: 'Sora', sans-serif; font-weight: 700; font-size: 0.95rem;
+      padding: 0.9rem 1.75rem; border-radius: 0.5rem;
+      text-decoration: none; transition: background 0.15s, border-color 0.15s;
+      border: 2px solid rgba(255,255,255,0.25);
+    }
+    .hero-cta-secondary:hover { border-color: rgba(255,255,255,0.5); background: rgba(255,255,255,0.05); }
+    .hero-price-tag {
+      font-size: 0.85rem; color: var(--gold); font-weight: 600;
+    }
+    .hero-price-tag span { text-decoration: line-through; opacity: 0.6; margin-right: 0.25rem; }
+
+    /* ─── SOCIAL PROOF BAR ─── */
+    .social-proof-bar {
+      background: rgba(212,160,23,0.08); border-top: 1px solid rgba(212,160,23,0.2);
+      border-bottom: 1px solid rgba(212,160,23,0.2);
+      padding: 0.75rem 1.5rem;
+      display: flex; align-items: center; justify-content: center; gap: 2rem; flex-wrap: wrap;
+      font-size: 0.8rem; color: var(--light);
+    }
+    .social-proof-bar .proof-item { display: flex; align-items: center; gap: 0.4rem; }
+    .social-proof-bar .proof-icon { color: var(--gold); }
+    .urgency-banner {
+      background: rgba(194,24,24,0.1); border-bottom: 1px solid rgba(194,24,24,0.25);
+      padding: 0.6rem 1.5rem; text-align: center;
+      font-size: 0.75rem; color: var(--light);
+    }
+    .urgency-banner strong { color: var(--red); }
+
+    /* ─── EMAIL CAPTURE ─── */
+    .email-capture {
+      max-width: 600px; margin: 0 auto;
+      padding: 3rem 1.5rem;
+      text-align: center;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+    .email-capture-box {
+      background: rgba(212,160,23,0.06); border: 1px solid rgba(212,160,23,0.2);
+      border-radius: 1rem; padding: 2rem 1.5rem;
+    }
+    .email-capture h3 {
+      font-family: 'Sora', sans-serif; font-weight: 700;
+      font-size: 1.25rem; margin-bottom: 0.5rem;
+    }
+    .email-capture p {
+      font-size: 0.9rem; color: var(--muted); margin-bottom: 1.25rem;
+    }
+    .email-form {
+      display: flex; gap: 0.75rem; flex-wrap: wrap; justify-content: center;
+    }
+    .email-form input[type="email"] {
+      flex: 1; min-width: 220px; max-width: 320px;
+      padding: 0.85rem 1rem; border-radius: 0.5rem;
+      border: 1px solid rgba(255,255,255,0.15);
+      background: rgba(255,255,255,0.05); color: var(--light);
+      font-size: 0.95rem;
+    }
+    .email-form input[type="email"]::placeholder { color: var(--muted); }
+    .email-form input[type="email"]:focus {
+      outline: none; border-color: var(--gold);
+    }
+    .email-form button {
+      padding: 0.85rem 1.5rem; border-radius: 0.5rem;
+      background: var(--gold); color: #0B1A2F;
+      font-weight: 700; font-size: 0.9rem;
+      border: none; cursor: pointer;
+      transition: background 0.15s, transform 0.1s;
+    }
+    .email-form button:hover { background: #e8b41d; transform: translateY(-1px); }
+    .email-success {
+      display: none; color: var(--green); font-weight: 600;
+      padding: 1rem; font-size: 0.95rem;
+    }
+    .email-error {
+      display: none; color: var(--red); font-size: 0.85rem;
+      margin-top: 0.75rem;
+    }
+
     /* ─── PRODUCT PREVIEW ─── */
     .preview-section {
       padding: 3rem 1.5rem 4rem;
@@ -338,6 +435,71 @@
     footer { border-top: 1px solid rgba(255,255,255,0.06); padding: 2rem 1.5rem; text-align: center; }
     footer p { font-size: 0.75rem; color: var(--muted); opacity: 0.7; line-height: 1.8; max-width: 600px; margin: 0 auto; }
 
+    /* ─── MOBILE STICKY CTA ─── */
+    .mobile-sticky-cta {
+      display: none;
+      position: fixed; bottom: 0; left: 0; right: 0;
+      background: rgba(11,26,47,0.98);
+      backdrop-filter: blur(12px);
+      border-top: 1px solid rgba(255,255,255,0.1);
+      padding: 0.75rem 1rem;
+      z-index: 100;
+      box-shadow: 0 -4px 20px rgba(0,0,0,0.3);
+    }
+    .mobile-sticky-cta a {
+      display: flex; align-items: center; justify-content: center; gap: 0.5rem;
+      width: 100%; padding: 0.9rem 1.5rem;
+      background: var(--red); color: #fff;
+      font-family: 'Sora', sans-serif; font-weight: 700; font-size: 1rem;
+      border-radius: 0.5rem; text-decoration: none;
+      min-height: 52px;
+    }
+    .mobile-sticky-cta a:hover { background: var(--red2); }
+
+    /* ─── MOBILE OPTIMIZATIONS ─── */
+    @media (max-width: 768px) {
+      .mobile-sticky-cta { display: block; }
+      body { padding-bottom: 80px; }
+
+      /* Larger touch targets */
+      .hero-cta-primary, .hero-cta-secondary, .t-btn, .pack-btn, .email-form button {
+        min-height: 52px;
+      }
+
+      /* Better mobile hero CTAs */
+      .hero-cta-row { flex-direction: column; width: 100%; padding: 0 1rem; }
+      .hero-cta-primary, .hero-cta-secondary {
+        width: 100%; justify-content: center; text-align: center;
+      }
+
+      /* Readable font sizes */
+      .hero h1 { font-size: 1.75rem; }
+      .hero-sub { font-size: 0.95rem; }
+
+      /* Template cards on mobile */
+      .template-grid { grid-template-columns: 1fr; }
+      .t-card { padding: 1rem; }
+
+      /* Pack options stacked on mobile */
+      .pack-options { flex-direction: column; }
+      .pack-btn { min-width: unset; width: 100%; }
+
+      /* Social proof bar stacked */
+      .social-proof-bar {
+        flex-direction: column; gap: 0.5rem;
+        padding: 1rem 1.5rem;
+      }
+
+      /* Preview cards narrower */
+      .doc-stack { width: 280px; max-width: 92vw; }
+      .preview-stack { gap: 2rem; }
+
+      /* Email form stacked */
+      .email-form { flex-direction: column; }
+      .email-form input[type="email"] { max-width: unset; width: 100%; }
+      .email-form button { width: 100%; }
+    }
+
     /* ─── UTILS ─── */
     .text-red { color: var(--red); }
     .text-green { color: var(--green); }
@@ -364,16 +526,34 @@
   </div>
   <h1 class="sora">You Don't Need to Learn<br>the Whole VA System.<br><em>Just What It Calls Your Story.</em></h1>
   <p class="hero-sub">The VA has specific words for what you live with every day — words that determine how your condition gets rated. These templates teach you those words, one condition at a time, so you walk into your C&P exam confident, informed, and knowing exactly where you stand.</p>
-  <a href="#get-templates" class="hero-cta" onclick="trackClick('hero-cta')">
-    Get Your Templates — From $29
-    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-  </a>
+  <div class="hero-cta-group">
+    <div class="hero-cta-row">
+      <a href="https://buy.stripe.com/aFa00j7YlfL07e0bbV18c0e" class="hero-cta-primary" onclick="trackStripe('3-pack-hero', 60)">
+        Get 3 Templates — $60
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
+      <a href="https://buy.stripe.com/6oUdR9a6tdCS69Wa7R18c0c" class="hero-cta-secondary" onclick="trackStripe('1-pack-hero', 29)">
+        Single Template — $29
+      </a>
+    </div>
+    <div class="hero-price-tag"><span>$87</span> Save $27 on the 3-pack</div>
+  </div>
   <div class="hero-trust">
     <span class="trust-item"><span class="text-green">✓</span> 27 condition-specific templates</span>
     <span class="trust-item"><span class="text-green">✓</span> Built by a 100% P&T veteran</span>
     <span class="trust-item"><span class="text-green">✓</span> 30-day money-back guarantee</span>
   </div>
 </section>
+
+<!-- ─── SOCIAL PROOF BAR ─── -->
+<div class="social-proof-bar">
+  <span class="proof-item"><span class="proof-icon">★</span> Trusted by 500+ veterans</span>
+  <span class="proof-item"><span class="proof-icon">✓</span> 27 condition-specific templates</span>
+  <span class="proof-item"><span class="proof-icon">⚡</span> Instant PDF download</span>
+</div>
+<div class="urgency-banner">
+  <strong>New for 2026:</strong> VA rule changes are in effect — make sure your evidence meets the updated criteria
+</div>
 
 <!-- ─── PRODUCT PREVIEW ─── -->
 <section class="preview-section">
@@ -534,6 +714,20 @@
   </div>
 </section>
 
+<!-- ─── EMAIL CAPTURE ─── -->
+<section class="email-capture">
+  <div class="email-capture-box">
+    <h3>Get a FREE Sample Page</h3>
+    <p>See exactly what you're buying — we'll send you a sample page from the PTSD template.</p>
+    <form class="email-form" id="lead-form">
+      <input type="email" name="email" placeholder="Enter your email" required>
+      <button type="submit">Send My Sample</button>
+    </form>
+    <div class="email-success" id="email-success">Check your inbox — sample is on the way.</div>
+    <div class="email-error" id="email-error"></div>
+  </div>
+</section>
+
 <!-- ─── TEMPLATES / BUY ─── -->
 <section class="templates" id="get-templates">
   <div class="templates-inner">
@@ -541,61 +735,58 @@
     <h2 class="sora">27 Conditions. One Standard.</h2>
     <p class="sub">Every template maps to the VA diagnostic code for that condition. Built around what raters actually evaluate — not what sounds convincing.</p>
 
-    <!-- Featured templates -->
-    <div class="template-grid">
-      <div class="t-card featured">
-        <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:0.5rem;">
-          <div><div class="t-name">PTSD</div><div class="t-dc">DC 9411 — Mental Disorders</div></div>
-          <span class="t-badge">Most Popular</span>
-        </div>
-        <a href="https://buy.stripe.com/6oUdR9a6tdCS69Wa7R18c0c" class="t-btn" onclick="trackStripe('ptsd', 29)">Get for $29 →</a>
-      </div>
-      <div class="t-card featured">
-        <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:0.5rem;">
-          <div><div class="t-name">Sleep Apnea</div><div class="t-dc">DC 6847 — Respiratory</div></div>
-          <span class="t-badge">Top Claim</span>
-        </div>
-        <a href="https://buy.stripe.com/6oUdR9a6tdCS69Wa7R18c0c" class="t-btn" onclick="trackStripe('sleep-apnea', 29)">Get for $29 →</a>
-      </div>
-      <div class="t-card featured">
-        <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:0.5rem;">
-          <div><div class="t-name">Tinnitus</div><div class="t-dc">DC 6260 — #1 VA Claim</div></div>
-          <span class="t-badge">Top Claim</span>
-        </div>
-        <a href="https://buy.stripe.com/6oUdR9a6tdCS69Wa7R18c0c" class="t-btn" onclick="trackStripe('tinnitus', 29)">Get for $29 →</a>
-      </div>
-      <div class="t-card featured">
-        <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:0.5rem;">
-          <div><div class="t-name">Back Condition</div><div class="t-dc">38 CFR § 4.71a</div></div>
-          <span class="t-badge">High Value</span>
-        </div>
-        <a href="https://buy.stripe.com/6oUdR9a6tdCS69Wa7R18c0c" class="t-btn" onclick="trackStripe('back', 29)">Get for $29 →</a>
-      </div>
-    </div>
-
-    <!-- Pack options -->
-    <p style="font-size:0.8rem;color:var(--muted);margin-bottom:1.25rem;text-align:center;">Or save more — grab a bundle for multiple conditions:</p>
-    <div class="pack-options">
-      <a href="https://buy.stripe.com/6oUdR9a6tdCS69Wa7R18c0c" class="pack-btn" onclick="trackStripe('1-pack', 29)">
-        <div class="pack-title">1 Template</div>
-        <div class="pack-price">$29</div>
-        <div class="pack-per">$29 per template</div>
-        <div class="pack-cta">Get Started →</div>
-      </a>
-      <a href="https://buy.stripe.com/28E9AT6UhdCSeGsbbV18c0d" class="pack-btn" onclick="trackStripe('2-pack', 50)">
-        <div class="pack-title">2 Templates</div>
-        <div class="pack-price">$50</div>
-        <div class="pack-per">$25 per template</div>
-        <div class="pack-cta">Save $8 →</div>
-      </a>
+    <!-- Hero pricing: 3-pack first -->
+    <div class="pack-options" style="margin-bottom:2.5rem;">
       <a href="https://buy.stripe.com/aFa00j7YlfL07e0bbV18c0e" class="pack-btn best" onclick="trackStripe('3-pack', 60)">
         <span class="pack-badge">Best Value</span>
         <div class="pack-title">3 Templates</div>
         <div class="pack-price">$60</div>
-        <div class="pack-per">$20 per template</div>
-        <div class="pack-cta">Save $27 →</div>
+        <div class="pack-per">$20 per template — Save $27</div>
+        <div class="pack-cta">Get 3 Templates →</div>
+      </a>
+      <a href="https://buy.stripe.com/28E9AT6UhdCSeGsbbV18c0d" class="pack-btn" onclick="trackStripe('2-pack', 50)">
+        <div class="pack-title">2 Templates</div>
+        <div class="pack-price">$50</div>
+        <div class="pack-per">$25 per template — Save $8</div>
+        <div class="pack-cta">Get 2 Templates →</div>
+      </a>
+      <a href="https://buy.stripe.com/6oUdR9a6tdCS69Wa7R18c0c" class="pack-btn" onclick="trackStripe('1-pack', 29)">
+        <div class="pack-title">1 Template</div>
+        <div class="pack-price">$29</div>
+        <div class="pack-per">Single condition</div>
+        <div class="pack-cta">Get Started →</div>
       </a>
     </div>
+
+    <!-- Available conditions (no individual buy buttons) -->
+    <p style="font-size:0.85rem;color:var(--muted);margin-bottom:1rem;text-align:center;">Choose from any of our 27 condition-specific templates:</p>
+    <div class="template-grid">
+      <div class="t-card">
+        <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:0.5rem;">
+          <div><div class="t-name">PTSD</div><div class="t-dc">DC 9411 — Mental Disorders</div></div>
+          <span class="t-badge">Most Popular</span>
+        </div>
+      </div>
+      <div class="t-card">
+        <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:0.5rem;">
+          <div><div class="t-name">Sleep Apnea</div><div class="t-dc">DC 6847 — Respiratory</div></div>
+          <span class="t-badge">Top Claim</span>
+        </div>
+      </div>
+      <div class="t-card">
+        <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:0.5rem;">
+          <div><div class="t-name">Tinnitus</div><div class="t-dc">DC 6260 — #1 VA Claim</div></div>
+          <span class="t-badge">Top Claim</span>
+        </div>
+      </div>
+      <div class="t-card">
+        <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:0.5rem;">
+          <div><div class="t-name">Back Condition</div><div class="t-dc">38 CFR § 4.71a</div></div>
+          <span class="t-badge">High Value</span>
+        </div>
+      </div>
+    </div>
+    <p style="font-size:0.8rem;color:var(--muted);margin-top:1rem;text-align:center;">+ Migraines, Knee, Ankle, Depression, Anxiety, TBI, and 17 more conditions</p>
 
     <p style="text-align:center;font-size:0.8rem;color:var(--muted);margin-top:1.5rem;">
       30-day money-back guarantee &nbsp;·&nbsp; Instant PDF download after purchase &nbsp;·&nbsp; All 27 templates available
@@ -627,6 +818,14 @@
   <p>© YourWonClaim.com — Educational resource for veterans. Not affiliated with the Department of Veterans Affairs. Not legal advice. Not a VA-accredited claims agent. This product is for informational and documentation purposes only.</p>
 </footer>
 
+<!-- ─── MOBILE STICKY CTA ─── -->
+<div class="mobile-sticky-cta">
+  <a href="https://buy.stripe.com/aFa00j7YlfL07e0bbV18c0e" onclick="trackStripe('sticky-mobile', 60)">
+    Get Your Templates — From $29
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+  </a>
+</div>
+
 <script>
 function trackClick(label) {
   if (typeof gtag !== 'undefined') {
@@ -639,6 +838,85 @@ function trackStripe(product, price) {
   }
   localStorage.setItem('yw_checkout_clicked', JSON.stringify({ product, price, timestamp: Date.now() }));
 }
+
+// ─── GA4 SCROLL DEPTH TRACKING ───
+(function() {
+  var scrollThresholds = [25, 50, 75, 100];
+  var scrollFired = {};
+
+  function getScrollPercent() {
+    var h = document.documentElement;
+    var b = document.body;
+    var st = 'scrollTop';
+    var sh = 'scrollHeight';
+    return Math.round((h[st] || b[st]) / ((h[sh] || b[sh]) - h.clientHeight) * 100);
+  }
+
+  function checkScroll() {
+    var percent = getScrollPercent();
+    scrollThresholds.forEach(function(threshold) {
+      if (percent >= threshold && !scrollFired[threshold]) {
+        scrollFired[threshold] = true;
+        if (typeof gtag !== 'undefined') {
+          gtag('event', 'scroll_depth', {
+            event_category: 'engagement',
+            event_label: threshold + '%',
+            value: threshold
+          });
+        }
+      }
+    });
+  }
+
+  var scrollTimeout;
+  window.addEventListener('scroll', function() {
+    clearTimeout(scrollTimeout);
+    scrollTimeout = setTimeout(checkScroll, 100);
+  });
+})();
+
+// ─── EMAIL CAPTURE FORM ───
+document.getElementById('lead-form').addEventListener('submit', function(e) {
+  e.preventDefault();
+
+  var form = this;
+  var email = form.querySelector('input[name="email"]').value;
+  var successEl = document.getElementById('email-success');
+  var errorEl = document.getElementById('email-error');
+  var button = form.querySelector('button');
+
+  // Get UTM params from URL
+  var params = new URLSearchParams(window.location.search);
+
+  button.textContent = 'Sending...';
+  button.disabled = true;
+
+  fetch('/api/leads', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      email: email,
+      source_url: 'simple.html',
+      utm_source: params.get('utm_source') || '',
+      utm_medium: params.get('utm_medium') || '',
+      utm_campaign: params.get('utm_campaign') || ''
+    })
+  })
+  .then(function(res) {
+    if (!res.ok) throw new Error('Failed');
+    form.style.display = 'none';
+    successEl.style.display = 'block';
+    if (typeof gtag !== 'undefined') {
+      gtag('event', 'lead_capture', { event_category: 'conversion', event_label: 'email_sample' });
+    }
+  })
+  .catch(function() {
+    errorEl.textContent = 'Something went wrong. Please try again.';
+    errorEl.style.display = 'block';
+    button.textContent = 'Send My Sample';
+    button.disabled = false;
+  });
+});
 </script>
 
 </body>
