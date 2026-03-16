@@ -306,7 +306,7 @@
                             </div>
                         </div>
 
-                        <a href="#" id="bundle-checkout-btn"
+                        <a href="#" id="bundle-checkout-btn" aria-disabled="true"
                             class="inline-block px-12 py-5 bg-[#C21818] text-white font-bold rounded-xl hover:bg-[#a01414] transition-all transform hover:scale-105 active:scale-95 uppercase tracking-tight text-xl shadow-xl w-full sm:w-auto opacity-50 cursor-not-allowed">
                             Select a condition to start
                         </a>
@@ -357,51 +357,82 @@
                 const summaryText = document.getElementById('bundle-summary-text');
                 const checkoutBtn = document.getElementById('bundle-checkout-btn');
                 const savingsBadge = document.getElementById('savings-badge');
+                const PACK_PRICING = { 1: 29, 2: 50, 3: 60 };
 
-                // =================================================================
-                // STRIPE LINKS
-                // =================================================================
-                const STRIPE_URLS = {
-                    onePack: 'https://buy.stripe.com/6oUdR9a6tdCS69Wa7R18c0c', // $29
-                    twoPack: 'https://buy.stripe.com/28E9AT6UhdCSeGsbbV18c0d', // $50
-                    threePack: 'https://buy.stripe.com/aFa00j7YlfL07e0bbV18c0e'  // $60
-                };
+                function trackTemplateCheckout(productType, price) {
+                    if (typeof gtag !== 'undefined') {
+                        gtag('event', 'stripe_checkout_click', {
+                            event_category: 'conversion',
+                            event_label: productType,
+                            value: price,
+                            currency: 'USD'
+                        });
+                    }
 
-                // Initialize individual product buttons with the 1-Pack link
-                function initIndividualButtons() {
-                    const buttons = [
-                        'btn-buy-ptsd',
-                        'btn-buy-sleep',
-                        'btn-buy-back',
-                        'btn-buy-migraines',
-                        'btn-buy-tinnitus'
-                    ];
-
-                    buttons.forEach(id => {
-                        const btn = document.getElementById(id);
-                        if (btn) {
-                            btn.href = STRIPE_URLS.onePack;
-                            btn.style.opacity = '1';
-                            btn.style.cursor = 'pointer';
-                        }
-                    });
+                    const checkoutData = {
+                        product: productType,
+                        price,
+                        timestamp: Date.now(),
+                        sessionId: 'sess_' + Math.random().toString(36).slice(2, 11)
+                    };
+                    localStorage.setItem('yw_checkout_clicked', JSON.stringify(checkoutData));
                 }
 
-                // Save selected conditions to localStorage before Stripe redirect
+                async function startTemplateCheckout(selectedConditionNames, productType) {
+                    const selectedConditions = [...new Set(selectedConditionNames)].filter(Boolean);
+                    const packSize = selectedConditions.length;
+                    const price = PACK_PRICING[packSize];
+
+                    if (!price) {
+                        alert('Please select between 1 and 3 templates.');
+                        return;
+                    }
+
+                    checkoutBtn.classList.add('opacity-50', 'cursor-not-allowed');
+                    checkoutBtn.setAttribute('aria-disabled', 'true');
+                    checkoutBtn.textContent = 'Redirecting to secure checkout...';
+
+                    localStorage.setItem('yw_selected_conditions', JSON.stringify(selectedConditions));
+                    localStorage.setItem('yw_pack_size', String(packSize));
+                    trackTemplateCheckout(productType, price);
+
+                    try {
+                        const response = await fetch('/api/create-template-checkout', {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify({
+                                selectedConditions,
+                                cancelPath: window.location.pathname + window.location.hash
+                            })
+                        });
+
+                        const data = await response.json();
+                        if (!response.ok || !data.url) {
+                            throw new Error(data.error || 'Unable to start checkout.');
+                        }
+
+                        window.location.href = data.url;
+                    } catch (error) {
+                        console.error('Template checkout failed:', error);
+                        alert('Checkout could not be started right now. Please try again in a moment.');
+                        updateUI();
+                    }
+                }
+
                 checkoutBtn.addEventListener('click', function(e) {
-                    if (!this.href || this.href === '#' || this.href.endsWith('#')) return;
-                    localStorage.setItem('yw_selected_conditions', JSON.stringify(selectedItems.map(i => i.name)));
-                    localStorage.setItem('yw_pack_size', String(selectedItems.length));
+                    e.preventDefault();
+                    if (selectedItems.length === 0 || this.getAttribute('aria-disabled') === 'true') return;
+                    startTemplateCheckout(selectedItems.map((item) => item.name), selectedItems.length + '-pack-bundle');
                 });
 
-                // Also wire individual product buttons
-                initIndividualButtons();
-
-                const stripeLinks = {
-                    1: STRIPE_URLS.onePack,
-                    2: STRIPE_URLS.twoPack,
-                    3: STRIPE_URLS.threePack
-                };
+                document.querySelectorAll('[data-template-condition]').forEach((button) => {
+                    button.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        const conditionName = this.getAttribute('data-template-condition');
+                        if (!conditionName) return;
+                        startTemplateCheckout([conditionName], this.getAttribute('data-product-type') || '1-pack');
+                    });
+                });
 
                 function updateUI() {
                     // Update Slots
@@ -438,11 +469,11 @@
                     if (count > 0) {
                         checkoutBtn.classList.remove('opacity-50', 'cursor-not-allowed');
                         checkoutBtn.textContent = 'GET MY ' + count + '-PACK BUNDLE';
-                        checkoutBtn.href = stripeLinks[count] || '#';
+                        checkoutBtn.setAttribute('aria-disabled', 'false');
                     } else {
                         checkoutBtn.classList.add('opacity-50', 'cursor-not-allowed');
                         checkoutBtn.textContent = 'Select a condition to start';
-                        checkoutBtn.href = '#';
+                        checkoutBtn.setAttribute('aria-disabled', 'true');
                     }
 
                     if (count === 2) {
@@ -547,7 +578,7 @@
                             <li class="flex items-start"><span class="text-green-400 font-bold mr-2">&#10003;</span> Strong vs weak entries</li>
                         </ul>
                         <div class="text-4xl font-extrabold text-[#C21818] mb-6">$29</div>
-                        <a id="btn-buy-ptsd" href="#"
+                        <a id="btn-buy-ptsd" href="#" data-template-condition="PTSD (Post-Traumatic Stress)" data-product-type="ptsd-template"
                             class="block w-full px-6 py-3 bg-[#C21818] text-white font-semibold rounded-lg hover:bg-[#a01414] transition-all text-center">Get PTSD Only</a>
                     </div>
 
@@ -565,7 +596,7 @@
                             <li class="flex items-start"><span class="text-green-400 font-bold mr-2">&#10003;</span> Secondary condition help</li>
                         </ul>
                         <div class="text-4xl font-extrabold text-[#C21818] mb-6">$29</div>
-                        <a id="btn-buy-sleep" href="#"
+                        <a id="btn-buy-sleep" href="#" data-template-condition="Sleep Apnea" data-product-type="sleep-apnea-template"
                             class="block w-full px-6 py-3 bg-[#C21818] text-white font-semibold rounded-lg hover:bg-[#a01414] transition-all text-center">Get Sleep Apnea Only</a>
                     </div>
 
@@ -583,7 +614,7 @@
                             <li class="flex items-start"><span class="text-green-400 font-bold mr-2">&#10003;</span> IVDS episode tracking</li>
                         </ul>
                         <div class="text-4xl font-extrabold text-[#C21818] mb-6">$29</div>
-                        <a id="btn-buy-back" href="#"
+                        <a id="btn-buy-back" href="#" data-template-condition="Back Condition (Degenerative Arthritis/Strain)" data-product-type="back-condition-template"
                             class="block w-full px-6 py-3 bg-[#C21818] text-white font-semibold rounded-lg hover:bg-[#a01414] transition-all text-center">Get Back Condition Only</a>
                     </div>
 
@@ -601,7 +632,7 @@
                             <li class="flex items-start"><span class="text-green-400 font-bold mr-2">&#10003;</span> Trigger documentation</li>
                         </ul>
                         <div class="text-4xl font-extrabold text-[#C21818] mb-6">$29</div>
-                        <a id="btn-buy-migraines" href="#"
+                        <a id="btn-buy-migraines" href="#" data-template-condition="Migraines (Headaches)" data-product-type="migraines-template"
                             class="block w-full px-6 py-3 bg-[#C21818] text-white font-semibold rounded-lg hover:bg-[#a01414] transition-all text-center">Get Migraines Only</a>
                     </div>
 
@@ -619,7 +650,7 @@
                             <li class="flex items-start"><span class="text-green-400 font-bold mr-2">&#10003;</span> Impact on sleep/focus</li>
                         </ul>
                         <div class="text-4xl font-extrabold text-[#C21818] mb-6">$29</div>
-                        <a id="btn-buy-tinnitus" href="#"
+                        <a id="btn-buy-tinnitus" href="#" data-template-condition="Tinnitus (Ringing in Ears)" data-product-type="tinnitus-template"
                             class="block w-full px-6 py-3 bg-[#C21818] text-white font-semibold rounded-lg hover:bg-[#a01414] transition-all text-center">Get Tinnitus Only</a>
                     </div>
                 </div>
@@ -830,9 +861,9 @@
                 </p>
 
                 <div class="mb-10">
-                    <a href="https://buy.stripe.com/aFa00j7YlfL07e0bbV18c0e"
+                    <a href="#bundle-builder"
                         class="inline-block px-14 py-6 bg-[#C21818] text-white font-bold rounded-xl hover:bg-[#a01414] transition-all transform hover:scale-105 active:scale-95 uppercase tracking-tight text-2xl shadow-xl mb-6">
-                        LOCK IN $60 BEFORE PRICE INCREASES
+                        SELECT YOUR 3 TEMPLATES
                     </a>
                 </div>
 

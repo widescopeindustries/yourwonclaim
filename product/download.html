@@ -187,7 +187,7 @@
             <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#4ade80" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
         </div>
         <h1 class="font-heading">Your Templates Are <span>Ready</span></h1>
-        <p>Download the evidence log templates below. Your selected conditions are highlighted — but all templates are included with your purchase.</p>
+        <p>Download only the evidence log templates included with this purchase below.</p>
     </div>
 
     <div class="content">
@@ -195,19 +195,17 @@
         <!-- Email reminder -->
         <div class="email-notice">
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#C21818" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-            <p><strong>Bookmark this page</strong> — or check your email for a copy of your download links. These PDFs are printable and can also be filled digitally. If you have any issues, email <a href="mailto:support@yourwonclaim.com" style="color:var(--red)">support@yourwonclaim.com</a>.</p>
+            <p><strong>Bookmark this page</strong> if you need it today. These PDFs are printable and can also be filled digitally. If you have any issues, email <a href="mailto:support@yourwonclaim.com" style="color:var(--red)">support@yourwonclaim.com</a>.</p>
         </div>
 
-        <!-- Selected conditions (shown first if available) -->
-        <div id="selected-section" style="display:none; margin-bottom:2.5rem;">
-            <p class="section-label primary">⭐ Your Selected Templates</p>
-            <div id="selected-grid" class="template-grid"></div>
+        <div id="status-notice" class="email-notice" style="margin-bottom:2rem;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#C21818" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            <p id="status-message"><strong>Verifying your purchase...</strong> One moment while we load the templates tied to this order.</p>
         </div>
 
-        <!-- All templates -->
-        <div>
-            <p class="section-label" id="all-label">All 27 Evidence Log Templates</p>
-            <div id="all-grid" class="template-grid"></div>
+        <div id="purchased-section" style="display:none; margin-bottom:2.5rem;">
+            <p class="section-label primary" id="purchased-label">Your Purchased Templates</p>
+            <div id="purchased-grid" class="template-grid"></div>
         </div>
 
         <div class="support-note">
@@ -222,82 +220,65 @@
 </footer>
 
 <script>
-// Condition name → PDF filename mapping
-const CONDITION_MAP = {
-    'Ankle Pain (Limitation of Motion)':               'Ankle_Pain_Evidence_Log_Template.pdf',
-    'Anxiety & Depression':                            'Anxiety_Depression_Evidence_Log_Template.pdf',
-    'Asthma':                                         'Asthma_Evidence_Log_Template.pdf',
-    'Back Condition (Degenerative Arthritis/Strain)':  'Back_Condition_Evidence_Log_Template.pdf',
-    'Eczema & Skin Conditions':                        'Eczema_Skin_Evidence_Log_Template.pdf',
-    'Elbow Pain & Tendonitis':                         'Elbow_Pain_Evidence_Log_Template.pdf',
-    'Eye Conditions':                                  'Eye_Conditions_Evidence_Log_Template.pdf',
-    'Flat Feet (Pes Planus)':                          'Pes_Planus_Evidence_Log_Template.pdf',
-    'GERD (Acid Reflux)':                              'GERD_Evidence_Log_Template.pdf',
-    'Hip Pain (Limitation of Motion)':                 'Hip_Pain_Evidence_Log_Template.pdf',
-    'Hypertension (High Blood Pressure)':              'Hypertension_Evidence_Log_Template.pdf',
-    'IBS (Irritable Bowel Syndrome)':                  'IBS_Evidence_Log_Template.pdf',
-    'Knee Pain (Limitation of Motion)':                'Knee_Pain_Evidence_Log_Template.pdf',
-    'Migraines (Headaches)':                           'Migraines_Evidence_Log_Template.pdf',
-    'Neck Pain (Cervical Strain)':                     'Neck_Pain_Evidence_Log_Template.pdf',
-    'Peripheral Neuropathy':                           'Peripheral_Neuropathy_Evidence_Log_Template.pdf',
-    'Plantar Fasciitis':                               'Plantar_Fasciitis_Evidence_Log_Template.pdf',
-    'PTSD (Post-Traumatic Stress)':                    'PTSD_Evidence_Log_Template.pdf',
-    'Radiculopathy (Sciatica/Nerve Pain)':             'Radiculopathy_Evidence_Log_Template.pdf',
-    'Shoulder Pain (Limitation of Motion)':            'Shoulder_Pain_Evidence_Log_Template.pdf',
-    'Sinusitis & Rhinitis':                            'Sinusitis_Rhinitis_Evidence_Log_Template.pdf',
-    'Sleep Apnea':                                     'Sleep_Apnea_Evidence_Log_Template.pdf',
-    'TBI (Traumatic Brain Injury)':                    'TBI_Evidence_Log_Template.pdf',
-    'Tinnitus (Ringing in Ears)':                      'Tinnitus_Evidence_Log_Template.pdf',
-    'TMJ / TMD (Jaw Pain)':                            'TMJ_TMD_Evidence_Log_Template.pdf',
-    "Vertigo & Meniere's":                             'Vertigo_Evidence_Log_Template.pdf',
-    'Wrist / Carpal Tunnel':                           'Wrist_Carpal_Tunnel_Evidence_Log_Template.pdf',
+const LEGACY_TEMPLATE_MAP = {
+    'Ankle Pain (Limitation of Motion)': { dc: 'DC 5271', filename: 'Ankle_Pain_Evidence_Log_Template.pdf' },
+    'Anxiety & Depression': { dc: 'DC 9400 series', filename: 'Anxiety_Depression_Evidence_Log_Template.pdf' },
+    'Asthma': { dc: 'DC 6602', filename: 'Asthma_Evidence_Log_Template.pdf' },
+    'Back Condition (Degenerative Arthritis/Strain)': { dc: '38 CFR § 4.71a', filename: 'Back_Condition_Evidence_Log_Template.pdf' },
+    'Eczema & Skin Conditions': { dc: 'DC 7806', filename: 'Eczema_Skin_Evidence_Log_Template.pdf' },
+    'Elbow Pain & Tendonitis': { dc: 'DC 5206', filename: 'Elbow_Pain_Evidence_Log_Template.pdf' },
+    'Eye Conditions': { dc: 'DC 6000 series', filename: 'Eye_Conditions_Evidence_Log_Template.pdf' },
+    'Flat Feet (Pes Planus)': { dc: 'DC 5276', filename: 'Pes_Planus_Evidence_Log_Template.pdf' },
+    'GERD (Acid Reflux)': { dc: 'DC 7346', filename: 'GERD_Evidence_Log_Template.pdf' },
+    'Hip Pain (Limitation of Motion)': { dc: 'DC 5250-5255', filename: 'Hip_Pain_Evidence_Log_Template.pdf' },
+    'Hypertension (High Blood Pressure)': { dc: 'DC 7101', filename: 'Hypertension_Evidence_Log_Template.pdf' },
+    'IBS (Irritable Bowel Syndrome)': { dc: 'DC 7319', filename: 'IBS_Evidence_Log_Template.pdf' },
+    'Knee Pain (Limitation of Motion)': { dc: 'DC 5260/5261', filename: 'Knee_Pain_Evidence_Log_Template.pdf' },
+    'Migraines (Headaches)': { dc: 'DC 8100', filename: 'Migraines_Evidence_Log_Template.pdf' },
+    'Neck Pain (Cervical Strain)': { dc: 'DC 5237', filename: 'Neck_Pain_Evidence_Log_Template.pdf' },
+    'Peripheral Neuropathy': { dc: 'DC 8520-8720', filename: 'Peripheral_Neuropathy_Evidence_Log_Template.pdf' },
+    'Plantar Fasciitis': { dc: 'DC 5269', filename: 'Plantar_Fasciitis_Evidence_Log_Template.pdf' },
+    'PTSD (Post-Traumatic Stress)': { dc: 'DC 9411', filename: 'PTSD_Evidence_Log_Template.pdf' },
+    'Radiculopathy (Sciatica/Nerve Pain)': { dc: 'DC 8520/8620', filename: 'Radiculopathy_Evidence_Log_Template.pdf' },
+    'Shoulder Pain (Limitation of Motion)': { dc: 'DC 5201', filename: 'Shoulder_Pain_Evidence_Log_Template.pdf' },
+    'Sinusitis & Rhinitis': { dc: 'DC 6510/6522', filename: 'Sinusitis_Rhinitis_Evidence_Log_Template.pdf' },
+    'Sleep Apnea': { dc: 'DC 6847', filename: 'Sleep_Apnea_Evidence_Log_Template.pdf' },
+    'TBI (Traumatic Brain Injury)': { dc: 'DC 8045', filename: 'TBI_Evidence_Log_Template.pdf' },
+    'Tinnitus (Ringing in Ears)': { dc: 'DC 6260', filename: 'Tinnitus_Evidence_Log_Template.pdf' },
+    'TMJ / TMD (Jaw Pain)': { dc: 'DC 9905', filename: 'TMJ_TMD_Evidence_Log_Template.pdf' },
+    "Vertigo & Meniere's": { dc: 'DC 6204/6205', filename: 'Vertigo_Evidence_Log_Template.pdf' },
+    'Wrist / Carpal Tunnel': { dc: 'DC 5215/8515', filename: 'Wrist_Carpal_Tunnel_Evidence_Log_Template.pdf' },
 };
 
-const DC_MAP = {
-    'Ankle Pain (Limitation of Motion)': 'DC 5271',
-    'Anxiety & Depression': 'DC 9400 series',
-    'Asthma': 'DC 6602',
-    'Back Condition (Degenerative Arthritis/Strain)': '38 CFR § 4.71a',
-    'Eczema & Skin Conditions': 'DC 7806',
-    'Elbow Pain & Tendonitis': 'DC 5206',
-    'Eye Conditions': 'DC 6000 series',
-    'Flat Feet (Pes Planus)': 'DC 5276',
-    'GERD (Acid Reflux)': 'DC 7346',
-    'Hip Pain (Limitation of Motion)': 'DC 5250-5255',
-    'Hypertension (High Blood Pressure)': 'DC 7101',
-    'IBS (Irritable Bowel Syndrome)': 'DC 7319',
-    'Knee Pain (Limitation of Motion)': 'DC 5260/5261',
-    'Migraines (Headaches)': 'DC 8100',
-    'Neck Pain (Cervical Strain)': 'DC 5237',
-    'Peripheral Neuropathy': 'DC 8520-8720',
-    'Plantar Fasciitis': 'DC 5269',
-    'PTSD (Post-Traumatic Stress)': 'DC 9411',
-    'Radiculopathy (Sciatica/Nerve Pain)': 'DC 8520/8620',
-    'Shoulder Pain (Limitation of Motion)': 'DC 5201',
-    'Sinusitis & Rhinitis': 'DC 6510/6522',
-    'Sleep Apnea': 'DC 6847',
-    'TBI (Traumatic Brain Injury)': 'DC 8045',
-    'Tinnitus (Ringing in Ears)': 'DC 6260',
-    'TMJ / TMD (Jaw Pain)': 'DC 9905',
-    "Vertigo & Meniere's": 'DC 6204/6205',
-    'Wrist / Carpal Tunnel': 'DC 5215/8515',
-};
+function trackDownload(conditionName) {
+    if (typeof gtag !== 'undefined') {
+        gtag('event', 'template_download', {
+            event_category: 'conversion',
+            event_label: conditionName,
+        });
+    }
+}
 
-function makeCard(name, isSelected) {
-    const filename = CONDITION_MAP[name];
-    const dc = DC_MAP[name] || '';
-    const url = '/product/pdfs/' + filename;
+function setStatus(message, isError) {
+    const notice = document.getElementById('status-notice');
+    const statusMessage = document.getElementById('status-message');
+    statusMessage.innerHTML = message;
+    notice.style.background = isError ? 'rgba(194,24,24,0.12)' : 'rgba(194,24,24,0.07)';
+    notice.style.borderColor = isError ? 'rgba(194,24,24,0.35)' : 'rgba(194,24,24,0.2)';
+}
+
+function makeCard(template) {
     const card = document.createElement('div');
-    card.className = 'template-card' + (isSelected ? ' selected' : '');
+    card.className = 'template-card selected';
     card.innerHTML = `
         <div class="card-top">
             <div>
-                <div class="card-name">${name}</div>
-                <div class="card-dc">${dc}</div>
+                <div class="card-name">${template.name}</div>
+                <div class="card-dc">${template.dc || ''}</div>
             </div>
-            ${isSelected ? '<span class="badge-yours">Yours</span>' : ''}
+            <span class="badge-yours">Included</span>
         </div>
-        <a href="${url}" download="${filename}" class="btn-download ${isSelected ? '' : 'secondary'}" onclick="trackDownload('${name}')">
+        <a href="${template.downloadUrl}" class="btn-download" onclick="trackDownload('${template.name.replace(/'/g, "\\'")}')">
             <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
             Download PDF
         </a>
@@ -305,64 +286,111 @@ function makeCard(name, isSelected) {
     return card;
 }
 
-function trackDownload(conditionName) {
-    if (typeof gtag !== 'undefined') {
-        gtag('event', 'template_download', {
-            'event_category': 'conversion',
-            'event_label': conditionName,
-        });
+function getLegacyTemplates() {
+    try {
+        const raw = localStorage.getItem('yw_selected_conditions');
+        const selectedConditions = raw ? JSON.parse(raw) : [];
+        if (!Array.isArray(selectedConditions) || selectedConditions.length === 0) {
+            return [];
+        }
+
+        const templates = selectedConditions
+            .map((name) => {
+                const template = LEGACY_TEMPLATE_MAP[name];
+                if (!template) return null;
+                return {
+                    name,
+                    dc: template.dc,
+                    filename: template.filename,
+                    downloadUrl: '/product/pdfs/' + template.filename,
+                };
+            })
+            .filter(Boolean);
+
+        localStorage.removeItem('yw_selected_conditions');
+        localStorage.removeItem('yw_pack_size');
+        return templates;
+    } catch (error) {
+        console.error('Failed to read legacy template selections:', error);
+        return [];
     }
 }
 
-function init() {
-    const allConditions = Object.keys(CONDITION_MAP).sort();
-    let selected = [];
-    try {
-        const raw = localStorage.getItem('yw_selected_conditions');
-        if (raw) selected = JSON.parse(raw);
-    } catch(e) {}
+async function getPurchasedTemplates() {
+    const sessionId = new URLSearchParams(window.location.search).get('session_id');
 
-    const selectedSection = document.getElementById('selected-section');
-    const selectedGrid = document.getElementById('selected-grid');
-    const allGrid = document.getElementById('all-grid');
-    const allLabel = document.getElementById('all-label');
+    if (sessionId) {
+        const response = await fetch('/api/template-session?session_id=' + encodeURIComponent(sessionId));
+        const data = await response.json();
 
-    // Show selected conditions section if we have them
-    if (selected.length > 0) {
-        selectedSection.style.display = 'block';
-        allLabel.textContent = 'All Templates (Included With Your Purchase)';
-        selected.forEach(name => {
-            if (CONDITION_MAP[name]) {
-                selectedGrid.appendChild(makeCard(name, true));
-            }
-        });
-        // Clear stored selection
-        localStorage.removeItem('yw_selected_conditions');
-        localStorage.removeItem('yw_pack_size');
+        if (!response.ok) {
+            throw new Error(data.error || 'Unable to verify this purchase.');
+        }
+
+        return {
+            templates: data.templates || [],
+            sessionId: data.sessionId || sessionId,
+        };
     }
 
-    // Render all templates
-    allConditions.forEach(name => {
-        allGrid.appendChild(makeCard(name, false));
-    });
+    const legacyTemplates = getLegacyTemplates();
+    if (legacyTemplates.length > 0) {
+        return {
+            templates: legacyTemplates,
+            sessionId: null,
+        };
+    }
 
-    // Track purchase confirmation
+    throw new Error('No verified template purchase was found for this page.');
+}
+
+function trackPurchase(sessionId) {
     const checkoutData = localStorage.getItem('yw_checkout_clicked');
-    if (checkoutData) {
-        try {
-            const data = JSON.parse(checkoutData);
-            const minutesSince = (Date.now() - data.timestamp) / 60000;
-            if (minutesSince < 30) {
-                gtag('event', 'purchase', {
-                    'event_category': 'conversion',
-                    'event_label': data.product,
-                    'value': data.price,
-                    'currency': 'USD',
-                    'transaction_id': data.sessionId
-                });
-                localStorage.removeItem('yw_checkout_clicked');
-            }
-        } catch(e) {}
+    if (!checkoutData) return;
+
+    try {
+        const data = JSON.parse(checkoutData);
+        const minutesSince = (Date.now() - data.timestamp) / 60000;
+        if (minutesSince < 30 && typeof gtag !== 'undefined') {
+            gtag('event', 'purchase', {
+                event_category: 'conversion',
+                event_label: data.product,
+                value: data.price,
+                currency: 'USD',
+                transaction_id: sessionId || data.sessionId,
+            });
+            localStorage.removeItem('yw_checkout_clicked');
+        }
+    } catch (error) {
+        console.error('Failed to track purchase conversion:', error);
+    }
+}
+
+async function init() {
+    const purchasedSection = document.getElementById('purchased-section');
+    const purchasedGrid = document.getElementById('purchased-grid');
+    const purchasedLabel = document.getElementById('purchased-label');
+
+    try {
+        const { templates, sessionId } = await getPurchasedTemplates();
+        if (!templates.length) {
+            throw new Error('No templates were found for this purchase.');
+        }
+
+        purchasedLabel.textContent = templates.length === 1
+            ? 'Your Purchased Template'
+            : 'Your Purchased Templates (' + templates.length + ')';
+
+        templates.forEach((template) => {
+            purchasedGrid.appendChild(makeCard(template));
+        });
+
+        purchasedSection.style.display = 'block';
+        setStatus('<strong>Access ready.</strong> The downloads below are the templates included with this purchase.', false);
+        trackPurchase(sessionId);
+    } catch (error) {
+        console.error('Template download page failed to initialize:', error);
+        setStatus('<strong>We could not verify this purchase automatically.</strong> Please open the download link from your receipt email or contact <a href="mailto:support@yourwonclaim.com" style="color:var(--red)">support@yourwonclaim.com</a> and we will fix it fast.', true);
     }
 }
 
